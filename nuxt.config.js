@@ -25,14 +25,6 @@ export default {
         rel: 'icon',
         type: 'image/x-icon',
         href: '/favicon.ico'
-      },
-      {
-        rel: 'stylesheet',
-        href: '/css/bootstrap.min.css'
-      },
-      {
-        rel: 'stylesheet',
-        href: '/css/custom.css'
       }
     ],
   },
@@ -56,6 +48,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'bootstrap-vue/nuxt'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
