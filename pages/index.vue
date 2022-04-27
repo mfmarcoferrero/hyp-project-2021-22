@@ -1,13 +1,15 @@
 <template>
   <div>
-    <p>
-      This is the homepage
-    </p>
+    <carousel/>
   </div>
 </template>
 
 <script>
+import Carousel from '@/components/Carousel.vue'
 export default {
   name: 'IndexPage',
+  components: {
+    Carousel,
+  }
 }
 </script>

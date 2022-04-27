@@ -215,6 +215,3 @@ export default {
   name: 'TheFooter',
 }
 </script>
-
-<style>
-</style>
