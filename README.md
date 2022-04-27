@@ -1,5 +1,5 @@
 # hyp-project-2021-22
-Web site for the TOURIST office of an cultural tourism destination
+Web site for the TOURIST office of a cultural tourism destination
 
 ## Build Setup
 
