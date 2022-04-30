@@ -7,10 +7,10 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#">Event</b-nav-item>
+        <b-nav-item href="#">Events</b-nav-item>
         <b-nav-item href="#">POI</b-nav-item>
-        <b-nav-item href="#">Itinerary</b-nav-item>
-        <b-nav-item href="#">Service</b-nav-item>                                                   
+        <b-nav-item href="#">Itineraries</b-nav-item>
+        <b-nav-item href="#">Services</b-nav-item>                                                   
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
