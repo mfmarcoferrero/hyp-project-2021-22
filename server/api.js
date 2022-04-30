@@ -18,7 +18,17 @@ async function initializeDatabaseConnection() {
 
 async function runMainApi() {
     const models = await initializeDatabaseConnection()
-
+    // HTTP GET api that returns all the pois in our fake database
+    app.get("/pois", async (req, res) => {
+        const filtered = []
+        filtered.push({
+            name: "duomo",
+            img: "https://fs.i3lab.group/hypermedia/cats/birman.jpg",
+            description: "Il duomo di milano",
+            id: 23,
+        })
+        return res.json(filtered)
+    })
 }
 
 runMainApi()

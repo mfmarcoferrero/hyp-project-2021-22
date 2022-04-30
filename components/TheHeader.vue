@@ -8,8 +8,8 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#">Event</b-nav-item>
-        <b-nav-item href="#">POI</b-nav-item>
-        <b-nav-item href="#">Itinerary</b-nav-item>
+        <nuxt-link to="/attractions">Attractions</nuxt-link>
+        <b-nav-item href="#">Itineraries</b-nav-item>
         <b-nav-item href="#">Service</b-nav-item>                                                   
       </b-navbar-nav>
 
