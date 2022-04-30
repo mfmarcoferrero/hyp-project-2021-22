@@ -2,7 +2,7 @@
   <div>
     <b-card
       overlay
-      img-src="https://fs.i3lab.group/hypermedia/cats/birman.jpg"
+      img-src="https://picsum.photos/900/250/?image=3"
       img-alt="Card Image"
       text-variant="white"
       title="name"
