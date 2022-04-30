@@ -18,10 +18,10 @@ async function initializeDatabaseConnection() {
     })
     const POI = database.define("pointofinterest", {
         name: DataTypes.STRING,
-            latitude: DataTypes.NUMBER,
-            longitude: DataTypes.NUMBER,
-            description: DataTypes.STRING,
-            img: DataTypes.STRING
+        latitude: DataTypes.FLOAT,
+        longitude: DataTypes.FLOAT,
+        description: DataTypes.STRING,
+        img: DataTypes.STRING
     })
     const Event = database.define("event", {
         name: DataTypes.STRING,
@@ -44,9 +44,9 @@ async function initializeDatabaseConnection() {
     await database.sync({ force: true })
     return {
         Town,
-        POI, 
-        Event, 
-        Itinerary, 
+        POI,
+        Event,
+        Itinerary,
         ServiceType
     }
 }
@@ -56,6 +56,19 @@ async function runMainApi() {
     const models = await initializeDatabaseConnection()
     await initialize(models)
 
+    app.get("/pois", async (req, res) => {
+        const result = await models.POI.findAll()
+        const filtered = []
+        for (const element of result) {
+            filtered.push({
+                name: element.name,
+                img: element.img,
+                breed: element.desctiprion,
+                id: element.id,
+            })
+        }
+        return res.json(filtered)
+    })
 }
 
 runMainApi()
