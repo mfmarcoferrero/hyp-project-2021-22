@@ -1,32 +1,72 @@
 const express = require('express')
 const app = express()
 const { Sequelize, DataTypes } = require("sequelize")
+const initialize = require('./initialize').default
 app.use(express.json())
 
-const database = new Sequelize("postgres://postgres:postgres@localhost:5432/hyp")
+const database = new Sequelize("postgres://postgres:postgres@localhost:5432/TheCity")
 
 
 // Function that will initialize the connection to the database
 async function initializeDatabaseConnection() {
     await database.authenticate()
+    const Town = database.define("town", {
+        name: DataTypes.STRING,
+        description: DataTypes.STRING,
+        breed: DataTypes.STRING,
+        img: DataTypes.STRING,
+    })
+    const POI = database.define("pointofinterest", {
+        name: DataTypes.STRING,
+        latitude: DataTypes.FLOAT,
+        longitude: DataTypes.FLOAT,
+        description: DataTypes.STRING,
+        img: DataTypes.STRING
+    })
+    const Event = database.define("event", {
+        name: DataTypes.STRING,
+        description: DataTypes.STRING,
+        breed: DataTypes.STRING,
+        img: DataTypes.STRING,
+    })
+    const Itinerary = database.define("itinerary", {
+        name: DataTypes.STRING,
+        description: DataTypes.STRING,
+        breed: DataTypes.STRING,
+        img: DataTypes.STRING,
+    })
+    const ServiceType = database.define("serviceType", {
+        name: DataTypes.STRING,
+        description: DataTypes.STRING,
+        breed: DataTypes.STRING,
+        img: DataTypes.STRING,
+    })
     await database.sync({ force: true })
     return {
-        
+        Town,
+        POI,
+        Event,
+        Itinerary,
+        ServiceType
     }
 }
 
 
 async function runMainApi() {
     const models = await initializeDatabaseConnection()
-    // HTTP GET api that returns all the pois in our fake database
+    await initialize(models)
+
     app.get("/pois", async (req, res) => {
+        const result = await models.POI.findAll()
         const filtered = []
-        filtered.push({
-            name: "duomo",
-            img: "https://fs.i3lab.group/hypermedia/cats/birman.jpg",
-            description: "Il duomo di milano",
-            id: 23,
-        })
+        for (const element of result) {
+            filtered.push({
+                name: element.name,
+                img: element.img,
+                breed: element.desctiprion,
+                id: element.id,
+            })
+        }
         return res.json(filtered)
     })
 }
