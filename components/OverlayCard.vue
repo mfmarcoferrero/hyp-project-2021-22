@@ -6,7 +6,7 @@
       img-alt="Card Image"
       text-variant="white"
       :title="name"
-      img-height="500px"
+      fluid-grow
     >
       <b-card-text>
         {{description}}
