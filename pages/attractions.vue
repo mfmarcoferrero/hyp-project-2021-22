@@ -1,10 +1,10 @@
 <template>
   <div class="page container mt-5">
-    <h1>Attractions page</h1>
-    <div class="row mt-3">
+    <h1 class="text-center">Attractions page</h1>
+    <div class="row justify-content-center">
       <overlay-card
         v-for="(poi, poiIndex) of poiList"
-        class="col-sm-2 m-2"
+        class="col-lg-11 m-3"
         :key="`poi-index-${poiIndex}`"
         :id="poi.id"
         :name="poi.name"

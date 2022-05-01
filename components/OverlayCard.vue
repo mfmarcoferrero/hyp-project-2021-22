@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div @click="goToDetails()" class="btn">
     <b-card
       overlay
-      img-src="https://picsum.photos/900/250/?image=3"
+      :img-src="img"
       img-alt="Card Image"
       text-variant="white"
-      title="name"
-      sub-title=""
+      :title="name"
+      img-height="500px"
     >
       <b-card-text>
         {{description}}
@@ -14,6 +14,7 @@
     </b-card>
   </div>
 </template>
+
 
 <script>
 export default {

@@ -1,22 +1,24 @@
 <template>
-  <div class="page container mt-5">
-    <p>{{ name }}</p>
+  <div class="page container mt-4">
+    <h1 class="title">{{ name }}</h1>
     <p>{{ description }}</p>
-    <img :src="img" alt="" />
+    <div class="mb-5">
+      <img :src="img" class="rounded mx-auto d-block img-fluid"/>
+    </div>
   </div>
 </template>
 
+<style scoped>
+</style>
 
 <script>
 export default {
   name: 'DetailsPage',
   async asyncData({ route, $axios }) {
-    // console.log(route.params.id)
     const { id } = route.params
-    const { data } = await $axios.get('/api/cats/' + id)
+    const { data } = await $axios.get('/api/pois/' + id)
     return {
       name: data.name,
-      breed: data.breed,
       img: data.img,
       description: data.description,
     }

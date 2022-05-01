@@ -63,11 +63,17 @@ async function runMainApi() {
             filtered.push({
                 name: element.name,
                 img: element.img,
-                breed: element.desctiprion,
+                description: element.description,
                 id: element.id,
             })
         }
         return res.json(filtered)
+    })
+
+    app.get('/pois/:id', async (req, res) => {
+        const id = +req.params.id
+        const result = await models.POI.findOne({ where: { id } })
+        return res.json(result)
     })
 }
 
