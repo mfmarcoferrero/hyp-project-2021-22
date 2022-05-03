@@ -75,6 +75,19 @@ async function runMainApi() {
         const result = await models.POI.findOne({ where: { id } })
         return res.json(result)
     })
+
+    app.get("/city-details", async (req, res) => {
+        const result = await models.POI.findAll()
+        const filtered = []
+        for (const element of result) {
+            filtered.push({
+                name: element.name,
+                img: element.img,
+                description: element.description,
+            })
+        }
+        return res.json(filtered)
+    })
 }
 
 runMainApi()

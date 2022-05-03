@@ -2,65 +2,45 @@
   <div>
     <b-carousel
       id="carousel-1"
-      fade
       v-model="slide"
       :interval="4000"
       controls
       indicators
-      background="#ababab"
-      img-width="1024"
-      img-height="400"
+      img-width="1024px"
+      img-height="480px"
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
     >
-      <b-carousel-slide>
-        <template #img>
-          <NuxtLink to="/city">
-            <img
-              class="d-block img-fluid w-100"
-              width="1024"
-              height="480"
-              src="@/static/pictures/city.jpg"
-              alt="image slot"
-            />
-          </NuxtLink>
-        </template>
-      </b-carousel-slide>
-
-      <b-carousel-slide>
-        <template #img>
-          <NuxtLink to="/food">
-            <img
-              class="d-block img-fluid w-100"
-              width="1024"
-              height="480"
-              src="@/static/pictures/food.jpg"
-              alt="image slot"
-            />
-          </NuxtLink>
-        </template>
-      </b-carousel-slide>
-
-      <b-carousel-slide>
-        <template #img>
-          <NuxtLink to="/temples">
-            <img
-              class="d-block img-fluid w-100"
-              width="1024"
-              height="480"
-              src="@/static/pictures/temples.jpg"
-              alt="image slot"
-            />
-          </NuxtLink>
-        </template>
-      </b-carousel-slide>
+      <div>
+        <b-carousel-slide
+          v-for="(detail, detailIndex) of detailList"
+          :key="`detail-index-${detailIndex}`"
+          :caption="detail.name"
+        >
+          <img
+            slot="img"
+            class="d-block img-fluid w-100"
+            width="1024"
+            height="480"
+            :src="detail.img"
+            alt="image slot"
+            v-on:click="goTo(detail.id)"
+          />
+        </b-carousel-slide>
+      </div>
     </b-carousel>
   </div>
 </template>
 
 <script>
+//TODO: Fix the img size (even if images on db have different sizes) and change the cursor icon when on the slide
+
 export default {
   name: 'Carousel',
+  props: {
+    detailList: Array,
+    required: true,
+  },
   data() {
     return {
       slide: 0,
@@ -73,6 +53,9 @@ export default {
     },
     onSlideEnd(slide) {
       this.sliding = false
+    },
+    goTo(id) {
+      this.$router.push(`/details/${id}`)
     },
   },
 }
