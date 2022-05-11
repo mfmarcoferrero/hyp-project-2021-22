@@ -1,91 +1,43 @@
 <template>
   <div>
     <div>
-      <carousel/>
+      <carousel :detailList="carouselList" />
     </div>
     <div>
-      <div class="header">
-      <h1>Guide to the City!</h1>
-      <p>These are the most searched things</p>
+      <h1 class="text-center mt-3">Guide to the City</h1>
+      <div class="row mt-3">
+        <card
+          v-for="(item, itemIndex) of carouselList"
+          class="col-sm-2 m-2"
+          :key="`data-index-${itemIndex}`"
+          :id="item.id"
+          :name="item.name"
+          :img="item.img"
+          :description="item.description"
+        />
       </div>
-      <b-card-group deck>
-        <b-card img-src="@/static/pictures/city.jpg"
-                img-top>
-          <p class="card-text 1">
-            Testo
-          </p>
-          <div slot="footer">
-            <b-btn variant="primary" block>Button 1</b-btn>
-          </div>
-        </b-card>
-
-        <b-card img-src="@/static/pictures/city.jpg"
-                img-top>
-          <p class="card-text 1">
-            Testo
-          </p>
-          <div slot="footer">
-            <b-btn variant="primary" block>Button 2</b-btn>
-          </div>
-        </b-card>
-
-        <b-card img-src="@/static/pictures/city.jpg"
-                img-top>
-          <p class="card-text 1">
-            Testo
-          </p>
-          <div slot="footer">
-            <b-btn variant="primary" block>Button 2.5</b-btn>
-          </div>
-        </b-card>
-
-        <b-card img-src="@/static/pictures/city.jpg"
-                img-top>
-          <p class="card-text 1">
-            Testo
-          </p>
-          <div slot="footer">
-            <b-btn variant="primary" block>Button 3</b-btn>
-          </div>
-        </b-card>
-        
-      </b-card-group>  
-
-      <div class="header">
-        <h1>Some photos from the city</h1>
-      </div>
-      <div>
-        <collage/>
-      </div>
-
-      <div class="header">
-        Travel information
-      </div>
-      <div class="row">
-      <div class="zoom">
-        <p>test1</p>
-      </div>
-      <div class="zoom">
-        <p>test2</p>
-      </div>
-      <div class="zoom">
-        <p>test3</p>
-      </div>
-      </div>
-
     </div>
   </div>
 </template>
 
 <script>
 import Carousel from '@/components/Carousel.vue'
-import Collage from '@/components/Collage.vue'
+import Card from '@/components/Card.vue'
 export default {
   components: {
     Carousel,
-    Collage
+    Card,
   },
   name: 'IndexPage',
+  //TODO: It is probably a better optimization to use the store directory with vuex to save these data
+  //      because we don't want to retrive homepage images from db everytime it is loaded.
+  async asyncData({ $axios }) {
+    const { data } = await $axios.get('/api/pois')
+    //console.log(data);
+    return {
+      carouselList: data,
+    }
+  },
 }
 </script>
 

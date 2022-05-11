@@ -1,16 +1,16 @@
 <template>
   <div>
   <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#">NOME</b-navbar-brand>
+    <b-navbar-brand href="\">HOME</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#">Events</b-nav-item>
-        <b-nav-item href="#">POI</b-nav-item>
-        <b-nav-item href="#">Itineraries</b-nav-item>
-        <b-nav-item href="#">Services</b-nav-item>                                                   
+        <b-nav-item href="\events">Events</b-nav-item>
+        <b-nav-item href="\attractions">Attractions</b-nav-item>
+        <b-nav-item href="\itineraries">Itineraries</b-nav-item>
+        <b-nav-item href="\services">Services</b-nav-item>                                                   
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -32,4 +32,6 @@ export default {
 </script>
 
 <style>
+
+
 </style>
