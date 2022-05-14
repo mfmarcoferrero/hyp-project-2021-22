@@ -10,7 +10,7 @@
         <b-nav-item href="\events">Events</b-nav-item>
         <b-nav-item href="\attractions">Attractions</b-nav-item>
         <b-nav-item href="\itineraries">Itineraries</b-nav-item>
-        <b-nav-item href="\services">Services</b-nav-item>                                                   
+        <b-nav-item href="\serviceTypesPage">Services</b-nav-item>                                                   
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->

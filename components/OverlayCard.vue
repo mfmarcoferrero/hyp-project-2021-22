@@ -36,10 +36,14 @@ export default {
       type: String,
       required: true,
     },
+    path: {
+      type: String,
+      required: true
+    }
   },
   methods: {
     goToDetails() {
-      this.$router.push(`/details/${this.id}`)
+      this.$router.push(`/${this.path}/${this.id}`)
     },
   },
 }

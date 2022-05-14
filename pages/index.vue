@@ -14,6 +14,7 @@
           :name="item.name"
           :img="item.img"
           :description="item.description"
+          :path = "path"
         />
       </div>
     </div>
@@ -36,6 +37,7 @@ export default {
     //console.log(data);
     return {
       carouselList: data,
+      path: "details"
     }
   },
 }
