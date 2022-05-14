@@ -1,18 +1,13 @@
 <template>
-  <div @click="goToDetails()" class="btn">
-    <b-card
-      overlay
-      :img-src="img"
-      img-alt="Card Image"
-      text-variant="white"
-      :title="name"
-      fluid-grow
-    >
-      <b-card-text>
-        {{description}}
-      </b-card-text>
-    </b-card>
-  </div>
+  <nuxt-link :to="`/details/${id}`">
+    <div class="card shadow-lg p-0 mb-5 text-white" @OnClick="goToDetails()">
+      <img :src="img" class="card-img" alt="No image found">
+      <div class="card-img-overlay">
+        <h3 class="card-title text-center">{{ name }}</h3>
+        <p class="card-text text-center">{{ description }}</p>
+      </div>
+    </div>
+  </nuxt-link>
 </template>
 
 
@@ -35,11 +30,6 @@ export default {
     description: {
       type: String,
       required: true,
-    },
-  },
-  methods: {
-    goToDetails() {
-      this.$router.push(`/details/${this.id}`)
     },
   },
 }
