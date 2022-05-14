@@ -17,11 +17,11 @@
           :key="`detail-index-${detailIndex}`"
           :caption="detail.name"
         >
-          <img
+          <b-img
             slot="img"
             class="d-block img-fluid w-100"
-            width="1024"
-            height="480"
+            img-width="1024px"
+            img-height="480px"
             :src="detail.img"
             alt="image slot"
             v-on:click="goTo(detail.id)"
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-//TODO: Fix the img size (even if images on db have different sizes) and change the cursor icon when on the slide
+// TODO: Fix the img size (even if images on db have different sizes) and change the cursor icon when on the slide
 
 export default {
   name: 'Carousel',
