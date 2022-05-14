@@ -5,6 +5,10 @@
     <div class="mb-5">
       <img :src="img" class="rounded mx-auto d-block img-fluid"/>
     </div>
+    <div class="mb-5">
+      <h1 class="title">Map</h1>
+      <p>Map</p>
+    </div>
   </div>
 </template>
 
