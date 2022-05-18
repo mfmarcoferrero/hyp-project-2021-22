@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'OverlayCardComponent',
+  name: 'CardComponent',
   props: {
     name: {
       type: String,

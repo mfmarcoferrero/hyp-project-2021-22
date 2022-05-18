@@ -8,9 +8,9 @@
     </li>
     <li v-for="(crumb, index) in crumbs" :key="index" property="itemListElement" typeof="ListItem">
       <nuxt-Link property="item" typeof="WebPage" :to="crumb.path">
-        <span property="name">{{
-            $route.fullPath === crumb.path && title !== null ? title : crumb.title
-        }}</span>
+        <span property="name">
+          {{ $route.fullPath === crumb.path && title !== null ? title : crumb.title }}
+        </span>
       </nuxt-Link>
       <meta property="position" :content="index + 2" />
     </li>
