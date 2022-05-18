@@ -1,17 +1,27 @@
 <template>
 <div>
-  <div class="container-fluid">
-    <h1>Itineraries</h1>
-    <div class="row">
-      <div class="col-6">
-        <h2>Title</h2>
-        <p>Description</p>
-      </div>
-      <div class="col">
-        <img src="https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111.jpg" class="rounded img-fluid" alt="...">
-      </div>
+  <div class="page container-fluid mt-4">
+  <div class="row g-4">
+    <div class="col">
+     <div class="p-3 border rounded bg-light">Content 1</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border rounded bg-light">Content 2</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border rounded bg-light">Content 3</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border rounded bg-light">Content 4</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border rounded bg-light">Content 5</div>
+    </div>
+    <div class="col">
+     <div class="p-3 border rounded bg-light">Content 6</div>
     </div>
   </div>
+</div>
 </div>
 </template>
 

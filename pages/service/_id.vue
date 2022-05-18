@@ -1,5 +1,5 @@
 <template>
-  <div class="page container mt-4">
+  <!-- div class="page container mt-4">
     <h1 class="title">{{ name }}</h1>
     <p>{{ description }}</p>
     <div class="mb-5">
@@ -10,6 +10,19 @@
       <p>Map</p>
     </div>
   </div>
+  <div -->
+  <div class="page container-fluid mt-4">
+    <h1 class="title">{{ name }}</h1>
+    <div class="row">
+      <div class="col-6">
+        <p>{{ description }}</p>
+      </div>
+      <div class="col">
+        <img :src="img" class="rounded img-fluid" alt="...">
+      </div>
+    </div>
+  </div>
+</div>
 </template>
 
 <style scoped>
