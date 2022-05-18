@@ -1,22 +1,13 @@
 <template>
-  <div>
-    <b-card
-      :title="name"
-      :img-src="img"
-      img-alt="Image"
-      img-top
-      tag="article"
-      style="max-width: 20rem"
-      class="mb-2"
-    >
-      <b-card-text>
-        {{ description }}
-      </b-card-text>
-      <div @click="goToDetails()" class="btn btn-primary">See Details</div>
-    </b-card>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" :src="img" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ name }}</h5>
+      <p class="card-text">{{ description }}</p>
+      <nuxt-link :to="'/details/'+id" class="btn btn-primary">Go to {{ name }}</nuxt-link>
+    </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -37,11 +28,6 @@ export default {
     description: {
       type: String,
       required: true,
-    },
-  },
-  methods: {
-    goToDetails() {
-      this.$router.push(`/details/${this.id}`)
     },
   },
 }

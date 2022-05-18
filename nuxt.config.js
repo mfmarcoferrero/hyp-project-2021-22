@@ -10,7 +10,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'hyp-project-2021-22',
+    title: 'theCity',
     htmlAttrs: {
       lang: 'en',
     },
@@ -21,12 +21,12 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { 
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico'
-      }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" }
     ],
+    script: [
+      { src: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -48,12 +48,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    'bootstrap-vue/nuxt',
   ],
-  
-  bootstrapVue: {
-    icons: true
-  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

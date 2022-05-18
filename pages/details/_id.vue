@@ -39,7 +39,7 @@ export default {
 
   // mounted(){
   //   const date = new Date()
-  //   // Example on hwo to use mixinx
+  //   // Example on how to use mixinx
   //   console.log(this.formatMyDate(date.toLocaleDateString()))
   // },
   methods: {
