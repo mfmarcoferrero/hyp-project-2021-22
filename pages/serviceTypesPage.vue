@@ -1,6 +1,7 @@
 <template>
 <div>
   <!-- v-for bootstrap cards taking elements from database -->
+  <div class="card-deck">
   <card
           v-for="(item, itemIndex) of serviceDetails"
           class="col-sm-2 m-2"
@@ -12,6 +13,7 @@
           :path="path"
         />
 
+</div>
 </div>
 </template>
 
