@@ -1,8 +1,8 @@
 module.exports = {
-  root: true,
+  root: false,
   env: {
-    browser: true,
-    node: true,
+    browser: false,
+    node: false,
   },
   parserOptions: {
     parser: '@babel/eslint-parser',
@@ -11,5 +11,8 @@ module.exports = {
   extends: ['@nuxtjs', 'plugin:nuxt/recommended', 'prettier'],
   plugins: [],
   // add your custom rules here
-  rules: {},
+  rules: {
+    "vue/require-prop-type-constructor" : "off",
+    "vue/multi-word-component-names" : "off"
+  },
 }

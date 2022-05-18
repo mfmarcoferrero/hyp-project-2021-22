@@ -14,6 +14,7 @@
           :name="item.name"
           :img="item.img"
           :description="item.description"
+          :path = "path"
         />
       </div>
     </div>
@@ -36,7 +37,36 @@ export default {
     //console.log(data);
     return {
       carouselList: data,
+      path: "details"
     }
   },
 }
 </script>
+
+<style scoped>
+  .header {
+    text-align: center;
+    padding: 32px;
+  }
+  .zoom {
+  padding: 50px;
+  background-color: rgb(109, 151, 109);
+  transition: transform .2s; 
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  background-color: rgb(80, 111, 80);
+  transform: scale(1.2); 
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+</style>

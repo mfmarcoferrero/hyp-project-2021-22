@@ -30,7 +30,7 @@ async function initializeDatabaseConnection() {
         latitude: DataTypes.FLOAT,
         longitude: DataTypes.FLOAT,
         description: DataTypes.STRING,
-        img: DataTypes.STRING
+        img: DataTypes.STRING,
     })
     const Event = database.define("event", {
         name: DataTypes.STRING,
@@ -44,10 +44,10 @@ async function initializeDatabaseConnection() {
         breed: DataTypes.STRING,
         img: DataTypes.STRING,
     })
-    const ServiceType = database.define("serviceType", {
+    const SERVICE = database.define("serviceType", {
         name: DataTypes.STRING,
         description: DataTypes.STRING,
-        breed: DataTypes.STRING,
+        pins: DataTypes.ARRAY(DataTypes.JSON),
         img: DataTypes.STRING,
     })
     await database.sync({ force: true })
@@ -56,7 +56,7 @@ async function initializeDatabaseConnection() {
         POI,
         Event,
         Itinerary,
-        ServiceType
+        SERVICE
     }
 }
 
@@ -82,6 +82,27 @@ async function runMainApi() {
     app.get('/pois/:id', async (req, res) => {
         const id = +req.params.id
         const result = await models.POI.findOne({ where: { id } })
+        return res.json(result)
+    })
+
+    app.get("/services", async (req, res) => {
+        const result = await models.SERVICE.findAll()
+        const filtered = []
+        for (const element of result) {
+            filtered.push({
+                name: element.name,
+                img: element.img,
+                description: element.description,
+                id: element.id,
+                pins: element.pins,
+            })
+        }
+        return res.json(filtered)
+    })
+
+    app.get('/services/:id', async (req, res) => {
+        const id = +req.params.id
+        const result = await models.SERVICE.findOne({ where: { id } })
         return res.json(result)
     })
 
