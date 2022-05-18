@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="`/details/${id}`">
-    <div class="card shadow-lg p-0 mb-5 text-white" @OnClick="goToDetails()">
+    <div class="card shadow-lg p-0 mb-5 text-white">
       <img :src="img" class="card-img" alt="No image found">
       <div class="card-img-overlay">
         <h3 class="card-title text-center">{{ name }}</h3>
