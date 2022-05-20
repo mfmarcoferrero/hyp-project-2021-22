@@ -46,6 +46,7 @@ async function initializeDatabaseConnection() {
     })
     const SERVICETYPES = database.define("serviceType", {
         name: DataTypes.STRING,
+        type: DataTypes.STRING,
         description: DataTypes.STRING,
         img: DataTypes.STRING,
     })
@@ -108,9 +109,9 @@ async function runMainApi() {
         return res.json(filtered)
     })
 
-    app.get('/services/:id', async (req, res) => {
-        const id = +req.params.id
-        const result = await models.SERVICETYPES.findOne({ where: { id } })
+    app.get('/services/:name', async (req, res) => {
+        const name = req.params.name
+        const result = await models.SERVICETYPES.findOne({ where: { name: name } })
         return res.json(result)
     })
 

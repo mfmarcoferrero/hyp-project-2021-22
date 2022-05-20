@@ -7,7 +7,7 @@
     loading="lazy"
     allowfullscreen
     referrerpolicy="no-referrer-when-downgrade"
-    :src="link"
+    :src="link+query"
     ></iframe>
 </div>
 </template>
@@ -18,7 +18,8 @@ export default {
   name: 'Map', 
   data() {
     return {
-        link: "https://www.google.com/maps/embed/v1/search?key=AIzaSyDh_I2tRIFiqGYfIZFTzxZyiqCW6B0K-mo&q=hospital+in+Amsterdam"
+        link: "https://www.google.com/maps/embed/v1/search?key=AIzaSyDh_I2tRIFiqGYfIZFTzxZyiqCW6B0K-mo&q=",
+        query: "hospital+in+Amsterdam"
     }
 },
 

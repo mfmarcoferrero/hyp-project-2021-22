@@ -82,7 +82,7 @@
 <div class="page container-fluid mt-4">
   <div class="row">
     <div class="col">
-        <google-map/>
+        <google-map :query="query"/>
     </div>
     <div class="col">
       <accordion :serviceDetails="serviceDetails"/>
@@ -110,7 +110,9 @@ export default {
     const { data } = await $axios.get('/api/service/medical')
     return {
       serviceDetails: data,
-      path: "service"
+      path: "service",
+      // This should be different depending on the service kind
+      query: "hospital+in+Amsterdam"
     }
   }
 

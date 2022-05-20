@@ -2,7 +2,7 @@
 <div>  
 <div class="container">
   <div v-for="(item, itemIndex) of photoList">
-    <nuxt-link :to="`/${path}/${item.id}`">
+    <nuxt-link :to="`/${path}/${item.name}`">
     <figure>
         <img :src="item.img" class="rounded img-fluid" :alt="item.name" />
         <figcaption>{{ item.name }}</figcaption>
@@ -34,9 +34,7 @@ name: 'Masonry',
     }
   },
   methods: {
-    goTo(id) {
-      this.$router.push(`/${path}/${id}`)
-    },
+
   },
 }
 </script>

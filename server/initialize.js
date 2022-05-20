@@ -38,22 +38,26 @@ export default async (models) => {
     ]
     const serviceTypesList = [
         {
-            name: "Medical Services",
+            name: "Medical+Services",
+            type: "medical",
             description: "medical services description",
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            name: "Cultural Services",
+            name: "Cultural+Services",
+            type: "cultural",
             description: "cultural services description",
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            name: "Thematic and leisure parks",
+            name: "Thematic+and+leisure+parks",
+            type:"leisure",
             description: "parks services description",
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            name: "Job Services",
+            name: "Job+Services",
+            type: "job",
             description: "job services description",
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
