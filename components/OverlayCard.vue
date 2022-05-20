@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="`/details/${id}`">
+  <nuxt-link :to="`/attractions/${id}`">
     <div class="card shadow-lg p-0 mb-5 text-white">
       <img :src="img" class="card-img" alt="No image found">
       <div class="card-img-overlay">
