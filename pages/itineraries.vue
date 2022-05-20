@@ -79,12 +79,40 @@
   </figure>
 </div>
 
+<div class="page container-fluid mt-4">
+  <div class="row">
+    <div class="col">
+        <google-map/>
+    </div>
+    <div class="col">
+      <accordion :serviceDetails="serviceDetails"/>
+    </div>
+  </div>
+</div>
+
+
 
 </div>
 </template>
 
 <script>
+
+import GoogleMap from '@/components/Map.vue'
+import Accordion from '@/components/Accordion.vue'
+
 export default {
+  components: {
+    GoogleMap,
+    Accordion,
+  },
+   async asyncData({ $axios }) {
+    // Database table to populate service name, image, description and opening hours.  
+    const { data } = await $axios.get('/api/service/medical')
+    return {
+      serviceDetails: data,
+      path: "service"
+    }
+  }
 
 }
 </script>

@@ -36,48 +36,95 @@ export default async (models) => {
             img: "https://s1.gifyu.com/images/brera.jpg",
         },
     ]
-    const serviceList = [
+    const serviceTypesList = [
         {
             name: "Medical Services",
             description: "medical services description",
-            pins: [
-                { x : 45.577849, y : 9.156383 },
-                { x : 45.677849, y : 9.256383 },
-                { x : 45.477849, y : 9.456383 }
-            ],
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
             name: "Cultural Services",
             description: "cultural services description",
-            pins: [
-                { x : 45.577849, y : 9.156383 },
-                { x : 45.677849, y : 9.256383 },
-                { x : 45.477849, y : 9.456383 }
-            ],
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
             name: "Thematic and leisure parks",
             description: "parks services description",
-            pins: [
-                { x : 45.577849, y : 9.156383 },
-                { x : 45.677849, y : 9.256383 },
-                { x : 45.477849, y : 9.456383 }
-            ],
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
             name: "Job Services",
             description: "job services description",
-            pins: [
-                { x : 45.577849, y : 9.156383 },
-                { x : 45.677849, y : 9.256383 },
-                { x : 45.477849, y : 9.456383 }
-            ],
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+    ]
+    const serviceList = [
+        {
+            type: "medical",
+            name: "Big Hospital",
+            description: "is the biggest hospital of Amsterdam!",
+            address: "First Street, 1",
+            hours: "Open 24/7",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "medical",
+            name: "Small Hospital",
+            description: "is the smallest hospital of Amsterdam!",
+            address: "Second Street, 2",
+            hours: "Open 24/7",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "cultural",
+            name: "Big Library",
+            description: "is the biggest library of Amsterdam!",
+            address: "Bookworm Street, 1",
+            hours: "08:00 - 18:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "cultural",
+            name: "Small Library",
+            description: "is the smallest library of Amsterdam!",
+            address: "Little Street, 2",
+            hours: "09:00 - 15:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "leisure",
+            name: "Big Park",
+            description: "is the biggest park of Amsterdam!",
+            address: "Leaf Street, 1",
+            hours: "08:00 - 20:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "leisure",
+            name: "Small Park",
+            description: "is the smallest park of Amsterdam!",
+            address: "Bertolds Street, 2",
+            hours: "08:00 - 12:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "job",
+            name: "Big Job Center",
+            description: "is the biggest job center of Amsterdam!",
+            address: "Wall Street, 1",
+            hours: "08:00 - 18:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "job",
+            name: "Small Job Center",
+            description: "is the smallest job center of Amsterdam!",
+            address: "Unemployed Street, 2",
+            hours: "Currently closed",
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
     ]
     await models.POI.bulkCreate(poiList),
+    await models.SERVICETYPES.bulkCreate(serviceTypesList),
     await models.SERVICE.bulkCreate(serviceList)
 }

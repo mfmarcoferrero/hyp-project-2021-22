@@ -44,10 +44,17 @@ async function initializeDatabaseConnection() {
         breed: DataTypes.STRING,
         img: DataTypes.STRING,
     })
-    const SERVICE = database.define("serviceType", {
+    const SERVICETYPES = database.define("serviceType", {
         name: DataTypes.STRING,
         description: DataTypes.STRING,
-        pins: DataTypes.ARRAY(DataTypes.JSON),
+        img: DataTypes.STRING,
+    })
+    const SERVICE = database.define("serviceList", {
+        type: DataTypes.STRING,
+        name: DataTypes.STRING,
+        description: DataTypes.STRING,
+        address: DataTypes.STRING,
+        hours: DataTypes.STRING,
         img: DataTypes.STRING,
     })
     await database.sync({ force: true })
@@ -56,6 +63,7 @@ async function initializeDatabaseConnection() {
         POI,
         Event,
         Itinerary,
+        SERVICETYPES,
         SERVICE
     }
 }
@@ -86,7 +94,7 @@ async function runMainApi() {
     })
 
     app.get("/services", async (req, res) => {
-        const result = await models.SERVICE.findAll()
+        const result = await models.SERVICETYPES.findAll()
         const filtered = []
         for (const element of result) {
             filtered.push({
@@ -102,7 +110,13 @@ async function runMainApi() {
 
     app.get('/services/:id', async (req, res) => {
         const id = +req.params.id
-        const result = await models.SERVICE.findOne({ where: { id } })
+        const result = await models.SERVICETYPES.findOne({ where: { id } })
+        return res.json(result)
+    })
+
+    app.get('/service/:typename', async (req, res) => {
+        const typename = req.params.typename
+        const result = await models.SERVICE.findAll({ where: { type: typename }})
         return res.json(result)
     })
 

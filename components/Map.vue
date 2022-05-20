@@ -1,57 +1,34 @@
 <template>
-    <div class="row mt-5">
-        <div style="height: 500px; width: 500px;" ref="map"></div>
-    </div>
+<div style="border-radius: 10px; width: 600px; height: 450px; overflow: hidden;"> 
+    <iframe
+    width="600"
+    height="450"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+    :src="link"
+    ></iframe>
+</div>
 </template>
 
 <script>
-const apiKey = "AIzaSyDFXV0KyCo-R1fLti-Z4aIvBBfXccADqHM"
 export default { 
-  head() {
+
+  name: 'Map', 
+  data() {
     return {
-        title: 'Map',
-        script: [{
-            src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDFXV0KyCo-R1fLti-Z4aIvBBfXccADqHM",
-            hid: "map", 
-            defer: true,
-        }]
+        link: "https://www.google.com/maps/embed/v1/search?key=AIzaSyDh_I2tRIFiqGYfIZFTzxZyiqCW6B0K-mo&q=hospital+in+Amsterdam"
     }
 },
 
 mounted(){
-    const mapOptions = {
-        zoom: 18,
-        center: { lat: 43.758773, lng: -79.391785 },
-        disableDefaultUI: true,
-        zoomControl: true
-    };
 
-    const map = new window.google.maps.Map(this.$refs.map, mapOptions);
-    const position = new window.google.maps.LatLng(43.758773, -79.391785)
-    const marker = new window.google.maps.Marker({ position })
-    marker.setMap(map)
 },
 };
 
 </script>
 
 <style scoped>
-/* 
- * Always set the map height explicitly to define the size of the div element
- * that contains the map. 
- */
-#map {
-  height: 100%;
-}
-
-/* 
- * Optional: Makes the sample page fill the window. 
- */
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
 </style>
