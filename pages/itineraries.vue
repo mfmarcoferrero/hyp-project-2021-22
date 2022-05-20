@@ -1,36 +1,23 @@
 <template>
-<div>
-  <div class="page container-fluid mt-4">
-  <div class="row g-4">
-    <div class="col">
-     <div class="p-3 border rounded bg-light">Content 1</div>
-    </div>
-    <div class="col">
-     <div class="p-3 border rounded bg-light">Content 2</div>
-    </div>
-    <div class="col">
-     <div class="p-3 border rounded bg-light">Content 3</div>
-    </div>
-    <div class="col">
-     <div class="p-3 border rounded bg-light">Content 4</div>
-    </div>
-    <div class="col">
-     <div class="p-3 border rounded bg-light">Content 5</div>
-    </div>
-    <div class="col">
-     <div class="p-3 border rounded bg-light">Content 6</div>
-    </div>
-  </div>
-</div>
-</div>
+  <google-map />
 </template>
 
 <script>
+import GoogleMap from '@/components/Map.vue'
 export default {
+  head() {
+    return {
+      title: 'ItinerariesPage',
+      script: [{
+        src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDFXV0KyCo-R1fLti-Z4aIvBBfXccADqHM",
+        hid: "map",
+        defer: true,
+      }]
+    }
+  },
+  components: {
+    GoogleMap,
+  },
 
 }
 </script>
-
-<style>
-
-</style>
