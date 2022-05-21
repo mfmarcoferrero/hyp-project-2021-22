@@ -1,23 +1,14 @@
 <template>
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner" >
-
-      <div class="carousel-item active">
-        <img src="@/static/pictures/dam.jpg" class="d-block w-100" alt="first">
-        <div class="carousel-caption d-none d-md-block">
-          <h2>Welcome to Amsterdam</h2>
-          <p>Details about the city</p>
-        </div>
-      </div>
-
-      <div v-for="(detail, detailIndex) of detailList" :key="`detail-index-${detailIndex}`" class="carousel-item" v-on:click="goTo(detail.id)">
+    <div class="carousel-inner">
+      <div v-for="(detail, detailIndex) of detailList" :key="`detail-index-${detailIndex}`"
+        v-bind:class="[carouselClass, detailIndex == 0 ? activeClass : '']" v-on:click="goTo(detail.id)">
         <img :src="detail.img" class="d-block w-100" alt="second">
         <div class="carousel-caption d-none d-md-block">
-          <h2>{{detail.name}}</h2>
-          <p>{{detail.description}}</p>
+          <h2>{{ detail.name }}</h2>
+          <p>{{ detail.description }}</p>
         </div>
       </div>
-
     </div>
 
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -43,6 +34,8 @@ export default {
   },
   data() {
     return {
+      carouselClass: 'carousel-item',
+      activeClass: 'active',
       slide: 0,
       sliding: null,
     }
@@ -55,7 +48,7 @@ export default {
       this.sliding = false
     },
     goTo(id) {
-      this.$router.push(`/details/${id}`)
+      this.$router.push(`/attractions/${id}`)
     },
   },
 }

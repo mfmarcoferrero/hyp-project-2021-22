@@ -8,9 +8,9 @@
     </li>
     <li v-for="(crumb, index) in crumbs" :key="index" property="itemListElement" typeof="ListItem">
       <nuxt-Link property="item" typeof="WebPage" :to="crumb.path">
-        <span property="name">{{
-            $route.fullPath === crumb.path && title !== null ? title : crumb.title
-        }}</span>
+        <span property="name">
+          {{ $route.fullPath === crumb.path && title !== null ? title : crumb.title }}
+        </span>
       </nuxt-Link>
       <meta property="position" :content="index + 2" />
     </li>
@@ -36,12 +36,15 @@ export default {
       let path = ''
 
       params.forEach((param, index) => {
+        let regex = /\?id=[0-9]*/
+        param = param.replace( regex,'')
+        regex = /%20/g
+        param = param.replace(regex,' ')
         path = `${path}/${param}`
         const match = this.$router.match(path)
 
         if (match.name !== null) {
           crumbs.push({
-            //title: param.replace(/-/g, ' ').toUpperCase(),
             title: this.capitalizeFirstLetter(param.replace(/-/g, ' ')),
             ...match,
           })
