@@ -19,9 +19,14 @@ export default {
   data() {
     return {
         link: "https://www.google.com/maps/embed/v1/search?key=AIzaSyDh_I2tRIFiqGYfIZFTzxZyiqCW6B0K-mo&q=",
-        query: "hospital+in+Amsterdam"
     }
 },
+props: {
+    query: {
+        type: String,
+        required: true
+    }
+  },
 
 mounted(){
 

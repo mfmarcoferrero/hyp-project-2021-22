@@ -21,6 +21,14 @@
         <img :src="img" class="rounded img-fluid" alt="...">
       </div>
     </div>
+    <div class="row">
+      <div class="col">
+        <google-map :query="mapQuery"/>
+      </div>
+      <div class="col">
+        <accordion :serviceDetails="serviceDetails"/>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -28,16 +36,30 @@
 </style>
 
 <script>
+import GoogleMap from '@/components/Map.vue'
+import Accordion from '@/components/Accordion.vue'
 export default {
   name: 'DetailsPage',
+  components: {
+    GoogleMap,
+    Accordion,
+  },
   async asyncData({ route, $axios }) {
+    /*
+      Se si fanno entrambe le chiamate api, non funziona.
+      La parte commentata dovrebbe riempire la parte superiore della pagina.
+    */
     const { id } = route.params
-    const { data } = await $axios.get('/api/services/' + id)
+    //const { data } = await $axios.get('/api/services/' + id)
+    const { data } = await $axios.get('/api/service/' + id)
     return {
-      name: data.name,
-      img: data.img,
-      description: data.description,
+      //name: data.name,
+      //img: data.img,
+      //description: data.description,
+      mapQuery: id+"in+Amsterdam",
+      serviceDetails: data,
     }
   },
+  
 }
 </script>
