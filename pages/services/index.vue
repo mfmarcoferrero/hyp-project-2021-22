@@ -39,7 +39,7 @@ export default {
     const { data } = await $axios.get('/api/services')
     return {
       serviceDetails: data,
-      path: "service"
+      path: "services"
     }
   }
 
