@@ -48,7 +48,7 @@ export default {
       this.sliding = false
     },
     goTo(id) {
-      this.$router.push(`/details/${id}`)
+      this.$router.push(`/attractions/${id}`)
     },
   },
 }
