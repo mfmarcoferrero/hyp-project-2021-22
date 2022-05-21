@@ -4,11 +4,11 @@
     <div class="card-body">
       <h5 class="card-title">{{ name }}</h5>
       <p class="card-text">{{ description }}</p>
-      <nuxt-link :to="'/attractions/'+id" class="btn btn-primary">Go to {{ name }}</nuxt-link>
+      <nuxt-link :to="'/'+path+'/'+id" class="btn btn-primary">Go to {{ name }}</nuxt-link>
     </div>
   </div>
 </template>
-
+ 
 <script>
 export default {
   name: 'CardComponent',
@@ -28,10 +28,14 @@ export default {
     description: {
       type: String,
       required: true,
+    },
+    path: {
+      type: String,
+      required: true
     }
   },
 }
 </script>
-
+ 
 <style>
 </style>
