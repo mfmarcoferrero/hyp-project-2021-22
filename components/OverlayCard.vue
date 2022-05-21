@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="`/details/${id}`">
+  <nuxt-link :to="{ path: `/attractions/${name}`, query: { id: id}}">
     <div class="card shadow-lg p-0 mb-5 text-white">
       <img :src="img" class="card-img" alt="No image found">
       <div class="card-img-overlay">
@@ -30,12 +30,13 @@ export default {
     description: {
       type: String,
       required: true,
-    },
-    path: {
-      type: String,
-      required: true
     }
   },
+  methods: {
+    goToDetails() {
+      this.$router.push({path:`/attractions/${this.name}`, params: {id: this.id}})
+    }
+  }
 }
 </script>
 
