@@ -36,12 +36,15 @@ export default {
       let path = ''
 
       params.forEach((param, index) => {
+        let regex = /\?id=[0-9]*/
+        param = param.replace( regex,'')
+        regex = /%20/g
+        param = param.replace(regex,' ')
         path = `${path}/${param}`
         const match = this.$router.match(path)
 
         if (match.name !== null) {
           crumbs.push({
-            //title: param.replace(/-/g, ' ').toUpperCase(),
             title: this.capitalizeFirstLetter(param.replace(/-/g, ' ')),
             ...match,
           })

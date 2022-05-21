@@ -27,9 +27,8 @@ export default {
   //     title: this.name
   //   }
   // },
-  async asyncData({ route, $axios }) {
-    const { id } = route.params
-    const { data } = await $axios.get('/api/pois/' + id)
+  async asyncData({ route, query, $axios }) {
+    const { data } = await $axios.get(`/api/pois/${query.id}`)
     return {
       name: data.name,
       img: data.img,
@@ -43,9 +42,16 @@ export default {
   //   console.log(this.formatMyDate(date.toLocaleDateString()))
   // },
   methods: {
-     backToList() {
-       this.$router.push('/attractions')
-     },
+    backToList() {
+      this.$router.push('/attractions')
+    },
   },
+
+  params: {
+    id: {
+      type: Number,
+      required: true,
+    }
+  }
 }
 </script>
