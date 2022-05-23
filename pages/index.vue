@@ -16,6 +16,9 @@
           :description="item.description"
           :path = "path"
         />
+        <masonry :photoList="carouselList"
+               :path="path"
+        />
       </div>
     </div>
   </div>
@@ -37,7 +40,7 @@ export default {
     //console.log(data);
     return {
       carouselList: data,
-      path: "details"
+      path: "attractions"
     }
   },
 }

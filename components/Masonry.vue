@@ -39,6 +39,10 @@ name: 'Masonry',
 }
 </script>
 
+<!-->
+  TO DO: trovare un modo per cambiare lo stile del testo del figcaption (blu link sottolineato)
+<-->
+
 <style scoped>
 
 body {
@@ -80,5 +84,6 @@ figcaption {
 .container {
   column-count: 4;
   column-gap: 10px;
-}
+  }
+
 </style>
