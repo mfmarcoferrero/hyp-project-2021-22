@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="wrapper">
   <!-- v-for bootstrap cards taking elements from database -->
   <div class="page container-fluid">
     <div class="row mt-3 justify-content-md-center">
@@ -47,5 +47,8 @@ export default {
 </script>
 
 <style>
-
+.wrapper{
+  overflow:auto;
+  margin:0 auto 100px auto;
+}
 </style>

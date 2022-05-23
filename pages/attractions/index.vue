@@ -1,5 +1,5 @@
 <template>
-  <div class="page container mt-5">
+  <div class="page container mt-5 wrapper">
     <h1 class="text-center">Attractions page</h1>
     <div class="row justify-content-center">
       <overlay-card
@@ -31,3 +31,10 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.wrapper{
+  overflow:auto;
+  margin:0 auto 100px auto;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid wrapper">
     <div>
       <carousel :detailList="carouselList" />
     </div>
@@ -16,10 +16,12 @@
           :description="item.description"
           :path = "path"
         />
+      </div>
+      <!-- div class="row">
         <masonry :photoList="carouselList"
                :path="path"
         />
-      </div>
+      </div-->
     </div>
   </div>
 </template>
@@ -71,5 +73,10 @@ export default {
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
   padding: 0 4px;
+}
+
+.wrapper{
+  overflow:auto;
+  margin:0 auto 100px auto;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
 <div class="wrap">
   <!-- Footer -->
-  <footer class="footer bg-info text-center text-white">
+  <footer class="footer bg-info text-center text-white fixed-bottom">
     <!-- Grid container 
     <div class="container p-4">
       <!-- Section: Social media 
@@ -146,12 +146,6 @@ export default {
 
 <style scoped>
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
 
-}
 
 </style>
