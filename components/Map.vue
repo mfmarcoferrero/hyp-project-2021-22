@@ -1,8 +1,8 @@
 <template>
-<div style="border-radius: 10px; width: 600px; height: 450px; overflow: hidden;"> 
+<div class="wrapper"> 
     <iframe
-    width="600"
-    height="450"
+    width="100%" 
+    height="100%"
     style="border:0"
     loading="lazy"
     allowfullscreen
@@ -36,5 +36,18 @@ mounted(){
 </script>
 
 <style scoped>
+
+.wrapper {
+position: relative;
+padding-bottom: 75%; 
+}
+iframe{
+border-radius: 10px;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
 
 </style>

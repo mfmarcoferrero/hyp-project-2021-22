@@ -13,19 +13,17 @@
   <div -->
   <div class="page container-fluid mt-4">
     <h1 class="title">{{ name }}</h1>
-    <div class="row">
+    <div class="row g-5">
       <div class="col-6">
         <p>{{ description }}</p>
       </div>
-      <div class="col">
+      <div class="col-6">
         <img :src="img" class="rounded img-fluid" alt="...">
       </div>
-    </div>
-    <div class="row">
-      <div class="col">
+      <div class="col-6">
         <google-map :query="mapQuery"/>
       </div>
-      <div class="col">
+      <div class="col-6">
         <accordion :serviceDetails="serviceDetails"/>
       </div>
     </div>
@@ -50,14 +48,14 @@ export default {
       La parte commentata dovrebbe riempire la parte superiore della pagina.
     */
     const { id } = route.params
-    //const { data } = await $axios.get('/api/services/' + id)
-    const { data } = await $axios.get('/api/service/' + id)
+    const { data: serviceInfo } = await $axios.get('/api/services/' + id)
+    const { data: serviceList } = await $axios.get('/api/service/' + id)
     return {
-      //name: data.name,
-      //img: data.img,
-      //description: data.description,
+      name: serviceInfo.name,
+      img: serviceInfo.img,
+      description: serviceInfo.description,
       mapQuery: id+"in+Amsterdam",
-      serviceDetails: data,
+      serviceDetails: serviceList,
     }
   },
   

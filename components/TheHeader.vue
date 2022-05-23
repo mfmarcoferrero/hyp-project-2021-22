@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-info px-3 header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info px-3 header sticky-top">
     <a class="navbar-brand" href="/">HOME</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
       aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">

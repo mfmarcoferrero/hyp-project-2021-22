@@ -1,15 +1,16 @@
 <template>
+<div class="wrap">
   <!-- Footer -->
-  <footer class="bg-info text-center text-white">
-    <!-- Grid container -->
+  <footer class="footer bg-info text-center text-white">
+    <!-- Grid container 
     <div class="container p-4">
-      <!-- Section: Social media -->
+      <!-- Section: Social media 
       <section class="mb-4">
-        <!-- Facebook -->
+        <!-- Facebook 
         <base-button round class="btn-facebook btn-icon-only">
           <span class="btn-inner--icon"><i class="fab fa-facebook"></i></span>
         </base-button>
-        <!-- Github -->
+        <!-- Github 
         <a
           class="btn btn-outline-light btn-floating m-1"
           href="#!"
@@ -19,7 +20,7 @@
       </section>
       <!-- Section: Social media -->
 
-      <!-- Section: Text -->
+      <!-- Section: Text 
       <section class="mb-4">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
@@ -28,13 +29,13 @@
           voluptate quas.
         </p>
       </section>
-      <!-- Section: Text -->
+      <!-- Section: Text 
 
-      <!-- Section: Links -->
+      <!-- Section: Links 
       <section class="">
-        <!--Grid row-->
+        <!--Grid row
         <div class="row">
-          <!--Grid column-->
+          <!--Grid column
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase">Attractions</h5>
 
@@ -55,7 +56,7 @@
           </div>
           <!--Grid column-->
 
-          <!--Grid column-->
+          <!--Grid column
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase">Itineraries</h5>
 
@@ -76,7 +77,7 @@
           </div>
           <!--Grid column-->
 
-          <!--Grid column-->
+          <!--Grid column
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase">Events</h5>
 
@@ -95,9 +96,9 @@
               </li>
             </ul>
           </div>
-          <!--Grid column-->
+          <!--Grid column
 
-          <!--Grid column-->
+          <!--Grid column
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase">Services</h5>
 
@@ -116,22 +117,23 @@
               </li>
             </ul>
           </div>
-          <!--Grid column-->
+          <!--Grid column
         </div>
-        <!--Grid row-->
+        <!--Grid row
       </section>
-      <!-- Section: Links -->
+      <!-- Section: Links 
     </div>
-    <!-- Grid container -->
+    <!-- Grid container 
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-      © 2020 Copyright:
-      <a class="text-white" href="#">polimi</a>
+      © 2022 Copyright:
+      <a class="text-white" href="#">polimi</a> (Lo teniamo così piccolo o era meglio grosso?)
     </div>
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
+</div>
 </template>
 
 
@@ -141,3 +143,15 @@ export default {
   name: 'TheFooter',
 }
 </script>
+
+<style scoped>
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+}
+
+</style>
