@@ -3,7 +3,7 @@
         <div class="card">
 		    <img :src="img">
 		    <div class="info">
-			    <h1>{{name}}</h1>
+			    <h1>{{ swapUnderscoresWithSpaces(name) }}</h1>
 			    <p>{{description}}</p>
 				<nuxt-link :to="`/${path}/${name}`"><button>Read more</button></nuxt-link>
             </div>
@@ -12,8 +12,12 @@
 </template>
  
 <script>
+
+import common from '@/mixins/common.js'
+
 export default {
   name: 'HoverCard',
+  mixins: [common],
   props: {
     name: {
       type: String,
@@ -36,6 +40,11 @@ export default {
       required: true
     }
   },
+  methods: {
+	swapUnderscoresWithSpaces(string){
+        return string.replace(/_/g, " ");
+    }
+  }
 }
 </script>
  

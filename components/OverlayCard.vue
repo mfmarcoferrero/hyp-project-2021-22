@@ -1,9 +1,9 @@
 <template>
-  <nuxt-link :to="{ path: `/attractions/${name}`, query: { id: id}}">
+  <nuxt-link :to="`/${path}/${name}`">
     <div class="card shadow-lg p-0 mb-5 text-white">
       <img :src="img" class="card-img" alt="No image found">
       <div class="card-img-overlay">
-        <h3 class="card-title text-center">{{ name }}</h3>
+        <h3 class="card-title text-center">{{ swapUnderscoresWithSpaces(name) }}</h3>
         <p class="card-text text-center">{{ description }}</p>
       </div>
     </div>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'OverlayCardComponent',
+  name: 'OverlayCard',
   props: {
     name: {
       type: String,
@@ -30,11 +30,15 @@ export default {
     description: {
       type: String,
       required: true,
-    }
+    },
+    path: {
+      type: String,
+      required: true,
+    },
   },
   methods: {
-    goToDetails() {
-      this.$router.push({path:`/attractions/${this.name}`, params: {id: this.id}})
+	swapUnderscoresWithSpaces(string){
+        return string.replace(/_/g, " ");
     }
   }
 }

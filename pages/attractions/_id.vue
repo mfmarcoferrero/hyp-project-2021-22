@@ -1,6 +1,6 @@
 <template>
   <div class="page container mt-4">
-    <h1 class="title">{{ name }}</h1>
+    <h1 class="title">{{ swapUnderscoresWithSpaces(name) }}</h1>
     <p>{{ description }}</p>
     <div class="mb-5">
       <img :src="img" class="rounded mx-auto d-block img-fluid" />
@@ -27,8 +27,9 @@ export default {
   //     title: this.name
   //   }
   // },
-  async asyncData({ route, query, $axios }) {
-    const { data } = await $axios.get(`/api/pois/${query.id}`)
+  async asyncData({ route, $axios }) {
+    const { id } = route.params
+    const { data } = await $axios.get(`/api/pois/` + id)
     return {
       name: data.name,
       img: data.img,
@@ -45,6 +46,9 @@ export default {
     backToList() {
       this.$router.push('/attractions')
     },
+    swapUnderscoresWithSpaces(string){
+        return string.replace(/_/g, " ");
+    }
   },
 
   params: {

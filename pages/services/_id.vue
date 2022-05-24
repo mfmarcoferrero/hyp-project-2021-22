@@ -12,7 +12,7 @@
   </div>
   <div -->
   <div class="page container-fluid mt-4">
-    <h1 class="title">{{ name }}</h1>
+    <h1 class="title">{{ swapUnderscoresWithSpaces(name) }}</h1>
     <div class="row g-5">
       <div class="col-6">
         <p>{{ description }}</p>
@@ -58,6 +58,11 @@ export default {
       serviceDetails: serviceList,
     }
   },
+  methods: {
+	swapUnderscoresWithSpaces(string){
+        return string.replace(/_/g, " ");
+    }
+  }
   
 }
 </script>

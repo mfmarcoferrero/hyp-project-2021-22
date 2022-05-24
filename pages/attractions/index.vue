@@ -10,6 +10,7 @@
         :name="poi.name"
         :img="poi.img"
         :description="poi.description"
+        path="attractions"
       />
     </div>
   </div>
@@ -34,7 +35,7 @@ export default {
 
 <style scoped>
 .wrapper{
-  overflow:auto;
+  overflow: hidden;
   margin:0 auto 100px auto;
 }
 </style>

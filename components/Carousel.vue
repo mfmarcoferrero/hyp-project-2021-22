@@ -5,7 +5,7 @@
         v-bind:class="[carouselClass, detailIndex == 0 ? activeClass : '']" v-on:click="goTo(detail.id)">
         <img :src="detail.img" class="d-block w-100" alt="second">
         <div class="carousel-caption d-none d-md-block">
-          <h2>{{ detail.name }}</h2>
+          <h2>{{ swapUnderscoresWithSpaces(detail.name) }}</h2>
           <p>{{ detail.description }}</p>
         </div>
       </div>
@@ -50,6 +50,9 @@ export default {
     goTo(id) {
       this.$router.push(`/attractions/${id}`)
     },
+	  swapUnderscoresWithSpaces(string){
+        return string.replace(/_/g, " ");
+    }
   },
 }
 </script> 

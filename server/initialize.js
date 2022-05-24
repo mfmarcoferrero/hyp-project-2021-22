@@ -1,7 +1,7 @@
 export default async (models) => {
     const poiList = [
         {
-            name: "Duomo di Milano",
+            name: "Duomo_di_Milano",
             latitude: 45.464211,
             longitude: 9.191383,
             description: "Details about Duomo ",
@@ -22,7 +22,7 @@ export default async (models) => {
             img: "https://s1.gifyu.com/images/citylife.jpg",
         },
         {
-            name: "Castello Sforzesco",
+            name: "Castello_Sforzesco",
             latitude: 45.477849,
             longitude: 9.156383,
             description: "Details about Castello",
@@ -38,29 +38,29 @@ export default async (models) => {
     ]
     const serviceTypesList = [
         {
-            name: "Medical Services",
+            name: "Medical_Services",
             description: "medical services description",
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            name: "Cultural Services",
+            name: "Cultural_Services",
             description: "cultural services description",
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            name: "Thematic and leisure parks",
+            name: "Thematic_and_leisure_parks",
             description: "parks services description",
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            name: "Job Services",
+            name: "Job_Services",
             description: "job services description",
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
     ]
     const serviceList = [
         {
-            type: "Medical Services",
+            type: "Medical_Services",
             name: "Big Hospital",
             description: "is the biggest hospital of Amsterdam!",
             address: "First Street, 1",
@@ -68,7 +68,7 @@ export default async (models) => {
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            type: "Medical Services",
+            type: "Medical_Services",
             name: "Small Hospital",
             description: "is the smallest hospital of Amsterdam!",
             address: "Second Street, 2",
@@ -76,7 +76,7 @@ export default async (models) => {
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            type: "Cultural Services",
+            type: "Cultural_Services",
             name: "Big Library",
             description: "is the biggest library of Amsterdam!",
             address: "Bookworm Street, 1",
@@ -84,7 +84,7 @@ export default async (models) => {
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            type: "Cultural Services",
+            type: "Cultural_Services",
             name: "Small Library",
             description: "is the smallest library of Amsterdam!",
             address: "Little Street, 2",
@@ -92,7 +92,7 @@ export default async (models) => {
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            type: "Thematic and leisure parks",
+            type: "Thematic_and_leisure_parks",
             name: "Big Park",
             description: "is the biggest park of Amsterdam!",
             address: "Leaf Street, 1",
@@ -100,7 +100,7 @@ export default async (models) => {
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            type: "Thematic and leisure parks",
+            type: "Thematic_and_leisure_parks",
             name: "Small Park",
             description: "is the smallest park of Amsterdam!",
             address: "Bertolds Street, 2",
@@ -108,7 +108,7 @@ export default async (models) => {
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            type: "Job Services",
+            type: "Job_Services",
             name: "Big Job Center",
             description: "is the biggest job center of Amsterdam!",
             address: "Wall Street, 1",
@@ -116,7 +116,7 @@ export default async (models) => {
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            type: "Job Services",
+            type: "Job_Services",
             name: "Small Job Center",
             description: "is the smallest job center of Amsterdam!",
             address: "Unemployed Street, 2",

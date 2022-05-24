@@ -87,9 +87,9 @@ async function runMainApi() {
         return res.json(filtered)
     })
 
-    app.get('/pois/:id', async (req, res) => {
-        const id = +req.params.id
-        const result = await models.POI.findOne({ where: { id } })
+    app.get('/pois/:name', async (req, res) => {
+        const name = req.params.name
+        const result = await models.POI.findOne({ where: { name: name } })
         return res.json(result)
     })
 
