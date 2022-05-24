@@ -3,9 +3,9 @@
   <!-- v-for bootstrap cards taking elements from database -->
   <div class="page container-fluid">
     <div class="row mt-3 justify-content-md-center">
-      <card
+      <hover-card
           v-for="(item, itemIndex) of serviceDetails"
-          class="col-sm-2 m-2"
+          class="col-sm-auto m-2"
           :key="`data-index-${itemIndex}`"
           :id="item.id"
           :name="item.name"
@@ -13,11 +13,10 @@
           :description="item.description"
           :path="path"
         />
-
+      </div>
       <masonry :photoList="serviceDetails"
                :path="path"
       />
-    </div>
   </div>
 </div>
 </template>
@@ -26,12 +25,14 @@
 
 import Card from '@/components/Card.vue'
 import Masonry from '@/components/Masonry.vue'
+import HoverCard from '@/components/HoverCard.vue'
 
 export default {
 
   components: {
     Card,
-    Masonry
+    Masonry,
+    HoverCard,
   },
 
   async asyncData({ $axios }) {
@@ -50,5 +51,12 @@ export default {
 .wrapper{
   overflow:auto;
   margin:0 auto 100px auto;
+}
+.cardwrapper{
+  column-count: 4;
+  column-gap: 10px;
+}
+.col-sm-auto{
+  overflow: visible;
 }
 </style>

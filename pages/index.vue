@@ -5,10 +5,10 @@
     </div>
     <div>
       <h1 class="text-center mt-3">Guide to the City</h1>
-      <div class="row mt-3">
-        <card
+      <div class="row mt-3 justify-content-md-center">
+        <hover-card
           v-for="(item, itemIndex) of carouselList"
-          class="col-sm-2 m-2"
+          class="col-sm-auto m-2"
           :key="`data-index-${itemIndex}`"
           :id="item.id"
           :name="item.name"
@@ -29,10 +29,13 @@
 <script>
 import Carousel from '@/components/Carousel.vue'
 import Card from '@/components/Card.vue'
+import HoverCard from '@/components/HoverCard.vue'
+
 export default {
   components: {
     Carousel,
     Card,
+    HoverCard,
   },
   name: 'IndexPage',
   //TODO: It is probably a better optimization to use the store directory with vuex to save these data
@@ -76,7 +79,11 @@ export default {
 }
 
 .wrapper{
-  overflow:auto;
+  overflow: visible;
   margin:0 auto 100px auto;
+}
+
+.col-sm-auto{
+  overflow: visible;
 }
 </style>

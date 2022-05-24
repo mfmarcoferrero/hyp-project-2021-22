@@ -40,5 +40,37 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.card {
+  transition: 0.4s ease-out;
+  &:hover {
+    transform: scale(1.05);
+    &:before {
+      opacity: .5;
+    }
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: rgba(black, 0.6);
+    z-index: 2;
+    transition: 0.5s;
+    opacity: 0;
+}
+  .card-img-overlay {
+      z-index: 3;
+      transition: 0.4s ease-out;
+      &:hover {
+        transform: translate(0px, 200px) scale(1.5);
+        //translate: (-20px, 0px);
+        //transform: scale(1.3);
+      }
+  }
+}
 </style>
