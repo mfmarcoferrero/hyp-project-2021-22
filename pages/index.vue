@@ -3,26 +3,21 @@
     <div>
       <carousel :detailList="carouselList" />
     </div>
-    <div>
-      <h1 class="text-center mt-3">Guide to the City</h1>
-      <div class="row mt-3 justify-content-md-center">
-        <hover-card
-          v-for="(item, itemIndex) of carouselList"
-          class="col-sm-auto m-2"
-          :key="`data-index-${itemIndex}`"
-          :id="item.id"
-          :name="item.name"
-          :img="item.img"
-          :description="item.description"
-          :path = "path"
-        />
+    <h1 class="text-center mt-3">Guide to the City</h1>
+
+    <!--Horizontal slider for cards -->
+
+    <div class="container-fluid">
+      <div class="scrolling-wrapper row flex-row flex-nowrap mt-2 pb-2 pt-2">
+
+        <div v-for="(item, itemIndex) of carouselList" :key="`data-index-${itemIndex}`" class="col-3">
+          <hover-card :id="item.id" :name="item.name" :img="item.img" :description="item.description" :path="path" />
+        </div>
+
       </div>
-      <!-- div class="row">
-        <masonry :photoList="carouselList"
-               :path="path"
-        />
-      </div-->
     </div>
+    <hr>
+
   </div>
 </template>
 
@@ -47,19 +42,24 @@ export default {
       carouselList: data,
       path: "attractions"
     }
-  },
+  }
 }
 </script>
 
 <style scoped>
-  .header {
-    text-align: center;
-    padding: 32px;
-  }
-  .zoom {
+.scrolling-wrapper {
+  overflow-x: auto;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.zoom {
   padding: 50px;
   background-color: rgb(109, 151, 109);
-  transition: transform .2s; 
+  transition: transform .2s;
   width: 200px;
   height: 200px;
   margin: 0 auto;
@@ -67,23 +67,25 @@ export default {
 
 .zoom:hover {
   background-color: rgb(80, 111, 80);
-  transform: scale(1.2); 
+  transform: scale(1.2);
 }
 
 .row {
-  display: -ms-flexbox; /* IE10 */
+  display: -ms-flexbox;
+  /* IE10 */
   display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
+  -ms-flex-wrap: wrap;
+  /* IE10 */
   flex-wrap: wrap;
   padding: 0 4px;
 }
 
-.wrapper{
+.wrapper {
   overflow: visible;
-  margin:0 auto 100px auto;
+  margin: 0 auto 100px auto;
 }
 
-.col-sm-auto{
+.col-sm-auto {
   overflow: visible;
 }
 </style>
