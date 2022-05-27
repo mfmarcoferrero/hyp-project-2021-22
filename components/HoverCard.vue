@@ -13,11 +13,10 @@
  
 <script>
 
-import common from '@/mixins/common.js'
-
+import CommonMixin from '~/mixins/common';
 export default {
   name: 'HoverCard',
-  mixins: [common],
+  mixins: [CommonMixin],
   props: {
     name: {
       type: String,
@@ -41,9 +40,6 @@ export default {
     }
   },
   methods: {
-	swapUnderscoresWithSpaces(string){
-        return string.replace(/_/g, " ");
-    }
   }
 }
 </script>
