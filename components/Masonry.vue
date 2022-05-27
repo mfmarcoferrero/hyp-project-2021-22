@@ -1,32 +1,29 @@
 <template>
-<div>  
-<div class="container">
-  <div v-for="(item, itemIndex) of photoList">
-    
-    <figure>
-        <img :src="item.img" class="rounded img-fluid" :alt="item.name" />
-        <figcaption>
-          <nuxt-link :to="`/${path}/${item.name}`">{{ item.name }}</nuxt-link>
-        </figcaption>
-    </figure>
+  <div>
+    <div class="container">
+      <div v-for="(item, itemIndex) of photoList" :key="`item-index-${itemIndex}`">
+        <figure>
+          <img :src="item.img" class="rounded img-fluid" :alt="item.name" />
+          <figcaption>
+            <nuxt-link :to="`/${path}/${item.name}`">{{ item.name }}</nuxt-link>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
   </div>
-</div>
-
-
-</div>
 </template>
 
 <script>
 export default {
-name: 'Masonry',
+  name: 'Masonry',
   props: {
     photoList: {
-        type: Array,
-        required: true
+      type: Array,
+      required: true
     },
     path: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     }
   },
   data() {
@@ -45,7 +42,6 @@ name: 'Masonry',
 <-->
 
 <style scoped>
-
 body {
   background-color: rgb(255, 255, 255);
   font: 1.1em Arial, Helvetica, sans-serif;
@@ -64,7 +60,7 @@ figure {
   break-inside: avoid;
 }
 
-figure > img {
+figure>img {
   grid-row: 1 / -1;
   grid-column: 1;
 }
@@ -77,7 +73,7 @@ figure a {
 figcaption {
   grid-row: 2;
   grid-column: 1;
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(255, 255, 255, .5);
   padding: .2em .5em;
   justify-self: start;
 }
@@ -85,6 +81,10 @@ figcaption {
 .container {
   column-count: 4;
   column-gap: 10px;
-  }
+}
 
+figure:hover {
+  opacity: 1;
+  transform: translateY(-100%);
+}
 </style>

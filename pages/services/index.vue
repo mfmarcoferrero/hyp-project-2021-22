@@ -14,9 +14,6 @@
           :path="path"
         />
       </div>
-      <masonry :photoList="serviceDetails"
-               :path="path"
-      />
   </div>
 </div>
 </template>
