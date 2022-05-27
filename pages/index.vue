@@ -8,9 +8,9 @@
     <!--Horizontal slider for cards -->
 
     <div class="container-fluid">
-      <div class="scrolling-wrapper row flex-row flex-nowrap mt-2 pb-2 pt-2">
+      <div class="scrolling-wrapper row flex-row flex-nowrap gx-5 mt-2 pt-2 pb-2">
 
-        <div v-for="(item, itemIndex) of carouselList" :key="`data-index-${itemIndex}`" class="col-3">
+        <div v-for="(item, itemIndex) of carouselList" :key="`data-index-${itemIndex}`" class="col">
           <hover-card :id="item.id" :name="item.name" :img="item.img" :description="item.description" :path="path" />
         </div>
 
