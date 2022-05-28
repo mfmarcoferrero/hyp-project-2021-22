@@ -19,13 +19,14 @@ const database = new Sequelize("postgres://postgres:postgres@localhost:5432/TheC
 // Function that will initialize the connection to the database
 async function initializeDatabaseConnection() {
     await database.authenticate()
-    const Town = database.define("town", {
+    const HomePageDetail = database.define("homePageDetail", {
         name: DataTypes.STRING,
         description: DataTypes.STRING,
-        breed: DataTypes.STRING,
         img: DataTypes.STRING,
+        section: DataTypes.STRING,
+        path: DataTypes.STRING
     })
-    const POI = database.define("pointofinterest", {
+    const POI = database.define("pointOfInterest", {
         name: DataTypes.STRING,
         latitude: DataTypes.FLOAT,
         longitude: DataTypes.FLOAT,
@@ -44,12 +45,12 @@ async function initializeDatabaseConnection() {
         breed: DataTypes.STRING,
         img: DataTypes.STRING,
     })
-    const SERVICETYPES = database.define("serviceType", {
+    const ServiceType = database.define("serviceType", {
         name: DataTypes.STRING,
         description: DataTypes.STRING,
         img: DataTypes.STRING,
     })
-    const SERVICE = database.define("serviceList", {
+    const Service = database.define("serviceList", {
         type: DataTypes.STRING,
         name: DataTypes.STRING,
         description: DataTypes.STRING,
@@ -59,12 +60,12 @@ async function initializeDatabaseConnection() {
     })
     await database.sync({ force: true })
     return {
-        Town,
+        HomePageDetail,
         POI,
         Event,
         Itinerary,
-        SERVICETYPES,
-        SERVICE
+        ServiceType,
+        Service
     }
 }
 
@@ -94,7 +95,7 @@ async function runMainApi() {
     })
 
     app.get("/services", async (req, res) => {
-        const result = await models.SERVICETYPES.findAll()
+        const result = await models.ServiceType.findAll()
         const filtered = []
         for (const element of result) {
             filtered.push({
@@ -110,24 +111,27 @@ async function runMainApi() {
 
     app.get('/services/:name', async (req, res) => {
         const name = req.params.name
-        const result = await models.SERVICETYPES.findOne({ where: { name: name } })
+        const result = await models.ServiceType.findOne({ where: { name: name } })
         return res.json(result)
     })
 
     app.get('/service/:typename', async (req, res) => {
         const typename = req.params.typename
-        const result = await models.SERVICE.findAll({ where: { type: typename }})
+        const result = await models.Service.findAll({ where: { type: typename }})
         return res.json(result)
     })
 
-    app.get("/city-details", async (req, res) => {
-        const result = await models.POI.findAll()
+    app.get("/home-page-details", async (req, res) => {
+        const result = await models.HomePageDetail.findAll()
         const filtered = []
         for (const element of result) {
             filtered.push({
+                id: element.id,
                 name: element.name,
                 img: element.img,
                 description: element.description,
+                section: element.section,
+                path: element.path
             })
         }
         return res.json(filtered)

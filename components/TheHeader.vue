@@ -1,6 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-info px-3 header sticky-top">
-    <a class="navbar-brand" href="/">HOME</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dam px-3 header sticky-top">
+    <a class="navbar-brand" href="/">
+      <img class="logo-img mb-1 " src="@/static/dam-logo-resize.png" alt="HOME">
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
       aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -19,14 +21,23 @@
 </template>
 
 <style scoped>
-/* .header {
-  background: orange;
+.logo-img {
+  height: 20px;
+  object-fit: cover;
+}
+.bg-dam{
+    background-color:rgb(253,0,13,255);
+    opacity: 0.9;
+}
+.bg-dam:hover {
+  opacity: 1;
+}
+.navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
 }
 
-.logo {
-  color: white;
-  font-size: 32px;
-} */
 </style>
 
 <script>

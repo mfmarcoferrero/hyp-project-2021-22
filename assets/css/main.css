@@ -1,0 +1,13 @@
+.logo-img {
+  height: 20px;
+  object-fit: cover;
+}
+
+.bg-dam {
+  background-color: rgb(253, 0, 13, 255);
+  opacity: 0.9;
+}
+
+.bg-dam:hover {
+  opacity: 1;
+}

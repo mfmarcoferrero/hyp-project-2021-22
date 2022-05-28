@@ -47,9 +47,9 @@ export default {
       Se si fanno entrambe le chiamate api, non funziona.
       La parte commentata dovrebbe riempire la parte superiore della pagina.
     */
-    const { id } = route.params
-    const { data: serviceInfo } = await $axios.get('/api/services/' + id)
-    const { data: serviceList } = await $axios.get('/api/service/' + id)
+    const { name } = route.params
+    const { data: serviceInfo } = await $axios.get('/api/services/' + name)
+    //const { data: serviceList } = await $axios.get('/api/service/' + name)
     return {
       name: serviceInfo.name,
       img: serviceInfo.img,

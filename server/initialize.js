@@ -1,39 +1,99 @@
 export default async (models) => {
+    const homePageList = [
+        {
+            name: "Welcome to Amsterdam",
+            description: "",
+            img: "https://s8.gifyu.com/images/rijks-cover.jpg",
+            section: "carousel",
+            path: ""
+        },
+        {
+            name: "",
+            description: "",
+            img: "https://s8.gifyu.com/images/GettyImages-659083249-5912430d3df78c92830e4eaa.jpg",
+            section: "carousel",
+            path: ""
+        },
+        {
+            name: "",
+            description: "",
+            img: "https://s8.gifyu.com/images/gaurav-jain-2K2SR19RLg8-unsplash.jpg",
+            section: "carousel",
+            path: ""
+
+        },
+        {
+            name: "",
+            description: "",
+            img: "https://s8.gifyu.com/images/tobias-kordt-2GaBftOdewQ-unsplash.jpg",
+            section: "carousel",
+            path: ""
+        },
+        {
+            name: "Attractions",
+            description: "",
+            img: "https://s8.gifyu.com/images/frans-ruiter-jfPGunIH_9M-unsplash.jpg",
+            section: "categories",
+            path: "attractions"
+        },
+        {
+            name: "Itineraries",
+            description: "",
+            img: "https://s8.gifyu.com/images/moritz-kindler-I5zb8Tw-Avc-unsplash.jpg",
+            section: "categories",
+            path: "itineraries"
+        },
+        {
+            name: "Events",
+            description: "",
+            img: "https://s8.gifyu.com/images/pedro-cunha-GjUXroFNC0c-unsplash.jpg",
+            section: "categories",
+            path: "events"
+        },
+        {
+            name: "Services",
+            description: "",
+            img: "https://s8.gifyu.com/images/behzad-ghaffarian-ayrkUIy9r30-unsplash.jpg",
+            section: "categories",
+            path: "services"
+        },
+    ]
+
     const poiList = [
         {
-            name: "Duomo_di_Milano",
+            name: "Rijksmuseum",
             latitude: 45.464211,
             longitude: 9.191383,
-            description: "Details about Duomo ",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            description: "Details about Rijksmuseum",
+            img: "https://s8.gifyu.com/images/Rijksmuseum.jpg",
         },
         {
-            name: "Garibaldi",
+            name: "Van_Gogh_Museum",
+            latitude: 45.477849,
+            longitude: 9.156383,
+            description: "Details about Van Gogh museum",
+            img: "https://s8.gifyu.com/images/frans-ruiter-jfPGunIH_9M-unsplash.jpg",
+        },
+        {
+            name: "Dam_Square",
             latitude: 45.482500,
             longitude: 9.191020,
-            description: "Details about Garibaldi",
-            img: "https://s1.gifyu.com/images/garibaldi.jpg",
+            description: "Details about Dam Square",
+            img: "https://s8.gifyu.com/images/amsterdam_09_piazza_dam_jpg_1200_630_cover_85.jpg",
         },
         {
-            name: "CityLife",
+            name: "Anne_Frank_House",
             latitude: 45.477849,
             longitude: 9.156383,
-            description: "Details about CityLife",
-            img: "https://s1.gifyu.com/images/citylife.jpg",
+            description: "Details about Anne Frank house",
+            img: "https://s8.gifyu.com/images/AF-house-1.jpg",
         },
         {
-            name: "Castello_Sforzesco",
+            name: "Vondelpark",
             latitude: 45.477849,
             longitude: 9.156383,
-            description: "Details about Castello",
-            img: "https://s1.gifyu.com/images/castello.jpg",
-        },
-        {
-            name: "Brera",
-            latitude: 45.477849,
-            longitude: 9.156383,
-            description: "Details about Brera",
-            img: "https://s1.gifyu.com/images/brera.jpg",
+            description: "Details about Vondelpark",
+            img: "https://s8.gifyu.com/images/28280-Vondelpark.jpg",
         },
     ]
     const serviceTypesList = [
@@ -41,21 +101,28 @@ export default async (models) => {
             name: "Medical_Services",
             description: "medical services description",
             img: "https://s1.gifyu.com/images/duomo.jpg",
+            path: "services/Medical_Services"
         },
         {
             name: "Cultural_Services",
             description: "cultural services description",
             img: "https://s1.gifyu.com/images/duomo.jpg",
+            path: "services/Cultural_Services"
+
         },
         {
             name: "Thematic_and_leisure_parks",
             description: "parks services description",
             img: "https://s1.gifyu.com/images/duomo.jpg",
+            path: "services/Thematic_and_leisure_parks"
+
         },
         {
             name: "Job_Services",
             description: "job services description",
             img: "https://s1.gifyu.com/images/duomo.jpg",
+            path: "services/Job_Services"
+
         },
     ]
     const serviceList = [
@@ -125,6 +192,7 @@ export default async (models) => {
         },
     ]
     await models.POI.bulkCreate(poiList),
-    await models.SERVICETYPES.bulkCreate(serviceTypesList),
-    await models.SERVICE.bulkCreate(serviceList)
+    await models.ServiceType.bulkCreate(serviceTypesList),
+    await models.Service.bulkCreate(serviceList),
+    await models.HomePageDetail.bulkCreate(homePageList)
 }

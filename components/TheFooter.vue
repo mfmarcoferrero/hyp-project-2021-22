@@ -1,9 +1,9 @@
 <template>
 <div class="wrap">
   <!-- Footer -->
-  <footer class="footer bg-info text-center text-white">
+  <footer class="footer bg-dam text-center text-white">
     <!-- Copyright -->
-    <div class="text-center p-3 background-color info">
+    <div class="text-center p-3">
       © 2022 Copyright:
       <a class="text-white" href="#">polimi</a> (Lo teniamo così piccolo o era meglio grosso?)
     </div>
@@ -22,5 +22,8 @@ export default {
 </script>
 
 <style scoped>
-
+.bg-dam{
+    background-color: black;
+    opacity: 0.8;
+}
 </style>
