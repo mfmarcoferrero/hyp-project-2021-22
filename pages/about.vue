@@ -1,5 +1,8 @@
 <template>
-  <custom-page :title="title" :image="image" :description="description" />
+  <!--custom-page :title="title" :image="image" :description="description" /-->
+  <div>
+    <h1>About Us !</h1>
+  </div>
 </template>
 
 <script>
@@ -9,19 +12,19 @@ export default {
   components: {
     CustomPage,
   },
-  data() {
-    return {}
-  },
-  async asyncData({ $axios }) {
-    const { data } = await $axios.get('/api/page-info/about')
-    const title = data.title
-    const image = data.image
-    const description = data.description
-    return {
-      title,
-      description,
-      image,
-    }
-  },
+  // data() {
+  //   return {}
+  // },
+  // async asyncData({ $axios }) {
+  //   const { data } = await $axios.get('/api/page-info/about')
+  //   const title = data.title
+  //   const image = data.image
+  //   const description = data.description
+  //   return {
+  //     title,
+  //     description,
+  //     image,
+  //   }
+  // },
 }
 </script>
