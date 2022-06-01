@@ -1,10 +1,33 @@
 <template>
-  <div class="page container mt-4">
-    <h1 class="title">{{ swapUnderscoresWithSpaces(name) }}</h1>
-    <p>{{ description }}</p>
-    <div class="mb-5">
-      <img :src="img" class="rounded mx-auto d-block img-fluid" />
+  <div class="page container mt-5">
+
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col">
+          <h1 class="title">{{ swapUnderscoresWithSpaces(name) }}</h1>
+          <p>{{ description }}</p>
+        </div>
+        <div class="col">
+          <img :src="img" class="rounded mx-auto img-fluid poi-img" />
+        </div>
+      </div>
     </div>
+
+    <hr>
+    <section id="info">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <google-map :query="name" />
+          </div>
+          <div class="col">
+            <h3 class="text-center">General Information</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr>
+
     <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
       <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="backToList">
         Back to attractions
@@ -14,11 +37,23 @@
 </template>
 
 <style scoped>
+/*.poi-img {
+  width: 700px;
+  object-fit: cover;
+}*/
+.map-container {
+  height: 300px;
+}
 </style>
 
 <script>
+import GoogleMap from '@/components/Map.vue'
 export default {
+
   name: 'DetailsPage',
+  components: {
+    GoogleMap,
+  },
   //mixins: [CommonMixin],
 
   //Important for the SEO
@@ -46,8 +81,8 @@ export default {
     backToList() {
       this.$router.push('/attractions')
     },
-    swapUnderscoresWithSpaces(string){
-        return string.replace(/_/g, " ");
+    swapUnderscoresWithSpaces(string) {
+      return string.replace(/_/g, " ");
     }
   },
 

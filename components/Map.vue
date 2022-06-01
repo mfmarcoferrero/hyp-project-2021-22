@@ -1,53 +1,45 @@
 <template>
-<div class="wrapper"> 
-    <iframe
-    width="100%" 
-    height="100%"
-    style="border:0"
-    loading="lazy"
-    allowfullscreen
-    referrerpolicy="no-referrer-when-downgrade"
-    :src="link+query"
-    ></iframe>
-</div>
+  <div class="wrapper">
+    <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade" :src="link + query"></iframe>
+  </div>
 </template>
 
 <script>
-export default { 
+export default {
 
-  name: 'Map', 
+  name: 'Map',
   data() {
     return {
-        link: "https://www.google.com/maps/embed/v1/search?key=AIzaSyDh_I2tRIFiqGYfIZFTzxZyiqCW6B0K-mo&q=",
+      link: "https://www.google.com/maps/embed/v1/search?key=AIzaSyDh_I2tRIFiqGYfIZFTzxZyiqCW6B0K-mo&q=",
     }
-},
-props: {
+  },
+  props: {
     query: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     }
   },
 
-mounted(){
+  mounted() {
 
-},
+  },
 };
 
 </script>
 
 <style scoped>
-
 .wrapper {
-position: relative;
-padding-bottom: 75%; 
-}
-iframe{
-border-radius: 10px;
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
+  position: relative;
+  padding-bottom: 75%;
 }
 
+iframe {
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 </style>
