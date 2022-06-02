@@ -80,13 +80,8 @@
 </div>
 
 <div class="page container-fluid mt-4">
-  <div class="row">
-    <div class="col">
+  <div class="test">
         <google-map :query="query"/>
-    </div>
-    <div class="col">
-      <accordion :serviceDetails="serviceDetails"/>
-    </div>
   </div>
 </div>
 
@@ -170,5 +165,10 @@ figcaption {
 .container {
   column-count: 4;
   column-gap: 10px;
+}
+
+.test{
+  height: 200px;
+  overflow:hidden;
 }
 </style>
