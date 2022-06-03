@@ -18,81 +18,103 @@ const database = new Sequelize("postgres://postgres:postgres@localhost:5432/TheC
 
 // Function that will initialize the connection to the database
 async function initializeDatabaseConnection() {
-    await database.authenticate()
-    const HomePageDetail = database.define("homePageDetail", {
-        name: DataTypes.STRING,
-        description: DataTypes.STRING,
-        img: DataTypes.STRING,
-        section: DataTypes.STRING,
-        path: DataTypes.STRING
-    })
-    const POI = database.define("pointOfInterest", {
-        name: DataTypes.STRING,
-        latitude: DataTypes.FLOAT,
-        longitude: DataTypes.FLOAT,
-        description: DataTypes.STRING,
-        img: DataTypes.STRING,
-    })
-    const Event = database.define("event", {
-        name: DataTypes.STRING,
-        description: DataTypes.STRING,
-        breed: DataTypes.STRING,
-        img: DataTypes.STRING,
-    })
-    const Itinerary = database.define("itinerary", {
-        name: DataTypes.STRING,
-        description: DataTypes.STRING,
-        breed: DataTypes.STRING,
-        img: DataTypes.STRING,
-    })
-    const ServiceType = database.define("serviceType", {
-        name: DataTypes.STRING,
-        description: DataTypes.STRING,
-        img: DataTypes.STRING,
-    })
-    const Service = database.define("serviceList", {
-        type: DataTypes.STRING,
-        name: DataTypes.STRING,
-        description: DataTypes.STRING,
-        address: DataTypes.STRING,
-        hours: DataTypes.STRING,
-        img: DataTypes.STRING,
-    })
-    await database.sync({ force: true })
-    return {
-        HomePageDetail,
-        POI,
-        Event,
-        Itinerary,
-        ServiceType,
-        Service
-    }
+  await database.authenticate()
+  const HomePageDetail = database.define("homePageDetail", {
+    name: {
+      type: DataTypes.STRING,
+      primaryKey:true
+    },
+    description: DataTypes.STRING(10000),
+    img: DataTypes.STRING,
+    section: DataTypes.STRING,
+    path: DataTypes.STRING
+  })
+  const POI = database.define("pointofinterest", {
+    name: {
+      type: DataTypes.STRING,
+      primaryKey:true
+    },
+    latitude: DataTypes.FLOAT,
+    longitude: DataTypes.FLOAT,
+    description: DataTypes.STRING(10000),
+    img: DataTypes.STRING,
+  })
+  const Event = database.define("event", {
+    name: {
+      type: DataTypes.STRING,
+      primaryKey:true
+    },
+    description: DataTypes.STRING(10000),
+    breed: DataTypes.STRING,
+    img: DataTypes.STRING,
+  })
+  const Itinerary = database.define("itinerary", {
+    name: {
+      type: DataTypes.STRING,
+      primaryKey:true
+    },
+    description: DataTypes.STRING(10000),
+    breed: DataTypes.STRING,
+    img: DataTypes.STRING,
+  })
+  const ServiceType = database.define("serviceType", {
+    name:{
+      type: DataTypes.STRING,
+      primaryKey:true
+    },
+    description: DataTypes.STRING(10000),
+    img: DataTypes.STRING,
+  })
+  const Service = database.define("serviceList", {
+    type: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      primaryKey:true
+    },
+    description: DataTypes.STRING(10000),
+    address: DataTypes.STRING,
+    hours: DataTypes.STRING,
+    img: DataTypes.STRING,
+  })
+  const ItineraryPoi = database.define("itinerary_poi", {})
+  Itinerary.belongsToMany(POI, {through: 'itinerary_poi'})
+  POI.belongsToMany(Itinerary, {through: 'itinerary_poi'})
+  await database.sync({force: true})
+  return {
+    HomePageDetail,
+    POI,
+    Event,
+    Itinerary,
+    ServiceType,
+    Service,
+    ItineraryPoi
+  }
 }
 
 
 async function runMainApi() {
-    const models = await initializeDatabaseConnection()
-    await initialize(models)
+  const models = await initializeDatabaseConnection()
+  await initialize(models)
 
-    app.get("/pois", async (req, res) => {
-        const result = await models.POI.findAll()
-        const filtered = []
-        for (const element of result) {
-            filtered.push({
-                name: element.name,
-                img: element.img,
-                description: element.description,
-                id: element.id,
-            })
-        }
-        return res.json(filtered)
-    })
+  app.get("/pois", async (req, res) => {
+    const result = await models.POI.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        img: element.img,
+        description: element.description,
+        id: element.id,
+      })
+    }
+    return res.json(filtered)
+  })
 
-    app.get('/pois/:name', async (req, res) => {
-        const name = req.params.name
-        const result = await models.POI.findOne({ where: { name: name } })
-        return res.json(result)
-    })
+  app.get('/pois/:name', async (req, res) => {
+    const name = req.params.name
+    const result = await models.POI.findOne({where: {name: name}})
+    return res.json(result)
+  })
 
     app.get("/services", async (req, res) => {
         const result = await models.ServiceType.findAll()
@@ -136,6 +158,44 @@ async function runMainApi() {
         }
         return res.json(filtered)
     })
+  app.get("/city-details", async (req, res) => {
+    const result = await models.POI.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        img: element.img,
+        description: element.description,
+      })
+    }
+    return res.json(filtered)
+  })
+
+  app.get("/itineraries", async (req, res) => {
+    const result = await models.Itinerary.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        description: element.description,
+        breed: element.breed,
+        img: element.img
+      })
+    }
+    return res.json(filtered)
+  })
+
+  app.get('/itineraries/:name', async (req, res) => {
+    const name = req.params.name
+    const result = await models.Itinerary.findOne({where: {name: name}})
+    return res.json(result)
+  })
+
+  app.get('/poisOfItinerary/:name', async (req, res) => {
+    const name = req.params.name
+    const result = await models.ItineraryPoi.findOne({where: {itinerary: name}})
+    return res.json(result)
+  })
 }
 
 runMainApi()

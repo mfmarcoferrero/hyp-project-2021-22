@@ -10,9 +10,9 @@
 
       <div class="container-fluid">
         <div class="scrolling-wrapper row flex-row flex-nowrap gx-5 mt-2 pt-2 pb-2">
-        
+
           <div v-for="(item, itemIndex) of categoriesList" :key="`data-index-${itemIndex}`" class="col">
-            <hover-card :id="item.id" :name="item.name" :img="item.img" :description="item.description" :path="item.path" />
+            <hover-card :name="item.name" :img="item.img" :description="item.description" :path="item.path" />
           </div>
 
         </div>
@@ -33,8 +33,7 @@ export default {
   components: {
     Carousel,
     Card,
-    HoverCard,
-    Carousel
+    HoverCard
   },
   layout: 'nocrumbs',
   name: 'IndexPage',
@@ -53,7 +52,7 @@ export default {
     }
     return {
       carouselList: carousel,
-      categoriesList: categories, 
+      categoriesList: categories,
       path: "attractions"
     }
   }

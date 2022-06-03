@@ -1,174 +1,81 @@
 <template>
-<div>
-  <!-- div class="page container-fluid mt-4">
-  <div class="row g-4">
-    <div class="col">
-     <div class="p-3 border rounded bg-light">Content 1</div>
-    </div>
-    <div class="col">
-     <div class="p-3 border rounded bg-light">Content 2</div>
-    </div>
-    <div class="col">
-     <div class="p-3 border rounded bg-light">Content 3</div>
-    </div>
-    <div class="col">
-     <div class="p-3 border rounded bg-light">Content 4</div>
-    </div>
-    <div class="col">
-     <div class="p-3 border rounded bg-light">Content 5</div>
-    </div>
-    <div class="col">
-     <div class="p-3 border rounded bg-light">Content 6</div>
+  <div>
+    <h1 class="text-center mt-4">Itineraries page</h1>
+    <div v-for="(itinerary, index) of itinerariesDetails"
+         :key="`itinerary-index-${index}`">
+      <div class="row mt-5 mb-1 px-5">
+        <div class="col ">
+          <div class="card">
+            <img class="itinerary-img card-img-top" :src=itinerary.img alt="Card image" style="width:100%"
+                 v-on:click="goTo(itinerary.name)">
+            <div class="card-body">
+              <h4 class="card-title">{{ itinerary.name }}</h4>
+              <p class="card-text">{{ itinerary.description }}</p>
+              <nuxt-link :to="`/itineraries/${itinerary.name}`" class="btn btn-primary">See Itinerary</nuxt-link>
+            </div>
+          </div>
+        </div>
+        <div class="col ">
+          <div v-for="(poi, poiIndex) of itinerariesDetails"
+          :key="`poi-index-${poiIndex}`">
+          <div class="row g-4">
+            <div>
+              <div class="card">
+                <!--                <img src="..." class="card-img-top" alt="...">-->
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div -->
-<!-- div class="grid-container">
-  <img src="https://static2-viaggi.corriereobjects.it/wp-content/uploads/2019/11/1-1.jpg?v=353239" class="rounded img-fluid" alt="...">
-  <img src="https://www.lamialiguria.it/images/2020/manarola_AG_m.jpg" class="rounded img-fluid" alt="...">
-  <img src="https://fotocomefare.com/wp-content/uploads/2020/03/consigli-fotografia-inverno.jpg" class="rounded img-fluid" alt="...">
-  <img src="https://www.keblog.it/wp-content/uploads/2019/07/fotografo-mostra-trucchi-foto-creative-jordi-puig-21.jpg" class="rounded img-fluid" alt="...">
-  <img src="https://www.keblog.it/wp-content/uploads/2019/12/le-piu-belle-foto-del-2019-15.jpg" class="rounded img-fluid" alt="...">
-  <img src="https://static2-viaggi.corriereobjects.it/wp-content/uploads/2020/05/Gesamtsieger_K2_1_peter_lindel_a_hares_dream-1080x720.jpg?v=382917" class="rounded img-fluid" alt="...">
-</div-->
 
-
-<div class="container">
-  <figure>
-    <img src="https://assets.codepen.io/12005/windmill.jpg" class="rounded img-fluid" alt="A windmill" />
-    <figcaption><a href="#">1</a></figcaption>
-  </figure>
-  <figure>
-    <img src="https://assets.codepen.io/12005/suspension-bridge.jpg" class="rounded img-fluid" alt="The Clifton Suspension Bridge" />
-    <figcaption><a href="#">2</a></figcaption>
-  </figure>
-  <figure>
-    <img src="https://assets.codepen.io/12005/sunset.jpg" class="rounded img-fluid" alt="Sunset and boats" />
-    <figcaption><a href="#">3</a></figcaption>
-  </figure>
-  <figure>
-    <img src="https://assets.codepen.io/12005/snowy.jpg" class="rounded img-fluid" alt="a river in the snow" />
-    <figcaption><a href="#">4</a></figcaption>
-  </figure>
-  <figure>
-    <img src="https://assets.codepen.io/12005/bristol-balloons1.jpg" class="rounded img-fluid" alt="a single checked balloon" />
-    <figcaption><a href="#">5</a></figcaption>
-  </figure>
-  <figure>
-    <img src="https://assets.codepen.io/12005/dog-balloon.jpg" class="rounded img-fluid" alt="a hot air balloon shaped like a dog" />
-    <figcaption><a href="#">6</a></figcaption>
-  </figure>
-  <figure>
-    <img src="https://assets.codepen.io/12005/abq-balloons.jpg" class="rounded img-fluid" alt="View from a hot air balloon of other balloons" />
-    <figcaption><a href="#">7</a></figcaption>
-  </figure>
-  <figure>
-    <img src="https://assets.codepen.io/12005/disney-balloon.jpg" class="rounded img-fluid" alt="a balloon fairground ride" />
-    <figcaption><a href="#">8</a></figcaption>
-  </figure>
-  <figure>
-    <img src="https://assets.codepen.io/12005/bristol-harbor.jpg" class="rounded img-fluid" alt="sunrise over a harbor" />
-    <figcaption><a href="#">9</a></figcaption>
-  </figure>
-  <figure>
-    <img src="https://assets.codepen.io/12005/bristol-balloons2.jpg" class="rounded img-fluid" alt="three hot air balloons in a blue sky" />
-    <figcaption><a href="#">10</a></figcaption>
-  </figure>
-  <figure>
-  <img src="https://assets.codepen.io/12005/toronto.jpg" class="rounded img-fluid" alt="the Toronto light up sign at night" />
-    <figcaption><a href="#">11</a></figcaption>
-  </figure>
-</div>
-
-<div class="page container-fluid mt-4">
-  <div class="test">
-        <google-map :query="query"/>
-  </div>
-</div>
-
-
-
-</div>
 </template>
 
 <script>
 
-import GoogleMap from '@/components/Map.vue'
-import Accordion from '@/components/Accordion.vue'
+import Card from '@/components/Card.vue'
+import Masonry from '@/components/Masonry.vue'
+import HoverCard from '@/components/HoverCard.vue'
 
 export default {
+  name: 'ItinerariesPage',
+
   components: {
-    GoogleMap,
-    Accordion,
+    Card,
+    Masonry,
+    HoverCard
   },
-   async asyncData({ $axios }) {
-    // Database table to populate service name, image, description and opening hours.  
-    const { data } = await $axios.get('/api/service/medical')
+
+  async asyncData({$axios}) {
+    //Database table to populate service image, service description and markers array to show on map
+    const { data } = await $axios.get('/api/itineraries')
     return {
-      serviceDetails: data,
-      path: "service",
-      // This should be different depending on the service kind
-      query: "hospital+in+Amsterdam"
+      itinerariesDetails: data,
+    }
+  },
+
+  methods: {
+    goTo(name) {
+      this.$router.push(`/itineraries/${name}`)
     }
   }
-
 }
+
 </script>
 
 <style scoped>
-/*
-.grid-container {
-    width: 100%;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 20px;
-    text-align: center;
-    margin-top: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-} */
-
-body {
-  background-color: rgb(255, 255, 255);
-  font: 1.1em Arial, Helvetica, sans-serif;
+.itinerary-img{
+  width:100%;
+  height:15vw;
+  object-fit:cover;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-figure {
-  margin: 0;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  margin-bottom: 10px;
-  break-inside: avoid;
-}
-
-figure > img {
-  grid-row: 1 / -1;
-  grid-column: 1;
-}
-
-figure a {
-  color: black;
-  text-decoration: none;
-}
-
-figcaption {
-  grid-row: 2;
-  grid-column: 1;
-  background-color: rgba(255,255,255,.5);
-  padding: .2em .5em;
-  justify-self: start;
-}
-
-.container {
-  column-count: 4;
-  column-gap: 10px;
-}
-
-.test{
-  height: 200px;
-  overflow:hidden;
-}
 </style>

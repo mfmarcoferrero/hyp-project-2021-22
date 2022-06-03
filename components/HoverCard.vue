@@ -10,7 +10,7 @@
         </div>
     </div>
 </template>
- 
+
 <script>
 
 import CommonMixin from '~/mixins/common';
@@ -26,10 +26,6 @@ export default {
       type: String,
       required: true,
     },
-    id: {
-      type: Number,
-      required: true,
-    },
     description: {
       type: String,
       required: true,
@@ -43,7 +39,7 @@ export default {
   }
 }
 </script>
- 
+
 <style lang="scss" scoped>
 
 * {
