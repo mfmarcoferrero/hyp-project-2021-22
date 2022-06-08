@@ -1,5 +1,5 @@
 <template>
-  <!-- <div class="page container mt-5 wrapper">
+  <div class="page container mt-5 wrapper">
     <h1 class="text-center">Attractions page</h1>
     <div class="row justify-content-center">
       <overlay-card
@@ -13,8 +13,8 @@
         path="attractions"
       />
     </div>
-  </div> -->
-  <div class="page-container mt-5">
+  </div>
+  <!-- <div class="page-container mt-5">
     <h1 class="text-center">Attractions page</h1>
 
     <div class="container mb-5">
@@ -37,7 +37,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
