@@ -1,21 +1,24 @@
 <template>
   <div class="container-fluid wrapper">
     <div>
-      <carousel :detailList="carouselList" />
+      <carousel :detailList="carouselList" scrollTo="#guide-to-the-city" />
     </div>
-    <h1 class="text-center mt-3">Guide to the City</h1>
 
     <!--Horizontal slider for cards -->
+    <section id="guide-to-the-city">
+      <h1 class="text-center mt-3">Guide to the City</h1>
 
-    <div class="container-fluid">
-      <div class="scrolling-wrapper row flex-row flex-nowrap gx-5 mt-2 pt-2 pb-2">
+      <div class="container-fluid">
+        <div class="scrolling-wrapper row flex-row flex-nowrap gx-5 mt-2 pt-2 pb-2">
 
-        <div v-for="(item, itemIndex) of carouselList" :key="`data-index-${itemIndex}`" class="col">
-          <hover-card :id="item.id" :name="item.name" :img="item.img" :description="item.description" :path="path" />
+          <div v-for="(item, itemIndex) of categoriesList" :key="`data-index-${itemIndex}`" class="col">
+            <hover-card :name="item.name" :img="item.img" :description="item.description" :path="item.path" />
+          </div>
+
         </div>
-
       </div>
-    </div>
+    </section>
+
     <hr>
 
   </div>
@@ -30,16 +33,26 @@ export default {
   components: {
     Carousel,
     Card,
-    HoverCard,
+    HoverCard
   },
+  layout: 'nocrumbs',
   name: 'IndexPage',
   //TODO: It is probably a better optimization to use the store directory with vuex to save these data
   //      because we don't want to retrive homepage images from db everytime it is loaded.
   async asyncData({ $axios }) {
-    const { data } = await $axios.get('/api/pois')
-    //console.log(data);
+    let carousel = []
+    let categories = []
+    const { data } = await $axios.get('/api/home-page-details')
+    for (var item of data) {
+      if (item.section === 'carousel') {
+        carousel.push(item)
+      } else if (item.section === 'categories') {
+        categories.push(item)
+      }
+    }
     return {
-      carouselList: data,
+      carouselList: carousel,
+      categoriesList: categories,
       path: "attractions"
     }
   }
