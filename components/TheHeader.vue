@@ -1,25 +1,3 @@
-<!--template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-dam px-3 header sticky-top">
-    <a class="navbar-brand" href="/">
-      <img class="logo-img mb-1 " src="@/static/dam-logo-resize.png" alt="HOME">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
-      aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarToggler">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li v-for="(navItem, navItemIndex) of headerList" :key="`navItem${navItemIndex}`" class="nav-item">
-          <nuxt-link :to="navItem.path" class="nav-link">
-            {{ navItem.name }}
-          </nuxt-link>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</template-->
-
 <template>
   <div>
     <div class="collapse" id="navbarToggleExternalContent">
@@ -71,6 +49,11 @@
   left: 50%;
   position: absolute;
 }
+
+.nuxt-link-active {
+    font-weight: bold;
+}
+
 </style>
 
 <script>
@@ -94,7 +77,7 @@ export default {
         {
           name: 'Services',
           path: '/services',
-        },
+        }
       ],
     }
   },

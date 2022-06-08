@@ -3,7 +3,7 @@ export default async (models) => {
         {
             name: "Welcome to Amsterdam",
             description: "",
-            img: "https://s8.gifyu.com/images/rijks-cover.jpg",
+            img: "https://s8.gifyu.com/images/homepage-dam.jpg",
             section: "carousel",
             path: ""
         },
