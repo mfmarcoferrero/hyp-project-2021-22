@@ -47,7 +47,7 @@ export default {
 
 <style>
 .wrapper{
-  overflow:auto;
+  overflow:visible;
   margin:0 auto 100px auto;
 }
 .cardwrapper{
@@ -57,4 +57,5 @@ export default {
 .col-sm-auto{
   overflow: visible;
 }
+
 </style>
