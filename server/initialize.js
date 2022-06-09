@@ -217,9 +217,28 @@ export default async (models) => {
       img: "https://s1.gifyu.com/images/duomo.jpg",
     }
   ]
+  const itineraryPOIList = [
+    {
+      itineraryName: "One-day itinerary",
+      pointofinterestName: "Rijksmuseum"
+    },
+    {
+      itineraryName: "One-day itinerary",
+      pointofinterestName: "Van_Gogh_Museum"
+    },
+    {
+      itineraryName: "One-day itinerary",
+      pointofinterestName: "Dam_Square"
+    },
+    {
+      itineraryName: "One-day itinerary",
+      pointofinterestName: "Anne_Frank_House"
+    },
+  ]
     await models.POI.bulkCreate(poiList),
     await models.ServiceType.bulkCreate(serviceTypesList),
     await models.Service.bulkCreate(serviceList),
     await models.HomePageDetail.bulkCreate(homePageList),
-    await models.Itinerary.bulkCreate(itinerariesList)
+    await models.Itinerary.bulkCreate(itinerariesList),
+    await models.ItineraryPoi.bulkCreate(itineraryPOIList)
 }
