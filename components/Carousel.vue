@@ -56,9 +56,6 @@ export default {
     onSlideEnd(slide) {
       this.sliding = false
     },
-    goTo(id) {
-      this.$router.push(`/attractions/${id}`)
-    }
   },
 }
 </script> 

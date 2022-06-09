@@ -1,14 +1,14 @@
 <template>
-    <div class="wrapper">
-        <div class="card">
-		    <img :src="img">
-		    <div class="info">
-			    <h1>{{ swapUnderscoresWithSpaces(name) }}</h1>
-			    <p>{{description}}</p>
-				<nuxt-link :to="`/${path}/${name}`"><button>Read more</button></nuxt-link>
-            </div>
-        </div>
+  <div class="wrapper">
+    <div class="card">
+      <img :src="img">
+      <div class="info">
+        <h1>{{ swapUnderscoresWithSpaces(name) }}</h1>
+        <p>{{ description }}</p>
+        <nuxt-link :to="`/${path}`"><button>Read more</button></nuxt-link>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -41,7 +41,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 * {
   box-sizing: border-box;
 }
@@ -51,6 +50,7 @@ export default {
   //text-align: justify;  /* For Edge */
   text-align-last: right;
 }
+
 .card {
   width: 280px;
   height: 360px;
@@ -62,16 +62,20 @@ export default {
   align-items: flex-end;
   transition: 0.4s ease-out;
   box-shadow: 0px 7px 10px rgba(black, 0.5);
+
   &:hover {
     transform: translateY(20px);
+
     &:before {
       opacity: 1;
     }
+
     .info {
       opacity: 1;
       transform: translateY(0px);
     }
   }
+
   &:before {
     content: "";
     position: absolute;
@@ -86,6 +90,7 @@ export default {
     transition: 0.5s;
     opacity: 0;
   }
+
   img {
     width: 100%;
     height: 100%;
@@ -95,6 +100,7 @@ export default {
     left: 0;
     border-radius: 15px;
   }
+
   .info {
     position: relative;
     z-index: 3;
@@ -102,14 +108,17 @@ export default {
     opacity: 0;
     transform: translateY(30px);
     transition: 0.5s;
+
     h1 {
       margin: 0px;
     }
+
     p {
       letter-spacing: 1px;
       font-size: 15px;
       margin-top: 8px;
     }
+
     button {
       padding: 0.6rem;
       outline: none;
@@ -120,6 +129,7 @@ export default {
       font-weight: bold;
       cursor: pointer;
       transition: 0.4s ease;
+
       &:hover {
         background: dodgerblue;
         color: white;
@@ -127,5 +137,4 @@ export default {
     }
   }
 }
-
 </style>

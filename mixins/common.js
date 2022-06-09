@@ -7,6 +7,9 @@ export default {
         capitalizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         },
+        toLowerCase(string) {
+            return string.toLowerCase();
+        },
         swapUnderscoresWithSpaces(string){
             return string.replace(/_/g, " ");
         }

@@ -1,22 +1,15 @@
 <template>
-<div class="wrapper">
-  <!-- v-for bootstrap cards taking elements from database -->
-  <div class="page container-fluid">
-    <div class="row mt-3 justify-content-md-center">
-      <hover-card
-          v-for="(item, itemIndex) of serviceDetails"
-          class="col-sm-auto m-2"
-          :key="`data-index-${itemIndex}`"
-          :id="item.id"
-          :name="item.name"
-          :img="item.img"
-          :description="item.description"
-          :path="path"
-        />
+  <div class="wrapper">
+    <!-- v-for bootstrap cards taking elements from database -->
+    <div class="page container-fluid">
+      <div class="row mt-3 justify-content-md-center">
+        <hover-card v-for="(item, itemIndex) of serviceDetails" class="col-sm-auto m-2" :key="`data-index-${itemIndex}`"
+          :id="item.id" :name="item.name" :img="item.img" :description="item.description"
+          :path="'services/' + item.name" />
       </div>
-  
+
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -46,15 +39,17 @@ export default {
 </script>
 
 <style>
-.wrapper{
-  overflow:auto;
-  margin:0 auto 100px auto;
+.wrapper {
+  overflow: auto;
+  margin: 0 auto 100px auto;
 }
-.cardwrapper{
+
+.cardwrapper {
   column-count: 4;
   column-gap: 10px;
 }
-.col-sm-auto{
+
+.col-sm-auto {
   overflow: visible;
 }
 </style>
