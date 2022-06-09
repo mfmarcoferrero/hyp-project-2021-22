@@ -45,7 +45,7 @@ async function initializeDatabaseConnection() {
       primaryKey:true
     },
     description: DataTypes.STRING(10000),
-    breed: DataTypes.STRING,
+    season: DataTypes.STRING,
     img: DataTypes.STRING,
   })
   const Itinerary = database.define("itinerary", {
@@ -87,7 +87,7 @@ async function initializeDatabaseConnection() {
     Itinerary,
     ServiceType,
     Service,
-    ItineraryPoi
+    ItineraryPoi,
   }
 }
 
@@ -184,6 +184,26 @@ async function runMainApi() {
     }
     return res.json(filtered)
   })
+
+  app.get("/events", async (req, res) => {
+    const result = await models.Event.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        description: element.description,
+        season: element.season,
+        img: element.img
+      })
+    }
+    return res.json(filtered)
+  })
+
+app.get('/event/:name', async (req, res) => {
+  const name = req.params.name
+  const result = await models.Event.findOne({ where: { name: name }})
+  return res.json(result)
+})
 
   app.get('/itineraries/:name', async (req, res) => {
     const name = req.params.name

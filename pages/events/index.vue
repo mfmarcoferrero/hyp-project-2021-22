@@ -1,13 +1,15 @@
 <template>
   <div class="page container-fluid mt-4 wrapper">
-  <h1>What's up in Amsterdam?</h1>
-  <div class="row g-5">
+  <div class="row m-5">
+  <h1 style="text-align: center">What's up in Amsterdam?</h1>
+  </div>
+<!--   <div class="row g-5">
     <div class="col-sm-2">
-      <div id="list-example" class="list-group sticky">
-        <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+      <div id="list-example" class="list-group">
+        <a class="list-group-item winter" href="#list-item-1">Winter events</a>
+        <a class="list-group-item spring" href="#list-item-2">Spring events</a>
+        <a class="list-group-item summer" href="#list-item-3">Summer events</a>
+        <a class="list-group-item autumn" href="#list-item-4">Autumn events</a>
       </div>
     </div>
     <div class="col"> 
@@ -23,7 +25,54 @@
       </div>
     </div>
   </div>
+  </div> -->
+  <div class="row">
+  <div class="col-4">
+    <div class="list-group sticky" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-winter-list" data-bs-toggle="list" href="#list-winter" role="tab" aria-controls="list-winter">Winter events</a>
+      <a class="list-group-item list-group-item-action" id="list-spring-list" data-bs-toggle="list" href="#list-spring" role="tab" aria-controls="list-spring">Spring events</a>
+      <a class="list-group-item list-group-item-action" id="list-summer-list" data-bs-toggle="list" href="#list-summer" role="tab" aria-controls="list-summer">Summer events</a>
+      <a class="list-group-item list-group-item-action" id="list-fall-list" data-bs-toggle="list" href="#list-fall" role="tab" aria-controls="list-fall">Fall events</a>
+    </div>
   </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+<!--       <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+        <h4>Winter events</h4>
+        <p>{{lipsum}}</p>
+      </div>
+      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+        <h4>Spring events</h4>
+        <p>{{lipsum}}</p>
+      </div>
+      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+        <h4>Summer events</h4>
+        <p>{{lipsum}}</p>
+      </div>
+      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+        <h4>Autumn events</h4>
+        <p>{{lipsum}}</p>
+      </div> -->
+      <div v-for="(event, eventIndex) of eventList" 
+           :key="eventIndex" 
+           class="tab-pane fade"
+           :class={show: eventIndex == 0}
+           :class={active: eventIndex == 0}
+           :id="`list-${event.season}`"
+           role="tabpanel"
+           :aria-labelledby="`list-${event.season}-list`">
+      <h2>
+        <nuxt-link :to="`/events/test`">
+          test
+        </nuxt-link>
+      </h2>
+      <p>
+        {{ event.description }}
+      </p>
+    </div>
+  </div>
+</div>
+
   </div>
 </template>
 
@@ -49,6 +98,12 @@ Vivamus eget tincidunt ipsum. Phasellus tempor viverra urna, sed consequat massa
 Praesent nec lacus a orci condimentum imperdiet. Quisque eu nibh ornare, commodo leo vel, fermentum neque. Mauris volutpat eleifend arcu, sed laoreet augue rhoncus ut. Etiam non euismod velit. Ut lobortis, urna id ornare hendrerit, neque urna hendrerit ipsum, non maximus arcu erat a erat. Curabitur ultricies, ex a interdum faucibus, lacus erat porttitor sem, at fermentum ex elit at est. Nunc gravida ullamcorper nulla. Aliquam auctor tristique magna, et viverra erat lacinia in. Morbi sit amet tellus semper, tincidunt purus et, tincidunt lectus. Proin lorem magna, euismod a ligula vitae, viverra tincidunt augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. `
 
     }
+  },
+    async asyncData({ $axios }) {
+    const { data } = await $axios.get('/api/events')
+    return {
+      eventList: data,
+    }
   }
 
 }
@@ -56,14 +111,23 @@ Praesent nec lacus a orci condimentum imperdiet. Quisque eu nibh ornare, commodo
 
 <style scoped>
 
-.wrapper{
-  overflow: visible;
-  margin:0 auto 100px auto;
+.list-group {
+  position: sticky;
+  top: 10px;
+  left: 10px;
 }
 
-.sticky {
-  position: sticky;
-  top: 100px;
+.winter{
+  background-color: rgb(178, 216, 216);
+}
+.spring{
+  background-color: rgb(182, 227, 169);
+}
+.summer{
+  background-color: rgb(255, 252, 177);
+}
+.autumn{
+  background-color: rgb(176, 155, 133);
 }
 
 </style>
