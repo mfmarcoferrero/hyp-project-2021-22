@@ -1,76 +1,65 @@
 <template>
-  <div class="row">
-    <div class="col-4">
-      <div class="list-group sticky" id="list-tab" role="tablist">
-        <a
-          class="list-group-item list-group-item-action active"
-          id="list-winter-list"
-          data-bs-toggle="list"
-          href="#list-winter"
-          role="tab"
-          aria-controls="list-winter"
-          @click="season = `winter`"
-          >Winter events</a
+  <div class="container">
+    <div class="row">
+      <ul class="nav nav-pills mb-5 justify-content-center" id="pills-tab" role="tablist">
+        <li
+          v-for="(item, index) of categories"
+          :key="index"
+          class="nav-item"
+          role="presentation"
         >
-        <a
-          class="list-group-item list-group-item-action"
-          id="list-spring-list"
-          data-bs-toggle="list"
-          href="#list-spring"
-          role="tab"
-          aria-controls="list-spring"
-          @click="season = `spring`"
-          >Spring events</a
-        >
-        <a
-          class="list-group-item list-group-item-action"
-          id="list-summer-list"
-          data-bs-toggle="list"
-          href="#list-summer"
-          role="tab"
-          aria-controls="list-summer"
-          @click="season = `summer`"
-          >Summer events</a
-        >
-        <a
-          class="list-group-item list-group-item-action"
-          id="list-fall-list"
-          data-bs-toggle="list"
-          href="#list-fall"
-          role="tab"
-          aria-controls="list-fall"
-          @click="season = `fall`"
-          >Fall events</a
-        >
-      </div>
+          <button
+            class="nav-link"
+            :class="index === 0 ? 'active' : null"
+            :id="`${item}-tab`"
+            data-bs-toggle="pill"
+            :data-bs-target="`#${item}`"
+            type="button"
+            role="tab"
+            :aria-controls="item"
+            :aria-selected="index === 0"
+            @click="item === 'all' ? (selected = '') : (selected = item)"
+          >
+            {{ item }}
+          </button>
+        </li>
+      </ul>
     </div>
-    <div class="col-8">
-      <div class="tab-content" id="nav-tabContent">
-        <div
-          v-for="(event, eventIndex) of list"
-          :key="eventIndex"
-          class="tab-pane fade"
-          :id="`list-${event.season}`"
-          role="tabpanel"
-          :aria-labelledby="`list-${event.season}-list`"
-        >
-          <h2>
-            <nuxt-link :to="`/events/test`">
-              {{ event.name }}
-            </nuxt-link>
-          </h2>
-          <p>
-            {{ event.description }}
-          </p>
+    <div class="row">
+    <div class="tab-content" id="pills-tabContent">
+      <div
+        v-for="(item, index) of categories"
+        :key="index"
+        class="tab-pane fade"
+        :class="index === 0 ? 'show active' : null"
+        :id="item"
+        role="tabpanel"
+        aria-labelledby="pills-home-tab"
+      >
+        <div v-for="(item, index) of filtered" :key="index">
+          <card
+            class="mb-3"
+            :name="item.name"
+            :img="item.img"
+            :description="item.description"
+            path="events"
+          />
         </div>
       </div>
+      </div>
     </div>
-  </div>
+    </div>
+
 </template>
 
 <script>
+import Card from '@/components/Card.vue'
+
 export default {
   name: 'CardList',
+  components: {
+    Card,
+  },
   props: {
     list: {
       type: Array,
@@ -78,17 +67,19 @@ export default {
     },
   },
   data() {
-    return {}
+    return {
+      selected: '',
+      categories: ['all', 'winter', 'spring', 'summer', 'fall'],
+    }
   },
   computed: {
-    filteredItems(){
-    return this.list.filter(season => this.selectedCategories.includes(season))
-    }
-  }
+    filtered() {
+      if (this.selected === '') return this.list
+      return this.list.filter((s) => s.season === this.selected)
+    },
+  },
 }
 </script>
 
 <style>
-
-
 </style>

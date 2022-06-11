@@ -1,10 +1,10 @@
 <template>
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 100%;">
     <img class="card-img-top" :src="img" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{ swapUnderscoresWithSpaces(name) }}</h5>
       <p class="card-text">{{ description }}</p>
-      <nuxt-link :to="{ path: `/${path}/${name}`, query: { id: id } }" class="btn btn-primary">Go to {{ name }}
+      <nuxt-link :to="{ path: `/${path}/${name}` }" class="btn btn-primary">Go to {{ name }}
       </nuxt-link>
     </div>
   </div>
@@ -24,10 +24,6 @@ export default {
       type: String,
       required: true,
     },
-    id: {
-      type: Number,
-      required: true,
-    },
     description: {
       type: String,
       required: true,
@@ -43,4 +39,9 @@ export default {
 </script>
  
 <style lang="scss" scoped>
+.card-img-top{
+  width:100%;
+  height:15vw;
+  object-fit:cover;
+}
 </style>

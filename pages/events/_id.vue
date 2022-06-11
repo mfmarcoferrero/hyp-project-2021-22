@@ -7,7 +7,7 @@
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
       <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="backToList">
-        Back to attractions
+        Back to Events
       </button>
     </div>
   </div>
@@ -29,7 +29,7 @@ export default {
   // },
   async asyncData({ route, $axios }) {
     const { id } = route.params
-    const { data } = await $axios.get('/api/pois/' + id)
+    const { data } = await $axios.get('/api/events/' + id)
     return {
       name: data.name,
       img: data.img,
@@ -44,7 +44,7 @@ export default {
   // },
   methods: {
      backToList() {
-       this.$router.push('/attractions')
+       this.$router.push('/events')
      },
   },
 }

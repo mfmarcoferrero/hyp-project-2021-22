@@ -199,7 +199,7 @@ async function runMainApi() {
     return res.json(filtered)
   })
 
-app.get('/event/:name', async (req, res) => {
+app.get('/events/:name', async (req, res) => {
   const name = req.params.name
   const result = await models.Event.findOne({ where: { name: name }})
   return res.json(result)
