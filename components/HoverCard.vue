@@ -5,7 +5,7 @@
 		    <div class="info">
 			    <h1>{{ swapUnderscoresWithSpaces(name) }}</h1>
 			    <p>{{description}}</p>
-				<nuxt-link :to="`/${path}/${name}`"><button>Read more</button></nuxt-link>
+				<nuxt-link :to="`/${path}/`+filtered"><button>Read more</button></nuxt-link>
             </div>
         </div>
     </div>
@@ -36,6 +36,14 @@ export default {
     }
   },
   methods: {
+  },
+  computed:{
+    filtered() {
+      var str
+      if (this.path.toLowerCase() === this.name.toLowerCase()) str = ''
+      else str = this.name
+      return str
+    }
   }
 }
 </script>
