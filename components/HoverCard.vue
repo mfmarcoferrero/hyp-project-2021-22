@@ -1,12 +1,13 @@
 <template>
-  <div class="wrapper">
-    <div class="card">
-      <img :src="img">
-      <div class="info">
-        <h1>{{ swapUnderscoresWithSpaces(name) }}</h1>
-        <p>{{ description }}</p>
-        <nuxt-link :to="`/${path}`"><button>Read more</button></nuxt-link>
-      </div>
+    <div class="wrapper">
+        <div class="card">
+		    <img :src="img">
+		    <div class="info">
+			    <h1>{{ swapUnderscoresWithSpaces(name) }}</h1>
+			    <p>{{description}}</p>
+				<nuxt-link :to="`/${path}/`+filtered"><button>Read more</button></nuxt-link>
+            </div>
+        </div>
     </div>
   </div>
 </template>
@@ -36,6 +37,14 @@ export default {
     }
   },
   methods: {
+  },
+  computed:{
+    filtered() {
+      var str
+      if (this.path.toLowerCase() === this.name.toLowerCase()) str = ''
+      else str = this.name
+      return str
+    }
   }
 }
 </script>

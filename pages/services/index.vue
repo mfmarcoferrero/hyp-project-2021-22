@@ -39,9 +39,9 @@ export default {
 </script>
 
 <style>
-.wrapper {
-  overflow: auto;
-  margin: 0 auto 100px auto;
+.wrapper{
+  overflow:visible;
+  margin:0 auto 100px auto;
 }
 
 .cardwrapper {
@@ -52,4 +52,5 @@ export default {
 .col-sm-auto {
   overflow: visible;
 }
+
 </style>
