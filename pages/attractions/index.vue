@@ -1,44 +1,51 @@
 <template>
   <div class="page-container mt-5">
     <h1 class="text-center">Attractions page</h1>
-    <div class="row justify-content-center">
-      <overlay-card
-        v-for="(poi, poiIndex) of poiList"
-        class="col-lg-11 m-3"
-        :key="`poi-index-${poiIndex}`"
-        :name="poi.name"
-        :img="poi.img"
-        :description="poi.description"
-        path="attractions"
-      />
-    </div>
-    <hr class="m-5">
-    <h1 class="text-center">Attractions page</h1>     
-    <div-- class="container m-5">
+
+    <div class="container">
+
       <h2 class="second-title vl m-5"> Most visited attractions </h2>
-      <div class="row m-4">
+
+      <div class="row m-3">
         <div class="col">
-          <card :name="name" :img="img" class="position-center"></card>
+          <card :name="name" :img="img"></card>
         </div>
         <div class="col">
           <card :name="name" :img="img"></card>
         </div>
       </div>
-      <div class="row m-4">
-         <div class="col">
+
+      <div class="row m-3">
+        <div class="col">
           <card :name="name" :img="img"></card>
         </div>
-         <div class="col">
+        <div class="col">
           <card :name="name" :img="img"></card>
         </div>
-         <div class="col">
+        <div class="col">
           <card :name="name" :img="img"></card>
         </div>
       </div>
-    </div-->
+
+    </div>
+
+    <hr class="m-5">
+
+    <div class="container">
+      <h2 class="second-title vl ms-5"> Best cultural attractions </h2>
+    </div>
+
     <section id="card-carousel">
-      <card-carousel :detailMatrix="generateMatrixFromArray(poiList,4)"> </card-carousel>
+      <card-carousel :detailMatrix="generateMatrixFromArray(poiList, 4)"> </card-carousel>
     </section>
+
+    <hr class="m-5">
+
+    <div class="row justify-content-center">
+      <overlay-card v-for="(poi, poiIndex) of poiList" class="col-lg-11 m-3" :key="`poi-index-${poiIndex}`"
+        :name="poi.name" :img="poi.img" :description="poi.description" path="attractions" />
+    </div>
+
   </div>
 </template>
 
