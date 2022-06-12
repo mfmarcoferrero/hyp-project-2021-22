@@ -1,6 +1,6 @@
 <template>
   <div class="page container mt-4">
-    <h1 class="title">{{ name }}</h1>
+    <h1 class="title">{{ swapDashesAndCapitalize(name)}}</h1>
     <p>{{ description }}</p>
     <div class="mb-5">
       <img :src="img" class="rounded mx-auto d-block img-fluid" />
@@ -17,9 +17,10 @@
 </style>
 
 <script>
+import CommonMixin from '@/mixins/common.js'
 export default {
   name: 'DetailsPage',
-  //mixins: [CommonMixin],
+  mixins: [CommonMixin],
 
   //Important for the SEO
   // head() {

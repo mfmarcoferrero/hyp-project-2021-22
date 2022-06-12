@@ -14,6 +14,10 @@ export default {
         swapUnderscoresWithSpaces(string) {
             return string.replace(/_/g, " ");
         },
+        swapDashesAndCapitalize (string) {
+            string = string.replace(/-/g, " ");
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        },
         generateMatrixFromArray(array, chunkSize) {
             const n = Math.ceil(array.length / chunkSize);
             var matrix = new Array(n);
