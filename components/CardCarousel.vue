@@ -1,20 +1,13 @@
 <template>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-        <!--div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div-->
+   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
         <div class="carousel-inner">
-            <div v-for="index in 2" :key="index" v-bind:class="[carouselClass, index == 1 ? activeClass : '']">
+            <div v-for="slideIndex in detailMatrix.length" :key="slideIndex"
+                v-bind:class="[carouselClass, slideIndex == 1 ? activeClass : '']">
                 <div class="container pt-5">
                     <div class="row row-cols-1 row-cols-md-4 g-4">
-                        <div v-for="index in 4" :key="index" class="col">
+                        <div v-for="(detail,detailIndex) of detailMatrix[slideIndex-1]" :key="detailIndex" class="col">
                             <div class="card shadow">
-                                <img :src="img" class="card-img-top" alt="...">
+                                <img :src="detail.img" class="card-img-top" alt="No image">
                                 <div class="card-body">
                                     <h5 class="card-title">Individual</h5>
                                     <p class="card-text">The perfect plan for just you. Get all the fresh fruit and
@@ -42,21 +35,26 @@
 </template>
 
 <script>
+//Card carousel is different from Image carousel because to create a sequence of cards(columns) into a slide
+// needs a matrix in which details are divided into lists
+// I'll use a function defined in mixins to convert a list into a matrix with lists of n(num cards) elements
 import CommonMixin from '~/mixins/common';
 export default {
     mixins: [CommonMixin],
     name: 'CardCarousel',
     data() {
         return {
-            name: "Museum",
-            img: "https://s8.gifyu.com/images/frans-ruiter-jfPGunIH_9M-unsplash.jpg",
             carouselClass: 'carousel-item',
             activeClass: 'active',
             slide: 0,
             sliding: null,
         }
     },
-
+    props: {
+        detailMatrix: {
+            type: Array
+        }
+    },
     methods: {
         onSlideStart(slide) {
             this.sliding = true
@@ -64,22 +62,17 @@ export default {
         onSlideEnd(slide) {
             this.sliding = false
         },
-        goTo(id) {
-            this.$router.push(`/`)
-        }
     },
 }
 </script>
 
-<style>
-
+<style scoped>
 /*To import a different icon for controls*/
 .carousel-control-prev-icon {
- background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
 }
 
 .carousel-control-next-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
-
 </style>

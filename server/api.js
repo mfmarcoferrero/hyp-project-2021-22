@@ -4,7 +4,7 @@ const { Sequelize, DataTypes } = require("sequelize")
 const initialize = require('./initialize').default
 app.use(express.json())
 
-const database = new Sequelize("postgres://postgres:postgres@localhost:5432/TheCity")
+const database = new Sequelize(process.env.DATABASE_URL)
 
 
 // Production (use this code when deploying to production in Heroku)

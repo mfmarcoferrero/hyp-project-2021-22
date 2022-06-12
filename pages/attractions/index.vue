@@ -1,6 +1,6 @@
 <template>
   <div class="page-container mt-5">
-    <!--h1 class="text-center">Attractions page</!--h1>
+    <h1 class="text-center">Attractions page</h1>
     <div class="row justify-content-center">
       <overlay-card
         v-for="(poi, poiIndex) of poiList"
@@ -12,11 +12,11 @@
         path="attractions"
       />
     </div>
-    <hr>
+    <hr class="m-5">
     <h1 class="text-center">Attractions page</h1>     
-    <div-- class="container mb-5">
-      <h2 class="second-title vl"> Most visited attractions </h2>
-      <div class="row mb-4">
+    <div-- class="container m-5">
+      <h2 class="second-title vl m-5"> Most visited attractions </h2>
+      <div class="row m-4">
         <div class="col">
           <card :name="name" :img="img" class="position-center"></card>
         </div>
@@ -24,7 +24,7 @@
           <card :name="name" :img="img"></card>
         </div>
       </div>
-      <div class="row">
+      <div class="row m-4">
          <div class="col">
           <card :name="name" :img="img"></card>
         </div>
@@ -37,22 +37,25 @@
       </div>
     </div-->
     <section id="card-carousel">
-      <card-carousel></card-carousel>
+      <card-carousel :detailMatrix="generateMatrixFromArray(poiList,4)"> </card-carousel>
     </section>
   </div>
 </template>
 
 <script>
+import CommonMixin from '~/mixins/common';
 import OverlayCard from '~/components/OverlayCard.vue';
 import Card from '~/components/Card.vue';
 import CardCarousel from '~/components/CardCarousel.vue';
+
 export default {
   name: 'AttractionsPage',
   title: 'Attractions',
+  mixins: [CommonMixin],
   components: {
     OverlayCard,
     Card,
-    CardCarousel,
+    CardCarousel
   },
   data() {
     return {
