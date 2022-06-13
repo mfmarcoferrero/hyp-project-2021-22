@@ -213,7 +213,7 @@ app.get('/events/:name', async (req, res) => {
 
   app.get('/poisOfItinerary/:name', async (req, res) => {
     const name = req.params.name
-    const result = await models.ItineraryPoi.findOne({where: {itinerary: name}})
+    const result = await models.ItineraryPoi.findAll({where: {itineraryName: name}})
     return res.json(result)
   })
 }
