@@ -55,9 +55,12 @@ img {
 figure {
   margin: 0;
   display: grid;
-  grid-template-rows: 1fr auto;
+  /* grid-template-rows: 1fr auto; */
+  grid-template-rows: masonry;
+  grid-template-columns: masonry;
   margin-bottom: 10px;
   break-inside: avoid;
+  transition: all .5s ease-in-out;
 }
 
 figure>img {
@@ -84,7 +87,6 @@ figcaption {
 }
 
 figure:hover {
-  opacity: 1;
-  transform: translateY(-100%);
+  transform: scale(110%);
 }
 </style>

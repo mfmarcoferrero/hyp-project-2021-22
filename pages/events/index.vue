@@ -3,7 +3,8 @@
   <div class="row m-5">
   <h1 style="text-align: center">What's up in Amsterdam?</h1>
   </div>
-      <card-list :list="eventList" />
+      <card-list :list="eventList"
+                 :categories="seasons" />
   </div>
 </template>
 
@@ -18,7 +19,7 @@ export default {
   },
   data() {
     return {
-
+      seasons : ["all", "winter", "spring", "summer", "fall"]
     }
   },
     async asyncData({ $axios }) {

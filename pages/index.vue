@@ -4,23 +4,32 @@
       <carousel :detailList="carouselList" scrollTo="#guide-to-the-city" />
     </div>
 
-    <!--Horizontal slider for cards -->
-    <section id="guide-to-the-city">
-      <h1 class="text-center mt-3">Guide to the City</h1>
+    
 
-      <div class="container-fluid">
-        <div class="scrolling-wrapper row flex-row flex-nowrap gx-5 mt-2 pt-2 pb-2">
-
-          <div v-for="(item, itemIndex) of categoriesList" :key="`data-index-${itemIndex}`" class="col">
-            <hover-card :id="item.id" :name="item.name" :img="item.img" :description="item.description" :path="item.name" />
-          </div>
-
+    <div class="container-fluid">
+      <hr />
+      <h1 class="text-center m-3">Guide to the City</h1>
+      <div class="row flex-row mt-2 pt-2 pb-2">
+        <div
+          v-for="(item, itemIndex) of categoriesList"
+          :key="`data-index-${itemIndex}`"
+          class="col"
+        >
+          <hover-card
+            :id="item.id"
+            :name="item.name"
+            :img="item.img"
+            :description="item.description"
+            :path="item.name"
+          />
         </div>
+        <hr />
+        <h1 class="text-center m-3">Pictures of City's life</h1>
+        <masonry :photoList="carouselList" path="placeholder" />
       </div>
-    </section>
+    </div>
 
-    <hr>
-
+    <hr />
   </div>
 </template>
 
@@ -28,13 +37,15 @@
 import Carousel from '@/components/Carousel.vue'
 import Card from '@/components/Card.vue'
 import HoverCard from '@/components/HoverCard.vue'
+import Masonry from '@/components/Masonry.vue'
 
 export default {
   components: {
     Carousel,
     Card,
     HoverCard,
-    Carousel
+    Carousel,
+    Masonry
   },
   layout: 'nocrumbs',
   name: 'IndexPage',
@@ -53,10 +64,10 @@ export default {
     }
     return {
       carouselList: carousel,
-      categoriesList: categories, 
-      path: "attractions"
+      categoriesList: categories,
+      path: 'attractions',
     }
-  }
+  },
 }
 </script>
 
@@ -73,7 +84,7 @@ export default {
 .zoom {
   padding: 50px;
   background-color: rgb(109, 151, 109);
-  transition: transform .2s;
+  transition: transform 0.2s;
   width: 200px;
   height: 200px;
   margin: 0 auto;

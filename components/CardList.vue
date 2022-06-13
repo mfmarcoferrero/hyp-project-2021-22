@@ -6,7 +6,7 @@
           <button class="nav-link" :class="index === 0 ? 'active' : null" :id="`${item}-tab`" data-bs-toggle="pill"
             :data-bs-target="`#${item}`" type="button" role="tab" :aria-controls="item" :aria-selected="index === 0"
             @click="item === 'all' ? (selected = '') : (selected = item)">
-            {{ item }}
+             {{ swapDashesAndCapitalize(item) }}
           </button>
         </li>
       </ul>
@@ -40,11 +40,14 @@ export default {
       type: Array,
       required: true,
     },
+    categories: {
+      type: String,
+      required: true,
+    }
   },
   data() {
     return {
-      selected: '',
-      categories: ['all', 'winter', 'spring', 'summer', 'fall'],
+      selected: ''
     }
   },
   computed: {
