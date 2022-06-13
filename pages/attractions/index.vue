@@ -1,9 +1,22 @@
 <template>
-  <div class="page-container mt-5">
-    <h1 class="text-center">Attractions page</h1>
+  <div class="wrapper page-container">
+    <img src="https://s8.gifyu.com/images/attractions-1.jpg" alt="no image" class="main-img">
 
     <div class="container">
+      <div class="row m-5">
+        <div class="col">
+          <card name="Guided Tours" :img="img" path="/itineraries" />
+        </div>
+        <div class="col">
+          <card name="Amsterdam Areas" :img="img" path="/neighbourhoods" />
+        </div>
+        <div class="col">
+          <card name="Buy Tickets" :img="img" path="#tickets-info" />
+        </div>
+      </div>
+    </div>
 
+    <div class="container">
       <h2 class="second-title vl m-5"> Most visited attractions </h2>
 
       <div class="row m-3">
@@ -29,22 +42,46 @@
 
     </div>
 
+    <div class="container">
+      <h2 class="second-title vl m-5"> Art and cutural </h2>
+
+      <div class="row m-3">
+        <div class="col">
+          <card :name="name" :img="img"></card>
+        </div>
+
+        <div class="col">
+          <div class="row m-3">
+            <div class="col">
+              <card :name="name" :img="img"></card>
+            </div>
+            <div class="col">
+              <card :name="name" :img="img"></card>
+            </div>
+          </div>
+
+          <div class="row m-3">
+            <div class="col">
+              <card :name="name" :img="img"></card>
+            </div>
+            <div class="col">
+              <card :name="name" :img="img"></card>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
     <hr class="m-5">
 
     <div class="container">
-      <h2 class="second-title vl ms-5"> Best cultural attractions </h2>
+      <h2 class="second-title vl ms-5"> Tickets for attractions and activities </h2>
     </div>
 
-    <section id="card-carousel">
+    <section id="tickets-info">
       <card-carousel :detailMatrix="generateMatrixFromArray(poiList, 4)"> </card-carousel>
     </section>
-
-    <hr class="m-5">
-
-    <div class="row justify-content-center">
-      <overlay-card v-for="(poi, poiIndex) of poiList" class="col-lg-11 m-3" :key="`poi-index-${poiIndex}`"
-        :name="poi.name" :img="poi.img" :description="poi.description" path="attractions" />
-    </div>
 
   </div>
 </template>
@@ -92,5 +129,11 @@ export default {
 
 .vl {
   border-left: 6px solid red;
+}
+
+.main-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
 }
 </style>

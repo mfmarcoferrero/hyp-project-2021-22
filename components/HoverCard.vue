@@ -5,7 +5,7 @@
       <div class="info">
         <h1>{{ swapUnderscoresWithSpaces(name) }}</h1>
         <p>{{ description }}</p>
-        <nuxt-link :to="`/${path}/` + filtered"><button>Read more</button></nuxt-link>
+        <nuxt-link :to="`/${path}`"><button>Read more</button></nuxt-link>
       </div>
     </div>
   </div>

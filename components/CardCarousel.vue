@@ -6,7 +6,8 @@
                 <div class="container pt-5">
                     <div class="row row-cols-1 row-cols-md-4 g-4">
                         <div v-for="(detail,detailIndex) of detailMatrix[slideIndex-1]" :key="detailIndex" class="col">
-                            <div class="card shadow">
+                            <card :img="detail.img" :description="detail.description" :name="detail.name" :path="detail.path"></card>
+                            <!--div class="card shadow">
                                 <img :src="detail.img" class="card-img-top" alt="No image">
                                 <div class="card-body">
                                     <h5 class="card-title">Individual</h5>
@@ -15,7 +16,7 @@
                                         you need without waste.</p>
                                     <a href="#" class="btn btn-success">Buy</a>
                                 </div>
-                            </div>
+                            </div-->
                         </div>
                     </div>
                 </div>
@@ -39,6 +40,7 @@
 // needs a matrix in which details are divided into lists
 // I'll use a function defined in mixins to convert a list into a matrix with lists of n(num cards) elements
 import CommonMixin from '~/mixins/common';
+import Card from '@/components/Card.vue'
 export default {
     mixins: [CommonMixin],
     name: 'CardCarousel',
