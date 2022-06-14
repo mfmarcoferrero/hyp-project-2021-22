@@ -10,6 +10,7 @@
       <hr />
       <h1 class="text-center m-3">Guide to the City</h1>
       <div class="row flex-row mt-2 pt-2 pb-2">
+        <div class="card-container">
         <div
           v-for="(item, itemIndex) of categoriesList"
           :key="`data-index-${itemIndex}`"
@@ -22,6 +23,7 @@
             :description="item.description"
             :path="item.name"
           />
+        </div>
         </div>
         <hr />
         <h1 class="text-center m-3">Pictures of City's life</h1>
@@ -113,4 +115,19 @@ export default {
 .col-sm-auto {
   overflow: visible;
 }
+
+/* Home page responsiveness */
+
+@media only screen and (min-width: 1024px) {
+  .card-container {
+    column-count: 4;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 540px) {
+  .card-container {
+    column-count: 2;
+  }
+}
+
 </style>
