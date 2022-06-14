@@ -4,7 +4,7 @@
     <div class="container mb-5">
       <div class="row">
         <div class="col">
-          <h1 class="title">{{ swapUnderscoresWithSpaces(name) }}</h1>
+          <h1 class="title">{{ swapDashesAndCapitalize(name) }}</h1>
           <p>{{ description }}</p>
         </div>
         <div class="col">
@@ -47,6 +47,7 @@
 </style>
 
 <script>
+import CommonMixin from '@/mixins/common.js'
 import GoogleMap from '@/components/Map.vue'
 export default {
 
@@ -54,10 +55,10 @@ export default {
   components: {
     GoogleMap,
   },
-  //mixins: [CommonMixin],
+  mixins: [CommonMixin],
 
   //Important for the SEO
-  // head() {
+  //head() {
   //   return {
   //     title: this.name
   //   }
@@ -80,12 +81,8 @@ export default {
   methods: {
     backToList() {
       this.$router.push('/attractions')
-    },
-    swapUnderscoresWithSpaces(string) {
-      return string.replace(/_/g, " ");
     }
   },
-
   params: {
     id: {
       type: Number,

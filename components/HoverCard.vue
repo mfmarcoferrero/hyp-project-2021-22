@@ -35,16 +35,6 @@ export default {
       required: true
     }
   },
-  methods: {
-  },
-  computed: {
-    filtered() {
-      var str
-      if (this.path.toLowerCase() === this.name.toLowerCase()) str = ''
-      else str = this.name
-      return str
-    }
-  }
 }
 </script>
 

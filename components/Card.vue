@@ -4,7 +4,8 @@
     <div class="card-body">
       <h5 class="card-title">{{ swapUnderscoresWithSpaces(name) }}</h5>
       <p class="card-text">{{ description }}</p>
-      <nuxt-link :to="{ path: `/${path}/${name}` }" class="link-dark"> Read more
+      <nuxt-link :to="`/${path}`" class="btn btn-primary">
+        Go to {{ name }}
       </nuxt-link>
     </div>
   </div>
@@ -26,9 +27,11 @@ export default {
     },
     description: {
       type: String,
+      required: true,
     },
     path: {
       type: String,
+      required: true
     }
   },
 }
