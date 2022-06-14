@@ -37,13 +37,7 @@
 </template>
 
 <style scoped>
-/*.poi-img {
-  width: 700px;
-  object-fit: cover;
-}*/
-.map-container {
-  height: 300px;
-}
+
 </style>
 
 <script>
@@ -73,21 +67,10 @@ export default {
     }
   },
 
-  // mounted(){
-  //   const date = new Date()
-  //   // Example on how to use mixinx
-  //   console.log(this.formatMyDate(date.toLocaleDateString()))
-  // },
   methods: {
     backToList() {
       this.$router.push('/attractions')
     }
   },
-  params: {
-    id: {
-      type: Number,
-      required: true,
-    }
-  }
 }
 </script>

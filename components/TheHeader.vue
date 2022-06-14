@@ -37,21 +37,12 @@
 
 .bg-dam {
   background-color: rgb(253, 0, 13, 255);
-  opacity: 0.9;
-}
-
-.bg-dam:hover {
-  opacity: 1;
 }
 
 .navbar-brand {
   transform: translateX(-50%);
   left: 50%;
   position: absolute;
-}
-
-.nuxt-link-active {
-    font-weight: bold;
 }
 
 </style>

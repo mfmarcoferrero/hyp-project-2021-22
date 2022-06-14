@@ -1,13 +1,10 @@
 <template>
-  <div class="card" style="width: 100%;">
-    <img class="card-img-top" :src="img" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{ swapUnderscoresWithSpaces(name) }}</h5>
-      <p class="card-text">{{ description }}</p>
-      <nuxt-link :to="`/${path}`" class="btn btn-primary">
-        Go to {{ name }}
-      </nuxt-link>
-    </div>
+  <div class="card" @click="goTo(path)">
+      <img class="card-img-top" :src="img" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ swapDashesAndCapitalize(name) }}</h5>
+        <p class="card-text">{{ description }}</p>
+      </div>
   </div>
 </template>
  
@@ -31,9 +28,14 @@ export default {
     },
     path: {
       type: String,
-      required: true
+      //required: true
     }
   },
+  methods: {
+    goTo(path){
+      this.$router.push(path);
+    },
+  }
 }
 </script>
  
@@ -45,12 +47,13 @@ export default {
 }
 
 .card {
+  width: 100%;
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .card:hover {
-  box-shadow: 5px 6px 6px 2px #e9ecef;
-  transform: scale(1.03);
+  box-shadow: 6px 6px 6px 6px #e9ecef;
+  transform: scale(1.005);
 }
 </style>
