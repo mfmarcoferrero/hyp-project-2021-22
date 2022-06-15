@@ -7,11 +7,12 @@
 
 <script>
 export default {
-
   name: 'Map',
+
   data() {
     return {
-      link: process.env.MAPS_KEY,
+      //link: process.env.MAPS_KEY,
+      link: "https://www.google.com/maps/embed/v1/search?key=AIzaSyDh_I2tRIFiqGYfIZFTzxZyiqCW6B0K-mo&q="
     }
   },
   props: {
@@ -19,11 +20,8 @@ export default {
       type: String,
       required: true
     }
-  },
+  }
 
-  mounted() {
-
-  },
 };
 
 </script>
