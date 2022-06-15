@@ -7,7 +7,6 @@
           :id="item.id" :name="item.name" :img="item.img" :description="item.description"
           :path="'services/' + item.name" />
       </div>
-
     </div>
   </div>
 </template>

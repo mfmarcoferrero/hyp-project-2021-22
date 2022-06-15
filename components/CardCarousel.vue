@@ -6,17 +6,7 @@
                 <div class="container pt-5">
                     <div class="row row-cols-1 row-cols-md-4 g-4">
                         <div v-for="(detail,detailIndex) of detailMatrix[slideIndex-1]" :key="detailIndex" class="col">
-                            <card :img="detail.img" :description="detail.description" :name="detail.name" :path="detail.path"></card>
-                            <!--div class="card shadow">
-                                <img :src="detail.img" class="card-img-top" alt="No image">
-                                <div class="card-body">
-                                    <h5 class="card-title">Individual</h5>
-                                    <p class="card-text">The perfect plan for just you. Get all the fresh fruit and
-                                        vegatables
-                                        you need without waste.</p>
-                                    <a href="#" class="btn btn-success">Buy</a>
-                                </div>
-                            </div-->
+                            <card :img="detail.img" :description="detail.description" :name="detail.name" :path="detail.name"></card>
                         </div>
                     </div>
                 </div>
