@@ -7,7 +7,7 @@ app.use(express.json())
 const database = new Sequelize(process.env.DATABASE_URL)
 
 
-// Production (use this code when deploying to production in Heroku)
+//Production (use this code when deploying to production in Heroku)
 // const pg = require('pg')
 // pg.defaults.ssl = true
 // const database = new Sequelize(process.env.DATABASE_URL, {

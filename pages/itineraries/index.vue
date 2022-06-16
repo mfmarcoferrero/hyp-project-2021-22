@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper page-container mt-5">
     <h1 class="text-center mt-4">Itineraries page</h1>
     <div v-for="(itinerary, index) of itinerariesDetails"
          :key="`itinerary-index-${index}`">

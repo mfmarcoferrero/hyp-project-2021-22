@@ -1,29 +1,54 @@
 <template>
-  <div class="page-container mt-5">
-    <h1 class="text-center">Attractions page</h1>
+  <div class="wrapper page-container">
+    <cover-image img="https://s8.gifyu.com/images/attractions-1.jpg" title="Things to do"></cover-image>
 
     <div class="container">
-
-      <h2 class="second-title vl m-5"> Most visited attractions </h2>
-
-      <div class="row m-3">
+      <div class="row m-5">
         <div class="col">
-          <card :name="name" :img="img"></card>
+          <topic-card title="Guided Tours" img="https://s8.gifyu.com/images/adrien-olichon-QRtym77B6xk-unsplash.jpg"
+            path="/itineraries" />
         </div>
         <div class="col">
-          <card :name="name" :img="img"></card>
+          <topic-card title="Amsterdam Areas"
+            img="https://s8.gifyu.com/images/GettyImages-659083249-5912430d3df78c92830e4eaa.jpg"
+            path="/neighbourhoods" />
+        </div>
+        <div class="col">
+          <topic-card title="Buy Tickets" img="https://s8.gifyu.com/images/Rijkmuseum-1.jpg" path="#tickets-info" />
+        </div>
+      </div>
+    </div>
+
+    <hr class="m-5">
+
+    <div class="container">
+      <h2 class="second-title vl ms-5 mt-5 mb-4"> Most visited attractions </h2>
+      <p class="mb-5">There’s more to Amsterdam than just the storybook charm of its Golden Age architecture and quaint
+        canals. This
+        pocket-size city likes to think big. Its acclaimed museums hold the world’s largest collection of Van Goghs
+        along with impressive Rembrandts, Vermeers, and modern masters. While its eco-friendly attitude and proud
+        history of embracing diversity has long attracted international attention. With so much going for it, we’ve made
+        it easier for you by sharing our top picks. From the Rijksmuseum’s homegrown collection to Anne Frank’s
+        heart-rending house, discover the best the city has to offer. And don’t forget to soak up some gezellig, the
+        Dutch concept of coziness, at any number of bruin cafés. </p>
+      <div class="row m-3">
+        <div class="col">
+          <card :name="poiList[0].name" :img="poiList[0].img" :description="poiList[0].description" :path="'/attractions/'+poiList[0].name"></card>
+        </div>
+        <div class="col">
+          <card :name="poiList[1].name" :img="poiList[1].img" :description="poiList[1].description" :path="'/attractions/'+poiList[1].name"></card>
         </div>
       </div>
 
       <div class="row m-3">
         <div class="col">
-          <card :name="name" :img="img"></card>
+          <card :name="poiList[2].name" :img="poiList[2].img" :description="poiList[2].description" :path="'/attractions/'+poiList[2].name"></card>
         </div>
         <div class="col">
-          <card :name="name" :img="img"></card>
+          <card :name="poiList[3].name" :img="poiList[3].img" :description="poiList[3].description" :path="'/attractions/'+poiList[3].name"></card>
         </div>
         <div class="col">
-          <card :name="name" :img="img"></card>
+          <card :name="poiList[4].name" :img="poiList[4].img" :description="poiList[4].description" :path="'/attractions/'+poiList[4].name"></card>
         </div>
       </div>
 
@@ -32,19 +57,45 @@
     <hr class="m-5">
 
     <div class="container">
-      <h2 class="second-title vl ms-5"> Best cultural attractions </h2>
+      <h2 class="second-title vl ms-5 mt-5 mb-4"> Art and cutural </h2>
+      <p class="mb-5">Amsterdam is one of the most popular cities in Europe and a hotbed for Dutch and international art
+        and culture. In addition to being one of Europe’s greenest cities and famed for its canal networks which earn
+        the city the nickname ‘Venice of the North’, there is an abundance of art and culture in Amsterdam. From
+        galleries displaying world famous art, to an exciting music, film and theatre scene, the Dutch capital has a
+        little bit of everything. Continue reading for our list below outlining eight things to see in Amsterdam that
+        showcase the best of Dutch and international art and culture. For business travellers visiting The Netherlands
+        and keen on exploring Amsterdam, these attractions are certainly worth visiting.</p>
+
+      <div class="row m-3">
+        <div class="col-sm-6">
+          <card :name="poiList[0].name" :img="poiList[0].img" :description="poiList[0].description" :path="'/attractions/'+poiList[0].name"></card>
+        </div>
+        <div class="col-sm-3">
+          <card :name="poiList[1].name" :img="poiList[1].img" :description="poiList[1].description" :path="'/attractions/'+poiList[1].name"></card>
+        </div>
+        <div class="col-sm-3">
+          <card :name="poiList[2].name" :img="poiList[2].img" :description="poiList[2].description" :path="'/attractions/'+poiList[2].name"></card>
+        </div>
+      </div>
+      <div class="row m-3">
+        <div class="col-sm-6">
+          <card :name="poiList[3].name" :img="poiList[3].img" :description="poiList[3].description" :path="'/attractions/'+poiList[3].name"></card>
+        </div>
+        <div class="col-sm-6">
+          <card :name="poiList[4].name" :img="poiList[4].img" :description="poiList[4].description" :path="'/attractions/'+poiList[4].name"></card>
+        </div>
+      </div>
     </div>
 
-    <section id="card-carousel">
+    <hr class="m-5">
+
+    <div class="container">
+      <h2 class="second-title vl ms-5"> Tickets for attractions and activities </h2>
+    </div>
+
+    <section id="tickets-info">
       <card-carousel :detailMatrix="generateMatrixFromArray(poiList, 4)"> </card-carousel>
     </section>
-
-    <hr class="m-5">
-
-    <div class="row justify-content-center">
-      <overlay-card v-for="(poi, poiIndex) of poiList" class="col-lg-11 m-3" :key="`poi-index-${poiIndex}`"
-        :name="poi.name" :img="poi.img" :description="poi.description" path="attractions" />
-    </div>
 
   </div>
 </template>
@@ -54,6 +105,7 @@ import CommonMixin from '~/mixins/common';
 import OverlayCard from '~/components/OverlayCard.vue';
 import Card from '~/components/Card.vue';
 import CardCarousel from '~/components/CardCarousel.vue';
+import CoverImage from '~/components/CoverImage.vue';
 
 export default {
   name: 'AttractionsPage',
@@ -62,7 +114,8 @@ export default {
   components: {
     OverlayCard,
     Card,
-    CardCarousel
+    CardCarousel,
+    CoverImage
   },
   data() {
     return {
@@ -92,5 +145,11 @@ export default {
 
 .vl {
   border-left: 6px solid red;
+}
+
+.main-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
 }
 </style>

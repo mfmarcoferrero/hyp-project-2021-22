@@ -52,37 +52,27 @@ export default async (models) => {
 
     const poiList = [
         {
-            name: "Rijksmuseum",
-            latitude: 45.464211,
-            longitude: 9.191383,
+            name: "rijksmuseum",
             description: "Details about Rijksmuseum",
             img: "https://s8.gifyu.com/images/Rijksmuseum.jpg",
         },
         {
-            name: "Van_Gogh_Museum",
-            latitude: 45.477849,
-            longitude: 9.156383,
+            name: "van-gogh-museum",
             description: "Details about Van Gogh museum",
             img: "https://s8.gifyu.com/images/frans-ruiter-jfPGunIH_9M-unsplash.jpg",
         },
         {
-            name: "Dam_Square",
-            latitude: 45.482500,
-            longitude: 9.191020,
+            name: "dam-square",
             description: "Details about Dam Square",
             img: "https://s8.gifyu.com/images/amsterdam_09_piazza_dam_jpg_1200_630_cover_85.jpg",
         },
         {
-            name: "Anne_Frank_House",
-            latitude: 45.477849,
-            longitude: 9.156383,
+            name: "anne-frank-house",
             description: "Details about Anne Frank house",
             img: "https://s8.gifyu.com/images/AF-house-1.jpg",
         },
         {
-            name: "Vondelpark",
-            latitude: 45.477849,
-            longitude: 9.156383,
+            name: "vondelpark",
             description: "Details about Vondelpark",
             img: "https://s8.gifyu.com/images/28280-Vondelpark.jpg",
         },

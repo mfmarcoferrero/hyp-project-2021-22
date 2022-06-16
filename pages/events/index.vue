@@ -11,7 +11,7 @@
 import Map from '@/components/Map.vue'
 import CardList from '@/components/CardList.vue'
 export default {
-  
+
   components: {
     Map,
     CardList,
@@ -21,7 +21,7 @@ export default {
 
     }
   },
-    async asyncData({ $axios }) {
+  async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/events')
     return {
       eventList: data,
@@ -32,5 +32,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
