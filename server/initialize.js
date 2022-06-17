@@ -247,26 +247,26 @@ export default async (models) => {
   const itineraryPOIList = [
     {
       itineraryName: "One-day itinerary",
-      pointofinterestName: "Rijksmuseum"
+      pointofinterestName: "rijksmuseum"
     },
     {
       itineraryName: "One-day itinerary",
-      pointofinterestName: "Van_Gogh_Museum"
+      pointofinterestName: "van-gogh-museum"
     },
     {
       itineraryName: "One-day itinerary",
-      pointofinterestName: "Dam_Square"
+      pointofinterestName: "dam-square"
     },
     {
       itineraryName: "One-day itinerary",
-      pointofinterestName: "Anne_Frank_House"
+      pointofinterestName: "anne-frank-house"
     },
   ]
-    await models.POI.bulkCreate(poiList),
-    await models.ServiceType.bulkCreate(serviceTypesList),
-    await models.Service.bulkCreate(serviceList),
-    await models.HomePageDetail.bulkCreate(homePageList),
-    await models.Itinerary.bulkCreate(itinerariesList),
-    await models.ItineraryPoi.bulkCreate(itineraryPOIList)
+    await models.POI.bulkCreate(poiList)
+    await models.ServiceType.bulkCreate(serviceTypesList)
+    await models.Service.bulkCreate(serviceList)
+    await models.HomePageDetail.bulkCreate(homePageList)
+    await models.Itinerary.bulkCreate(itinerariesList)
     await models.Event.bulkCreate(eventList)
+    await models.ItineraryPoi.bulkCreate(itineraryPOIList)
 }

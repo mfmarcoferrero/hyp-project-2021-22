@@ -54,8 +54,7 @@ async function initializeDatabaseConnection() {
       primaryKey:true
     },
     description: DataTypes.STRING(10000),
-    breed: DataTypes.STRING,
-    img: DataTypes.STRING,
+    img: DataTypes.STRING
   })
   const ServiceType = database.define("serviceType", {
     name:{
