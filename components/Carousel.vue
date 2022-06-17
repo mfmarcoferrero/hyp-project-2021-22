@@ -45,18 +45,8 @@ export default {
     return {
       carouselClass: 'carousel-item',
       activeClass: 'active',
-      slide: 0,
-      sliding: null,
     }
-  },
-  methods: {
-    onSlideStart(slide) {
-      this.sliding = true
-    },
-    onSlideEnd(slide) {
-      this.sliding = false
-    },
-  },
+  }
 }
 </script> 
 
