@@ -40,6 +40,7 @@ async function initializeDatabaseConnection() {
     info: DataTypes.STRING(1000),
     timetable: DataTypes.STRING(1000),
     category: DataTypes.STRING,
+    link: DataTypes.STRING
   })
   const Event = database.define("event", {
     name: {
@@ -145,34 +146,6 @@ async function runMainApi() {
     return res.json(result)
   })
 
-  app.get("/home-page-details", async (req, res) => {
-    const result = await models.HomePageDetail.findAll()
-    const filtered = []
-    for (const element of result) {
-      filtered.push({
-        id: element.id,
-        name: element.name,
-        img: element.img,
-        description: element.description,
-        section: element.section,
-        path: element.path
-      })
-    }
-    return res.json(filtered)
-  })
-  app.get("/city-details", async (req, res) => {
-    const result = await models.POI.findAll()
-    const filtered = []
-    for (const element of result) {
-      filtered.push({
-        name: element.name,
-        img: element.img,
-        description: element.description,
-      })
-    }
-    return res.json(filtered)
-  })
-
   app.get("/itineraries", async (req, res) => {
     const result = await models.Itinerary.findAll()
     const filtered = []
@@ -218,6 +191,60 @@ async function runMainApi() {
     const result = await models.ItineraryPoi.findOne({ where: { itinerary: name } })
     return res.json(result)
   })
+
+  //-----------------------------------------------------------------------------------------
+  //-----------------------------------------------------------------------------------------
+  //                                PAGE DETAILS
+  //-----------------------------------------------------------------------------------------
+  //-----------------------------------------------------------------------------------------
+
+  app.get("/home-page-details", async (req, res) => {
+    const result = await models.HomePageDetail.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+        img: element.img,
+        description: element.description,
+        section: element.section,
+        path: element.path
+      })
+    }
+    return res.json(filtered)
+  })
+
+  app.get("/attractions-page-details", async (req, res) => {
+    const result = await models.POI.findAll()
+    const filtered = []
+    for (const element of result) {
+      if (element.category === "top" || element.category === "museum" || element.link != null) {
+        filtered.push({
+          name: element.name,
+          img: element.img,
+          shortDescription: element.shortDescription,
+          category: element.category,
+          link: element.link
+        })
+      }
+    }
+    return res.json(filtered)
+  })
+
+  app.get("/city-details", async (req, res) => {
+    const result = await models.POI.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        img: element.img,
+        description: element.description,
+      })
+    }
+    return res.json(filtered)
+  })
+
+  
 }
 
 runMainApi()

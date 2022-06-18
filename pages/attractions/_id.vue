@@ -37,14 +37,13 @@
 </template>
 
 <style scoped>
-
 </style>
 
 <script>
 import CommonMixin from '@/mixins/common.js'
 import GoogleMap from '@/components/Map.vue'
 export default {
-
+  scrollToTop: true,
   name: 'DetailsPage',
   components: {
     GoogleMap,
