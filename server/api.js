@@ -34,10 +34,13 @@ async function initializeDatabaseConnection() {
       type: DataTypes.STRING,
       primaryKey: true
     },
-    latitude: DataTypes.FLOAT,
-    longitude: DataTypes.FLOAT,
+    shortDescription: DataTypes.STRING(10000),
     description: DataTypes.STRING(10000),
     img: DataTypes.STRING,
+    info: DataTypes.STRING(1000),
+    timetable: DataTypes.STRING(1000),
+    category: DataTypes.STRING,
+    link: DataTypes.STRING
   })
   const Event = database.define("event", {
     name: {
@@ -54,8 +57,7 @@ async function initializeDatabaseConnection() {
       primaryKey: true
     },
     description: DataTypes.STRING(10000),
-    breed: DataTypes.STRING,
-    img: DataTypes.STRING,
+    img: DataTypes.STRING
   })
   const ServiceType = database.define("serviceType", {
     name: {
@@ -103,8 +105,8 @@ async function runMainApi() {
       filtered.push({
         name: element.name,
         img: element.img,
+        shortDescription: element.shortDescription,
         description: element.description,
-        id: element.id,
       })
     }
     return res.json(filtered)
@@ -141,34 +143,6 @@ async function runMainApi() {
     const typename = req.params.typename
     const result = await models.Service.findAll({ where: { type: typename } })
     return res.json(result)
-  })
-
-  app.get("/home-page-details", async (req, res) => {
-    const result = await models.HomePageDetail.findAll()
-    const filtered = []
-    for (const element of result) {
-      filtered.push({
-        id: element.id,
-        name: element.name,
-        img: element.img,
-        description: element.description,
-        section: element.section,
-        path: element.path
-      })
-    }
-    return res.json(filtered)
-  })
-  app.get("/city-details", async (req, res) => {
-    const result = await models.POI.findAll()
-    const filtered = []
-    for (const element of result) {
-      filtered.push({
-        name: element.name,
-        img: element.img,
-        description: element.description,
-      })
-    }
-    return res.json(filtered)
   })
 
   app.get("/itineraries", async (req, res) => {
@@ -213,9 +187,63 @@ async function runMainApi() {
 
   app.get('/poisOfItinerary/:name', async (req, res) => {
     const name = req.params.name
-    const result = await models.ItineraryPoi.findOne({ where: { itinerary: name } })
+    const result = await models.ItineraryPoi.findAll({where: {itineraryName: name}})
     return res.json(result)
   })
+
+  //-----------------------------------------------------------------------------------------
+  //-----------------------------------------------------------------------------------------
+  //                                PAGE DETAILS
+  //-----------------------------------------------------------------------------------------
+  //-----------------------------------------------------------------------------------------
+
+  app.get("/home-page-details", async (req, res) => {
+    const result = await models.HomePageDetail.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+        img: element.img,
+        description: element.description,
+        section: element.section,
+        path: element.path
+      })
+    }
+    return res.json(filtered)
+  })
+
+  app.get("/attractions-page-details", async (req, res) => {
+    const result = await models.POI.findAll()
+    const filtered = []
+    for (const element of result) {
+      if (element.category === "top" || element.category === "museum" || element.link != null) {
+        filtered.push({
+          name: element.name,
+          img: element.img,
+          shortDescription: element.shortDescription,
+          category: element.category,
+          link: element.link
+        })
+      }
+    }
+    return res.json(filtered)
+  })
+
+  app.get("/city-details", async (req, res) => {
+    const result = await models.POI.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        img: element.img,
+        description: element.description,
+      })
+    }
+    return res.json(filtered)
+  })
+
+  
 }
 
 runMainApi()

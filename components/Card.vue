@@ -24,7 +24,7 @@ export default {
     },
     description: {
       type: String,
-      required: true,
+      //required: true,
     },
     path: {
       type: String,

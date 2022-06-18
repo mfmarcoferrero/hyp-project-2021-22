@@ -1,12 +1,12 @@
 <template>
-   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false">
         <div class="carousel-inner">
             <div v-for="slideIndex in detailMatrix.length" :key="slideIndex"
                 v-bind:class="[carouselClass, slideIndex == 1 ? activeClass : '']">
                 <div class="container pt-5">
-                    <div class="row row-cols-1 row-cols-md-4 g-4">
-                        <div v-for="(detail,detailIndex) of detailMatrix[slideIndex-1]" :key="detailIndex" class="col">
-                            <card :img="detail.img" :description="detail.description" :name="detail.name" :path="detail.name"></card>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                        <div v-for="(detail,detailIndex) of detailMatrix[slideIndex-1]" :key="detailIndex" class="col-sm">
+                            <card :img="detail.img" :name="detail.name" :path="'attractions/'+ detail.name"></card>
                         </div>
                     </div>
                 </div>
@@ -38,22 +38,15 @@ export default {
         return {
             carouselClass: 'carousel-item',
             activeClass: 'active',
-            slide: 0,
-            sliding: null,
         }
     },
     props: {
         detailMatrix: {
             type: Array
+        },
+        path: {
+            type: String
         }
-    },
-    methods: {
-        onSlideStart(slide) {
-            this.sliding = true
-        },
-        onSlideEnd(slide) {
-            this.sliding = false
-        },
     },
 }
 </script>
