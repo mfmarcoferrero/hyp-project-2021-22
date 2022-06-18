@@ -121,7 +121,7 @@ export default async (models) => {
             link: "https://www.rijksmuseum.nl/en/tickets/articles"
         },
         {
-            name: "Van Gogh museum",
+            name: "Van Gogh Museum",
             shortDescription: "The Van Gogh Museum specialises in works by Vincent Van Gogh. Museum housing the world's largest collection of Van Gogh paintings, alongside drawings & letters",
             description: "The Van Gogh Museum is a Dutch art museum dedicated to the works of Vincent van Gogh and his contemporaries in the Museum Square in Amsterdam South, close to the Stedelijk Museum, the Rijksmuseum, and the Concertgebouw. The museum opened on 2 June 1973, and its buildings were designed by Gerrit Rietveld and Kisho Kurokawa. The museum contains the largest collection of Van Gogh's paintings and drawings in the world. In 2017, the museum had 2.3 million visitors and was the most-visited museum in the Netherlands, and the 23rd-most-visited art museum in the world. In 2019, the Van Gogh Museum launched the Meet Vincent Van Gogh Experience, a technology-driven immersive exhibition on Van Gogh's life and works, which has toured globally.",
             img: "https://s8.gifyu.com/images/frans-ruiter-jfPGunIH_9M-unsplash.jpg",
@@ -216,7 +216,7 @@ export default async (models) => {
             category: "experience",
             link: "https://www.stedelijk.nl/en/visit"
         },
-        
+
         {
             name: "Hortus Botanicus Amsterdam",
             shortDescription: "",
@@ -253,7 +253,7 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "experience"
-        },   
+        },
         {
             name: "FOAM",
             shortDescription: "",
@@ -292,7 +292,25 @@ export default async (models) => {
             description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
             img: "https://s1.gifyu.com/images/duomo.jpg",
         }
+    ]
 
+    const itineraryPOIList = [
+        {
+            itineraryName: "One-day itinerary",
+            pointofinterestName: "Rijksmuseum"
+        },
+        {
+            itineraryName: "One-day itinerary",
+            pointofinterestName: "Van Gogh Museum"
+        },
+        {
+            itineraryName: "One-day itinerary",
+            pointofinterestName: "Dam square"
+        },
+        {
+            itineraryName: "One-day itinerary",
+            pointofinterestName: "Anne Frank house"
+        },
     ]
 
     //-----------------------------------------------------------------------------------------
@@ -449,11 +467,11 @@ export default async (models) => {
         },
     ]
 
-
-    await models.POI.bulkCreate(poiList),
-        await models.ServiceType.bulkCreate(serviceTypesList),
-        await models.Service.bulkCreate(serviceList),
-        await models.HomePageDetail.bulkCreate(homePageList),
-        await models.Itinerary.bulkCreate(itinerariesList),
-        await models.Event.bulkCreate(eventList)
+    await models.POI.bulkCreate(poiList)
+    await models.ServiceType.bulkCreate(serviceTypesList)
+    await models.Service.bulkCreate(serviceList)
+    await models.HomePageDetail.bulkCreate(homePageList)
+    await models.Itinerary.bulkCreate(itinerariesList)
+    await models.Event.bulkCreate(eventList)
+    await models.ItineraryPoi.bulkCreate(itineraryPOIList)
 }

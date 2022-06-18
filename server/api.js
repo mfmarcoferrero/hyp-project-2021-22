@@ -57,8 +57,7 @@ async function initializeDatabaseConnection() {
       primaryKey: true
     },
     description: DataTypes.STRING(10000),
-    breed: DataTypes.STRING,
-    img: DataTypes.STRING,
+    img: DataTypes.STRING
   })
   const ServiceType = database.define("serviceType", {
     name: {
@@ -188,7 +187,7 @@ async function runMainApi() {
 
   app.get('/poisOfItinerary/:name', async (req, res) => {
     const name = req.params.name
-    const result = await models.ItineraryPoi.findOne({ where: { itinerary: name } })
+    const result = await models.ItineraryPoi.findAll({where: {itineraryName: name}})
     return res.json(result)
   })
 
