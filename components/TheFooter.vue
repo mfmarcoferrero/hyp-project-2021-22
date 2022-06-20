@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer bg-dark">
+  <footer class="footer bg-header">
     <div class="footer-content">
       <!-- Company Icon -->
       <img class="logo" src="~/static/dam-logo.png" alt="VISIT-DAM" />
@@ -84,6 +84,7 @@ export default {
 }
 .icon-list {
   float: right;
+  margin-left: 10px;
 }
 /* Colored social icons on mouse hover */
 .mdi-twitter:hover {
@@ -98,6 +99,7 @@ export default {
 /* Footer logo layout */
 img.logo {
   height: 50px;
-  
+  border-radius: 10%;
+  margin: 10px;
 }
 </style>

@@ -5,6 +5,11 @@
   border-radius: 10%;
 }
 
+.bg-header {
+  background-color: #262626;
+  opacity: 0.95;
+}
+
 .bg-dam {
   background-color: rgb(253, 0, 13, 255);
   opacity: 1;
@@ -33,7 +38,7 @@
 /*--------------------------------------------------------*/
 /* Content containers */
 .layout-container {
-  margin-top: 56px;
+  margin-top: 80px;
 }
 .page-container {
   min-height: 90vh;

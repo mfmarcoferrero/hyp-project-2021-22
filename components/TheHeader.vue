@@ -31,9 +31,9 @@
 
 
 <template>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-header">
     <div class="container-fluid">
-      <nuxt-link class="navbar-brand position-absolute top-50 start-50 translate-middle" to="/">
+      <nuxt-link class="navbar-brand" to="/">
         <img class="logo-img p-1" src="@/static/dam-logo.png" alt="HOME">
       </nuxt-link>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
