@@ -21,7 +21,7 @@
 
     <hr class="m-5">
 
-    <div class="container">
+    <div class="container position-relative pb-5">
       <h2 class="second-title vl ms-5 mt-5 mb-4"> Most visited attractions </h2>
       <p class="m-4 p-2">There’s more to Amsterdam than just the storybook charm of its Golden Age architecture and
         quaint
@@ -57,7 +57,12 @@
             :path="'/attractions/' + topList[4].name"></card>
         </div>
       </div>
-
+      <nuxt-link to="attractions/list">
+        <button type="button"
+          class="btn btn-outline-secondary btn-lg px-4 position-absolute start-50 translate-middle mt-4">
+          Go to all the attractions
+        </button>
+      </nuxt-link>
     </div>
 
     <hr class="m-5">
@@ -146,8 +151,8 @@ export default {
         topList.push(item)
       } else if (item.category === 'museum') {
         artList.push(item)
-      } 
-      if (item.link != null){
+      }
+      if (item.link != null) {
         ticketList.push(item)
       }
     }
@@ -161,15 +166,5 @@ export default {
 </script>
 
 <style scoped>
-.wrapper {
-  overflow: hidden;
-  margin: 0 auto 100px auto;
-}
-.second-title {
-  padding-left: 10px;
-}
-.vl {
-  border-left: 6px solid rgb(253, 0, 13, 255);
-  ;
-}
+
 </style>

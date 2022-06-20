@@ -7,25 +7,25 @@ export default async (models) => {
     //-----------------------------------------------------------------------------------------
     const homePageList = [
         {
-            name: "Welcome to Amsterdam",
+            name: "",
             description: "",
             img: "https://s8.gifyu.com/images/homepage-dam.jpg",
             section: "carousel",
         },
         {
-            name: "CaruselImg1",
+            name: "",
             description: "",
             img: "https://s8.gifyu.com/images/GettyImages-659083249-5912430d3df78c92830e4eaa.jpg",
             section: "carousel",
         },
         {
-            name: "CaruselImg2",
+            name: "",
             description: "",
             img: "https://s8.gifyu.com/images/gaurav-jain-2K2SR19RLg8-unsplash.jpg",
             section: "carousel",
         },
         {
-            name: "CaruselImg3",
+            name: "",
             description: "",
             img: "https://s8.gifyu.com/images/tobias-kordt-2GaBftOdewQ-unsplash.jpg",
             section: "carousel",

@@ -5,9 +5,23 @@
 
 .bg-dam {
   background-color: rgb(253, 0, 13, 255);
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .bg-dam:hover {
   opacity: 1;
+}
+
+.second-title {
+  padding-left: 10px;
+}
+
+.vl {
+  border-left: 6px solid rgb(253, 0, 13, 255);
+  ;
+}
+
+.wrapper {
+  overflow: hidden;
+  margin: 0 auto 100px auto;
 }

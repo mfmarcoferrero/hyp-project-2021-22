@@ -1,25 +1,31 @@
 <template>
-  <div class="container-fluid wrapper">
-    <div>
+  <div>
+    <div class="container-carousel">
       <carousel :detailList="carouselList" scrollTo="#guide-to-the-city" />
+      <p class="fs-1 text-center fw-bold position-absolute top-50 start-50 translate-middle shadow-plg cover-title">
+            Welcome to Amsterdam </p>
     </div>
 
-    <!--Horizontal slider for cards -->
-    <section id="guide-to-the-city">
-      <h1 class="text-center mt-3">Guide to the City</h1>
+    <div class="container-fluid wrapper">
+      <!--Horizontal slider for cards -->
+      <section id="guide-to-the-city">
+        <h1 class="text-center mt-3">Guide to the City</h1>
 
-      <div class="container-fluid">
-        <div class="scrolling-wrapper row flex-row flex-nowrap gx-5 mt-2 pt-2 pb-2">
+        <div class="container-fluid">
+          <div class="scrolling-wrapper row flex-row flex-nowrap gx-5 mt-2 pt-2 pb-2">
 
-          <div v-for="(item, itemIndex) of categoriesList" :key="`data-index-${itemIndex}`" class="col">
-            <hover-card :id="item.id" :name="item.name" :img="item.img" :description="item.description" :path="item.name" />
+            <div v-for="(item, itemIndex) of categoriesList" :key="`data-index-${itemIndex}`" class="col">
+              <hover-card :id="item.id" :name="item.name" :img="item.img" :description="item.description"
+                :path="item.name" />
+            </div>
+
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <hr>
+      <hr>
+    </div>
+
 
   </div>
 </template>
@@ -53,7 +59,7 @@ export default {
     }
     return {
       carouselList: carousel,
-      categoriesList: categories, 
+      categoriesList: categories,
       path: "attractions"
     }
   }
@@ -102,4 +108,21 @@ export default {
 .col-sm-auto {
   overflow: visible;
 }
+
+/* Container holding the image and the text */
+.container-carousel {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.cover-title {
+    text-shadow: 0 0 16px rgba(0, 0, 0, .75);
+    /* font-size: 36px; */
+    /* font-weight: 900; */
+    /* line-height: 1.17; */
+    color: #fff;
+    /* width: 100%; */
+}
+
 </style>

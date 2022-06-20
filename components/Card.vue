@@ -29,10 +29,17 @@ export default {
     path: {
       type: String,
       //required: true
-    }
+    },
+    // goToPath: {
+    //   type: Boolean,
+    //   required: true
+    // } 
   },
   methods: {
     goTo(path){
+      // if(goToPath){
+      //   this.$router.push(path);
+      // }
       this.$router.push(path);
     },
   }

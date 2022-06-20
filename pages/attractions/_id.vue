@@ -68,7 +68,7 @@ export default {
 
   methods: {
     backToList() {
-      this.$router.push('/attractions')
+      this.$router.push('/attractions/list')
     }
   },
 }
