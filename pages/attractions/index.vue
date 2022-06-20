@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper page-container">
+  <div class="">
     <cover-image img="https://s8.gifyu.com/images/attractions-1.jpg" title="Things to do"></cover-image>
 
     <div class="container">
@@ -111,7 +111,7 @@
     </div>
 
     <section id="tickets-info">
-      <card-carousel :detailMatrix="generateMatrixFromArray(ticketList, 4)"> </card-carousel>
+      <card-carousel :detailMatrix="generateMatrixFromArray(ticketList, 4)" class="mb-5"> </card-carousel>
     </section>
 
   </div>

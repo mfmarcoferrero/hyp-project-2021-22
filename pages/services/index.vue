@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper page-container">
     <!-- v-for bootstrap cards taking elements from database -->
     <div class="page container-fluid">
       <div class="row mt-3 justify-content-md-center">

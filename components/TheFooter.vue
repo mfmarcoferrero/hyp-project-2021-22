@@ -1,29 +1,103 @@
 <template>
-<div class="wrap">
-  <!-- Footer -->
-  <footer class="footer bg-dam text-center text-white">
-    <!-- Copyright -->
-    <div class="text-center p-3">
-      © 2022 Copyright:
-      <a class="text-white" href="#">polimi</a> (Lo teniamo così piccolo o era meglio grosso?)
+  <footer class="footer bg-dark">
+    <div class="footer-content">
+      <!-- Company Icon -->
+      <img class="logo" src="~/static/dam-logo.png" alt="VISIT-DAM" />
+      <div class="footer-label">&copy; 2022 Visit DAM </div>
+
+      <!-- Social list -->
+      <div class="icon-list">
+        Follow us:
+        <div
+          v-for="(item, itemIndex) of socialList"
+          :key="'icon-item-' + itemIndex"
+          class="icon-item"
+        >
+          <a
+            :href="item.link"
+            target="_blank"
+            rel="noopener"
+            :aria-label="item.name"
+          >
+            <span :class="item.icon"></span>
+          </a>
+        </div>
+      </div>
     </div>
-    <!-- Copyright -->
   </footer>
-  <!-- Footer -->
-</div>
 </template>
 
-
 <script>
-//TODO: Use bootstrap-icons-vue to include social media icons in the footer
 export default {
-  name: 'TheFooter',
+  data() {
+    return {
+      socialList: [
+        {
+          name: 'Facebook',
+          icon: 'mdi mdi-facebook',
+          link: 'http://www.facebook.com/',
+        },
+        {
+          name: 'Twitter',
+          icon: 'mdi mdi-twitter',
+          link: 'http://www.twitter.com/',
+        },
+        {
+          name: 'Linkedin',
+          icon: 'mdi mdi-linkedin',
+          link: 'http://www.linkedin.com/',
+        },
+      ],
+    }
+  },
 }
 </script>
 
 <style scoped>
-.bg-dam{
-    background-color: black;
-    opacity: 0.8;
+/* Positioning and colors of the whole component */
+.footer {
+  width: 100vw;
+  /* background: rgba(229, 229, 229); */
+  height: 100px;
+  bottom: 0;
+}
+/* Foreground components black */
+.footer * {
+  color: white;
+}
+/* Main footer containers */
+.footer-content {
+  margin-left: 8vw;
+  width: 84vw;
+  height: inherit;
+  margin-right: 8vw;
+}
+.footer-label,
+.icon-list {
+  display: inline-flex;
+  align-items: center;
+  height: inherit;
+}
+.icon-item {
+  margin-left: 1.5vw;
+  font-size: 25px;
+}
+.icon-list {
+  float: right;
+}
+/* Colored social icons on mouse hover */
+.mdi-twitter:hover {
+  color: #00d9ff;
+}
+.mdi-facebook:hover {
+  color: #005eff;
+}
+.mdi-linkedin:hover {
+  color: #137ffa;
+}
+/* Footer logo layout */
+img.logo {
+  height: 50px;
+  
 }
 </style>

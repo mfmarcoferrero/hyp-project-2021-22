@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-container">
     <div class="container-carousel">
       <carousel :detailList="carouselList" scrollTo="#guide-to-the-city" />
       <p class="fs-1 text-center fw-bold position-absolute top-50 start-50 translate-middle shadow-plg cover-title">
@@ -25,8 +25,6 @@
 
       <hr>
     </div>
-
-
   </div>
 </template>
 

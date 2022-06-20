@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout-container bg-light">
     <the-header />
     <nuxt />
     <the-footer />

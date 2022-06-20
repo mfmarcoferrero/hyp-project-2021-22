@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout-container bg-light">
     <the-header />
     <breadcrumbs />
     <nuxt />
@@ -20,3 +20,14 @@ export default {
   },
 }
 </script>
+
+
+<style>
+/* Font family for the whole website */
+/* html {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  letter-spacing: 0.4px;
+} */
+
+</style>
