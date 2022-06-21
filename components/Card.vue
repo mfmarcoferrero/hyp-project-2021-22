@@ -12,6 +12,7 @@
 import CommonMixin from '~/mixins/common';
 export default {
   mixins: [CommonMixin],
+  scrollToTop: true,
   name: 'CardComponent',
   props: {
     name: {
@@ -29,10 +30,17 @@ export default {
     path: {
       type: String,
       //required: true
-    }
+    },
+    // goToPath: {
+    //   type: Boolean,
+    //   required: true
+    // } 
   },
   methods: {
     goTo(path){
+      // if(goToPath){
+      //   this.$router.push(path);
+      // }
       this.$router.push(path);
     },
   }

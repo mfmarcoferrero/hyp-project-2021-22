@@ -20,10 +20,7 @@ const database = new Sequelize(process.env.DATABASE_URL, {
 async function initializeDatabaseConnection() {
   await database.authenticate()
   const HomePageDetail = database.define("homePageDetail", {
-    name: {
-      type: DataTypes.STRING,
-      primaryKey: true
-    },
+    name: DataTypes.STRING,
     description: DataTypes.STRING(10000),
     img: DataTypes.STRING,
     section: DataTypes.STRING,
@@ -107,6 +104,7 @@ async function runMainApi() {
         img: element.img,
         shortDescription: element.shortDescription,
         description: element.description,
+        category: element.category
       })
     }
     return res.json(filtered)
@@ -187,7 +185,7 @@ async function runMainApi() {
 
   app.get('/poisOfItinerary/:name', async (req, res) => {
     const name = req.params.name
-    const result = await models.ItineraryPoi.findAll({where: {itineraryName: name}})
+    const result = await models.ItineraryPoi.findAll({ where: { itineraryName: name } })
     return res.json(result)
   })
 
@@ -243,7 +241,7 @@ async function runMainApi() {
     return res.json(filtered)
   })
 
-  
+
 }
 
 runMainApi()

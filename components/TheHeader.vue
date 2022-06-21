@@ -1,4 +1,4 @@
-<template>
+<!--template>
   <div>
     <div class="collapse" id="navbarToggleExternalContent">
       <div class="bg-dark p-4">
@@ -27,24 +27,72 @@
       </div>
     </nav>
   </div>
+</template-->
+
+
+<template>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-header">
+    <div class="container-fluid">
+      <nuxt-link class="navbar-brand" to="/">
+        <img class="logo-img p-1" src="@/static/dam-logo.png" alt="HOME">
+      </nuxt-link>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav nav-links mr-auto">
+          <li class="nav-item">
+            <nuxt-link class="nav-link active" aria-current="page" to="/attractions">Attractions</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link class="nav-link active" to="/itineraries">Itineraries</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link class="nav-link active" to="/events">Events</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link class="nav-link active" to="/services">Services</nuxt-link>
+          </li>
+        </ul>
+        <ul class="navbar-nav nav-links ms-auto">
+          <li class="nav-item">
+            <nuxt-link class="nav-link" to="/contacts">Contacts</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link class="nav-link" to="/about">About</nuxt-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </template>
 
+
 <style scoped>
-.logo-img {
-  height: 20px;
-  object-fit: cover;
-}
-
-.bg-dam {
-  background-color: rgb(253, 0, 13, 255);
-}
-
-.navbar-brand {
+/* .navbar-brand {
   transform: translateX(-50%);
   left: 50%;
   position: absolute;
+} */
+
+/* Styling Navigation Links*/
+
+.nav-links {
+  font-weight: 600;
 }
 
+.nav-link {
+  text-decoration: none;
+  /*Increasing transition time animation can be smoother*/
+  transition: all ease-in-out 400ms;
+}
+
+.nav-link:hover {
+  color: black !important;
+  background-color: #fff;
+  border-radius: 50px;
+}
 </style>
 
 <script>

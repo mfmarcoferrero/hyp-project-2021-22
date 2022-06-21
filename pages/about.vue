@@ -1,6 +1,6 @@
 <template>
   <!--custom-page :title="title" :image="image" :description="description" /-->
-  <div>
+  <div class="page-container">
     <h1>About Us !</h1>
   </div>
 </template>

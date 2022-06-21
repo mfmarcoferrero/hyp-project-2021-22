@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
+    <iframe :width="width" :height="height" style="border:0" loading="lazy" allowfullscreen
       referrerpolicy="no-referrer-when-downgrade" :src="link + query"></iframe>
   </div>
 </template>
@@ -19,6 +19,14 @@ export default {
     query: {
       type: String,
       required: true
+    },
+    width: {
+      type: String,
+      default: "100%"
+    },
+    height: {
+      type: String,
+      default: "100%"
     }
   }
 

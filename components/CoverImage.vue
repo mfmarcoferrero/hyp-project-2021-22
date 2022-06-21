@@ -1,8 +1,7 @@
 <template>
     <div class="container-cover">
         <img :src="img" alt="no image" class="cover-img">
-        <p
-            class="fs-1 text-center fw-bold position-absolute top-50 start-50 translate-middle shadow-plg cover-title">
+        <p class="fs-1 text-center fw-bold position-absolute top-50 start-50 translate-middle shadow-plg cover-title">
             {{ title }} </p>
     </div>
 </template>

@@ -37,9 +37,9 @@ export default {
 
       params.forEach((param, index) => {
         let regex = /\?id=[0-9]*/
-        param = param.replace( regex,'')
+        param = param.replace(regex, '')
         regex = /%20/g
-        param = param.replace(regex,' ')
+        param = param.replace(regex, ' ')
         path = `${path}/${param}`
         const match = this.$router.match(path)
 

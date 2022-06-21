@@ -33,6 +33,14 @@
         Back to attractions
       </button>
     </div>
+
+    <!-- You may also like content -->
+
+    <!--section id="other-attractions">
+      <h1> You may also like </h1>
+      <card-carousel></card-carousel>
+    </section-->
+
   </div>
 </template>
 
@@ -42,12 +50,14 @@
 <script>
 import CommonMixin from '@/mixins/common.js'
 import GoogleMap from '@/components/Map.vue'
+import CardCarousel from '~/components/CardCarousel.vue'
 export default {
   scrollToTop: true,
   name: 'DetailsPage',
   components: {
     GoogleMap,
-  },
+    CardCarousel
+},
   mixins: [CommonMixin],
 
   //Important for the SEO
@@ -68,7 +78,7 @@ export default {
 
   methods: {
     backToList() {
-      this.$router.push('/attractions')
+      this.$router.push('/attractions/list')
     }
   },
 }

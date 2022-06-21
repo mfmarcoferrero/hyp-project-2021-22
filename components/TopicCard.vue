@@ -1,6 +1,6 @@
 <template>
-    <div class="topic-card position-relative" style="width: 100%;" @click="goTo(path)">
-        <img class="topic-card-img" :src="img" alt="Card image cap">
+    <div class="topic-card position-relative" @click="goTo(path)">
+        <img class="topic-card-img" :style="'height:'+imgHeight+';'" :src="img" alt="Card image cap">
         <h2 class="text-center text-white fw-bold position-absolute top-50 start-50 translate-middle">{{
                 swapDashesAndCapitalize(title)
         }}</h2>
@@ -24,6 +24,10 @@ export default {
         path: {
             type: String,
             required: true
+        },
+        imgHeight: {
+            type: String,
+            default: "15vw"
         }
     },
     methods: {
@@ -45,7 +49,7 @@ export default {
 
 .topic-card-img {
     width: 100%;
-    height: 15vw;
+    /* height: 15vw; */
     object-fit: cover;
     filter: brightness(75%)
 }
