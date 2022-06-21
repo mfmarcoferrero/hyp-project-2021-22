@@ -12,6 +12,7 @@
 import CommonMixin from '~/mixins/common';
 export default {
   mixins: [CommonMixin],
+  scrollToTop: true,
   name: 'CardComponent',
   props: {
     name: {

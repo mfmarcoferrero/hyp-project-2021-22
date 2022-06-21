@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row m-5">
         <div class="col-md m-2">
-          <topic-card title="Guided Tours" img="https://s8.gifyu.com/images/adrien-olichon-QRtym77B6xk-unsplash.jpg"
+          <topic-card title="Attractions Tours" img="https://s8.gifyu.com/images/adrien-olichon-QRtym77B6xk-unsplash.jpg"
             path="/itineraries" />
         </div>
         <div class="col-md m-2">
@@ -125,6 +125,7 @@ import CardCarousel from '~/components/CardCarousel.vue';
 import CoverImage from '~/components/CoverImage.vue';
 
 export default {
+  scrollToTop: true,
   name: 'AttractionsPage',
   title: 'Attractions',
   mixins: [CommonMixin],

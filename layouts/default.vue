@@ -13,6 +13,7 @@ import TheFooter from '@/components/TheFooter.vue'
 import Breadcrumbs from '@/components/Breadcrumbs.vue'
 export default {
   name: 'DefaultLayout',
+  scrollToTop: true,
   components: {
     TheHeader,
     TheFooter,
@@ -29,5 +30,4 @@ export default {
   box-sizing: border-box;
   letter-spacing: 0.4px;
 } */
-
 </style>

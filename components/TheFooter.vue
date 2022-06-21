@@ -2,7 +2,7 @@
   <footer class="footer bg-header">
     <div class="footer-content">
       <!-- Company Icon -->
-      <img class="logo" src="~/static/dam-logo.png" alt="VISIT-DAM" />
+      <img class="logo" src="~/static/dam-logo-resize.png" alt="VISIT-DAM" />
       <div class="footer-label">&copy; 2022 Visit DAM </div>
 
       <!-- Social list -->
@@ -98,8 +98,8 @@ export default {
 }
 /* Footer logo layout */
 img.logo {
-  height: 50px;
-  border-radius: 10%;
+  width: 100px;
+  border-radius: 0%;
   margin: 10px;
 }
 </style>

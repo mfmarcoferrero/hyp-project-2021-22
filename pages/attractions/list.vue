@@ -58,6 +58,7 @@ export default {
     name: 'AttractionsPage',
     title: 'Attractions',
     mixins: [CommonMixin],
+    scrollToTop: true,
     components: {
         OverlayCard,
         Card,
