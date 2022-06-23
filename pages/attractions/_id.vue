@@ -4,7 +4,7 @@
     <div class="container mb-5">
       <div class="row">
         <div class="col">
-          <h1 class="title">{{ swapUnderscoresWithSpaces(name) }}</h1>
+          <h1 class="title">{{ swapDashesAndCapitalize(name) }}</h1>
           <p>{{ description }}</p>
         </div>
         <div class="col">
@@ -33,31 +33,35 @@
         Back to attractions
       </button>
     </div>
+
+    <!-- You may also like content -->
+
+    <!--section id="other-attractions">
+      <h1> You may also like </h1>
+      <card-carousel></card-carousel>
+    </section-->
+
   </div>
 </template>
 
 <style scoped>
-/*.poi-img {
-  width: 700px;
-  object-fit: cover;
-}*/
-.map-container {
-  height: 300px;
-}
 </style>
 
 <script>
+import CommonMixin from '@/mixins/common.js'
 import GoogleMap from '@/components/Map.vue'
+import CardCarousel from '~/components/CardCarousel.vue'
 export default {
-
+  scrollToTop: true,
   name: 'DetailsPage',
   components: {
     GoogleMap,
-  },
-  //mixins: [CommonMixin],
+    CardCarousel
+},
+  mixins: [CommonMixin],
 
   //Important for the SEO
-  // head() {
+  //head() {
   //   return {
   //     title: this.name
   //   }
@@ -72,25 +76,10 @@ export default {
     }
   },
 
-  // mounted(){
-  //   const date = new Date()
-  //   // Example on how to use mixinx
-  //   console.log(this.formatMyDate(date.toLocaleDateString()))
-  // },
   methods: {
     backToList() {
-      this.$router.push('/attractions')
-    },
-    swapUnderscoresWithSpaces(string) {
-      return string.replace(/_/g, " ");
+      this.$router.push('/attractions/list')
     }
   },
-
-  params: {
-    id: {
-      type: Number,
-      required: true,
-    }
-  }
 }
 </script>

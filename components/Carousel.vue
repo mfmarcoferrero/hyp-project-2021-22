@@ -3,7 +3,7 @@
     <div class="carousel-inner">
       <div v-for="(detail, detailIndex) of detailList" :key="`detail-index-${detailIndex}`"
         v-bind:class="[carouselClass, detailIndex == 0 ? activeClass : '']">
-        <img :src="detail.img" class="slide-img d-block" alt="second">
+        <img :src="detail.img" class="slide-img d-block" alt="image">
         <div class="carousel-caption d-none d-md-block position-absolute top-0">
           <h2>{{ swapUnderscoresWithSpaces(detail.name) }}</h2>
           <p>{{ detail.description }}</p>
@@ -45,18 +45,8 @@ export default {
     return {
       carouselClass: 'carousel-item',
       activeClass: 'active',
-      slide: 0,
-      sliding: null,
     }
-  },
-  methods: {
-    onSlideStart(slide) {
-      this.sliding = true
-    },
-    onSlideEnd(slide) {
-      this.sliding = false
-    },
-  },
+  }
 }
 </script> 
 

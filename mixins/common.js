@@ -14,7 +14,7 @@ export default {
         swapUnderscoresWithSpaces(string) {
             return string.replace(/_/g, " ");
         },
-        swapDashesAndCapitalize (string) {
+        swapDashesAndCapitalize(string) {
             string = string.replace(/-/g, " ");
             return string.charAt(0).toUpperCase() + string.slice(1);
         },

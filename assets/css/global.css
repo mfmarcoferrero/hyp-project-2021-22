@@ -1,8 +1,117 @@
-@font-face {
-    font-family: "Avenir";
-    src: local("Avenir"), url(~assets/Avenir/Avenir-Regular.ttf) format("truetype");
+.logo-img {
+  height: 56px;
+  width: 80px;
+  object-fit: cover;
+  border-radius: 10%;
 }
-@font-face {
-    font-family: "ArianaVioleta";
-    src: local("ArianaVioleta"), url(~assets/ArianaVioleta/ArianaVioleta.ttf) format("truetype");
+
+.bg-header {
+  background-color: #262626;
+  opacity: 0.95;
+}
+
+.bg-dam {
+  background-color: rgb(253, 0, 13, 255);
+  opacity: 1;
+}
+
+.bg-dam:hover {
+  opacity: 1;
+}
+
+.second-title {
+  padding-left: 10px;
+}
+
+.vl {
+  border-left: 6px solid rgb(253, 0, 13, 255);
+  ;
+}
+
+.wrapper {
+  overflow: hidden;
+  margin: 0 auto 100px auto;
+}
+
+
+/*--------------------------------------------------------*/
+/*--------------------------------------------------------*/
+/* Content containers */
+.layout-container {
+  margin-top: 80px;
+}
+
+.page-container {
+  min-height: 90vh;
+  margin-bottom: 50px;
+}
+
+.section-container {
+  display: flow-root;
+  margin-left: 8vw;
+  margin-right: 8vw;
+}
+
+/* Appearance of the main elements */
+/* a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: underline;
+} */
+.disabled-link {
+  cursor: initial;
+}
+
+hr {
+  border-top: #212121 solid 2px;
+}
+
+figure img {
+  border-radius: 20px;
+}
+
+address span {
+  font-size: 1.5em;
+}
+
+address a {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+/* ul {
+  padding-left: 20px;
+  list-style-type: square;
+}
+li {
+  margin-bottom: 20px;
+} */
+
+.error-messages {
+  text-align: center;
+  margin-top: 30vh;
+}
+
+/* Styling for centered buttons */
+.centered-button {
+  text-align: center;
+}
+
+/* Flow up animation for page opening */
+@keyframes flowUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0%, 25%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.page-enter-active {
+  animation: flowUp 0.2s;
 }

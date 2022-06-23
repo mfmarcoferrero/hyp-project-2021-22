@@ -1,21 +1,12 @@
 <template>
-   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false">
         <div class="carousel-inner">
             <div v-for="slideIndex in detailMatrix.length" :key="slideIndex"
                 v-bind:class="[carouselClass, slideIndex == 1 ? activeClass : '']">
                 <div class="container pt-5">
-                    <div class="row row-cols-1 row-cols-md-4 g-4">
-                        <div v-for="(detail,detailIndex) of detailMatrix[slideIndex-1]" :key="detailIndex" class="col">
-                            <div class="card shadow">
-                                <img :src="detail.img" class="card-img-top" alt="No image">
-                                <div class="card-body">
-                                    <h5 class="card-title">Individual</h5>
-                                    <p class="card-text">The perfect plan for just you. Get all the fresh fruit and
-                                        vegatables
-                                        you need without waste.</p>
-                                    <a href="#" class="btn btn-success">Buy</a>
-                                </div>
-                            </div>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                        <div v-for="(detail,detailIndex) of detailMatrix[slideIndex-1]" :key="detailIndex" class="col-sm">
+                            <card :img="detail.img" :name="detail.name" :path="'attractions/'+ detail.name"></card>
                         </div>
                     </div>
                 </div>
@@ -39,6 +30,7 @@
 // needs a matrix in which details are divided into lists
 // I'll use a function defined in mixins to convert a list into a matrix with lists of n(num cards) elements
 import CommonMixin from '~/mixins/common';
+import Card from '@/components/Card.vue'
 export default {
     mixins: [CommonMixin],
     name: 'CardCarousel',
@@ -46,22 +38,15 @@ export default {
         return {
             carouselClass: 'carousel-item',
             activeClass: 'active',
-            slide: 0,
-            sliding: null,
         }
     },
     props: {
         detailMatrix: {
             type: Array
+        },
+        path: {
+            type: String
         }
-    },
-    methods: {
-        onSlideStart(slide) {
-            this.sliding = true
-        },
-        onSlideEnd(slide) {
-            this.sliding = false
-        },
     },
 }
 </script>
