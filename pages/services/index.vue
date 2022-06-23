@@ -12,35 +12,35 @@
               <div class="col-md m-2">
                 <topic-card
                   title="Medical Services"
-                  img="https://s8.gifyu.com/images/808x454_cmsv2_b3d598a0-bec1-5f13-bc92-88ae94163b73-6744142.jpg"
+                  img="https://www.medicalgroupitalia.it/wp-content/uploads/2021/11/clicca-e-scopri-il-nostro-team-traumatology-center-medical-group-italia.jpg"
                   path="services/Medical_Services"
                 />
               </div>
               <div class="col-md m-2">
                 <topic-card
-                  title="Cultural Sergives"
-                  img="https://s8.gifyu.com/images/91a051430ab15c667bad0d64bba0ff45299d9f28.jpg"
+                  title="Cultural Services"
+                  img="https://www.eui.eu/Content-Types-Assets/Services/Library/Librarian-showing-books.xa04803ee.JPG?w=586&h=330&fit=crop"
                   path="services/Cultural_Services"
                 />
               </div>
               <div class="col-md m-2">
                 <topic-card
                   title="Leisure Services"
-                  img="https://s8.gifyu.com/images/14896f158a325e49575.jpg"
+                  img="https://dutchreview.com/wp-content/uploads/walibi-holland-theme-park-netherlands-rollercoaster.jpeg"
                   path="services/Thematic_and_leisure_parks"
                 />
               </div>
               <div class="col-md m-2">
                 <topic-card
                   title="Work Services"
-                  img="https://s8.gifyu.com/images/808x454_cmsv2_b3d598a0-bec1-5f13-bc92-88ae94163b73-6744142.jpg"
-                  path="services/Job_Services"
+                  img="https://media.istockphoto.com/photos/young-asian-engineer-woman-picture-id1147555040?k=20&m=1147555040&s=612x612&w=0&h=zTWGl6N-nLBPK1iNGqo3BuZY2UZMcpMWMHD2DRQKv0k="
+                  path="services/Work_Services"
                 />
               </div>
               <div class="col-md m-2">
                 <topic-card
                   title="Student Services"
-                  img="https://s8.gifyu.com/images/808x454_cmsv2_b3d598a0-bec1-5f13-bc92-88ae94163b73-6744142.jpg"
+                  img="https://i0.wp.com/oecdedutoday.com/wp-content/uploads/2020/10/PISA-Volume-VI-blog.jpg?fit=1200%2C675&ssl=1"
                   path="services/Student_Services"
                 />
               </div>

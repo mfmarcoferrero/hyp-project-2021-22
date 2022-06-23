@@ -24,7 +24,7 @@
             <h2 class="text-center">General Information</h2>
             <br>
             <h3 class="text-center">Where?</h3>
-            <p class="text-center">Event takes place in <nuxt-link @click="goToAttraction"><strong>{{location}}</strong></nuxt-link></p>
+            <p class="text-center">Event takes place in <nuxt-link :to="`/attractions/${location}`"><strong>{{location}}</strong></nuxt-link></p>
             <br>
             <h3 class="text-center">When?</h3>
             <p class="text-center"><strong>{{when}}</strong></p>
