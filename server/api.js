@@ -45,10 +45,10 @@ async function initializeDatabaseConnection() {
       primaryKey: true
     },
     description: DataTypes.STRING(10000),
-    season: DataTypes.STRING(10000),
-    img: DataTypes.STRING(10000),
+    season: DataTypes.STRING,
+    img: DataTypes.STRING(1000),
     location: DataTypes.STRING(10000),
-    when: DataTypes.STRING(10000),
+    when: DataTypes.STRING,
   })
   const Itinerary = database.define("itinerary", {
     name: {
