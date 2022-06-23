@@ -41,7 +41,7 @@ export default {
       required: true,
     },
     categories: {
-      type: String,
+      type: Array,
       required: true,
     }
   },

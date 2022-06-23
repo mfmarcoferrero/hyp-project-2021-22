@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="masonry">
-      <div v-for="(item, itemIndex) of testList" :key="`item-index-${itemIndex}`" class="item">
-          <overlay-card :name="item.name" :description="item.description" :img="item.img" :path="item.path" />
+      <div v-for="(item, itemIndex) of photoList" :key="`item-index-${itemIndex}`" class="item">
+          <overlay-card :name="item.name" :description="item.description" :img="item.url" :path="item.path" />
       </div>
     </div>
   </div>
@@ -21,10 +21,6 @@ export default {
       type: Array,
       required: true
     },
-    path: {
-      type: String,
-      //required: true
-    }
   },
   data() {
     return {

@@ -3,33 +3,53 @@
     <div class="container-carousel">
       <carousel :detailList="carouselList" scrollTo="#guide-to-the-city" />
       <p class="fs-1 text-center fw-bold position-absolute top-50 start-50 translate-middle shadow-plg cover-title">
-            Welcome to Amsterdam </p>
+            Welcome to Amsterdam! </p>
     </div>
 
     
 
     <div class="container-fluid">
-      <hr />
-      <h1 class="text-center m-3">Guide to the City</h1>
+      <hr /><br><br>
       <div class="row flex-row mt-2 pt-2 pb-2">
-        <div class="card-container">
-        <div
-          v-for="(item, itemIndex) of categoriesList"
-          :key="`data-index-${itemIndex}`"
-          class="col"
-        >
-          <hover-card
-            :id="item.id"
-            :name="item.name"
-            :img="item.img"
-            :description="item.description"
-            :path="item.name"
-          />
-        </div>
-        </div>
+        <section id="topic-menu">
+          <div class="container">
+            <br>
+            <h3 class="text-center">What are you looking for?</h3>
+            <div class="row m-5">
+              <div class="col-md m-2">
+                <topic-card
+                  title="Attractions"
+                  img="https://s8.gifyu.com/images/91a051430ab15c667bad0d64bba0ff45299d9f28.jpg"
+                  path="attractions"
+                />
+              </div>
+              <div class="col-md m-2">
+                <topic-card
+                  title="Itineraries"
+                  img="https://s8.gifyu.com/images/14896f158a325e49575.jpg"
+                  path="itineraries"
+                />
+              </div>
+              <div class="col-md m-2">
+                <topic-card
+                  title="Events"
+                  img="https://s8.gifyu.com/images/808x454_cmsv2_b3d598a0-bec1-5f13-bc92-88ae94163b73-6744142.jpg"
+                  path="events"
+                />
+              </div>
+              <div class="col-md m-2">
+                <topic-card
+                  title="Services"
+                  img="https://s8.gifyu.com/images/808x454_cmsv2_b3d598a0-bec1-5f13-bc92-88ae94163b73-6744142.jpg"
+                  path="services"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
         <hr />
         <h1 class="text-center m-3">Pictures of City's life</h1>
-        <masonry :photoList="carouselList" path="placeholder" />
+        <masonry :photoList="photoList" path="placeholder" />
       </div>
     </div>
 
@@ -58,8 +78,9 @@ export default {
   async asyncData({ $axios }) {
     let carousel = []
     let categories = []
-    const { data } = await $axios.get('/api/home-page-details')
-    for (var item of data) {
+    const { data: homepage_details } = await $axios.get('/api/home-page-details')
+    const { data: photo_list } = await $axios.get('/api/photolist')
+    for (var item of homepage_details) {
       if (item.section === 'carousel') {
         carousel.push(item)
       } else if (item.section === 'categories') {
@@ -70,6 +91,7 @@ export default {
       carouselList: carousel,
       categoriesList: categories,
       path: 'attractions',
+      photoList: photo_list,
     }
   },
 }
