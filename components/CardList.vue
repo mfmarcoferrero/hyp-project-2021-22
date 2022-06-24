@@ -1,11 +1,29 @@
 <template>
   <div class="container">
-    <div class="row">
-      <ul class="nav nav-pills mb-5 justify-content-center" id="pills-tab" role="tablist">
-        <li v-for="(item, index) of categories" :key="index" class="nav-item" role="presentation">
-          <button class="nav-link" :class="index === 0 ? 'active' : null" :id="`${item.name}-tab`" data-bs-toggle="pill"
-            :data-bs-target="`#${item.name}`" type="button" role="tab" :aria-controls="item.name"
-            :aria-selected="index === 0" @click="item.name === 'all' ? (selected = '') : (selected = item.name)">
+    <div class="row ">
+      <ul
+        class="nav nav-pills mb-5 justify-content-center"
+        id="pills-tab"
+        role="tablist"
+      >
+        <li
+          v-for="(item, index) of categories"
+          :key="index"
+          class="nav-item"
+          role="presentation"
+        >
+          <button
+            class="nav-link"
+            :class="index === 0 ? 'active' : null"
+            :id="`${item.name}-tab`"
+            data-bs-toggle="pill"
+            :data-bs-target="`#${item.name}`"
+            type="button"
+            role="tab"
+            :aria-controls="item.name"
+            :aria-selected="index === 0"
+            @click="item.name === 'all' ? (selected = '') : (selected = item.name)"
+          >
             {{ swapDashesAndCapitalize(item.name) }}
           </button>
         </li>
@@ -40,12 +58,15 @@
           <p class="m-4 p-2">
             {{ item.description }}
           </p>
-          <div class="row row-cols-1 row-cols-lg-3 ms-4 me-4">
+          <div class="row row-cols-1 row-cols-lg-2 ms-4 me-4">
           <div v-for="(item, index) of filtered" :key="index" class=""> 
-            <card
-              :name="swapDashesAndCapitalize(item.name)"
+            <event-card
+              class="mb-3"
+              :title="swapDashesAndCapitalize(item.name)"
               :img="item.img"
               :description="item.description"
+              :location="item.location"
+              :date="item.date"
               :path="'events/' + item.name"
             />
           </div>
@@ -57,14 +78,14 @@
 </template>
 
 <script>
-import Card from '@/components/Card.vue'
+import EventCard from '@/components/EventCard.vue'
 import CommonMixin from '@/mixins/common.js'
 
 export default {
   name: 'CardList',
   mixins: [CommonMixin],
   components: {
-    Card,
+    EventCard,
   },
   props: {
     list: {
@@ -97,15 +118,13 @@ export default {
 
 /* not active */
 .nav-pills .nav-link:not(.active) {
-  background-color: rgba(255, 255, 255, 0.5);
-  /* color: rgb(132, 0, 0); */
-  color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
 }
 
 /* active (faded) */
 .nav-pills .nav-link {
-  /* background-color: rgb(132, 0, 0); */
-  background-color: rgb(253, 0, 13, 255);
-  color: white;
+    background-color: rgb(253, 0, 13, 255);
+    color: white;
 }
 </style>

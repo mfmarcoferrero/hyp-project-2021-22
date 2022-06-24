@@ -28,7 +28,7 @@
                         </div>
                     </div>
 
-                    <p class="card-text mt-2"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <p class="card-text mt-2"><small class="text-muted">COVID-19 restrictions may apply</small></p>
                 </div>
             </div>
         </div>
