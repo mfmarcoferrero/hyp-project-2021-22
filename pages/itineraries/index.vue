@@ -172,7 +172,13 @@ export default {
   },
 
   async asyncData({ $axios }) {
-    //Database table to populate service image, service description and markers array to show on map
+
+    const { data } = await $axios.get('/api/itineraries')
+    return {
+      itinerariesDetails: data,
+    }
+
+    /*Database table to populate service image, service description and markers array to show on map
     return $axios.get('/api/itineraries').then(async itineraries => {
       for (let itinerary of itineraries.data) {
         let pois = []
@@ -187,7 +193,7 @@ export default {
     })
       .catch(err => {
         console.log(err)
-      })
+      }) */
   },
 
   methods: {

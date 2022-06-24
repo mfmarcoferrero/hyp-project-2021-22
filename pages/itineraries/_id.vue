@@ -82,6 +82,7 @@ export default {
     
     const { id } = route.params
     const { data: itineraryInfo } = await $axios.get(`/api/itineraries/` + id)
+    console.log(id)
     const { data: poisOfItinerary } = await $axios.get(`/api/poisByItinerary/` + id)
     return {
       name: itineraryInfo.name,

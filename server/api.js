@@ -131,9 +131,10 @@ async function runMainApi() {
     return res.json(result)
   })
 
-  app.get('poisByItinerary/:itineraryName', async (req, res) => {
-    const itineraryName = req.params.itineraryName
-    const result = await models.POI.findAll({ where: { itineraryName : { [Op.contains] : itineraryName } } })
+  app.get('/poisByItinerary/:name', async (req, res) => {
+    const name = req.params.name
+    const result = await models.POI.findAll({ where: { itineraryName : { [Op.contains] : [name] } } })
+    return res.json(result)
   })
 
   app.get("/services", async (req, res) => {
@@ -170,7 +171,6 @@ async function runMainApi() {
       filtered.push({
         name: element.name,
         description: element.description,
-        breed: element.breed,
         img: element.img
       })
     }
