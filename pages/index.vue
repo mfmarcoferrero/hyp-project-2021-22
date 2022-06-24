@@ -2,8 +2,6 @@
   <div class="page-container">
     <div class="container-carousel">
       <carousel :detailList="carouselList" scrollTo="#guide-to-the-city" />
-      <p class="fs-1 text-center fw-bold position-absolute top-50 start-50 translate-middle shadow-plg cover-title">
-            Welcome to Amsterdam! </p>
     </div>
 
     
@@ -13,7 +11,7 @@
       <div class="row flex-row mt-2 pt-2 pb-2">
         <section id="topic-menu">
           <div class="container">
-            <br>
+            <h1 class="text-center"><strong>Welcome to Amsterdam!</strong></h1>
             <h3 class="text-center">What are you looking for?</h3>
             <div class="row m-5">
               <div class="col-md m-2">
