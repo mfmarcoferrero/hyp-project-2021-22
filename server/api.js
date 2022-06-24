@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const { Sequelize, DataTypes } = require("sequelize")
+const { Sequelize, Op, DataTypes } = require("sequelize")
 const initialize = require('./initialize').default
 app.use(express.json())
 
@@ -37,7 +37,8 @@ async function initializeDatabaseConnection() {
     info: DataTypes.STRING(1000),
     timetable: DataTypes.STRING(1000),
     category: DataTypes.STRING,
-    link: DataTypes.STRING
+    link: DataTypes.STRING,
+    itineraryName: DataTypes.ARRAY(DataTypes.STRING),
   })
   const Event = database.define("event", {
     name: {
@@ -85,10 +86,11 @@ async function initializeDatabaseConnection() {
     description: DataTypes.STRING,
     url: DataTypes.STRING,
     path: DataTypes.STRING(1000),
-  })
-  const ItineraryPoi = database.define("itinerary_poi", {})
-  Itinerary.belongsToMany(POI, { through: 'itinerary_poi' })
-  POI.belongsToMany(Itinerary, { through: 'itinerary_poi' })
+  }) 
+  
+  //const ItineraryPoi = database.define("itinerary_poi", {})
+  //Itinerary.belongsToMany(POI, { through: 'itinerary_poi' })
+  //POI.belongsToMany(Itinerary, { through: 'itinerary_poi' }) 
   await database.sync({ force: true })
   return {
     HomePageDetail,
@@ -97,7 +99,7 @@ async function initializeDatabaseConnection() {
     Itinerary,
     ServiceType,
     Service,
-    ItineraryPoi,
+    //ItineraryPoi,
     Photolist
   }
 }
@@ -126,6 +128,11 @@ async function runMainApi() {
     const name = req.params.name
     const result = await models.POI.findOne({ where: { name: name } })
     return res.json(result)
+  })
+
+  app.get('poisByItinerary/:itineraryName', async (req, res) => {
+    const itineraryName = req.params.itineraryName
+    const result = await models.POI.findAll({ where: { itineraryName : { [Op.contains] : itineraryName } } })
   })
 
   app.get("/services", async (req, res) => {
@@ -196,12 +203,12 @@ async function runMainApi() {
     const result = await models.Itinerary.findOne({ where: { name: name } })
     return res.json(result)
   })
-
+  /*
   app.get('/poisOfItinerary/:name', async (req, res) => {
     const name = req.params.name
     const result = await models.ItineraryPoi.findAll({ where: { itineraryName: name } })
     return res.json(result)
-  })
+  }) */
 
   //-----------------------------------------------------------------------------------------
   //-----------------------------------------------------------------------------------------

@@ -128,6 +128,7 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "top",
+            itineraryName: [ "One-day itinerary", "One-week itinerary" ]
         },
         {
             name: "Anne Frank house",
@@ -137,7 +138,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "top",
-            link: "https://www.annefrank.org/en/museum/tickets"
+            link: "https://www.annefrank.org/en/museum/tickets",
+            itineraryName: ["Three-day itinerary", "One-week itinerary"]
         },
         {
             name: "Vondelpark",
@@ -146,7 +148,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/28280-Vondelpark.jpg",
             info: "",
             timetable: "",
-            category: "top"
+            category: "top",
+            itineraryName: [ "One-week itinerary", ]
         },
         {
             name: "Royal Palace of Amsterdam",
@@ -156,7 +159,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "top",
-            link: "https://www.paleisamsterdam.nl/en/visit/"
+            link: "https://www.paleisamsterdam.nl/en/visit/",
+            itineraryName: [ "One-day itinerary", ]
         },
         {
             name: "Canals of Amsterdam",
@@ -165,7 +169,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/canals.jpg",
             info: "",
             timetable: "",
-            category: "top"
+            category: "top",
+            itineraryName: [ "One-day itinerary", ]
         },
         {
             name: "Rijksmuseum",
@@ -175,7 +180,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
-            link: "https://www.rijksmuseum.nl/en/tickets/articles"
+            link: "https://www.rijksmuseum.nl/en/tickets/articles",
+            itineraryName: [ "Three-day itinerary", "One-week itinerary" ]
         },
         {
             name: "Van Gogh Museum",
@@ -185,7 +191,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
-            link: "https://www.vangoghmuseum.nl/en/visit/tickets-and-ticket-prices"
+            link: "https://www.vangoghmuseum.nl/en/visit/tickets-and-ticket-prices",
+            itineraryName: [ "One-week itinerary", ]
         },
         {
             name: "Rembrandt House Museum",
@@ -195,7 +202,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
-            link: "https://www.tiqets.com/en/amsterdam-attractions-c75061/tickets-for-the-rembrandt-house-museum-p972886"
+            link: "https://www.tiqets.com/en/amsterdam-attractions-c75061/tickets-for-the-rembrandt-house-museum-p972886",
+            itineraryName: ["One-week itinerary", "Five-day itinerary"],
         },
         {
             name: "NEMO Science Museum",
@@ -205,7 +213,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
-            link: "https://www.nemosciencemuseum.nl/en/visit/tickets-and-prices/"
+            link: "https://www.nemosciencemuseum.nl/en/visit/tickets-and-prices/",
+            itineraryName: [ "Five-day itinerary", ]
         },
         {
             name: "EYE Film Institute Netherlands",
@@ -215,7 +224,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
-            link: "https://www.eyefilm.nl/en/plan-your-visit"
+            link: "https://www.eyefilm.nl/en/plan-your-visit",
+            itineraryName: [ "Five-day itinerary", ]
         },
         {
             name: "Jewis Historical Museum",
@@ -224,7 +234,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/jewish-2.jpg",
             info: "",
             timetable: "",
-            category: "museum"
+            category: "museum",
+            itineraryName: [ "One-week itinerary", ]
         },
         {
             name: "National Maritime Museum",
@@ -234,6 +245,7 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
+            itineraryName: [ "One-week itinerary", ]
         },
         {
             name: "Stedelijk Museum Amsterdam",
@@ -243,7 +255,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
-            link: "https://www.stedelijk.nl/en/visit"
+            link: "https://www.stedelijk.nl/en/visit",
+            itineraryName: [ "Three-day itinerary", ]
         },
         {
             name: "West Church (Westerkerk)",
@@ -252,7 +265,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/westkerk.jpg",
             info: "",
             timetable: "",
-            category: "building"
+            category: "building",
+            itineraryName: [ "One-week itinerary", ]
         },
         {
             name: "The Oude Church",
@@ -261,7 +275,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/oude-church.jpg",
             info: "",
             timetable: "",
-            category: "building"
+            category: "building",
+            itineraryName: [ "Five-day itinerary", ]
         },
         {
             name: "Heineken Experience",
@@ -271,7 +286,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "experience",
-            link: "https://www.stedelijk.nl/en/visit"
+            link: "https://www.stedelijk.nl/en/visit",
+            itineraryName: [ "Five-day itinerary", ]
         },
 
         {
@@ -281,7 +297,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/horus-botanicus-2.jpg",
             info: "",
             timetable: "",
-            category: "experience"
+            category: "experience",
+            itineraryName: [ "Three-day itinerary", ]
         },
         {
             name: "Amsterdam Royal Zoo",
@@ -291,7 +308,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "experience",
-            link: "https://www.artis.nl/en/"
+            link: "https://www.artis.nl/en/",
+            itineraryName: [ "One-week itinerary", ]
         },
         {
             name: "Albert Cuyp Market",
@@ -300,7 +318,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/albertcuyp.jpg",
             info: "",
             timetable: "",
-            category: "experience"
+            category: "experience",
+            itineraryName: [ "Five-day itinerary" ]
         },
         {
             name: "Bloemenmarkt",
@@ -309,7 +328,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/bloemenmarkt-2.jpg",
             info: "",
             timetable: "",
-            category: "experience"
+            category: "experience",
+            itineraryName: [ "Five-day itinerary", ]
         },
         {
             name: "FOAM",
@@ -319,7 +339,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "experience",
-            link: "https://tickets.foam.org/en/tickets"
+            link: "https://tickets.foam.org/en/tickets",
+            itineraryName: [ "Three-day itinerary" ]
         },
     ]
 
@@ -351,113 +372,6 @@ export default async (models) => {
         }
     ]
 
-  const itineraryPOIList = [
-    {
-      itineraryName: "One-day itinerary",
-      pointofinterestName: "Dam square"
-    },
-    {
-      itineraryName: "One-day itinerary",
-      pointofinterestName: "Van Gogh Museum"
-    },
-    {
-      itineraryName: "One-day itinerary",
-      pointofinterestName: "West Church (Westerkerk)"
-    },
-    {
-      itineraryName: "One-day itinerary",
-      pointofinterestName: "Heineken Experience"
-    },
-    {
-      itineraryName: "Three-day itinerary",
-      pointofinterestName: "Anne Frank house"
-    },
-    {
-      itineraryName: "Three-day itinerary",
-      pointofinterestName: "Canals of Amsterdam"
-    },
-    {
-      itineraryName: "Three-day itinerary",
-      pointofinterestName: "Rijksmuseum"
-    },
-    {
-      itineraryName: "Three-day itinerary",
-      pointofinterestName: "National Maritime Museum"
-    },
-    {
-      itineraryName: "Three-day itinerary",
-      pointofinterestName: "Hortus Botanicus Amsterdam"
-    },
-    {
-      itineraryName: "Five-day itinerary",
-      pointofinterestName: "Royal Palace of Amsterdam"
-    },
-    {
-      itineraryName: "Five-day itinerary",
-      pointofinterestName: "NEMO Science Museum"
-    },
-    {
-      itineraryName: "Five-day itinerary",
-      pointofinterestName: "EYE Film Institute Netherlands"
-    },
-    {
-      itineraryName: "Five-day itinerary",
-      pointofinterestName: "Stedelijk Museum Amsterdam"
-    },
-    {
-      itineraryName: "Five-day itinerary",
-      pointofinterestName: "The Oude Church"
-    },
-    {
-      itineraryName: "Five-day itinerary",
-      pointofinterestName: "Amsterdam Royal Zoo"
-    },
-    {
-      itineraryName: "Five-day itinerary",
-      pointofinterestName: "Bloemenmarkt"
-    },
-    {
-      itineraryName: "One-week itinerary",
-      pointofinterestName: "Dam square"
-    },
-    {
-      itineraryName: "One-week itinerary",
-      pointofinterestName: "Anne Frank house"
-    },
-    {
-      itineraryName: "One-week itinerary",
-      pointofinterestName: "Canals of Amsterdam"
-    },
-    {
-      itineraryName: "One-week itinerary",
-      pointofinterestName: "Van Gogh Museum"
-    },
-    {
-      itineraryName: "One-week itinerary",
-      pointofinterestName: "National Maritime Museum"
-    },
-    {
-      itineraryName: "One-week itinerary",
-      pointofinterestName: "Jewis Historical Museum"
-    },
-    {
-      itineraryName: "One-week itinerary",
-      pointofinterestName: "West Church (Westerkerk)"
-    },
-    {
-      itineraryName: "One-week itinerary",
-      pointofinterestName: "The Oude Church"
-    },
-    {
-      itineraryName: "One-week itinerary",
-      pointofinterestName: "Hortus Botanicus Amsterdam"
-    },
-    {
-      itineraryName: "One-week itinerary",
-      pointofinterestName: "Amsterdam Royal Zoo"
-    },
-
-  ]
 
     //-----------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------
@@ -776,6 +690,5 @@ export default async (models) => {
     await models.HomePageDetail.bulkCreate(homePageList)
     await models.Itinerary.bulkCreate(itinerariesList)
     await models.Event.bulkCreate(eventList)
-    await models.ItineraryPoi.bulkCreate(itineraryPOIList)
     await models.Photolist.bulkCreate(photoList)
 }
