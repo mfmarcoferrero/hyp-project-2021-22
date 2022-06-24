@@ -17,7 +17,7 @@
 
   <section id="agenda">
     <div class="container ps-5">
-    <h2 class="second-title v1 mt-5">Cultural Agenda</h2>
+    <h2 class="second-title vl ms-4 mt-5 mb-4">Cultural Agenda</h2>
     <agenda :list="eventList" class="mt-5" />
     </div>
   </section>
