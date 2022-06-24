@@ -1,9 +1,9 @@
 <template>
-    <div class="row">
-        <div class="col-4 agenda-nav">
+    <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col col-lg-4 agenda-nav">
             <ul class="nav nav-pills mb-5 flex-column nav-justified" id="pills-tab" role="tablist">
-                <li v-for="(item, index) of categories" :key="index" class="nav-item" role="presentation">
-                    <button class="nav-link" :class="index === 0 ? 'active' : null" :id="`${item}-tab`"
+                <li v-for="(item, index) of categories" :key="index" class="nav-item d-grid gap-2" role="presentation">
+                    <button class="btn btn-outline-dark m-1" :class="index === 0 ? 'active' : ''" :id="`${item}-tab`"
                         data-bs-toggle="pill" :data-bs-target="`#${item}`" type="button" role="tab"
                         :aria-controls="item" :aria-selected="index === 0"
                         @click="item === 'Today' ? (selected = '') : (selected = item)">
@@ -12,7 +12,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col overflow-auto cards-list agenda-container">
+        <div class="col col-lg-8 overflow-auto cards-list agenda-div">
             <div class="tab-content" id="pills-tabContent">
                 <div v-for="(item, index) of categories" :key="index" class="tab-pane fade"
                     :class="index === 0 ? 'show active' : null" :id="item" role="tabpanel"
@@ -20,7 +20,7 @@
                     <div class="row row-cols-1 ps-5 pe-5">
                         <div v-for="(item, index) of filtered" :key="index" class="col">
                             <event-card class="mb-3" :title="swapDashesAndCapitalize(item.name)" :img="item.img"
-                                :path="'events/' + item.name" />
+                                :location="item.location" :date="item.date" :path="'events/' + item.name" />
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style>
-.agenda-container {
+.agenda-div {
     height: 500px;
 }
 </style>

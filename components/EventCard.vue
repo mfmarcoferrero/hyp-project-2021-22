@@ -6,18 +6,32 @@
             </div>
             <div class="col-md-6">
                 <div class="card-body">
-                    <h5 class="card-title">{{title}}</h5>
-                    <p class="card-text m-0">Location: </p>
-                    <p class="card-text">Date: </p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="">
+                        <h5 class="card-title vl second-title">{{ title }}</h5>
+                    </div>
+                    <hr class="me-5">
+                    <div class="row row-cols-2">
+                        <div class="icon-item col-1">
+                            <span :class="locationIcon"></span>
+                        </div>
+                        <div class="col event-card-text ms-1">
+                            <span>{{ location }}</span>
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-2">
+                        <div class="icon-item col-1">
+                            <span :class="dateIcon"></span>
+                        </div>
+                        <div class="col event-card-text ms-1">
+                            <span class="">{{ date }}</span>
+                        </div>
+                    </div>
+
+                    <p class="card-text mt-2"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
         </div>
-        <!--img class="card-img-left" :src="img" alt="Card image cap">
-      <div-- class="card-body">
-        <h5 class="card-title">{{ swapDashesAndCapitalize(title) }}</h5>
-        <p class="card-text">{{ description }}</p>
-      </div-->
     </div>
 </template>
  
@@ -27,6 +41,12 @@ export default {
     mixins: [CommonMixin],
     scrollToTop: true,
     name: 'EventCard',
+    data() {
+        return {
+            locationIcon: 'mdi mdi-map-marker',
+            dateIcon: 'mdi mdi-timer',
+        }
+    },
     props: {
         title: {
             type: String,
@@ -41,7 +61,7 @@ export default {
             //required: true,
         },
         location: {
-            type: String,     
+            type: String,
         },
         date: {
             type: String,
@@ -57,9 +77,6 @@ export default {
     },
     methods: {
         goTo(path) {
-            // if(goToPath){
-            //   this.$router.push(path);
-            // }
             this.$router.push(path);
         },
     }
@@ -76,5 +93,19 @@ export default {
 .card:hover {
     box-shadow: 6px 6px 6px 6px #e9ecef;
     transform: scale(1.005);
+}
+
+.img-card {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.icon-item {
+    font-size: 25px;
+}
+
+.event-card-text {
+    padding-top: 6px;
 }
 </style>
