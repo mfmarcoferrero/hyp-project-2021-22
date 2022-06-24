@@ -29,21 +29,7 @@
         </li>
       </ul>
     </div>
-    <div class="">
-      <div class="tab-content overflow-auto list-div" id="pills-tabContent">
-        <div v-for="(item, index) of categories" :key="index" class="tab-pane fade"
-          :class="index === 0 ? 'show active' : null" :id="item" role="tabpanel" aria-labelledby="pills-home-tab">
-          <div class="row row-cols-1 m-1">
-            <div v-for="(item, index) of filtered" :key="index" class="col">
-              <event-card class="mb-3" :title="swapDashesAndCapitalize(item.name)" :img="item.img"
-                :description="item.description" :location="item.location" :date="item.date"
-                :path="'events/' + item.name" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--div class="row">
+    <div class="row">
       <div class="tab-content" id="pills-tabContent">
         <div
           v-for="(item, index) of categories"
@@ -73,7 +59,7 @@
           </div>
         </div>
       </div>
-    </div-->
+    </div>
   </div>
 </template>
 
@@ -94,8 +80,8 @@ export default {
     },
     categories: {
       type: Array,
-      //required: true,
-    }
+      required: true,
+    },
   },
   data() {
     return {
@@ -112,10 +98,6 @@ export default {
 </script>
 
 <style scoped>
-.list-div {
-  height: 500px;
-}
-
 /* not active */
 .nav-pills .nav-link:not(.active) {
     background-color: rgba(255, 255, 255, 0.5);
@@ -127,4 +109,5 @@ export default {
     background-color: rgb(253, 0, 13, 255);
     color: white;
 }
+
 </style>
