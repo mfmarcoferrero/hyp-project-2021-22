@@ -5,7 +5,7 @@
     <section id="events-by-season">
       <div class="container ps-5 mt-5 mb-5">
         <h1 style="text-align: center"><strong>What's up in Amsterdam?</strong></h1>
-        <p class="m-5">Almost every week a cultural event or festival is held in Amsterdam. Many of these Amsterdam events and
+        <p class="second-title vl ms-5 mt-5 mb-4">Almost every week a cultural event or festival is held in Amsterdam. Many of these Amsterdam events and
           festivals have a long tradition and are carefully conserved by the Dutch. But these typical Dutch festivities
           are also very nice for tourists, because a lot of them are held with an English-speaking public in mind.</p>
         <h3 style="text-align: center">Choose a time period!</h3>

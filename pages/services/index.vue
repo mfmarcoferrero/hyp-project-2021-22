@@ -109,11 +109,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.page-container{
+  background: white;
+}
 .wrapper {
   overflow: visible;
   margin: 0 auto 100px auto;
-  background:white;
 }
 
 .cardwrapper {
