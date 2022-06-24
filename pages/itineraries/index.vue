@@ -179,19 +179,6 @@ export default {
   methods: {
     goTo(name) {
       this.$router.push(`/itineraries/${name}`)
-    },
-    async getPois(name) {
-      try {
-        let pois = []
-        const { data } = await this.$axios.get('/api/poisOfItinerary/' + name)
-        for (let item of data) {
-          pois.push((await this.$axios.get('/api/pois/' + item.pointofinterestName)).data)
-        }
-        console.log(pois)
-        return pois
-      } catch (err) {
-        console.log(err)
-      }
     }
   }
 }
