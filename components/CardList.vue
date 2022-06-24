@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row">
+    <div class="row ">
       <ul
         class="nav nav-pills mb-5 justify-content-center"
         id="pills-tab"
