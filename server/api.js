@@ -46,7 +46,9 @@ async function initializeDatabaseConnection() {
     },
     description: DataTypes.STRING(10000),
     season: DataTypes.STRING,
-    img: DataTypes.STRING,
+    img: DataTypes.STRING(1000),
+    location: DataTypes.STRING(10000),
+    when: DataTypes.STRING,
   })
   const Itinerary = database.define("itinerary", {
     name: {
@@ -75,6 +77,15 @@ async function initializeDatabaseConnection() {
     hours: DataTypes.STRING,
     img: DataTypes.STRING,
   })
+  const Photolist = database.define("photoList", {
+    name: {
+      type: DataTypes.STRING,
+      primaryKey: true
+    },
+    description: DataTypes.STRING,
+    url: DataTypes.STRING,
+    path: DataTypes.STRING(1000),
+  })
   const ItineraryPoi = database.define("itinerary_poi", {})
   Itinerary.belongsToMany(POI, { through: 'itinerary_poi' })
   POI.belongsToMany(Itinerary, { through: 'itinerary_poi' })
@@ -87,6 +98,7 @@ async function initializeDatabaseConnection() {
     ServiceType,
     Service,
     ItineraryPoi,
+    Photolist
   }
 }
 
@@ -165,7 +177,9 @@ async function runMainApi() {
         name: element.name,
         description: element.description,
         season: element.season,
-        img: element.img
+        img: element.img,
+        location: element.location,
+        when: element.when,
       })
     }
     return res.json(filtered)
@@ -240,6 +254,22 @@ async function runMainApi() {
     }
     return res.json(filtered)
   })
+
+  app.get("/photolist", async (req, res) => {
+    const result = await models.Photolist.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        description: element.description,
+        url: element.url,
+        path: element.path,
+      })
+    }
+    return res.json(filtered)
+  })
+
+
 
 
 }

@@ -50,7 +50,8 @@ export default {
 }
 
 .card {
-  width: 280px;
+  //width: 280px;
+  width: 100%;
   height: 360px;
   border-radius: 15px;
   padding: 1.5rem;

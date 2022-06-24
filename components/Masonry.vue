@@ -1,34 +1,76 @@
 <template>
   <div>
-    <div class="container">
-      <div v-for="(item, itemIndex) of photoList" :key="`item-index-${itemIndex}`">
-        <figure>
-          <img :src="item.img" class="rounded img-fluid" :alt="item.name" />
-          <figcaption>
-            <nuxt-link :to="`/${path}/${item.name}`">{{ item.name }}</nuxt-link>
-          </figcaption>
-        </figure>
+    <div class="masonry">
+      <div v-for="(item, itemIndex) of photoList" :key="`item-index-${itemIndex}`" class="item">
+          <overlay-card :name="item.name" :description="item.description" :img="item.url" :path="item.path" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import OverlayCard from '@/components/OverlayCard.vue'
+
 export default {
   name: 'Masonry',
+  components: {
+    OverlayCard,
+  },
   props: {
     photoList: {
       type: Array,
       required: true
     },
-    path: {
-      type: String,
-      required: true
-    }
   },
   data() {
     return {
-
+      testList : [
+        {
+          name: "abde",
+          description: "abcde",
+          img: "https://images.pexels.com/photos/11991865/pexels-photo-11991865.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          name: "abde",
+          description: "abcde",
+          img: "https://images.pexels.com/photos/12447940/pexels-photo-12447940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          name: "abde",
+          description: "abcde",
+          img: "https://images.pexels.com/photos/12019099/pexels-photo-12019099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          name: "abde",
+          description: "abcde",
+          img: "https://images.pexels.com/photos/12217674/pexels-photo-12217674.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          name: "abde",
+          description: "abcde",
+          img: "https://images.pexels.com/photos/12361807/pexels-photo-12361807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          name: "abde",
+          description: "abcde",
+          img: "https://images.pexels.com/photos/12317958/pexels-photo-12317958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          name: "abde",
+          description: "abcde",
+          img: "https://images.pexels.com/photos/12250627/pexels-photo-12250627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          name: "abde",
+          description: "abcde",
+          img: "https://images.pexels.com/photos/12199828/pexels-photo-12199828.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          name: "abde",
+          description: "abcde",
+          img: "https://images.pexels.com/photos/12094234/pexels-photo-12094234.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+      ]
     }
   },
   methods: {
@@ -41,50 +83,36 @@ export default {
   TO DO: trovare un modo per cambiare lo stile del testo del figcaption (blu link sottolineato)
 <-->
 
-<style scoped>
-body {
-  background-color: rgb(255, 255, 255);
-  font: 1.1em Arial, Helvetica, sans-serif;
+<style lang="scss" scoped>
+/* Box-sizing reset: //w3bits.com/?p=3225 */
+html {
+  box-sizing: border-box;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
-figure {
-  margin: 0;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  margin-bottom: 10px;
-  break-inside: avoid;
+/* The Masonry Brick */
+.item {
+  background: #fff;
+  padding: 0.6em;
 }
 
-figure>img {
-  grid-row: 1 / -1;
-  grid-column: 1;
+/* Masonry on large screens */
+@media only screen and (min-width: 1024px) {
+  .masonry {
+    column-count: 4;
+  }
 }
 
-figure a {
-  color: black;
-  text-decoration: none;
+/* Masonry on medium-sized screens */
+@media only screen and (max-width: 1023px) and (min-width: 540px) {
+  .masonry {
+    column-count: 2;
+  }
 }
 
-figcaption {
-  grid-row: 2;
-  grid-column: 1;
-  background-color: rgba(255, 255, 255, .5);
-  padding: .2em .5em;
-  justify-self: start;
-}
-
-.container {
-  column-count: 4;
-  column-gap: 10px;
-}
-
-figure:hover {
-  opacity: 1;
-  transform: translateY(-100%);
-}
 </style>
