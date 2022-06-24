@@ -30,6 +30,20 @@ export default {
   components: {
     CustomPage,
   },
+
+  head() {
+    return {
+      title: 'Visit-DAM | About Us',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '',
+        },
+      ],
+    }
+  },
   // data() {
   //   return {}
   // },

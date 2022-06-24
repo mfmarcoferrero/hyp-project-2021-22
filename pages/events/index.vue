@@ -30,12 +30,27 @@
 import Map from '@/components/Map.vue'
 import CardList from '@/components/CardList.vue'
 import CoverImage from '~/components/CoverImage.vue'
+import Agenda from '~/components/Agenda.vue'
 export default {
 
   components: {
     Map,
     CardList,
-    CoverImage
+    CoverImage,
+    Agenda
+  },
+  head() {
+    return {
+      title: 'Visit-DAM | Events',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '',
+        },
+      ],
+    }
   },
   data() {
     return {

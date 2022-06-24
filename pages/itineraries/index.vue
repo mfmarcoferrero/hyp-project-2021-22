@@ -83,7 +83,7 @@
         </div>
 
         <div class="d-grid gap-2 mt-5 ms-4 me-4">
-          <a href="https://www.citysightseeingamsterdam.nl/" target="_blank" class="btn btn-outline-secondary"
+          <a href="https://www.citysightseeingamsterdam.nl/" target="_blank" class="btn btn-outline-dark"
             type="button"> Book a ticket </a>
         </div>
 
@@ -119,7 +119,7 @@
           </div>
         </div>
         <div class="d-grid gap-2 ms-4 me-4">
-          <a href="https://amsterdamcanalcruises.nl/canal-cruises/" target="_blank" class="btn btn-outline-secondary"
+          <a href="https://amsterdamcanalcruises.nl/canal-cruises/" target="_blank" class="btn btn-outline-dark"
             type="button"> Book a ticket </a>
         </div>
       </div>
@@ -148,6 +148,20 @@ export default {
     TopicCard,
     CoverImage,
     GoogleMap
+  },
+
+  head() {
+    return {
+      title: 'Visit-DAM | Itineraries',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '',
+        },
+      ],
+    }
   },
 
   data() {

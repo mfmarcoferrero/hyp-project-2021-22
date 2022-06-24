@@ -2,32 +2,47 @@
   <div class="page container mt-5">
 
     <div class="container mb-5">
-      <div class="row">
+      <h1 class="title text-center ">{{ swapDashesAndCapitalize(name) }}</h1>
+      <div class="row row-cols-1 row-cols-lg-2 mt-5">
         <div class="col">
-          <h1 class="title">{{ swapDashesAndCapitalize(name) }}</h1>
-          <p>{{ description }}</p>
+          <p class="p-4">{{ description }}</p>
         </div>
         <div class="col">
-          <img :src="img" class="rounded mx-auto img-fluid poi-img" />
+          <img :src="img" alt="No img" class="img-fluid border border-dark border-3 id-img">
         </div>
       </div>
     </div>
 
     <hr>
     <section id="info">
-      <div class="container">
-        <div class="row">
+      <div class="container mt-3">
+        <div class="row row-cols-1 row-cols-lg-2">
           <div class="col">
             <google-map :query="location" />
           </div>
           <div class="col">
-            <h2 class="text-center">General Information</h2>
+            <div class="">
+              <h2 class="text-center">General Information</h2>
+            </div>
             <br>
-            <h3 class="text-center">Where?</h3>
-            <p class="text-center">Event takes place in <nuxt-link :to="`/attractions/${location}`"><strong>{{location}}</strong></nuxt-link></p>
-            <br>
-            <h3 class="text-center">When?</h3>
-            <p class="text-center"><strong>{{when}}</strong></p>
+
+            <div class="row row-cols-2 ms-3">
+              <div class="icon-item col-1">
+                <span :class="locationIcon"></span>
+              </div>
+              <div class="col event-card-text ms-1">
+                <span class="fs-4">{{ location }}</span>
+              </div>
+            </div>
+
+            <div class="row row-cols-2 m-3">
+              <div class="icon-item col-1">
+                <span :class="dateIcon"></span>
+              </div>
+              <div class="col event-card-text ms-1">
+                <span class="fs-4">{{ when }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -63,7 +78,7 @@ export default {
   components: {
     GoogleMap,
     CardCarousel
-},
+  },
   mixins: [CommonMixin],
 
   //Important for the SEO
@@ -72,6 +87,13 @@ export default {
   //     title: this.name
   //   }
   // },
+
+  data() {
+    return {
+      locationIcon: 'mdi mdi-map-marker',
+      dateIcon: 'mdi mdi-timer',
+    }
+  },
   async asyncData({ route, $axios }) {
     const { id } = route.params
     const { data } = await $axios.get(`/api/events/` + id)
@@ -88,9 +110,24 @@ export default {
     backToList() {
       this.$router.push('/events')
     },
-    goToAttraction(){
-      this.$router.push('/attractions'+location)
+    goToAttraction() {
+      this.$router.push('/attractions' + location)
     }
   },
 }
 </script>
+
+<style scoped>
+.id-img {
+  width: 100%;
+  height: 350px
+}
+
+.icon-item {
+    font-size: 35px;
+}
+
+.event-card-text {
+    padding-top: 6px;
+}
+</style>

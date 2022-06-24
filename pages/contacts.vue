@@ -15,10 +15,22 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: 'Visit-DAM | Contact Us',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '',
+        },
+      ],
+    }
+  },
 
 }
 </script>
 
 <style>
-
 </style>

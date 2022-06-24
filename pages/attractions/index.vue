@@ -59,7 +59,7 @@
       </div>
       <nuxt-link to="attractions/list">
         <button type="button"
-          class="btn btn-outline-secondary btn-lg px-4 position-absolute start-50 translate-middle mt-4">
+          class="btn btn-outline-dark btn-lg px-4 position-absolute start-50 translate-middle mt-4">
           Go to all the attractions
         </button>
       </nuxt-link>
@@ -135,6 +135,21 @@ export default {
     CardCarousel,
     CoverImage
   },
+
+  head() {
+    return {
+      title: 'Visit-DAM | Attractions',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '',
+        },
+      ],
+    }
+  },
+
   data() {
     return {
       name: "Museum",
