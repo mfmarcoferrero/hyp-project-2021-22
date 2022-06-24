@@ -3,11 +3,11 @@
     <div v-for="(detail, detailIndex) of serviceDetails" :key="detailIndex" class="accordion-item">
       <h2 class="accordion-header" :id="`heading${detailIndex}`">
         <button class="accordion-button" :class="{ collapsed: detailIndex > 0 }" type="button" data-bs-toggle="collapse"
-          :data-bs-target="`#collapse${detailIndex}`" :aria-expanded="i === 0" :aria-controls="`collapse${detailIndex}`">
+          :data-bs-target="`#collapse${detailIndex}`" :aria-expanded="detailIndex === 0" :aria-controls="`collapse${detailIndex}`">
           {{ detail.name }}
         </button>
       </h2>
-      <div :id="`collapse${detailIndex}`" class="accordion-collapse collapse" :class="{ show: i === 0 }"
+      <div :id="`collapse${detailIndex}`" class="accordion-collapse collapse" :class="{ show: detailIndex === 0 }"
         :aria-labelledby="`heading${detailIndex}`" data-bs-parent="#accordionExample">
         <div class="accordion-body">
           <div class="row">

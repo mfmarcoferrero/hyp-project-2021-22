@@ -59,7 +59,26 @@ export default {
     return {
       coverImg: "https://s8.gifyu.com/images/events-cover.jpg",
       title: "Festivals & Events",
-      categories: ["all", "winter", "spring", "summer", "fall"]
+      categories: [{
+                     name:"all",
+                     description:"Amsterdam is full of fun and interesting acrivities taking place throughout the whole year. Browse this page to discover all the events that are taking place in the city!"
+                   }, 
+                   {
+                     name:"winter",
+                     description:"The cold season brings everyone to stay in home and enjoy a hot cup of tea looking at the fireplace. Amsterdam, thought, never sleeps! Browse throught the winter activities that are taking place in the city."
+                   }, 
+                   {
+                     name:"spring",
+                     description:"Flowers are blooming, it's spring! Like flowers, Amsterdam life blooms like a bossom of rose during this season. Explore all the activities that you can do in the city while enjoying the first warm days of the year."
+                   }, 
+                   {
+                     name:"summer",
+                     description:"Summer is one of the best seasons to visit Amsterdam! The extreme cold is just a far memory, everyone is enjoying the mild climate in the city. All kinds of events take place during summer. Find more about them in this section!"
+                   }, 
+                   {
+                     name:"fall",
+                     description:"Summer ends, the trees are starting to lose their leaves, but Amsterdam does not go to sleep! A lot of fun and interesting events are taking place in the city during fall. Explore this possibilities and enjoy the fall season throught us!"
+                   }]
     }
   },
   async asyncData({ $axios }) {

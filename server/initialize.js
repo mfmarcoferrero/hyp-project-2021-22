@@ -351,24 +351,113 @@ export default async (models) => {
         }
     ]
 
-    const itineraryPOIList = [
-        {
-            itineraryName: "One-day itinerary",
-            pointofinterestName: "Rijksmuseum"
-        },
-        {
-            itineraryName: "One-day itinerary",
-            pointofinterestName: "Van Gogh Museum"
-        },
-        {
-            itineraryName: "One-day itinerary",
-            pointofinterestName: "Dam square"
-        },
-        {
-            itineraryName: "One-day itinerary",
-            pointofinterestName: "Anne Frank house"
-        },
-    ]
+  const itineraryPOIList = [
+    {
+      itineraryName: "One-day itinerary",
+      pointofinterestName: "Dam square"
+    },
+    {
+      itineraryName: "One-day itinerary",
+      pointofinterestName: "Van Gogh Museum"
+    },
+    {
+      itineraryName: "One-day itinerary",
+      pointofinterestName: "West Church (Westerkerk)"
+    },
+    {
+      itineraryName: "One-day itinerary",
+      pointofinterestName: "Heineken Experience"
+    },
+    {
+      itineraryName: "Three-day itinerary",
+      pointofinterestName: "Anne Frank house"
+    },
+    {
+      itineraryName: "Three-day itinerary",
+      pointofinterestName: "Canals of Amsterdam"
+    },
+    {
+      itineraryName: "Three-day itinerary",
+      pointofinterestName: "Rijksmuseum"
+    },
+    {
+      itineraryName: "Three-day itinerary",
+      pointofinterestName: "National Maritime Museum"
+    },
+    {
+      itineraryName: "Three-day itinerary",
+      pointofinterestName: "Hortus Botanicus Amsterdam"
+    },
+    {
+      itineraryName: "Five-day itinerary",
+      pointofinterestName: "Royal Palace of Amsterdam"
+    },
+    {
+      itineraryName: "Five-day itinerary",
+      pointofinterestName: "NEMO Science Museum"
+    },
+    {
+      itineraryName: "Five-day itinerary",
+      pointofinterestName: "EYE Film Institute Netherlands"
+    },
+    {
+      itineraryName: "Five-day itinerary",
+      pointofinterestName: "Stedelijk Museum Amsterdam"
+    },
+    {
+      itineraryName: "Five-day itinerary",
+      pointofinterestName: "The Oude Church"
+    },
+    {
+      itineraryName: "Five-day itinerary",
+      pointofinterestName: "Amsterdam Royal Zoo"
+    },
+    {
+      itineraryName: "Five-day itinerary",
+      pointofinterestName: "Bloemenmarkt"
+    },
+    {
+      itineraryName: "One-week itinerary",
+      pointofinterestName: "Dam square"
+    },
+    {
+      itineraryName: "One-week itinerary",
+      pointofinterestName: "Anne Frank house"
+    },
+    {
+      itineraryName: "One-week itinerary",
+      pointofinterestName: "Canals of Amsterdam"
+    },
+    {
+      itineraryName: "One-week itinerary",
+      pointofinterestName: "Van Gogh Museum"
+    },
+    {
+      itineraryName: "One-week itinerary",
+      pointofinterestName: "National Maritime Museum"
+    },
+    {
+      itineraryName: "One-week itinerary",
+      pointofinterestName: "Jewis Historical Museum"
+    },
+    {
+      itineraryName: "One-week itinerary",
+      pointofinterestName: "West Church (Westerkerk)"
+    },
+    {
+      itineraryName: "One-week itinerary",
+      pointofinterestName: "The Oude Church"
+    },
+    {
+      itineraryName: "One-week itinerary",
+      pointofinterestName: "Hortus Botanicus Amsterdam"
+    },
+    {
+      itineraryName: "One-week itinerary",
+      pointofinterestName: "Amsterdam Royal Zoo"
+    },
+
+  ]
 
     //-----------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------

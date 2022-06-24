@@ -1,5 +1,6 @@
 export default {
 
+  loading: '@/components/Loading.vue',
   ssr: true,
   serverMiddleware: [
     {
