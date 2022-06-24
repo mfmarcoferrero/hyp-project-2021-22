@@ -15,8 +15,11 @@
       <div class="tab-content" id="pills-tabContent">
         <div v-for="(item, index) of categories" :key="index" class="tab-pane fade"
           :class="index === 0 ? 'show active' : null" :id="item" role="tabpanel" aria-labelledby="pills-home-tab">
-          <div v-for="(item, index) of filtered" :key="index">
-            <card class="mb-3" :name="swapDashesAndCapitalize(item.name)" :img="item.img" :description="item.description" :path="'events/'+item.name" />
+          <div class="row row-cols-1 row-tab" >
+            <div v-for="(item, index) of filtered" :key="index" class="col">
+              <event-card class="mb-3" :title="swapDashesAndCapitalize(item.name)" :img="item.img"
+                :description="item.description" :path="'events/' + item.name" />
+            </div>
           </div>
         </div>
       </div>
@@ -57,4 +60,7 @@ export default {
 </script>
 
 <style>
+.row-tab {
+  height: "100px";
+}
 </style>

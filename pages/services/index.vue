@@ -28,6 +28,20 @@ export default {
     CoverImage
   },
 
+  head() {
+    return {
+      title: 'Visit-DAM | Services',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '',
+        },
+      ],
+    }
+  },
+
   data() {
     return {
       coverImg: "https://s8.gifyu.com/images/netherlands-transportation-1920x1080.jpg",

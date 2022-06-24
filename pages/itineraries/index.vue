@@ -150,6 +150,20 @@ export default {
     GoogleMap
   },
 
+  head() {
+    return {
+      title: 'Visit-DAM | Itineraries',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '',
+        },
+      ],
+    }
+  },
+
   data() {
     return {
       itinerariesDetails: [],

@@ -135,6 +135,21 @@ export default {
     CardCarousel,
     CoverImage
   },
+
+  head() {
+    return {
+      title: 'Visit-DAM | Attractions',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '',
+        },
+      ],
+    }
+  },
+
   data() {
     return {
       name: "Museum",
