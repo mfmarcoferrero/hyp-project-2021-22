@@ -45,7 +45,7 @@
             {{ item.description }}
           </p>
           <div class="row row-cols-1 row-cols-lg-2 ms-4 me-4">
-          <div v-for="(item, index) of filtered" :key="index" class=""> 
+          <div v-for="(item, index) of filtered" :key="index" class="mb-3"> 
             <event-card
               class="mb-3"
               :title="swapDashesAndCapitalize(item.name)"
