@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <cover-image img="https://s8.gifyu.com/images/attractions-1.jpg" title="Things to do"></cover-image>
 
     <div class="container">

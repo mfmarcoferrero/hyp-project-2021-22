@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container wrapper">
+  <div class="page-container">
     <cover-image :img="coverImg" :title="title" />
 
   <section id="events-by-season">

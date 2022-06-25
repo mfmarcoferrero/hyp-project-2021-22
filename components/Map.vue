@@ -1,6 +1,6 @@
 <template>
-  <div class="wrapper">
-    <iframe :width="width" :height="height" style="border:0" loading="lazy" allowfullscreen
+  <div :style="'width:'+ width + ';' +  'height:'+ height + ';'">
+    <iframe :style="'width:'+ width + ';' +  'height:'+ height + ';'" style="border:0" loading="lazy" allowfullscreen
       referrerpolicy="no-referrer-when-downgrade" :src="link + query"></iframe>
   </div>
 </template>
@@ -40,7 +40,7 @@ export default {
 
 iframe {
   border-radius: 10px;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;

@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div>
     <cover-image :img="coverImg" :title="title" />
     <!-- v-for bootstrap cards taking elements from database -->
     <div class="container position-relative pb-5">

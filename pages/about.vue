@@ -5,9 +5,8 @@
     <p class="m-4 p-2">
       This is a project for the
       <a
-        href="https://www4.ceda.polimi.it/manifesti/manifesti/controller/ManifestoPublic.do?EVN_DETTAGLIO_RIGA_MANIFESTO=evento&aa=2019&k_cf=225&k_corso_la=481&k_indir=T2A&codDescr=089318&lang=IT&semestre=2&idGruppo=3925&idRiga=239684"
-        >Hypermedia Applications</a
-      >
+        href="https://www4.ceda.polimi.it/manifesti/manifesti/controller/ManifestoPublic.do?EVN_DETTAGLIO_RIGA_MANIFESTO=evento&aa=2019&k_cf=225&k_corso_la=481&k_indir=T2A&codDescr=089318&lang=IT&semestre=2&idGruppo=3925&idRiga=239684">Hypermedia
+        Applications</a>
       exam at <a href="www.polimi.it">Politecnico di Milano</a>. The project was
       made by Milan-Delft group, composed of
       <strong>Marco Ferrero</strong> (<i>mfmarcoferrero</i>),
@@ -16,9 +15,8 @@
       <strong>Emile Lampe</strong>. The website was developed using
       <a href="https://nuxtjs.org/">Nuxt</a>, which is based on the Vue
       framework. To see the code and read the documentation,
-      <a href="https://github.com/mfmarcoferrero/hyp-project-2021-22"
-        >visit our Github repository</a
-      >. Thank you for reading!
+      <a href="https://github.com/mfmarcoferrero/hyp-project-2021-22">visit our Github repository</a>. Thank you for
+      reading!
     </p>
   </div>
 </template>
