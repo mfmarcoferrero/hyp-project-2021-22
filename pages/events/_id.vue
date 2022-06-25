@@ -1,15 +1,67 @@
 <template>
-  <div class="page container mt-4">
-    <h1 class="title">{{ swapDashesAndCapitalize(name)}}</h1>
-    <p>{{ description }}</p>
-    <div class="mb-5">
-      <img :src="img" class="rounded mx-auto d-block img-fluid" />
+  <div class="page container mt-5">
+
+    <div class="container mb-5">
+      <h1 class="title text-center ">{{ swapDashesAndCapitalize(name) }}</h1>
+      <div class="row row-cols-1 row-cols-lg-2 mt-5">
+        <div class="col">
+          <p class="p-4">{{ description }}</p>
+        </div>
+        <div class="col">
+          <img :src="img" alt="No img" class="img-fluid border border-dark border-3 id-img">
+        </div>
+      </div>
     </div>
+
+    <hr>
+    <section id="info">
+      <div class="container mt-3">
+        <div class="row row-cols-1 row-cols-lg-2">
+          <div class="col">
+            <google-map :query="location" />
+          </div>
+          <div class="col">
+            <div class="">
+              <h2 class="text-center">General Information</h2>
+            </div>
+            <br>
+
+            <div class="row row-cols-2 ms-3">
+              <div class="icon-item col-1">
+                <span :class="locationIcon"></span>
+              </div>
+              <div class="col event-card-text ms-1">
+                <span class="fs-4">{{ location }}</span>
+              </div>
+            </div>
+
+            <div class="row row-cols-2 m-3">
+              <div class="icon-item col-1">
+                <span :class="dateIcon"></span>
+              </div>
+              <div class="col event-card-text ms-1">
+                <span class="fs-4">{{ when }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr>
+
     <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
       <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="backToList">
-        Back to Events
+        Back to events
       </button>
     </div>
+
+    <!-- You may also like content -->
+
+    <!--section id="other-attractions">
+      <h1> You may also like </h1>
+      <card-carousel></card-carousel>
+    </section-->
+
   </div>
 </template>
 
@@ -18,35 +70,64 @@
 
 <script>
 import CommonMixin from '@/mixins/common.js'
+import GoogleMap from '@/components/Map.vue'
+import CardCarousel from '~/components/CardCarousel.vue'
 export default {
+  scrollToTop: true,
   name: 'DetailsPage',
+  components: {
+    GoogleMap,
+    CardCarousel
+  },
   mixins: [CommonMixin],
 
   //Important for the SEO
-  // head() {
+  //head() {
   //   return {
   //     title: this.name
   //   }
   // },
+
+  data() {
+    return {
+      locationIcon: 'mdi mdi-map-marker',
+      dateIcon: 'mdi mdi-timer',
+    }
+  },
   async asyncData({ route, $axios }) {
     const { id } = route.params
-    const { data } = await $axios.get('/api/events/' + id)
+    const { data } = await $axios.get(`/api/events/` + id)
     return {
       name: data.name,
+      location: data.location,
       img: data.img,
       description: data.description,
+      when: data.when,
     }
   },
 
-  // mounted(){
-  //   const date = new Date()
-  //   // Example on how to use mixinx
-  //   console.log(this.formatMyDate(date.toLocaleDateString()))
-  // },
   methods: {
-     backToList() {
-       this.$router.push('/events')
-     },
+    backToList() {
+      this.$router.push('/events')
+    },
+    goToAttraction() {
+      this.$router.push('/attractions' + location)
+    }
   },
 }
 </script>
+
+<style scoped>
+.id-img {
+  width: 100%;
+  height: 350px
+}
+
+.icon-item {
+    font-size: 35px;
+}
+
+.event-card-text {
+    padding-top: 6px;
+}
+</style>

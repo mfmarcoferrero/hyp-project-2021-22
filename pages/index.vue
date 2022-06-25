@@ -3,28 +3,30 @@
     <div class="container-carousel">
       <carousel :detailList="carouselList" scrollTo="#guide-to-the-city" />
       <p class="fs-1 text-center fw-bold position-absolute top-50 start-50 translate-middle shadow-plg cover-title">
-            Welcome to Amsterdam </p>
+        Welcome to Amsterdam! </p>
     </div>
 
-    <div class="container-fluid wrapper">
-      <!--Horizontal slider for cards -->
-      <section id="guide-to-the-city">
-        <h1 class="text-center mt-3">Guide to the City</h1>
-
-        <div class="container-fluid">
-          <div class="scrolling-wrapper row flex-row flex-nowrap gx-5 mt-2 pt-2 pb-2">
-
-            <div v-for="(item, itemIndex) of categoriesList" :key="`data-index-${itemIndex}`" class="col">
-              <hover-card :id="item.id" :name="item.name" :img="item.img" :description="item.description"
-                :path="item.name" />
-            </div>
-
+    <section id="topic-menu">
+      <div class="container">
+        <h2 class="text-center mt-5">What are you looking for?</h2>
+        <div class="row m-5">
+          <div v-for="(item, index) of categoriesList" :key="index" class="col-md m-2">
+            <topic-card :title="item.name"
+              :img="item.img" :path="item.name" />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <hr>
-    </div>
+    <hr class="m-5"/>
+
+    <section id="photo-collage">
+      <div class="container">
+        <h2 class="text-center m-3">Pictures of City's life</h2>
+        <masonry :photoList="photoList" path="placeholder" />
+      </div>
+    </section>
+
   </div>
 </template>
 
@@ -32,13 +34,15 @@
 import Carousel from '@/components/Carousel.vue'
 import Card from '@/components/Card.vue'
 import HoverCard from '@/components/HoverCard.vue'
+import Masonry from '@/components/Masonry.vue'
 
 export default {
   components: {
     Carousel,
     Card,
     HoverCard,
-    Carousel
+    Carousel,
+    Masonry
   },
   layout: 'nocrumbs',
   name: 'IndexPage',
@@ -47,8 +51,9 @@ export default {
   async asyncData({ $axios }) {
     let carousel = []
     let categories = []
-    const { data } = await $axios.get('/api/home-page-details')
-    for (var item of data) {
+    const { data: homepage_details } = await $axios.get('/api/home-page-details')
+    const { data: photo_list } = await $axios.get('/api/photolist')
+    for (var item of homepage_details) {
       if (item.section === 'carousel') {
         carousel.push(item)
       } else if (item.section === 'categories') {
@@ -58,69 +63,25 @@ export default {
     return {
       carouselList: carousel,
       categoriesList: categories,
-      path: "attractions"
+      path: 'attractions',
+      photoList: photo_list,
     }
-  }
+  },
 }
 </script>
 
 <style scoped>
-.scrolling-wrapper {
-  overflow-x: auto;
+/* Home page responsiveness */
+
+@media only screen and (min-width: 1024px) {
+  .card-container {
+    column-count: 4;
+  }
 }
 
-.header {
-  text-align: center;
-  padding: 32px;
+@media only screen and (max-width: 1023px) and (min-width: 540px) {
+  .card-container {
+    column-count: 2;
+  }
 }
-
-.zoom {
-  padding: 50px;
-  background-color: rgb(109, 151, 109);
-  transition: transform .2s;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-}
-
-.zoom:hover {
-  background-color: rgb(80, 111, 80);
-  transform: scale(1.2);
-}
-
-.row {
-  display: -ms-flexbox;
-  /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap;
-  /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
-
-.wrapper {
-  overflow: visible;
-  margin: 0 auto 100px auto;
-}
-
-.col-sm-auto {
-  overflow: visible;
-}
-
-/* Container holding the image and the text */
-.container-carousel {
-    position: relative;
-    text-align: center;
-    color: white;
-}
-
-.cover-title {
-    text-shadow: 0 0 16px rgba(0, 0, 0, .75);
-    /* font-size: 36px; */
-    /* font-weight: 900; */
-    /* line-height: 1.17; */
-    color: #fff;
-    /* width: 100%; */
-}
-
 </style>

@@ -12,12 +12,16 @@
 
 .bg-dam {
   background-color: rgb(253, 0, 13, 255);
-  opacity: 1;
 }
 
-.bg-dam:hover {
-  opacity: 1;
+
+.btn-dam {
+  background-color: rgb(253, 0, 13, 255);
+  color: white;
+  border-color: transparent;
+  opacity: 0.9;
 }
+
 
 .second-title {
   padding-left: 10px;
@@ -28,11 +32,10 @@
   ;
 }
 
-.wrapper {
-  overflow: hidden;
-  margin: 0 auto 100px auto;
+.cover-title {
+  text-shadow: 0 0 16px rgba(0, 0, 0, .75);
+  color: #fff;
 }
-
 
 /*--------------------------------------------------------*/
 /*--------------------------------------------------------*/
@@ -43,6 +46,7 @@
 
 .page-container {
   min-height: 90vh;
+  width: 100%;
   margin-bottom: 50px;
 }
 
@@ -52,20 +56,12 @@
   margin-right: 8vw;
 }
 
-/* Appearance of the main elements */
-/* a {
-  text-decoration: none;
-  color: black;
-}
-a:hover {
-  text-decoration: underline;
-} */
 .disabled-link {
   cursor: initial;
 }
 
 hr {
-  border-top: #212121 solid 2px;
+  border-top: #212121 solid 4px;
 }
 
 figure img {
@@ -81,22 +77,9 @@ address a {
   margin-bottom: 5px;
 }
 
-/* ul {
-  padding-left: 20px;
-  list-style-type: square;
-}
-li {
-  margin-bottom: 20px;
-} */
-
 .error-messages {
   text-align: center;
   margin-top: 30vh;
-}
-
-/* Styling for centered buttons */
-.centered-button {
-  text-align: center;
 }
 
 /* Flow up animation for page opening */

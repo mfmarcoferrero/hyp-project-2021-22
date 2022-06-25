@@ -44,7 +44,7 @@ export default {
 
 .card-img {
     width: 100%;
-    height: 15vw;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -67,7 +67,7 @@ export default {
     display: block;
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 2px;
     background: rgba(black, 0.6);
     z-index: 2;
     transition: 0.5s;
@@ -77,9 +77,11 @@ export default {
   .card-img-overlay {
     z-index: 3;
     transition: 0.4s ease-out;
+    opacity: 0;
 
     &:hover {
-      transform: translate(0px, 100px) scale(1.5);
+      transform: scale(1.1);
+      opacity: 1;
       //translate: (-20px, 0px);
       //transform: scale(1.3);
     }

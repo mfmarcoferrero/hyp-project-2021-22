@@ -56,6 +56,63 @@ export default async (models) => {
         },
     ]
 
+    const photoList = [
+        {
+            name: "name1",
+            description: "description",
+            url: "https://images.pexels.com/photos/11991865/pexels-photo-11991865.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            path: "attractions",
+        },
+        {
+            name: "name2",
+            description: "description",
+            url: "https://images.pexels.com/photos/12447940/pexels-photo-12447940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            path: "attractions",
+        },
+        {
+            name: "name3",
+            description: "description",
+            url: "https://images.pexels.com/photos/12019099/pexels-photo-12019099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            path: "attractions",
+        },
+        {
+            name: "name4",
+            description: "description",
+            url: "https://images.pexels.com/photos/12217674/pexels-photo-12217674.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            path: "attractions",
+        },
+        {
+            name: "name5",
+            description: "description",
+            url: "https://images.pexels.com/photos/12361807/pexels-photo-12361807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            path: "attractions",
+        },
+        {
+            name: "name6",
+            description: "description",
+            url: "https://images.pexels.com/photos/12317958/pexels-photo-12317958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            path: "attractions",
+        },
+        {
+            name: "name7",
+            description: "description",
+            url: "https://images.pexels.com/photos/12250627/pexels-photo-12250627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            path: "attractions",
+        },
+        {
+            name: "name8",
+            description: "description",
+            url: "https://images.pexels.com/photos/12199828/pexels-photo-12199828.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            path: "attractions",
+        },
+        {
+            name: "name9",
+            description: "description",
+            url: "https://images.pexels.com/photos/12094234/pexels-photo-12094234.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            path: "attractions",
+        },
+    ]
+
 
     //-----------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------
@@ -71,6 +128,7 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "top",
+            itineraryName: [ "One-day itinerary", "One-week itinerary" ]
         },
         {
             name: "Anne Frank house",
@@ -80,7 +138,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "top",
-            link: "https://www.annefrank.org/en/museum/tickets"
+            link: "https://www.annefrank.org/en/museum/tickets",
+            itineraryName: ["Three-day itinerary", "One-week itinerary"]
         },
         {
             name: "Vondelpark",
@@ -89,7 +148,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/28280-Vondelpark.jpg",
             info: "",
             timetable: "",
-            category: "top"
+            category: "top",
+            itineraryName: [ "One-week itinerary", ]
         },
         {
             name: "Royal Palace of Amsterdam",
@@ -99,7 +159,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "top",
-            link: "https://www.paleisamsterdam.nl/en/visit/"
+            link: "https://www.paleisamsterdam.nl/en/visit/",
+            itineraryName: [ "One-day itinerary", ]
         },
         {
             name: "Canals of Amsterdam",
@@ -108,7 +169,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/canals.jpg",
             info: "",
             timetable: "",
-            category: "top"
+            category: "top",
+            itineraryName: [ "One-day itinerary", ]
         },
         {
             name: "Rijksmuseum",
@@ -118,7 +180,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
-            link: "https://www.rijksmuseum.nl/en/tickets/articles"
+            link: "https://www.rijksmuseum.nl/en/tickets/articles",
+            itineraryName: [ "Three-day itinerary", "One-week itinerary" ]
         },
         {
             name: "Van Gogh Museum",
@@ -128,7 +191,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
-            link: "https://www.vangoghmuseum.nl/en/visit/tickets-and-ticket-prices"
+            link: "https://www.vangoghmuseum.nl/en/visit/tickets-and-ticket-prices",
+            itineraryName: [ "One-week itinerary", ]
         },
         {
             name: "Rembrandt House Museum",
@@ -138,7 +202,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
-            link: "https://www.tiqets.com/en/amsterdam-attractions-c75061/tickets-for-the-rembrandt-house-museum-p972886"
+            link: "https://www.tiqets.com/en/amsterdam-attractions-c75061/tickets-for-the-rembrandt-house-museum-p972886",
+            itineraryName: ["One-week itinerary", "Five-day itinerary"],
         },
         {
             name: "NEMO Science Museum",
@@ -148,7 +213,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
-            link: "https://www.nemosciencemuseum.nl/en/visit/tickets-and-prices/"
+            link: "https://www.nemosciencemuseum.nl/en/visit/tickets-and-prices/",
+            itineraryName: [ "Five-day itinerary", ]
         },
         {
             name: "EYE Film Institute Netherlands",
@@ -158,7 +224,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
-            link: "https://www.eyefilm.nl/en/plan-your-visit"
+            link: "https://www.eyefilm.nl/en/plan-your-visit",
+            itineraryName: [ "Five-day itinerary", ]
         },
         {
             name: "Jewis Historical Museum",
@@ -167,7 +234,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/jewish-2.jpg",
             info: "",
             timetable: "",
-            category: "museum"
+            category: "museum",
+            itineraryName: [ "One-week itinerary", ]
         },
         {
             name: "National Maritime Museum",
@@ -177,6 +245,7 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
+            itineraryName: [ "One-week itinerary", ]
         },
         {
             name: "Stedelijk Museum Amsterdam",
@@ -186,7 +255,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "museum",
-            link: "https://www.stedelijk.nl/en/visit"
+            link: "https://www.stedelijk.nl/en/visit",
+            itineraryName: [ "Three-day itinerary", ]
         },
         {
             name: "West Church (Westerkerk)",
@@ -195,7 +265,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/westkerk.jpg",
             info: "",
             timetable: "",
-            category: "building"
+            category: "building",
+            itineraryName: [ "One-week itinerary", ]
         },
         {
             name: "The Oude Church",
@@ -204,7 +275,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/oude-church.jpg",
             info: "",
             timetable: "",
-            category: "building"
+            category: "building",
+            itineraryName: [ "Five-day itinerary", ]
         },
         {
             name: "Heineken Experience",
@@ -214,7 +286,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "experience",
-            link: "https://www.stedelijk.nl/en/visit"
+            link: "https://www.stedelijk.nl/en/visit",
+            itineraryName: [ "Five-day itinerary", ]
         },
 
         {
@@ -224,7 +297,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/horus-botanicus-2.jpg",
             info: "",
             timetable: "",
-            category: "experience"
+            category: "experience",
+            itineraryName: [ "Three-day itinerary", ]
         },
         {
             name: "Amsterdam Royal Zoo",
@@ -234,7 +308,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "experience",
-            link: "https://www.artis.nl/en/"
+            link: "https://www.artis.nl/en/",
+            itineraryName: [ "One-week itinerary", ]
         },
         {
             name: "Albert Cuyp Market",
@@ -243,7 +318,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/albertcuyp.jpg",
             info: "",
             timetable: "",
-            category: "experience"
+            category: "experience",
+            itineraryName: [ "Five-day itinerary" ]
         },
         {
             name: "Bloemenmarkt",
@@ -252,7 +328,8 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/bloemenmarkt-2.jpg",
             info: "",
             timetable: "",
-            category: "experience"
+            category: "experience",
+            itineraryName: [ "Five-day itinerary", ]
         },
         {
             name: "FOAM",
@@ -262,7 +339,8 @@ export default async (models) => {
             info: "",
             timetable: "",
             category: "experience",
-            link: "https://tickets.foam.org/en/tickets"
+            link: "https://tickets.foam.org/en/tickets",
+            itineraryName: [ "Three-day itinerary" ]
         },
     ]
 
@@ -291,27 +369,10 @@ export default async (models) => {
             name: "One-week itinerary",
             description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
             img: "https://s8.gifyu.com/images/tulip-field-netherlands-shutterstock_483619153-1024x679.jpg",
-        }
+        },
+
     ]
 
-    const itineraryPOIList = [
-        {
-            itineraryName: "One-day itinerary",
-            pointofinterestName: "Rijksmuseum"
-        },
-        {
-            itineraryName: "One-day itinerary",
-            pointofinterestName: "Van Gogh Museum"
-        },
-        {
-            itineraryName: "One-day itinerary",
-            pointofinterestName: "Dam square"
-        },
-        {
-            itineraryName: "One-day itinerary",
-            pointofinterestName: "Anne Frank house"
-        },
-    ]
 
     //-----------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------
@@ -321,51 +382,81 @@ export default async (models) => {
     const eventList = [
         {
             name: "ice-skating-on-the-river",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description:"Skate on the frozen Amsterdam canals! This event happens during winter for obvious reasons, and it's a really interesting way to explore the city's canal system. Just be careful not to break the ice under your feet!",
             season: "winter",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            img: "https://deadline.com/wp-content/uploads/2018/03/ap_18061696756896.jpg?w=681&h=383&crop=1",
+            location: "Vondelpark",
+            when: "During all winter",
+            date: "21/12/2022"
         },
         {
             name: "van-gogh-week",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description: "If you're lucky to visit in this period, then you can't miss the Van Gogh Week! This event takes place in Van Gogh Museum, and consist in special prices to admire the painter master works, interesting activities and plays, and much more!",
             season: "winter",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            img: "https://cdn.getyourguide.com/img/tour/57a213594ce6f.jpeg/145.jpg",
+            location: "Van Gogh Museum",
+            when: "January 7 - January 14",
+            date: "07/01/2023"
         },
         {
             name: "street-museum",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description: "The cold snow is melting, and which occasion would be better than this to make a sroll in the city's streets! Modern and street artist are collaborating to make a open-sky museum on the streets of amsterdam, bringing their works or live performances. You can't miss it!",
             season: "spring",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            img: "https://travel.thewom.it/pictures/2020/04/06/street-art_1.jpeg",
+            location: "Canals of Amsterdam",
+            when: "April 18 - March 18",
+            date: "18/04/2023"
+
         },
         {
             name: "flower-walk",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description:"What's that parfume on the air? It's blooming tulips! If you love flowers then this is the right time to visit our Botanic Center. Tulip flowers are a wonderful sight and a charateristic event of our city. Come visit alone or with good company!",
             season: "spring",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            img: "https://i0.wp.com/tulipfestivalamsterdam.com/wp-content/uploads/2018/11/cropped-Bloemenvelden-Bollenstreek-2019.jpg?resize=800%2C451&ssl=1",
+            location: "Hortus Botanicus Amsterdam",
+            when: "23 March until firsts of April",
+            date: "23/03/2023"
+
         },
         {
             name: "summer-festival",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description: "Do you like to dance? Yes? Then what are you waitig for? Amsterdam Summer Festival is one of the craziest and most charateristic summer festivals of europe, with artists coming from all around the globe. All popular genres are going to be played. Raggaeton, Pop music, Indie and much more!",
             season: "summer",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            img: "https://storage.googleapis.com/mcp_acc_236blog/uploads/2015/06/2011-4-Dennis-Bouman.jpg",
+            location: "Vondelpark",
+            when: "July 5 - July 7",
+            date: "5/08/2022"
+
         },
         {
             name: "modern-art-exihibit",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description: "Modern art is very cool right? I think it is. Even if you don't like it, give this exihibit a chance! There are a lot of very famous artists that are presenting their new artwork. Also, the entrance is free!",
             season: "summer",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            img: "https://files.ocula.com/anzax/77/77b2e762-fbf0-4c1b-91d2-3e2ee0380d10_2000_1500.jpg",
+            location: "FOAM",
+            when: "August 15 - August 30",
+            date: "15/08/2022"
+
         },
         {
             name: "fall-rock-festival",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description:"Ready to rock your body? Fall Rock Festival is the perfect event for rock-loving people. A lot of very famous bands and rock artists are coming to play, and thousands of people are expected to join. Let's welcome the new season with dancing and rocking!",
             season: "fall",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            img: "https://media.resources.festicket.com/image/1262x460/smart/filters:quality(70)/www/magazine/Rock_B.jpg",
+            location: "Dam square",
+            when: "October 15 - October 18",
+            date: "15/10/2022"
+
         },
         {
-            name: "museum-marathon",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            name: "street-food-experience",
+            description: "If you love street food, then you're going to adore Street Food Experience! In this chilly week of November a contest of all street food chefs is taking place in Amsterdam and... of course we need people to eat this food! So, if you're lucky to be there in this period, pay this event a visit!",
             season: "fall",
             img: "https://s1.gifyu.com/images/duomo.jpg",
+            location: "Bloemenmarkt",
+            when: "November 10 - November 17",
+            date: "10/11/2022"
+
         },
 
 
@@ -381,57 +472,110 @@ export default async (models) => {
     const serviceTypesList = [
         {
             name: "Medical_Services",
-            description: "medical services description",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            description: "Hospital, pharmacies and clinics. All you need for your wellness and well-being during your stay in Amsterdam!",
+            img: "https://www.medicalgroupitalia.it/wp-content/uploads/2021/11/clicca-e-scopri-il-nostro-team-traumatology-center-medical-group-italia.jpg",
         },
         {
             name: "Cultural_Services",
             description: "cultural services description",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            img: "https://www.eui.eu/Content-Types-Assets/Services/Library/Librarian-showing-books.xa04803ee.JPG?w=586&h=330&fit=crop",
         },
         {
             name: "Thematic_and_leisure_parks",
             description: "parks services description",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            img: "https://dutchreview.com/wp-content/uploads/walibi-holland-theme-park-netherlands-rollercoaster.jpeg",
         },
         {
-            name: "Job_Services",
+            name: "Work_Services",
             description: "job services description",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            img: "https://media.istockphoto.com/photos/young-asian-engineer-woman-picture-id1147555040?k=20&m=1147555040&s=612x612&w=0&h=zTWGl6N-nLBPK1iNGqo3BuZY2UZMcpMWMHD2DRQKv0k=",
+        },
+        {
+            name: "Student_Services",
+            description: "job services description",
+            img: "https://i0.wp.com/oecdedutoday.com/wp-content/uploads/2020/10/PISA-Volume-VI-blog.jpg?fit=1200%2C675&ssl=1",
         },
     ]
     const serviceList = [
         {
             type: "Medical_Services",
-            name: "Big Hospital",
-            description: "is the biggest hospital of Amsterdam!",
-            address: "First Street, 1",
+            name: "Tourist Medical Center",
+            description: "is a medical facility for tourists.",
+            address: "De Ruijterkade, 24a",
             hours: "Open 24/7",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            img: "https://www.valdisievehospital.it/wp-content/uploads/2021/01/valdisieve-hospital-slider_02-desktop-1440x720.jpg",
         },
         {
             type: "Medical_Services",
-            name: "Small Hospital",
-            description: "is the smallest hospital of Amsterdam!",
-            address: "Second Street, 2",
+            name: "Amsterdam UMC",
+            description: "is an university hospital.",
+            address: "Meibergdreef, 9",
             hours: "Open 24/7",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            img: "https://www.policlinico.mi.it/assets/english/img/university.jpg",
+        },
+        {
+            type: "Medical_Services",
+            name: "Acibadem International M.C.",
+            description: "is a medical center near the main area.",
+            address: "Arlandaweg, 100",
+            hours: "Open 24/7",
+            img: "https://helse-nord.no/PublishingImages/Artikler_nyhetssaker/Kjersti%20operating%20theatre.jpg?RenditionID=11",
+        },
+        {
+            type: "Medical_Services",
+            name: "Amsterdam Central Pharmacy",
+            description: "is one of the biggest pharmacies in Amsterdam",
+            address: "De Ruijterkade, 24a",
+            hours: "Mon-Fri open 24h, Sat-Sun 08:30-20:30",
+            img: "https://i0.wp.com/mytravelboektje.com/wp-content/uploads/2016/10/AMSTERDAM_PHARMACY-15-600x332.jpg?resize=600%2C332g",
+        },
+        {
+            type: "Medical_Services",
+            name: "Central Hospital",
+            description: "is the biggest hospital of Amsterdam",
+            address: "First Street, 1",
+            hours: "Open 24/7",
+            img: "https://iadsb.tmgrup.com.tr/9ace4a/0/0/0/0/1000/563?u=https://idsb.tmgrup.com.tr/2019/02/13/1550082551040.jpg",
         },
         {
             type: "Cultural_Services",
-            name: "Big Library",
-            description: "is the biggest library of Amsterdam!",
+            name: "OBA Oosterdok - Public Library",
+            description: "is a public library.",
+            address: "Oosterdoksade, 143",
+            hours: "08:00 - 18:00",
+            img: "https://www.univiu.org/images/aauniviu2017/GP/viulife/library-488690_640.jpg",
+        },
+        {
+            type: "Cultural_Services",
+            name: "Rijksmuseum Research Center",
+            description: "is place for study and research.",
+            address: "Museumstraat, 1",
+            hours: "09:00 - 15:00",
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Rijksmuseum_Research_Library_%281%29.jpg/640px-Rijksmuseum_Research_Library_%281%29.jpg",
+        },
+        {
+            type: "Cultural_Services",
+            name: "OBA Roelof Hartplein",
+            description: "is a public library.",
+            address: "Roelof Hartplein, 430",
+            hours: "08:00 - 18:00",
+            img: "https://live.staticflickr.com/4092/4951482918_8590438379_b.jpg",
+        },
+        {
+            type: "Cultural_Services",
+            name: "Artis Library",
+            description: "is the a library open 24h.",
+            address: "Plantafe Middelaan, 45",
+            hours: "Open 24/7",
+            img: "https://www.uva.nl/binaries/_ht_1562681604595/pagebanner/content/gallery/locaties/a/artisbibliotheek-lowres.jpg",
+        },
+        {
+            type: "Cultural_Services",
+            name: "Smallerjks Library",
+            description: "is the smallest library of Amsterdam!",
             address: "Bookworm Street, 1",
             hours: "08:00 - 18:00",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
-        },
-        {
-            type: "Cultural_Services",
-            name: "Small Library",
-            description: "is the smallest library of Amsterdam!",
-            address: "Little Street, 2",
-            hours: "09:00 - 15:00",
-            img: "https://s1.gifyu.com/images/duomo.jpg",
+            img: "https://thesmalllibrary.co.uk/wp-content/uploads/2021/04/1-small_library_meg.jpg",
         },
         {
             type: "Thematic_and_leisure_parks",
@@ -450,7 +594,31 @@ export default async (models) => {
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            type: "Job_Services",
+            type: "Thematic_and_leisure_parks",
+            name: "Big Park2",
+            description: "is the biggest park of Amsterdam!",
+            address: "Leaf Street, 1",
+            hours: "08:00 - 20:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "Thematic_and_leisure_parks",
+            name: "Big Park3",
+            description: "is the biggest park of Amsterdam!",
+            address: "Leaf Street, 1",
+            hours: "08:00 - 20:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "Thematic_and_leisure_parks",
+            name: "Big Park4",
+            description: "is the biggest park of Amsterdam!",
+            address: "Leaf Street, 1",
+            hours: "08:00 - 20:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "Work_Services",
             name: "Big Job Center",
             description: "is the biggest job center of Amsterdam!",
             address: "Wall Street, 1",
@@ -458,11 +626,75 @@ export default async (models) => {
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
         {
-            type: "Job_Services",
+            type: "Work_Services",
             name: "Small Job Center",
             description: "is the smallest job center of Amsterdam!",
             address: "Unemployed Street, 2",
             hours: "Currently closed",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "Work_Services",
+            name: "Big Job Center2",
+            description: "is the biggest job center of Amsterdam!",
+            address: "Wall Street, 1",
+            hours: "08:00 - 18:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "Work_Services",
+            name: "Big Job Center3",
+            description: "is the biggest job center of Amsterdam!",
+            address: "Wall Street, 1",
+            hours: "08:00 - 18:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "Work_Services",
+            name: "Big Job Center4",
+            description: "is the biggest job center of Amsterdam!",
+            address: "Wall Street, 1",
+            hours: "08:00 - 18:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "Student_Services",
+            name: "Small School",
+            description: "is the smallest school of Amsterdam!",
+            address: "Saint's Street, 1",
+            hours: "Mon-Fri 8:00-12:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "Student_Services",
+            name: "Big School",
+            description: "is the biggest school of Amsterdam!",
+            address: "St.Margharet Square, 1",
+            hours: "Mon-Fri 8:00-12:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "Student_Services",
+            name: "Small School2",
+            description: "is the smallest school of Amsterdam!",
+            address: "Saint's Street, 1",
+            hours: "Mon-Fri 8:00-12:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "Student_Services",
+            name: "Small School3",
+            description: "is the smallest school of Amsterdam!",
+            address: "Saint's Street, 1",
+            hours: "Mon-Fri 8:00-12:00",
+            img: "https://s1.gifyu.com/images/duomo.jpg",
+        },
+        {
+            type: "Student_Services",
+            name: "Small School4",
+            description: "is the smallest school of Amsterdam!",
+            address: "Saint's Street, 1",
+            hours: "Mon-Fri 8:00-12:00",
             img: "https://s1.gifyu.com/images/duomo.jpg",
         },
     ]
@@ -473,5 +705,5 @@ export default async (models) => {
     await models.HomePageDetail.bulkCreate(homePageList)
     await models.Itinerary.bulkCreate(itinerariesList)
     await models.Event.bulkCreate(eventList)
-    await models.ItineraryPoi.bulkCreate(itineraryPOIList)
+    await models.Photolist.bulkCreate(photoList)
 }

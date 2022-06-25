@@ -2,7 +2,6 @@
   <ol vocab="http://schema.org/" typeof="BreadcrumbList" class="mb-0 bg-light">
     <li property="itemListElement" typeof="ListItem">
       <nuxt-Link property="item" typeof="WebPage" to="/">
-        <span property="name">Home</span>
       </nuxt-Link>
       <meta property="position" content="1" />
     </li>

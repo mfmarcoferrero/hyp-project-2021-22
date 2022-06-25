@@ -83,7 +83,7 @@
         </div>
 
         <div class="d-grid gap-2 mt-5 ms-4 me-4">
-          <a href="https://www.citysightseeingamsterdam.nl/" target="_blank" class="btn btn-outline-secondary"
+          <a href="https://www.citysightseeingamsterdam.nl/" target="_blank" class="btn btn-outline-dark"
             type="button"> Book a ticket </a>
         </div>
 
@@ -119,7 +119,7 @@
           </div>
         </div>
         <div class="d-grid gap-2 ms-4 me-4">
-          <a href="https://amsterdamcanalcruises.nl/canal-cruises/" target="_blank" class="btn btn-outline-secondary"
+          <a href="https://amsterdamcanalcruises.nl/canal-cruises/" target="_blank" class="btn btn-outline-dark"
             type="button"> Book a ticket </a>
         </div>
       </div>
@@ -150,6 +150,20 @@ export default {
     GoogleMap
   },
 
+  head() {
+    return {
+      title: 'Visit-DAM | Itineraries',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '',
+        },
+      ],
+    }
+  },
+
   data() {
     return {
       itinerariesDetails: [],
@@ -158,7 +172,13 @@ export default {
   },
 
   async asyncData({ $axios }) {
-    //Database table to populate service image, service description and markers array to show on map
+
+    const { data } = await $axios.get('/api/itineraries')
+    return {
+      itinerariesDetails: data,
+    }
+
+    /*Database table to populate service image, service description and markers array to show on map
     return $axios.get('/api/itineraries').then(async itineraries => {
       for (let itinerary of itineraries.data) {
         let pois = []
@@ -173,25 +193,12 @@ export default {
     })
       .catch(err => {
         console.log(err)
-      })
+      }) */
   },
 
   methods: {
     goTo(name) {
       this.$router.push(`/itineraries/${name}`)
-    },
-    async getPois(name) {
-      try {
-        let pois = []
-        const { data } = await this.$axios.get('/api/poisOfItinerary/' + name)
-        for (let item of data) {
-          pois.push((await this.$axios.get('/api/pois/' + item.pointofinterestName)).data)
-        }
-        console.log(pois)
-        return pois
-      } catch (err) {
-        console.log(err)
-      }
     }
   }
 }
