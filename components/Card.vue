@@ -2,7 +2,7 @@
   <div class="card" @click="goTo(path)">
       <img class="card-img-top" :src="img" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">{{ swapDashesAndCapitalize(name) }}</h5>
+        <h5 class="card-title second-title vl">{{ swapDashesAndCapitalize(name) }}</h5>
         <p class="card-text">{{ description }}</p>
       </div>
   </div>
@@ -56,6 +56,7 @@ export default {
 
 .card {
   width: 100%;
+  height: 100%;
   transition: all 0.2s ease;
   cursor: pointer;
 }

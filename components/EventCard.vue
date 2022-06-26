@@ -1,11 +1,11 @@
 <template>
-    <div class="card mb-3" @click="goTo(path)">
-        <div class="row g-4">
+    <div class="card" @click="goTo(path)">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col-md-6">
                 <img :src="img" class="img-fluid rounded-start img-card" alt="No Image">
             </div>
             <div class="col-md-6">
-                <div class="card-body">
+                <div class="card-body pe-2 me-2">
                     <div class="">
                         <h5 class="card-title vl second-title">{{ title }}</h5>
                     </div>
@@ -14,7 +14,7 @@
                         <div class="icon-item col-1">
                             <span :class="locationIcon"></span>
                         </div>
-                        <div class="col event-card-text ms-1">
+                        <div class="col-8 event-card-text ms-1">
                             <span>{{ location }}</span>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                         </div>
                     </div>
 
-                    <p class="card-text mt-2"><small class="text-muted">COVID-19 restrictions may apply</small></p>
+                    <!--p class="card-text mt-2"><small class="text-muted">COVID-19 restrictions may apply</small></p-->
                 </div>
             </div>
         </div>
@@ -86,6 +86,7 @@ export default {
 <style lang="scss" scoped>
 .card {
     width: 100%;
+    height: 200px;
     transition: all 0.2s ease;
     cursor: pointer;
 }
@@ -96,8 +97,7 @@ export default {
 }
 
 .img-card {
-    width: 100%;
-    height: 200px;
+    height: 200px; /* Change it based upon requirement */
     object-fit: cover;
 }
 
@@ -108,4 +108,19 @@ export default {
 .event-card-text {
     padding-top: 6px;
 }
+
+@media only screen and (max-width: 800px) {
+    .img-card {
+        height: 100%; /* Change it based upon requirement */
+        object-fit: cover;
+    }
+
+    .card {
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+}
+
 </style>
