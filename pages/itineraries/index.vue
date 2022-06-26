@@ -82,7 +82,7 @@
           </div>
         </div>
 
-        <div class="d-grid gap-2 mt-5 ms-4 me-4">
+        <div class="d-grid gap-2 p-5">
           <a href="https://www.citysightseeingamsterdam.nl/" target="_blank" class="btn btn-outline-dark"
             type="button"> Book a ticket </a>
         </div>
@@ -118,7 +118,7 @@
             <google-map query="amsterdam canal cruise" />
           </div>
         </div>
-        <div class="d-grid gap-2 ms-4 me-4">
+        <div class="d-grid gap-2 p-5">
           <a href="https://amsterdamcanalcruises.nl/canal-cruises/" target="_blank" class="btn btn-outline-dark"
             type="button"> Book a ticket </a>
         </div>
