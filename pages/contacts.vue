@@ -2,12 +2,13 @@
   <div class="page-container container position-relative pb-5">
     <h2 class="second-title vl ms-5 mt-5 mb-5">Contact us</h2>
 
-    <div class="row">
-      <div class="col-7 ms-5">
+    <div class="row row-cols-1 row-cols-lg-2">
+
+      <div class="col">
         <google-map query="i amsterdam visitor center" height="300px" class="" />
       </div>
-      <div class="col m-3">
 
+      <div class="col">
         <div class="row p-2 me-4 mb-3">
           <span>Amsterdam main official tourist office is in the center of the city. This office not only inform you
             about the city in a professional way but
@@ -38,8 +39,13 @@
     <hr class="m-5">
 
     <div class="container">
-      <contact-form />
+      <div class="row justify-content-center">
+        <div class="col-10 col-lg-6">
+          <contact-form />
+        </div>
+      </div>
     </div>
+  </div>
   </div>
 </template>
 
