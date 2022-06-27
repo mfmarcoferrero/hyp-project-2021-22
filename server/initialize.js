@@ -387,7 +387,8 @@ export default async (models) => {
             img: "https://deadline.com/wp-content/uploads/2018/03/ap_18061696756896.jpg?w=681&h=383&crop=1",
             location: "Vondelpark",
             when: "During all winter",
-            date: "21/12/2022"
+            date: '2022-12-21',
+            type: 'sport'
         },
         {
             name: "van-gogh-week",
@@ -396,7 +397,8 @@ export default async (models) => {
             img: "https://cdn.getyourguide.com/img/tour/57a213594ce6f.jpeg/145.jpg",
             location: "Van Gogh Museum",
             when: "January 7 - January 14",
-            date: "07/01/2023"
+            date: '2023-01-07',
+            type: 'art'
         },
         {
             name: "street-museum",
@@ -405,7 +407,8 @@ export default async (models) => {
             img: "https://travel.thewom.it/pictures/2020/04/06/street-art_1.jpeg",
             location: "Canals of Amsterdam",
             when: "April 18 - March 18",
-            date: "18/04/2023"
+            date: '2023/04/18',
+            type: 'art'
 
         },
         {
@@ -415,7 +418,8 @@ export default async (models) => {
             img: "https://i0.wp.com/tulipfestivalamsterdam.com/wp-content/uploads/2018/11/cropped-Bloemenvelden-Bollenstreek-2019.jpg?resize=800%2C451&ssl=1",
             location: "Hortus Botanicus Amsterdam",
             when: "23 March until firsts of April",
-            date: "23/03/2023"
+            date: '2023-03-23',
+            type: 'experience'
 
         },
         {
@@ -425,8 +429,8 @@ export default async (models) => {
             img: "https://storage.googleapis.com/mcp_acc_236blog/uploads/2015/06/2011-4-Dennis-Bouman.jpg",
             location: "Vondelpark",
             when: "July 5 - July 7",
-            date: "5/08/2022"
-
+            date: '2022-08-05',
+            type: 'music'
         },
         {
             name: "modern-art-exihibit",
@@ -435,7 +439,8 @@ export default async (models) => {
             img: "https://files.ocula.com/anzax/77/77b2e762-fbf0-4c1b-91d2-3e2ee0380d10_2000_1500.jpg",
             location: "FOAM",
             when: "August 15 - August 30",
-            date: "15/08/2022"
+            date: '2022-08-15',
+            type: 'art'
 
         },
         {
@@ -445,7 +450,8 @@ export default async (models) => {
             img: "https://media.resources.festicket.com/image/1262x460/smart/filters:quality(70)/www/magazine/Rock_B.jpg",
             location: "Dam square",
             when: "October 15 - October 18",
-            date: "15/10/2022"
+            date: '2022-10-15',
+            type: 'music'
 
         },
         {
@@ -455,7 +461,8 @@ export default async (models) => {
             img: "https://s1.gifyu.com/images/duomo.jpg",
             location: "Bloemenmarkt",
             when: "November 10 - November 17",
-            date: "10/11/2022"
+            date: '2022-11-05',
+            type: 'food'
 
         },
 

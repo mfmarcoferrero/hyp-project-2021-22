@@ -50,7 +50,8 @@ async function initializeDatabaseConnection() {
     img: DataTypes.STRING(1000),
     location: DataTypes.STRING(10000),
     when: DataTypes.STRING,
-    date: DataTypes.STRING
+    date: DataTypes.DATEONLY,
+    type: DataTypes.STRING
   })
   const Itinerary = database.define("itinerary", {
     name: {
@@ -194,7 +195,8 @@ async function runMainApi() {
         img: element.img,
         location: element.location,
         when: element.when,
-        date: element.date
+        date: element.date,
+        type: element.type
       })
     }
     return res.json(filtered)

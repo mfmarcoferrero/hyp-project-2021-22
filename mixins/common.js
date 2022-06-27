@@ -27,7 +27,7 @@ export default {
                 matrix[k] = chunk;
                 k++;
             }
-            return(matrix);
+            return (matrix);
         }
     }
 }

@@ -2,8 +2,8 @@
   <div class="page container mt-5">
 
     <div class="container mb-5">
-      <div class="row">
-        <div class="col">
+      <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col mb-3">
           <h1 class="title">{{ swapDashesAndCapitalize(name) }}</h1>
           <p>{{ description }}</p>
         </div>
@@ -16,8 +16,8 @@
     <hr>
     <section id="info">
       <div class="container">
-        <div class="row">
-          <div class="col">
+        <div class="row row-cols-1 row-cols-lg-2">
+          <div class="col mb-3">
             <google-map :query="name" />
           </div>
           <div class="col">
