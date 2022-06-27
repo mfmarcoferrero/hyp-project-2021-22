@@ -87,8 +87,13 @@ async function initializeDatabaseConnection() {
     description: DataTypes.STRING,
     url: DataTypes.STRING,
     path: DataTypes.STRING(1000),
-  }) 
-  
+  })
+  const Message = database.define("message", {
+    name: DataTypes.STRING,
+    email: DataTypes.STRING,
+    message: DataTypes.STRING(10000)
+  })
+
   //const ItineraryPoi = database.define("itinerary_poi", {})
   //Itinerary.belongsToMany(POI, { through: 'itinerary_poi' })
   //POI.belongsToMany(Itinerary, { through: 'itinerary_poi' }) 
@@ -101,7 +106,8 @@ async function initializeDatabaseConnection() {
     ServiceType,
     Service,
     //ItineraryPoi,
-    Photolist
+    Photolist,
+    Message
   }
 }
 
@@ -133,7 +139,7 @@ async function runMainApi() {
 
   app.get('/poisByItinerary/:name', async (req, res) => {
     const name = req.params.name
-    const result = await models.POI.findAll({ where: { itineraryName : { [Op.contains] : [name] } } })
+    const result = await models.POI.findAll({ where: { itineraryName: { [Op.contains]: [name] } } })
     return res.json(result)
   })
 
@@ -278,12 +284,25 @@ async function runMainApi() {
     return res.json(filtered)
   })
 
+  //-----------------------------------------------------------------------------------------
+  //-----------------------------------------------------------------------------------------
+  //                                    MESSAGE API
+  //-----------------------------------------------------------------------------------------
+  //-----------------------------------------------------------------------------------------
 
-
+  app.post("/message", async (req, res) => {
+    const { name, email, message, commercialFlag } = req.body
+    const messageObj = models.Message.build({
+      name,
+      email,
+      message
+    })
+    await messageObj.save()
+    return res.sendStatus(200)
+  })
 
 }
 
 runMainApi()
-
 
 export default app
