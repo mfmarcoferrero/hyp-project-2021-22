@@ -8,7 +8,7 @@
       <div class="row row-cols-1 row-cols-lg-2 justify-content-center">
         <div class="col">
 
-          <p class="fs-5">
+          <p class="fs-5 mb-3">
             Visit DAM is an association that is part of the NBTC, the Netherlands Board of Tourism & Conventions.
             <br><br>
             NBTC is all about the development, branding and marketing of the Netherlands as a destination.
@@ -21,7 +21,7 @@
           </p>
         </div>
 
-        <div class="col center-block">
+        <div class="col center-block ps-5">
           <img src="https://s8.gifyu.com/images/77376_fullimage_nbtc-default-logo-nl.jpg" alt="No img"
             class="img-fluid border border-dark border-3 about-img">
         </div>

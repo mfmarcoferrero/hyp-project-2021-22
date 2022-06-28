@@ -1,35 +1,39 @@
 <template>
-  <div class="page container mt-5">
+  <div class="page-container">
 
-    <div class="container mb-5">
-      <h1 class="title text-center ">{{ swapUnderscoresWithSpaces(name) }}</h1>
-      <div class="row row-cols-1 row-cols-lg-2 mt-5">
-        <div class="col">
-          <p class="p-4">{{ description }}</p>
-        </div>
-        <div class="col">
-          <img :src="img" alt="No img" class="img-fluid border border-dark border-3 id-img">
-        </div>
-      </div>
-    </div>
-
-    <hr>
-    <section id="info">
-      <div class="container mt-3">
-        <div class="row row-cols-1 row-cols-lg-2">
+    <section id="description">
+      <div class="section-container mb-5">
+        <h1 class="title text-center ">{{ swapUnderscoresWithSpaces(name) }}</h1>
+        <div class="row row-cols-1 row-cols-lg-2 mt-5">
           <div class="col">
-            <google-map :query="name + 'Amsterdam'" />
+            <p class="p-4">{{ description }}</p>
           </div>
-          <div class="col-6">
-            <accordion :serviceDetails="serviceDetails" />
+          <div class="col">
+            <img :src="img" alt="No img" class="img-fluid id-img">
           </div>
         </div>
       </div>
     </section>
-    <hr>
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-      <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="backToList">
+    <hr class="m-5">
+
+    <section id="info">
+      <div class="section-container">
+        <div class="row row-cols-1 row-cols-lg-2">
+          <div class="col mb-3">
+            <google-map :query="name + 'Amsterdam'" />
+          </div>
+          <div class="col">
+            <accordion :serviceDetails="serviceDetails" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <div class="section-container d-grid gap-2 d-md-flex justify-content-md-start mt-5 mb-5">
+      <button type="button" class="btn btn-outline-dark btn-lg px-4" @click="backToList">
         Back to services
       </button>
     </div>

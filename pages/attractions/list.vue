@@ -1,48 +1,46 @@
 <template>
-    <div class="wrapper page-container">
+    <div class="page-container">
         <cover-image :img="img" title="Attractions and Experiences" class="mb-5" />
-        <div class="container position-relative pb-5">
 
-            <div class="container">
-                <h2 class="second-title vl m-5"> Top Sights</h2>
-                <div class="row row-cols-1 row-cols-lg-4 ms-4 me-4">
-                    <div class="col" v-for="(poi, poiIndex) of topList" :key="`poi-index-${poiIndex}`">
-                        <card :name="poi.name" :img="poi.img" :path="'/attractions/' + poi.name" class="mb-3" />
-                    </div>
-                </div>
-                <hr />
-            </div>
-
-            <div class="container">
-                <h2 class="second-title vl m-5"> Museums and Arts </h2>
-                <div class="row row-cols-1 row-cols-lg-4 ms-4 me-4">
-                    <div class="col" v-for="(poi, poiIndex) of artList" :key="`poi-index-${poiIndex}`">
-                        <card :name="poi.name" :img="poi.img" :path="'/attractions/' + poi.name" class="mb-3" />
-                    </div>
-                </div>
-                <hr />
-            </div>
-
-            <div class="container">
-                <h2 class="second-title vl m-5"> Experiences </h2>
-                <div class="row row-cols-1 row-cols-lg-4 ms-4 me-4">
-                    <div class="col" v-for="(poi, poiIndex) of experienceList" :key="`poi-index-${poiIndex}`">
-                        <card :name="poi.name" :img="poi.img" :path="'/attractions/' + poi.name" class="mb-3" />
-                    </div>
-                </div>
-                <hr class="" />
-            </div>
-
-            <div class="container">
-                <h2 class="second-title vl m-5"> Buildings and Churches </h2>
-                <div class="row row-cols-1 row-cols-lg-4 ms-4 me-4">
-                    <div class="col" v-for="(poi, poiIndex) of buildingList" :key="`poi-index-${poiIndex}`">
-                        <card :name="poi.name" :img="poi.img" :path="'/attractions/' + poi.name" class="mb-3" />
-                    </div>
+        <div class="section-container">
+            <h2 class="second-title vl m-5"> Top Sights</h2>
+            <div class="row row-cols-1 row-cols-lg-4">
+                <div class="col mb-4" v-for="(poi, poiIndex) of topList" :key="`poi-index-${poiIndex}`">
+                    <card :name="poi.name" :img="poi.img" :path="'/attractions/' + poi.name" class="mb-3" />
                 </div>
             </div>
-
+            <hr />
         </div>
+
+        <div class="section-container">
+            <h2 class="second-title vl m-5"> Museums and Arts </h2>
+            <div class="row row-cols-1 row-cols-lg-4">
+                <div class="col mb-4" v-for="(poi, poiIndex) of artList" :key="`poi-index-${poiIndex}`">
+                    <card :name="poi.name" :img="poi.img" :path="'/attractions/' + poi.name" class="mb-3" />
+                </div>
+            </div>
+            <hr />
+        </div>
+
+        <div class="section-container">
+            <h2 class="second-title vl m-5"> Experiences </h2>
+            <div class="row row-cols-1 row-cols-lg-4">
+                <div class="col mb-4" v-for="(poi, poiIndex) of experienceList" :key="`poi-index-${poiIndex}`">
+                    <card :name="poi.name" :img="poi.img" :path="'/attractions/' + poi.name" class="mb-3" />
+                </div>
+            </div>
+            <hr class="" />
+        </div>
+
+        <div class="section-container">
+            <h2 class="second-title vl m-5"> Buildings and Churches </h2>
+            <div class="row row-cols-1 row-cols-lg-4">
+                <div class="col mb-4" v-for="(poi, poiIndex) of buildingList" :key="`poi-index-${poiIndex}`">
+                    <card :name="poi.name" :img="poi.img" :path="'/attractions/' + poi.name" class="mb-3" />
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 

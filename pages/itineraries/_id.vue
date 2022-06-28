@@ -33,7 +33,7 @@
     </section>
 
     <div class="d-grid gap-2 d-md-flex justify-content-center m-5">
-      <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="backToList">
+      <button type="button" class="btn btn-outline-dark btn-lg px-4" @click="backToList">
         Back to itineraries
       </button>
     </div>
@@ -54,7 +54,6 @@ export default {
   components: {
     GoogleMap,
     CardCarousel,
-    Accordion,
   },
 
   data() {

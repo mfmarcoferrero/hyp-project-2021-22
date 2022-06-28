@@ -1,7 +1,7 @@
 <template>
   <div :style="'width:'+ width + ';' +  'height:'+ height + ';'">
     <iframe :style="'width:'+ width + ';' +  'height:'+ height + ';'" style="border:0" loading="lazy" allowfullscreen
-      referrerpolicy="no-referrer-when-downgrade" :src="link + query"></iframe>
+      referrerpolicy="no-referrer-when-downgrade" :src="link + query + ' amsterdam'"></iframe>
   </div>
 </template>
 
