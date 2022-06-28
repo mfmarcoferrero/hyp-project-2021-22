@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper page-container">
+  <div class="page-container">
     <CoverImage :img="coverImg" title="Itineraries and Guided Tours" />
 
     <section id="topic-menu">
@@ -132,8 +132,6 @@
 <script>
 
 import Card from '@/components/Card.vue'
-import Masonry from '@/components/Masonry.vue'
-import HoverCard from '@/components/HoverCard.vue'
 import TopicCard from '@/components/TopicCard.vue'
 import CoverImage from '~/components/CoverImage.vue'
 import GoogleMap from '@/components/Map.vue'
@@ -143,8 +141,6 @@ export default {
 
   components: {
     Card,
-    Masonry,
-    HoverCard,
     TopicCard,
     CoverImage,
     GoogleMap

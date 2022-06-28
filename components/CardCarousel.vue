@@ -10,7 +10,7 @@
         :key="slideIndex"
         v-bind:class="[carouselClass, slideIndex == 1 ? activeClass : '']"
       >
-        <div class="container pt-5">
+        <div class="container">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 p-5">
             <div
               v-for="(detail, detailIndex) of detailMatrix[slideIndex - 1]"

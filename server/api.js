@@ -151,9 +151,6 @@ async function runMainApi() {
       filtered.push({
         name: element.name,
         img: element.img,
-        description: element.description,
-        id: element.id,
-        pins: element.pins,
       })
     }
     return res.json(filtered)

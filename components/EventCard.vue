@@ -44,7 +44,7 @@ export default {
     data() {
         return {
             locationIcon: 'mdi mdi-map-marker',
-            dateIcon: 'mdi mdi-timer',
+            dateIcon: 'mdi mdi-calendar',
         }
     },
     props: {

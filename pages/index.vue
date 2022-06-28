@@ -20,29 +20,17 @@
 
     <hr class="m-5"/>
 
-    <section id="photo-collage">
-      <div class="container">
-        <h2 class="text-center m-3">Pictures of City's life</h2>
-        <masonry :photoList="photoList" path="placeholder" />
-      </div>
-    </section>
-
   </div>
 </template>
 
 <script>
 import Carousel from '@/components/Carousel.vue'
 import Card from '@/components/Card.vue'
-import HoverCard from '@/components/HoverCard.vue'
-import Masonry from '@/components/Masonry.vue'
 
 export default {
   components: {
-    Carousel,
     Card,
-    HoverCard,
     Carousel,
-    Masonry
   },
   layout: 'nocrumbs',
   name: 'IndexPage',
