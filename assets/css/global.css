@@ -49,15 +49,15 @@
 }
 
 .page-container {
-  min-height: 90vh;
-  width: 100%;
-  margin-bottom: 50px;
+  min-height: 90vh; /*Gives a min height for the (possible) empty pages and error pages*/
+  width: 100%;  /*Full width*/
+  margin-bottom: 50px; /* A bit of margin at the end of the contents */
 }
 
 .section-container {
   display: flow-root;
-  margin-left: 8vw;
-  margin-right: 8vw;
+  margin-left: 11%;
+  margin-right: 11%;
 }
 
 .disabled-link {

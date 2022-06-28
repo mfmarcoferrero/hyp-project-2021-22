@@ -1,42 +1,45 @@
 <template>
-  <div class="container position-relative">
+  <div class="page-container position-relative">
 
-    <h2 class="second-title vl ms-5 mt-5 mb-5">About us</h2>
 
-    <div class="row m-5">
-      <div class="col">
+    <div class="section-container">
+      <h2 class="second-title vl mt-5 mb-5">About us</h2>
 
-        <p class="fs-5">
-          Visit DAM is an association that is part of the NBTC, the Netherlands Board of Tourism & Conventions.
-          <br><br>
-          NBTC is all about the development, branding and marketing of the Netherlands as a destination.
-          As the national destination management organisation of and for the Netherlands, NBTC provides a national
-          vision
-          for tourism based on relevant knowledge and insights. We use this vision to inspire, connect and facilitate
-          cities, regions, business owners and other stakeholders. To make our country a liveable, popular and
-          valuable
-          destination for residents, visitors and companies.
-        </p>
-        <div class="d-grid gap-2 p-3">
-          <a href="https://www.nbtc.nl/en/site.htm" target="_blank" class="btn btn-outline-dark" type="button"> Read
-            more about NBTC </a>
+      <div class="row row-cols-1 row-cols-lg-2 justify-content-center">
+        <div class="col">
+
+          <p class="fs-5">
+            Visit DAM is an association that is part of the NBTC, the Netherlands Board of Tourism & Conventions.
+            <br><br>
+            NBTC is all about the development, branding and marketing of the Netherlands as a destination.
+            As the national destination management organisation of and for the Netherlands, NBTC provides a national
+            vision
+            for tourism based on relevant knowledge and insights. We use this vision to inspire, connect and facilitate
+            cities, regions, business owners and other stakeholders. To make our country a liveable, popular and
+            valuable
+            destination for residents, visitors and companies.
+          </p>
+        </div>
+
+        <div class="col center-block">
+          <img src="https://s8.gifyu.com/images/77376_fullimage_nbtc-default-logo-nl.jpg" alt="No img"
+            class="img-fluid border border-dark border-3 about-img">
         </div>
       </div>
-
-      <div class="col">
-        <img src="https://s8.gifyu.com/images/77376_fullimage_nbtc-default-logo-nl.jpg" alt="No img"
-          class="img-fluid border border-dark border-3 about-img">
-        <!--img src="https://s8.gifyu.com/images/I_amsterdam_visitor_center-4b34ab60fba54a21acba6b33ef187d55.jpg"
-          alt="No img" class="img-fluid border border-dark border-3 about-img"-->
+      <div class="d-grid gap-2 p-5 section-container">
+        <a href="https://www.nbtc.nl/en/site.htm" target="_blank" class="btn btn-outline-dark" type="button"> Read
+          more about NBTC </a>
       </div>
+      <hr class="mb-5">
     </div>
 
-    <hr>
-    
-    <div class="container">
-      <div class="d-grid gap-2 p-5">
-        <nuxt-link class="btn btn-outline-dark" type="button" to="/contacts">
-          Contact Us </nuxt-link>
+    <div class="section-container">
+      <p class="text-center fs-5">If we want to receive any information or ask us some questions about your travel in Amsterdam: </p>
+      <div class="row justify-content-center">
+        <div class="d-grid gap-2 btn-contact col">
+          <nuxt-link class="btn btn-outline-dark " type="button" to="/contacts">
+            Contact Us </nuxt-link>
+        </div>
       </div>
     </div>
   </div>
@@ -84,10 +87,10 @@ export default {
 .about-img {
   width: 600px;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 
-.intro-div {
-  background-color: antiquewhite;
+.btn-contact {
+  max-width: 200px;
 }
 </style>

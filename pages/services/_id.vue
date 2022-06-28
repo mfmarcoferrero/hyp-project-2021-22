@@ -1,32 +1,46 @@
 <template>
-  <!-- div class="page container mt-4">
-    <h1 class="title">{{ name }}</h1>
-    <p>{{ description }}</p>
-    <div class="mb-5">
-      <img :src="img" class="rounded mx-auto d-block img-fluid"/>
-    </div>
-    <div class="mb-5">
-      <h1 class="title">Map</h1>
-      <p>Map</p>
-    </div>
-  </div>
-  <div -->
-  <div class="page container-fluid mt-4">
-    <h1 class="title">{{ swapUnderscoresWithSpaces(name) }}</h1>
-    <div class="row g-5">
-      <div class="col-6">
-        <p>{{ description }}</p>
-      </div>
-      <div class="col-6">
-        <img :src="img" class="rounded img-fluid" alt="...">
-      </div>
-      <div class="col-6">
-        <google-map :query="mapQuery"/>
-      </div>
-      <div class="col-6">
-        <accordion :serviceDetails="serviceDetails"/>
+  <div class="page container mt-5">
+
+    <div class="container mb-5">
+      <h1 class="title text-center ">{{ swapUnderscoresWithSpaces(name) }}</h1>
+      <div class="row row-cols-1 row-cols-lg-2 mt-5">
+        <div class="col">
+          <p class="p-4">{{ description }}</p>
+        </div>
+        <div class="col">
+          <img :src="img" alt="No img" class="img-fluid border border-dark border-3 id-img">
+        </div>
       </div>
     </div>
+
+    <hr>
+    <section id="info">
+      <div class="container mt-3">
+        <div class="row row-cols-1 row-cols-lg-2">
+          <div class="col">
+            <google-map :query="name + 'Amsterdam'" />
+          </div>
+          <div class="col-6">
+            <accordion :serviceDetails="serviceDetails" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+      <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="backToList">
+        Back to services
+      </button>
+    </div>
+
+    <!-- You may also like content -->
+
+    <!--section id="other-attractions">
+      <h1> You may also like </h1>
+      <card-carousel></card-carousel>
+    </section-->
+
   </div>
 </template>
 
@@ -42,6 +56,12 @@ export default {
     GoogleMap,
     Accordion,
   },
+  data() {
+    return {
+      locationIcon: 'mdi mdi-map-marker',
+      dateIcon: 'mdi mdi-timer',
+    }
+  },
   async asyncData({ route, $axios }) {
     /*
       Se si fanno entrambe le chiamate api, non funziona.
@@ -54,15 +74,19 @@ export default {
       name: serviceInfo.name,
       img: serviceInfo.img,
       description: serviceInfo.description,
-      mapQuery: id+"in+Amsterdam",
+      mapQuery: id + "in+Amsterdam",
       serviceDetails: serviceList,
     }
   },
   methods: {
-	swapUnderscoresWithSpaces(string){
-        return string.replace(/_/g, " ");
+    swapUnderscoresWithSpaces(string) {
+      return string.replace(/_/g, " ");
+    },
+    backToList() {
+      this.$router.push('/services')
+
     }
   }
-  
+
 }
 </script>

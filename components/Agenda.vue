@@ -60,7 +60,7 @@ export default {
 
 <style scoped>
 .agenda-div {
-  height: 500px;
+  height: 400px;
 }
 
 .nav-pills .nav-link:not(.active) {
