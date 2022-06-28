@@ -54,7 +54,6 @@ export default {
   components: {
     GoogleMap,
     CardCarousel,
-    Accordion,
   },
 
   data() {
