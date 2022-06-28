@@ -18,7 +18,7 @@
       <div class="container">
         <div class="row row-cols-1 row-cols-lg-2">
           <div class="col mb-3">
-            <google-map :query="name" />
+            <google-map :query="name"  height="400px"/>
           </div>
           <div class="col">
             <h3 class="text-center">General Information</h3>
@@ -70,7 +70,7 @@ export default {
     const { id } = route.params
     const { data } = await $axios.get(`/api/pois/` + id)
     if (data == null){
-      return redirect('/error/?err=test')
+      return redirect('/error/?err=This attraction does not exist!')
     }
     return {
       name: data.name,

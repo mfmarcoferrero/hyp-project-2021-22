@@ -1,14 +1,34 @@
 <template>
-  <div>
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
-    <h1 v-else>An error occurred - {{ error.statusCode }} </h1>
-    <NuxtLink to="/">Home page</NuxtLink>
-  </div>
+  <main class="page-container">
+    <section class="section-container error-messages p-5">
+      <img src="https://s8.gifyu.com/images/sad-emoji-by-google.png" height="300">
+      <h1><br />There is nothing here...</h1>
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-lg px-4 m-5"
+        @click="navigateTo('/')"
+      >
+        Back to homepage
+      </button>
+    </section>
+  </main>
 </template>
 
 <script>
-  export default {
-    props: ['error'],
-    layout: 'error' // you can set a custom layout for the error page
+export default {
+  components: { },
+  layout: "nocrumbs",
+  head() {
+    return {
+      title: 'Plug-IT | Error',
+    }
+  },
+  methods: {
+      navigateTo(path){
+          this.$router.push(path)
+      }
   }
+}
 </script>
+
+<style scoped></style>

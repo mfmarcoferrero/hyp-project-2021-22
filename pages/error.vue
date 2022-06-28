@@ -1,13 +1,16 @@
 <template>
   <main class="page-container">
     <section class="section-container error-messages p-5">
-      <h1><span class="mdi mdi-alert-circle"></span><br />An error occurred</h1>
+      <img src="https://s8.gifyu.com/images/sad-emoji-by-google.png" height="300">
+      <h1><br />Oops!</h1>
       <p>{{ $route.query.err }}</p>
-      <base-button
-        label="Go to the homepage"
-        icon="mdi mdi-home-variant"
-        @click.native="navigateTo('/')"
-      />
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-lg px-4 m-5"
+        @click="navigateTo('/')"
+      >
+        Back to homepage
+      </button>
     </section>
   </main>
 </template>

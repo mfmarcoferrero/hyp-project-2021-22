@@ -395,6 +395,116 @@ export default async (models) => {
             type: 'sport'
         },
         {
+            name: "Vondelpark Open Air Theatre",
+            description:"Head to the Open Air Theatre in Amsterdam's Vondelpark to catch summertime performances from children's acts, classical presentations or the latest Dutch or international pop performer. From May until early September you'll find a lot going on every Saturday and Sunday. ",
+            season: "winter",
+            img: "https://s8.gifyu.com/images/IMG_6594.jpg",
+            location: "Vondelpark",
+            when: "From May to September",
+            date: '2022-05-01',
+            type: 'art'
+        },
+        {
+            name: "Amsterdam Light Festival",
+            description:"During the winter months, the annual Amsterdam Light Festival (ALF) illuminates the city with brilliant works of light art. Each year, hundreds of ideas are submitted by designers, architects and artists from around the world. A selection committee usually chooses about 30 artworks that make up the festival’s installations. Past years have featured the work of prominent artists such as Ai Weiwei and Nicole Banowetz. ",
+            season: "winter",
+            img: "https://s8.gifyu.com/images/65790_fullimage_adam-light-festival_light-a-wish_1120x-520x320.jpg",
+            location: "Canals of Amsterdam",
+            when: "December 2 - January 23",
+            date: '2022-12-02',
+            type: 'art'
+        },
+        {
+            name: "New Year's Eve in Amsterdam",
+            description:"Whether you’re a party animal or a romantic, young of years or young-at-heart, a big spender or on a budget, Amsterdam is a great city to ring in the New Year. Fireworks illuminate the night sky and the city thrums in a cacophony of rockets, aerials, brocades, bangers and glittering willows. There will not be an official city-sponsored firework display this year, but you can expect to see a host of firework shows lighting up various locations around Amsterdam. Street level can be a bit chaotic in the midst of all the revelry, so you may want to find a nice rooftop perch or balcony to take it all in. ",
+            season: "winter",
+            img: "https://s8.gifyu.com/images/amsterdam-january-blog.jpg",
+            location: "Dam square",
+            when: "December 31 - January 1",
+            date: '2022-12-31',
+            type: 'experience'
+        },
+        {
+            name: "Sinterklaas",
+            description:"Saint Nicholas has had close ties with Amsterdam since 343 AD. Legend has it that Sinterklaas originally came from Turkey as St. Nicolaus, the Bishop of Mira, an honourable man who was kind to children. No one really knows why he then chose to live in Spain but historians point to the Spanish domination over the Netherlands in the past. The medieval attire of Sinterklaas’ assistants, the Zwarte Pieten, is equally mysterious. Zwarte Piet (literally: ‘Black Peter’) has long been the subject of debate in Amsterdam and the rest of the Netherlands. In 2018, the traditional Zwarte Pieten were replaced by Schoorsteenpieten (literally: ‘Chimney Peters’) at the Amsterdam Sinterklaas Parade. Rather than wearing the traditional blackface makeup that is at the heart of the Zwarte Piet controversy, the Schoorsteenpieten are only marked with light smudges of soot from bringing presents down the chimney. The more important characteristics of the Pieten, such as their jovial attitudes and seemingly endless supply of cookies and sweets, remain unchanged.  ",
+            season: "winter",
+            img: "https://s8.gifyu.com/images/sinterklaas-1280x720.jpg",
+            location: "Dam square",
+            when: "December 25",
+            date: '2022-12-25',
+            type: 'experience'
+        },
+        {
+            name: "Amsterdam Fringe Festival",
+            description:"Sometimes referred to as the NL Theater Festival’s quirky sister, Amsterdam Fringe Festival is all about bringing avant-garde productions to light. Each year some 70 productions are presented created by unorthodox theatre-makers keen to impress with their vision. What’s more, the venues where these eclectic performances take place can be just as unexpected. ",
+            season: "summer",
+            img: "https://s8.gifyu.com/images/Fringe-Festival-e1528194443195-1.webp",
+            location: "Vondelpark",
+            when: "September 1 - September 11",
+            date: '2022-09-01',
+            type: 'art'
+        },
+        {
+            name: "IDFA Festival",
+            description:"Each November, the International Documentary Film Festival Amsterdam (IDFA) transforms Amsterdam’s city centre into a paradise for documentary film fans. Held since 1988, IDFA is the world’s largest documentary festival and features lectures, workshops and over 300 movies that tell stories about life around the world. Some are funny, others sad, and they all represent the best the genre has to offer. Screenings take place throughout the city and include outdoor showings where you can watch a film under the night sky. ",
+            season: "autumn",
+            img: "https://s8.gifyu.com/images/1479458168545_0570x0400_0x0x0x0_1574326207583.jpg",
+            location: "EYE Film Institute Netherlands",
+            when: "November 13 - November 19",
+            date: '2022-09-01',
+            type: 'art'
+        },
+        {
+            name: "TCS Amsterdam Marathon",
+            description:"The 46th edition of the TCS Amsterdam Marathon will return to the city on Sunday October 16th, 2022. When it comes to running events, you could say Amsterdam has a personal best: the TCS Amsterdam Marathon taking place annually in October. The event draws elite runners from around the world as well as thousands of amateurs.",
+            season: "autumn",
+            img: "https://s8.gifyu.com/images/tcs-amsterdam-marathon-2020-lg.jpg",
+            location: "Vondelpark",
+            when: "October 16",
+            date: '2022-10-16',
+            type: 'sport'
+        },
+        {
+            name: "Pride Amsterdam",
+            description:"One of the biggest celebrations of LGBTI equality in the world, Pride Amsterdam celebrates its 25th anniversary in 2021. Whilst most large-scale parties, including the Canal Parade and Milkshake Festival cannot take place this year, a wealth of smaller events, exhibitions, talks and screenings will take place across the city.",
+            season: "summer",
+            img: "https://s8.gifyu.com/images/tcs-amsterdam-marathon-2020-lg.jpg",
+            location: "Dam square",
+            when: "June",
+            date: '2022-06-01',
+            type: 'experience'
+        },
+        {
+            name: "Grachtenfestival Amsterdam",
+            description:"The magnificent Grachtenfestival (Canal Festival), held annually in August on and around Amsterdam’s canals, is one of the cultural highlights of the Amsterdam summer. The historic canal belt of Amsterdam, a UNESCO World Heritage site since 2010, hosts the ten-day festival of classical music at numerous beautiful locations. ",
+            season: "summer",
+            img: "https://s8.gifyu.com/images/ia_grachtenfestival_02-1024x576.jpg",
+            location: "Canals of Amsterdam",
+            when: "August 8 - August 14",
+            date: '2022-08-12',
+            type: 'art'
+        },
+        {
+            name: "De Parade Theatre Festival",
+            description:"At De Parade there really is something for everyone. Whether you’re a die-hard theatre devotee or just along for the ride, you’ll find it here no matter what your pleasure is. Once on the festival terrain, you’ll find yourself enticed by artists giving outdoor performances in full regalia. The festival offers visitors a variety of short and full-length performances, as well as performances in open-air and secret locations. There’s always something new and surprising to look out for!",
+            season: "summer",
+            img: "https://s8.gifyu.com/images/63967_fullimage_parade_amsterdam_818x512.jpg",
+            location: "Vondelpark",
+            when: "August 12 - August 14",
+            date: '2022-08-12',
+            type: 'art'
+        },
+        {
+            name: "Holland Festival",
+            description:"One of the highlights of Amsterdam’s theatre and dance agenda, this theatre festival is held in various locations in Amsterdam and offers a heady mix of theatre, music, opera, film and visual arts, as well as Western and non-Western performance pieces in a variety of languages. programming consistently emphasises disciplinary crossovers and always includes works of the highest artistic standards. The festival has particularly been a frontrunner in supporting modern and non-classical contemporary music and new forms in musical theatre.",
+            season: "spring",
+            img: "https://s8.gifyu.com/images/dc93db771eb490fc0954e069674a6fe0.jpg",
+            location: "Dam square",
+            when: "March 15 - March 21",
+            date: '2022-03-15',
+            type: ''
+        },
+        {
             name: "van-gogh-week",
             description: "If you're lucky to visit in this period, then you can't miss the Van Gogh Week! This event takes place in Van Gogh Museum, and consist in special prices to admire the painter master works, interesting activities and plays, and much more!",
             season: "winter",

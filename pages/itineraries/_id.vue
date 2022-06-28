@@ -79,13 +79,16 @@ export default {
   //     title: this.name
   //   }
   // },
-  async asyncData({ route, $axios }) {
+  async asyncData({ route, $axios, redirect }) {
     const { id } = route.params
     const { data: itineraryInfo } = await $axios.get(`/api/itineraries/` + id)
     console.log(id)
     const { data: poisOfItinerary } = await $axios.get(
       `/api/poisByItinerary/` + id
     )
+    if (itineraryInfo == null){
+      return redirect('/error/?err=This itinerary does not exist!')
+    }
     return {
       name: itineraryInfo.name,
       img: itineraryInfo.img,
@@ -97,7 +100,7 @@ export default {
 
   methods: {
     backToList() {
-      this.$router.push('/itinerary/list')
+      this.$router.push('/itineraries')
     },
   },
 }
