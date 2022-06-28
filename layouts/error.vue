@@ -1,28 +1,14 @@
 <template>
-    <main class="page-container">
-        <section class="section-container error-messages">
-            <h1 class="text-center m-5"> Page not found</h1>
-            <nuxt-link to="/">
-                <button type="button"
-                    class="btn btn-outline-secondary btn-lg px-4 position-absolute start-50 translate-middle mt-4">
-                    Go back to the homepage
-                </button>
-            </nuxt-link>
-        </section>
-    </main>
+  <div>
+    <h1 v-if="error.statusCode === 404">Page not found</h1>
+    <h1 v-else>An error occurred - {{ error.statusCode }} </h1>
+    <NuxtLink to="/">Home page</NuxtLink>
+  </div>
 </template>
 
 <script>
-
-export default {
-    layout: 'nocrumbs',
-    head() {
-        return {
-            title: 'VisitDam | Error',
-        }
-    },
-}
+  export default {
+    props: ['error'],
+    layout: 'error' // you can set a custom layout for the error page
+  }
 </script>
-
-<style scoped>
-</style>

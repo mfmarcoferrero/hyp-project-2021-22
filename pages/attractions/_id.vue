@@ -66,9 +66,12 @@ export default {
   //     title: this.name
   //   }
   // },
-  async asyncData({ route, $axios }) {
+  async asyncData({ route, $axios, redirect }) {
     const { id } = route.params
     const { data } = await $axios.get(`/api/pois/` + id)
+    if (data == null){
+      return redirect('/error/?err=test')
+    }
     return {
       name: data.name,
       img: data.img,
