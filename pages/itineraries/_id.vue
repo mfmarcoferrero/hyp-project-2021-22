@@ -1,6 +1,5 @@
 <template>
   <div class="page-container">
-
     <section id="title-description">
       <div class="section-container">
         <h1 class="text-center m-5">{{ name }}</h1>
@@ -12,7 +11,10 @@
       <div class="section-container">
         <h2 class="second-title vl mt-5">The places in this itinerary</h2>
       </div>
-      <card-carousel :detailMatrix="generateMatrixFromArray(poisOfItinerary, 4)" class="mb-5" />
+      <card-carousel
+        :detailMatrix="generateMatrixFromArray(poisOfItinerary, 4)"
+        class="mb-5"
+      />
     </section>
 
     <hr class="m-5" />
@@ -28,16 +30,23 @@
           already layed out for you to follow, but you can visit these places in
           any order you want!
         </p>
-
+        <iframe
+          :src="src"
+          width="100%"
+          height="480"
+        ></iframe>
       </div>
     </section>
 
     <div class="d-grid gap-2 d-md-flex justify-content-center m-5">
-      <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="backToList">
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-lg px-4"
+        @click="backToList"
+      >
         Back to itineraries
       </button>
     </div>
-
   </div>
 </template>
 
@@ -81,6 +90,7 @@ export default {
       name: itineraryInfo.name,
       img: itineraryInfo.img,
       description: itineraryInfo.description,
+      src: itineraryInfo.maplink,
       poisOfItinerary: poisOfItinerary,
     }
   },

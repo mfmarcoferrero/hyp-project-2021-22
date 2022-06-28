@@ -59,7 +59,8 @@ async function initializeDatabaseConnection() {
       primaryKey: true
     },
     description: DataTypes.STRING(10000),
-    img: DataTypes.STRING
+    img: DataTypes.STRING,
+    maplink: DataTypes.STRING
   })
   const ServiceType = database.define("serviceType", {
     name: {
@@ -175,7 +176,8 @@ async function runMainApi() {
       filtered.push({
         name: element.name,
         description: element.description,
-        img: element.img
+        img: element.img,
+        maplink: element.maplink
       })
     }
     return res.json(filtered)
