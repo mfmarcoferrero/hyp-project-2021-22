@@ -33,10 +33,6 @@ export default {
 </script>
 
 <style scoped>
-.wrapper {
-  position: relative;
-  padding-bottom: 75%;
-}
 
 iframe {
   border-radius: 10px;

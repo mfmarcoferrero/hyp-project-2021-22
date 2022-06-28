@@ -48,7 +48,6 @@
 
 <script>
 import CommonMixin from '~/mixins/common';
-import OverlayCard from '~/components/OverlayCard.vue';
 import Card from '~/components/Card.vue';
 import CardCarousel from '~/components/CardCarousel.vue';
 import TopicCard from '~/components/TopicCard.vue'
@@ -60,7 +59,6 @@ export default {
     mixins: [CommonMixin],
     scrollToTop: true,
     components: {
-        OverlayCard,
         Card,
         CardCarousel,
         TopicCard,

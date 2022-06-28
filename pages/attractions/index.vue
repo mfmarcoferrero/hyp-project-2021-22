@@ -119,7 +119,6 @@
 
 <script>
 import CommonMixin from '~/mixins/common';
-import OverlayCard from '~/components/OverlayCard.vue';
 import Card from '~/components/Card.vue';
 import CardCarousel from '~/components/CardCarousel.vue';
 import CoverImage from '~/components/CoverImage.vue';
@@ -130,7 +129,6 @@ export default {
   title: 'Attractions',
   mixins: [CommonMixin],
   components: {
-    OverlayCard,
     Card,
     CardCarousel,
     CoverImage

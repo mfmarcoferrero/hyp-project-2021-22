@@ -102,16 +102,11 @@
 <script>
 import Carousel from '@/components/Carousel.vue'
 import Card from '@/components/Card.vue'
-import HoverCard from '@/components/HoverCard.vue'
-import Masonry from '@/components/Masonry.vue'
 
 export default {
   components: {
-    Carousel,
     Card,
-    HoverCard,
     Carousel,
-    Masonry,
   },
   layout: 'nocrumbs',
   name: 'IndexPage',
