@@ -20,8 +20,8 @@
     <section id="info">
       <div class="section-container mt-3">
         <div class="row row-cols-1 row-cols-lg-2">
-          <div class="col">
-            <google-map :query="location" />
+          <div class="col mb-3">
+            <google-map :query="name"  height="400px"/>
           </div>
           <div class="col">
             <div class="">
@@ -90,9 +90,12 @@ export default {
   //     title: this.name
   //   }
   // },
-  async asyncData({ route, $axios }) {
+  async asyncData({ route, $axios, redirect }) {
     const { id } = route.params
     const { data } = await $axios.get(`/api/pois/` + id)
+    if (data == null){
+      return redirect('/error/?err=This attraction does not exist!')
+    }
     return {
       name: data.name,
       img: data.img,

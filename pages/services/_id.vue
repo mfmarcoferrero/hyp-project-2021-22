@@ -20,8 +20,8 @@
     <section id="info">
       <div class="section-container">
         <div class="row row-cols-1 row-cols-lg-2">
-          <div class="col mb-3">
-            <google-map :query="name + 'Amsterdam'" />
+          <div class="col">
+            <google-map :query="name + 'Amsterdam'"  height="400px"/>
           </div>
           <div class="col">
             <accordion :serviceDetails="serviceDetails" />
@@ -66,7 +66,7 @@ export default {
       dateIcon: 'mdi mdi-timer',
     }
   },
-  async asyncData({ route, $axios }) {
+  async asyncData({ route, $axios, redirect }) {
     /*
       Se si fanno entrambe le chiamate api, non funziona.
       La parte commentata dovrebbe riempire la parte superiore della pagina.
@@ -74,6 +74,9 @@ export default {
     const { id } = route.params
     const { data: serviceInfo } = await $axios.get('/api/services/' + id)
     const { data: serviceList } = await $axios.get('/api/service/' + id)
+    if (serviceInfo == null){
+      return redirect('/error/?err=This service does not exist!')
+    }
     return {
       name: serviceInfo.name,
       img: serviceInfo.img,

@@ -1,40 +1,43 @@
 <template>
-  <div class="page-container container position-relative pb-5">
-    <h2 class="second-title vl ms-5 mt-5 mb-5">Contact us</h2>
+  <div class="page-container">
+    <div class="section-container">
+      <h2 class="second-title vl ms-5 mt-5 mb-5">Contact us</h2>
 
-    <div class="row row-cols-1 row-cols-lg-2">
+      <div class="row row-cols-1 row-cols-lg-2">
 
-      <div class="col">
-        <google-map query="i amsterdam visitor center" height="300px" class="" />
-      </div>
-
-      <div class="col">
-        <div class="row p-2 me-4 mb-3">
-          <span>Amsterdam main official tourist office is in the center of the city. This office not only inform you
-            about the city in a professional way but
-            can also give you free small maps and folders with information about the city.</span>
+        <div class="col mb-3">
+          <google-map query="i amsterdam visitor center" height="300px" class="" />
         </div>
 
-        <div class="row row-cols-2">
-          <div class="icon-item col-1">
-            <span :class="locationIcon"></span>
+        <div class="col">
+          <div class="row mb-3 justify-content-center">
+            <span class="p-3">Amsterdam main official tourist office is in the center of the city. This office not only inform you
+              about the city in a professional way but
+              can also give you free small maps and folders with information about the city.</span>
           </div>
-          <div class="col icon-text ms-1">
-            <span>{{ location }}</span>
-          </div>
-        </div>
 
-        <div class="row row-cols-2 mt-3">
-          <div class="icon-item col-1">
-            <span :class="phoneIcon"></span>
+          <div class="row row-cols-2 justify-content-center">
+            <div class="icon-item col-1">
+              <span :class="locationIcon"></span>
+            </div>
+            <div class="col icon-text ms-1">
+              <span>{{ location }}</span>
+            </div>
           </div>
-          <div class="col icon-text ms-1">
-            <span>{{ phone }}</span>
-          </div>
-        </div>
 
+          <div class="row row-cols-2 mt-3 justify-content-center">
+            <div class="icon-item col-1">
+              <span :class="phoneIcon"></span>
+            </div>
+            <div class="col icon-text ms-1">
+              <span>{{ phone }}</span>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
+
 
     <hr class="m-5">
 
@@ -45,7 +48,6 @@
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 

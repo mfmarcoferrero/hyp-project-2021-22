@@ -57,6 +57,7 @@
 /* Content containers */
 .layout-container {
   margin-top: 80px;
+  overflow: hidden;
 }
 
 .page-container {
@@ -94,7 +95,6 @@ address a {
 
 .error-messages {
   text-align: center;
-  margin-top: 30vh;
 }
 
 /* Flow up animation for page opening */

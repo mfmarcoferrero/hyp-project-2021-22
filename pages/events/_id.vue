@@ -21,7 +21,7 @@
       <div class="section-container mt-3">
         <div class="row row-cols-1 row-cols-lg-2">
           <div class="col">
-            <google-map :query="location" />
+            <google-map :query="location" height="400px" />
           </div>
           <div class="col">
             <div class="">
@@ -34,7 +34,11 @@
                 <span :class="locationIcon"></span>
               </div>
               <div class="col event-card-text ms-1">
-                <span class="fs-4">{{ location }}</span>
+                <span class="fs-4">
+                  <nuxt-link :to="`/attractions/`+location">
+                    {{ location }}
+                  </nuxt-link>
+                </span>
               </div>
             </div>
 
@@ -96,9 +100,12 @@ export default {
       dateIcon: 'mdi mdi-timer',
     }
   },
-  async asyncData({ route, $axios }) {
+  async asyncData({ route, $axios, redirect }) {
     const { id } = route.params
     const { data } = await $axios.get(`/api/events/` + id)
+    if (data == null){
+      return redirect('/error/?err=This event does not exist!')
+    }
     return {
       name: data.name,
       location: data.location,
