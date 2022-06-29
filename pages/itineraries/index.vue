@@ -42,7 +42,7 @@
           <div class="row mt-5 mb-1 ms-4 me-4 row-cols-1 row-cols-lg-4">
             <div v-for="(itinerary, index) of itinerariesDetails" :key="`itinerary-index-${index}`" class="col">
               <topic-card :title="itinerary.name" :img="itinerary.img" :path="'/itineraries/' + itinerary.name"
-                imgHeight="350px" class="mb-3" />
+                 class="mb-3" />
             </div>
           </div>
         </div>
@@ -138,7 +138,7 @@ import GoogleMap from '@/components/Map.vue'
 
 export default {
   name: 'ItinerariesPage',
-
+  scrollToTop: true,
   components: {
     Card,
     TopicCard,
