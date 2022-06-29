@@ -46,6 +46,7 @@
 /* Content containers */
 .layout-container {
   margin-top: 80px;
+  overflow: hidden;
 }
 
 .page-container {
