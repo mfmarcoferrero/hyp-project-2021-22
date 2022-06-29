@@ -1,7 +1,7 @@
 <template>
   <div class="page-container">
     <div class="container-carousel">
-      <carousel :detailList="carouselList" scrollTo="#guide-to-the-city" />
+      <carousel :detailList="carouselList" scrollTo="#topic-menu" />
       <p
         class="
           fs-1
