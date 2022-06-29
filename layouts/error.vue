@@ -20,7 +20,7 @@ export default {
   layout: "nocrumbs",
   head() {
     return {
-      title: 'Plug-IT | Error',
+      title: 'Visit DAM | Error',
     }
   },
   methods: {
