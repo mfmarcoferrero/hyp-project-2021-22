@@ -30,20 +30,37 @@
 
         <!-- SUCCESSFULLY RESPONSE INTERFACE: on message correctly sent -->
 
-        <div v-if="messageSent === true">
-            <p class="form-message success">
-                <span class="mdi mdi-email-check"></span>
-                Your message has been sent correctly<br />
-                You will receive a reply in the next few days
+        <div v-if="messageSent === true || errApi == true">
+            <p>
+                Your request has been sent. <br> Reload to send a new one.
             </p>
         </div>
 
-        <div v-if="errorApi === true">
-            <p class="form-message success">
-                <span class=""></span>
-                An error ooccured<br />
-                Try again
-            </p>
+        <!-- Modal -->
+        <div class="modal fade" id="responseModal" tabindex="-1" aria-labelledby="responseModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 v-if="messageSent === true" class="modal-title" id="responseModalLabel">Your message has
+                            been
+                            sent</h5>
+                        <h5 v-if="errorApi === true" class="modal-title" id="responseModalLabel">An error occured</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span v-if="messageSent === true"> You will receive a message from Visit-DAM as soon as
+                            possible</span>
+                        <span v-if="errorApi === true"> At the moment this service is not available. <br> Try again
+                            later </span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                            @click="backToHomePage()">Back to HomePage</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -70,6 +87,11 @@ export default {
     methods: {
         /** Send the message to the server updating the interface according to the outcome */
         sendMessage(e) {
+
+            var modal = new bootstrap.Modal(document.getElementById('responseModal'), {
+                keyboard: false
+            })
+
             e.preventDefault()
             this.$axios
                 .post('/api/message', {
@@ -85,8 +107,12 @@ export default {
                     this.messageSent = false
                     this.errorApi = true // Display the error interface
                 })
-            console.log("Ho fatto il submit con commercial: " + this.commericial);
+            modal.toggle()
         },
+
+        backToHomePage() {
+            this.$router.push('/');
+        }
     }
 
 }
