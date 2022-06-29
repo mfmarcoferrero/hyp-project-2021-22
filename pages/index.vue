@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <div class="container-carousel">
+    <div class="container-carousel position-relative">
       <carousel :detailList="carouselList" scrollTo="#guide-to-the-city" />
       <p
         class="
