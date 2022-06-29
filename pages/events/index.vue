@@ -33,7 +33,7 @@ import CardList from '@/components/CardList.vue'
 import CoverImage from '~/components/CoverImage.vue'
 import Agenda from '~/components/Agenda.vue'
 export default {
-
+  scrollToTop: true,
   components: {
     Map,
     CardList,

@@ -1,7 +1,7 @@
 <template>
   <div class="page-container">
-    <div class="container-carousel">
-      <carousel :detailList="carouselList" scrollTo="#topic-menu" />
+    <div class="container-carousel position-relative">
+      <carousel :detailList="carouselList" scrollTo="#quick-look" />
       <p
         class="
           fs-1
@@ -147,6 +147,19 @@ export default {
 </script>
 
 <style scoped>
+
+/* This CSS workaround gives a margin to the scrolling element  */
+/* to avoid content and header overlapping                      */
+
+section::before{
+  display: block; 
+  content: " "; 
+  margin-top: -50px; 
+  height: 50px; 
+  visibility: hidden; 
+  pointer-events: none;
+}
+
 /* Home page responsiveness */
 
 @media only screen and (min-width: 1024px) {
