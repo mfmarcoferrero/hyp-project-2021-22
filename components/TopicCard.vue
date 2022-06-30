@@ -1,6 +1,6 @@
 <template>
     <div class="topic-card position-relative" @click="goTo(path)">
-        <img class="topic-card-img" :style="'height:'+imgHeight+';'" :src="img" alt="Card image cap">
+        <img class="topic-card-img" :style="'height:' + imgHeight + ';'" :src="img" alt="Card image cap">
         <h2 class="text-center text-white fw-bold position-absolute top-50 start-50 translate-middle">{{
                 swapDashesAndCapitalize(title)
         }}</h2>
@@ -31,7 +31,7 @@ export default {
         }
     },
     methods: {
-        goTo(path) {
+        goTo(path) {    
             this.$router.push(path);
         },
     }
