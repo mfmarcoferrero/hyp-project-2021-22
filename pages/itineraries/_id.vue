@@ -3,7 +3,13 @@
     <section id="title-description">
       <div class="section-container">
         <h1 class="text-center m-5">{{ name }}</h1>
-        <p>{{ description }}</p>
+        <p class="mb-1 p-0">{{ description }}</p>
+        <ul class="nav nav-pills mb-0 " id="pills-tab" role="tablist">
+          <li v-for="(item, index) of poisOfItinerary" :key="index" class="nav-item d-grid m-0 p-0" role="presentation">
+            <p class="fw-bold m-0">{{item.name}}:</p>
+            <p class="m-0">{{ item.shortDescription }}</p>
+          </li>
+        </ul>
       </div>
     </section>
 
