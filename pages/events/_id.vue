@@ -127,6 +127,11 @@ export default {
 </script>
 
 <style scoped>
+.id-img {
+  width: 100%;
+  height: 100%;
+}
+
 .icon-item {
   font-size: 35px;
 }

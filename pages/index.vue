@@ -2,7 +2,7 @@
   <div class="page-container">
 
     <section id="image-carousel">
-      <div>
+      <div class="container-carousel position-relative">
         <carousel :detailList="carouselList" scrollTo="#topic-menu" />
         <p class="
           fs-1
@@ -15,7 +15,7 @@
           shadow-plg
           cover-title
         ">
-
+        {{carouselTitle}}
         </p>
       </div>
     </section>

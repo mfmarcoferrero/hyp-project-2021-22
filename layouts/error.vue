@@ -27,7 +27,7 @@ export default {
       navigateTo(path){
           this.$router.push(path)
       }
-  }
+  },
 }
 </script>
 

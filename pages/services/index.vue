@@ -1,15 +1,22 @@
 <template>
   <div class="page-container">
-
     <cover-image :img="coverImg" :title="title" />
 
     <section id="services-section">
       <div class="section-container mt-5">
         <h2 class="text-center"><strong>Which kind of service?</strong></h2>
         <div class="row mt-5 mb-1 row-cols-1 row-cols-md-2 row-cols-lg-5">
-          <div v-for="(service, index) of servicesList" :key="`itinerary-index-${index}`" class="col">
-            <topic-card :title="swapUnderscoresWithSpaces(service.name)" :img="service.img"
-              :path="'/services/' + service.name" imgHeight="350px" class="mb-3" />
+          <div
+            v-for="(service, index) of servicesList"
+            :key="`itinerary-index-${index}`"
+            class="col"
+          >
+            <topic-card
+              :title="swapUnderscoresWithSpaces(service.name)"
+              :img="service.img"
+              :path="'/services/' + service.name"
+              class="mb-3"
+            />
           </div>
         </div>
       </div>
@@ -17,16 +24,18 @@
 
     <section id="loading-img">
       <div class="text-center m-5">
-        <img src="https://i.pinimg.com/originals/f2/50/95/f250958979ba717571bf069ea43f053c.gif"
-          class="img-responsive text-center" style="height:150px; width:200px;">
+        <img
+          src="https://i.pinimg.com/originals/f2/50/95/f250958979ba717571bf069ea43f053c.gif"
+          class="img-responsive text-center"
+          style="height: 150px; width: 200px"
+        />
       </div>
     </section>
-
   </div>
 </template>
 
 <script>
-import CommonMixin from '~/mixins/common';
+import CommonMixin from '~/mixins/common'
 import Card from '@/components/Card.vue'
 import TopicCard from '@/components/TopicCard.vue'
 import CoverImage from '~/components/CoverImage.vue'
@@ -46,8 +55,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content:
-            '',
+          content: '',
         },
       ],
     }
@@ -72,5 +80,11 @@ export default {
 </script>
 
 <style scoped>
+
+/* windmill markline was too noticeable, fixed bg color for this page */
+
+.page-container{
+  background: white;
+}
 
 </style>

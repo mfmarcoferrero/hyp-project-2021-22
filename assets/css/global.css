@@ -97,6 +97,14 @@ address a {
   text-align: center;
 }
 
+:root{
+  --h-header: 50px;
+}
+
+.anchor {
+    scroll-margin-top: calc(var(--h-header) + 2.5em);
+}
+
 /* Flow up animation for page opening */
 @keyframes flowUp {
   from {
