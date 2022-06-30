@@ -144,7 +144,7 @@ export default async (models) => {
         {
             name: "Vondelpark",
             shortDescription: "The Vondelpark is a public urban park of 47 hectares in Amsterdam, Netherlands. It is part of the borough of Amsterdam-Zuid and situated west from the Leidseplein and the Museumplein.",
-            descriprion: "The Vondelpark is a public urban park of 47 hectares in Amsterdam, Netherlands. It is part of the borough of Amsterdam-Zuid and situated west from the Leidseplein and the Museumplein. The park was opened in 1865 and originally named Nieuwe Park, but later renamed Vondelpark, after the 17th-century playwright and poet Joost van den Vondel. The park has around 10 million visitors annually. Within the park is an open-air theatre, a playground and several food service facilities.",
+            description: "The Vondelpark is a public urban park of 47 hectares in Amsterdam, Netherlands. It is part of the borough of Amsterdam-Zuid and situated west from the Leidseplein and the Museumplein. The park was opened in 1865 and originally named Nieuwe Park, but later renamed Vondelpark, after the 17th-century playwright and poet Joost van den Vondel. The park has around 10 million visitors annually. Within the park is an open-air theatre, a playground and several food service facilities.",
             img: "https://s8.gifyu.com/images/28280-Vondelpark.jpg",
             info: "",
             timetable: "",
@@ -228,9 +228,9 @@ export default async (models) => {
             itineraryName: [ "Five-day itinerary", ]
         },
         {
-            name: "Jewis Historical Museum",
-            shortDescription: "",
-            description: "",
+            name: "Jewish Historical Museum",
+            shortDescription: "The Jewish Historical Museum is the only museum in the Netherlands to focus on Jewish history, religion and culture",
+            description: "The Jewish Historical Museum is the only museum in the Netherlands to focus on Jewish history, religion and culture. The museum is located in a group of four historical Ashkenazi synagogues at the heart of the former Jewish quarter in the centre of Amsterdam. It features the following themes: the role of religion and tradition, the links with Israel, the persecution of Jews during the Second World War, personal life stories and the mutual influence of Jewish and Dutch culture.",
             img: "https://s8.gifyu.com/images/jewish-2.jpg",
             info: "",
             timetable: "",
@@ -239,8 +239,8 @@ export default async (models) => {
         },
         {
             name: "National Maritime Museum",
-            shortDescription: "",
-            description: "",
+            shortDescription: "The National Maritime Museum holds one of the world's largest and most notable maritime collections including paintings, ship models, navigation instruments and sea charts. ",
+            description: "The National Maritime Museum shows how water connects worlds. Housed in the old ‘Zeemagazijn van de Admiraliteit’ of Amsterdam, a former naval storehouse from 1656, the museum is dedicated to ships and ship transport. It illustrates the story of five hundred years of maritime history in the Netherlands and shows the sea’s influence on the Dutch culture. The collection includes ship models, paintings, world maps and various weapons. A 1990 replica of the famous VOC ship Amsterdam is moored next to the museum.",
             img: "https://s8.gifyu.com/images/amsterdam-museum-maritime-ship-and-building.jpg",
             info: "",
             timetable: "",
@@ -249,8 +249,10 @@ export default async (models) => {
         },
         {
             name: "Stedelijk Museum Amsterdam",
-            shortDescription: "",
-            description: "",
+            shortDescription: "The Stedelijk Museum Amsterdam, colloquially known as the Stedelijk, is a museum for modern art, contemporary art, and design.",
+            description: "The Stedelijk Museum Amsterdam, colloquially known as the Stedelijk, is a museum for modern art, contemporary art, and design.The 19th century building was designed by Adriaan Willem Weissman and the 21st century wing with the current entrance was designed by Benthem Crouwel Architects. It is located at the Museum Square in the borough Amsterdam South, where it is close to the Van Gogh Museum, the Rijksmuseum, and the Concertgebouw.\n" +
+              "\n" +
+              "The collection comprises modern and contemporary art and design from the early 20th century up to the 21st century. It features artists such as Vincent van Gogh, Wassily Kandinsky, Ernst Ludwig Kirchner, Marc Chagall, Henri Matisse, Jackson Pollock, Karel Appel, Andy Warhol, Willem de Kooning, Marlene Dumas, Lucio Fontana, and Gilbert & George.",
             img: "https://s8.gifyu.com/images/Stedelijk-Museum-Amsterdam.jpg",
             info: "",
             timetable: "",
@@ -260,8 +262,8 @@ export default async (models) => {
         },
         {
             name: "West Church (Westerkerk)",
-            shortDescription: "",
-            description: "",
+            shortDescription: "The Western Church, is the most important Protestant church in the city, while its bell tower remains until today the pride of Amsterdam, regarded by many, as the city symbol.",
+            description: "The Western Church, is the most important Protestant church in the city, while its bell tower remains until today the pride of Amsterdam, regarded by many, as the city symbol. Probably for the reason that their land is so flat, the Dutch love towers. The much admired 85m/275ft high Westerkerk Tower, built in 1638, dominates above most of the Old City centre. During the tourist season, you may also climb the Westerkerk Tower and enjoy a truly unique view of Amsterdam from its balcony.",
             img: "https://s8.gifyu.com/images/westkerk.jpg",
             info: "",
             timetable: "",
@@ -270,8 +272,8 @@ export default async (models) => {
         },
         {
             name: "The Oude Church",
-            shortDescription: "",
-            description: "",
+            shortDescription: "The Oude Church is a big and monumental church (The Old Church) that dominates over the Red Light District.",
+            description: "The Oude Church is a big and monumental church (The Old Church) that dominates over the Red Light District. Standing in the church's main entry, you will be amazed to see a coffee shop just left to it, windows with sex workers in front of it and the Princess Juliana Nursery School right of it. Contrast could not be bigger and there. The Oude Kerk is the oldest and for centuries was the most important church in Amsterdam. Although it lost this title to the Nieuwe Kerk (New Curch), it still remains one of the grand sights to visit.",
             img: "https://s8.gifyu.com/images/oude-church.jpg",
             info: "",
             timetable: "",
@@ -280,8 +282,10 @@ export default async (models) => {
         },
         {
             name: "Heineken Experience",
-            shortDescription: "",
-            description: "",
+            shortDescription: "In 1988 Heineken closed an old Amsterdam brewery, which spread its smell over the popular De Pijp district, and opened a tour for the fans of its beer.",
+            description: "In 1988 Heineken closed an old Amsterdam brewery, which spread its smell over the popular De Pijp district, and opened a tour for the fans of its beer. For a small admission charge, you could learn something about the famous pilsner and drink as much as you wanted.\n" +
+              "\n" +
+              "The museum part of the show still remains interesting. The architecture of the 19th century Heineken brewery buildings, authentic interiors, old photographs and state decorations Heineken family received, famous gold medal from The Universal Exhibition in Paris in 1889, which you may see reproduced on each can of Heineken, impressive brass beer tanks and a quiet horse stable.",
             img: "https://s8.gifyu.com/images/heineken-experience.jpg",
             info: "",
             timetable: "",
@@ -292,8 +296,8 @@ export default async (models) => {
 
         {
             name: "Hortus Botanicus Amsterdam",
-            shortDescription: "",
-            description: "",
+            shortDescription: "Amsterdam has one of the oldest botanical gardens in the world called Hortus Botanicus. It was established in 1638 by the city municipality as Hortus Medicus, an herb garden with medical plants for Amsterdam doctors and pharmacists. ",
+            description: "Amsterdam has one of the oldest botanical gardens in the world called Hortus Botanicus. It was established in 1638 by the city municipality as Hortus Medicus, an herb garden with medical plants for Amsterdam doctors and pharmacists. The reasons for establishing a specialized medical garden were very serious: at that time the cities of Leiden and Utrecht experienced the plague epidemic (1634-1637) with thousands of victims. Additionally, several monasteries moved out of the quickly growing city and there was not enough space in Amsterdam to plant herbs.",
             img: "https://s8.gifyu.com/images/horus-botanicus-2.jpg",
             info: "",
             timetable: "",
@@ -302,8 +306,8 @@ export default async (models) => {
         },
         {
             name: "Amsterdam Royal Zoo",
-            shortDescription: "",
-            description: "",
+            shortDescription: " The zoo features 27 historic buildings, of which most date from the 19th century.",
+            description: " The zoo features 27 historic buildings, of which most date from the 19th century. Because of this, Artis has a distinctive charm and a historical dimension that lacks in more modern zoos. The monumental aquarium contains tropical fish and in the monumental birdhouse various birds fly around freely. In the tropical forest many animal species live with and between each other. Artis also features a butterfly pavilion where butterflies flutter.",
             img: "https://s8.gifyu.com/images/artis.jpg",
             info: "",
             timetable: "",
@@ -313,8 +317,8 @@ export default async (models) => {
         },
         {
             name: "Albert Cuyp Market",
-            shortDescription: "",
-            description: "",
+            shortDescription: "The Albert Cuypmarkt is a busy cosmopolitan food and clothes market, and by far the most famous daily market in Amsterdam. ",
+            description: "The Albert Cuypmarkt is a busy cosmopolitan food and clothes market, and by far the most famous daily market in Amsterdam. The whole area including the Ferdinand Bolstraat and Ceintuurbaan has many interesting shops. The 100-year-old, open-air street market features nearly 300 vendors selling everything from fruits, vegetables, fish, meats, spices, chocolate, cheese, flowers and plants to cheap clothes, jewelry, shoes, bike accessories, bedding, fabrics and cosmetics.",
             img: "https://s8.gifyu.com/images/albertcuyp.jpg",
             info: "",
             timetable: "",
@@ -323,8 +327,10 @@ export default async (models) => {
         },
         {
             name: "Bloemenmarkt",
-            shortDescription: "",
-            description: "",
+            shortDescription: "The Amsterdam Flower Market is the only floating flower market in the world, and one of the most fragrant places of interest of Amsterdam - in all seasons.",
+            description: "The Amsterdam Flower Market is the only floating flower market in the world, and one of the most fragrant places of interest of Amsterdam - in all seasons. This unique market exists since 1862. The flower stalls stand on the houseboats and evoke the old days when the market was daily supplied by boat.\n" +
+              "\n" +
+              "The flower market of Amsterdam is a particularly colorful place in the city. You will find there all sorts of tulips, narcissus, geraniums and many other types of flowers. At the Amsterdam Flower Market you can either buy bouquets, single flowers or bulbs. The bulbs are ready for export, so you can enjoy them at home too.",
             img: "https://s8.gifyu.com/images/bloemenmarkt-2.jpg",
             info: "",
             timetable: "",
@@ -333,8 +339,8 @@ export default async (models) => {
         },
         {
             name: "FOAM",
-            shortDescription: "",
-            description: "",
+            shortDescription: "Foam is an internationally renowned Amsterdam museum that exhibits all genres of photography in a beautiful canal-side setting.",
+            description: "Foam is an internationally renowned Amsterdam museum that exhibits all genres of photography in a beautiful canal-side setting. As well as displaying a wide variety of works, it acts as a creative hub where photographers can meet and participate in forums and symposiums.",
             img: "https://s8.gifyu.com/images/FOAM.jpg",
             info: "",
             timetable: "",
@@ -352,25 +358,25 @@ export default async (models) => {
     const itinerariesList = [
         {
             name: "One-day itinerary",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description: "Amsterdam is easily one of the most famous cities in Europe. If you’re planning on spending 1 day in Amsterdam, we think you should visit this attractions.\nFor your trip of 1 day we advise you three of the most characteristic attraction: ",
             img: "https://s8.gifyu.com/images/best-and-popular-Amsterdam-tours.jpg",
             maplink: "https://www.google.com/maps/d/u/0/embed?mid=1v9W7nOXFe2K0ALFhUTf8XAxhFIeErOQ&ehbc=2E312F"
         },
         {
             name: "Three-day itinerary",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description: "Amsterdam is easily one of the most famous cities in Europe. If you’re planning on spending 3 days in Amsterdam, we think you should visit this attractions.\nFor your trip of 3 days we advise you five of the most characteristic attraction: ",
             img: "https://s8.gifyu.com/images/083da412e487316e61.jpg",
             maplink: "https://www.google.com/maps/d/u/0/embed?mid=16bHMJ-NUrChVKw6rmpcpADWHjeBR9OI&ehbc=2E312F"
         },
         {
             name: "Five-day itinerary",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description: "Amsterdam is easily one of the most famous cities in Europe. If you’re planning on spending 5 days in Amsterdam, we think you should visit this attractions.\nFor your trip of 5 days we advise you seven of the most characteristic attraction: ",
             img: "https://s8.gifyu.com/images/caption.jpg",
             maplink: "https://www.google.com/maps/d/u/0/embed?mid=17prt9f6ckhm0AkSGVunlfzZ4OA5Mwis&ehbc=2E312F"
         },
         {
             name: "One-week itinerary",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description: "Amsterdam is easily one of the most famous cities in Europe. If you’re planning on spending one week in Amsterdam, we think you should visit this attractions.\nFor your trip of one week we advise you ten of the most characteristic attraction: ",
             img: "https://s8.gifyu.com/images/tulip-field-netherlands-shutterstock_483619153-1024x679.jpg",
             maplink: "https://www.google.com/maps/d/u/0/embed?mid=1yIdV0JHJTtZr3o2ddYjhCzSC-IlnWVs&ehbc=2E312F"
         },
