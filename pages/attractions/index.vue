@@ -9,9 +9,9 @@
             path="/itineraries" />
         </div>
         <div class="col-md m-2">
-          <topic-card title="Amsterdam Areas"
+          <topic-card title="Art and Culture"
             img="https://s8.gifyu.com/images/GettyImages-659083249-5912430d3df78c92830e4eaa.jpg"
-            path="/neighbourhoods" />
+            path="#art-and-culture" />
         </div>
         <div class="col-md m-2">
           <topic-card title="Buy Tickets" img="https://s8.gifyu.com/images/Rijkmuseum-1.jpg" path="#tickets-info" />
@@ -67,6 +67,7 @@
 
     <hr class="m-5">
 
+    <section id="art-and-culture">
     <div class="container">
       <h2 class="second-title vl ms-5 mt-5 mb-4"> Art and cutural </h2>
       <p class="m-4 p-2">Amsterdam is one of the most popular cities in Europe and a hotbed for Dutch and international
@@ -103,6 +104,7 @@
         </div>
       </div>
     </div>
+    </section>
 
     <hr class="m-5">
 
