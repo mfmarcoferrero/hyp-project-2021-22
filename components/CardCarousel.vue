@@ -20,7 +20,7 @@
               <card
                 :img="detail.img"
                 :name="detail.name"
-                :path="'attractions/' + detail.name"
+                :path="'/attractions/' + detail.name"
               ></card>
             </div>
           </div>

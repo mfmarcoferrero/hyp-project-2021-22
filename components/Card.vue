@@ -38,9 +38,6 @@ export default {
   },
   methods: {
     goTo(path) {
-      // if(goToPath){
-      //   this.$router.push(path);
-      // }
       this.$router.push(path);
     },
   }

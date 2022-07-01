@@ -3,7 +3,7 @@
 
     <section id="image-carousel">
       <div class="container-carousel position-relative">
-        <carousel :detailList="carouselList" scrollTo="#topic-menu" />
+        <carousel :detailList="carouselList" scrollTo="#quick-look" />
         <p class="
           fs-1
           text-center
