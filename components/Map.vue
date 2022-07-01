@@ -1,7 +1,7 @@
 <template>
-  <div class="wrapper">
-    <iframe :width="width" :height="height" style="border:0" loading="lazy" allowfullscreen
-      referrerpolicy="no-referrer-when-downgrade" :src="link + query"></iframe>
+  <div :style="'width:'+ width + ';' +  'height:'+ height + ';'">
+    <iframe :style="'width:'+ width + ';' +  'height:'+ height + ';'" style="border:0" loading="lazy" allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade" :src="link + query + ' amsterdam'"></iframe>
   </div>
 </template>
 
@@ -35,14 +35,10 @@ export default {
 </script>
 
 <style scoped>
-.wrapper {
-  position: relative;
-  padding-bottom: 75%;
-}
 
 iframe {
   border-radius: 10px;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;

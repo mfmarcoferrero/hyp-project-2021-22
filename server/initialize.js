@@ -144,7 +144,7 @@ export default async (models) => {
         {
             name: "Vondelpark",
             shortDescription: "The Vondelpark is a public urban park of 47 hectares in Amsterdam, Netherlands. It is part of the borough of Amsterdam-Zuid and situated west from the Leidseplein and the Museumplein.",
-            descriprion: "The Vondelpark is a public urban park of 47 hectares in Amsterdam, Netherlands. It is part of the borough of Amsterdam-Zuid and situated west from the Leidseplein and the Museumplein. The park was opened in 1865 and originally named Nieuwe Park, but later renamed Vondelpark, after the 17th-century playwright and poet Joost van den Vondel. The park has around 10 million visitors annually. Within the park is an open-air theatre, a playground and several food service facilities.",
+            description: "The Vondelpark is a public urban park of 47 hectares in Amsterdam, Netherlands. It is part of the borough of Amsterdam-Zuid and situated west from the Leidseplein and the Museumplein. The park was opened in 1865 and originally named Nieuwe Park, but later renamed Vondelpark, after the 17th-century playwright and poet Joost van den Vondel. The park has around 10 million visitors annually. Within the park is an open-air theatre, a playground and several food service facilities.",
             img: "https://s8.gifyu.com/images/28280-Vondelpark.jpg",
             info: "",
             timetable: "",
@@ -228,9 +228,9 @@ export default async (models) => {
             itineraryName: [ "Five-day itinerary", ]
         },
         {
-            name: "Jewis Historical Museum",
-            shortDescription: "",
-            description: "",
+            name: "Jewish Historical Museum",
+            shortDescription: "The Jewish Historical Museum is the only museum in the Netherlands to focus on Jewish history, religion and culture",
+            description: "The Jewish Historical Museum is the only museum in the Netherlands to focus on Jewish history, religion and culture. The museum is located in a group of four historical Ashkenazi synagogues at the heart of the former Jewish quarter in the centre of Amsterdam. It features the following themes: the role of religion and tradition, the links with Israel, the persecution of Jews during the Second World War, personal life stories and the mutual influence of Jewish and Dutch culture.",
             img: "https://s8.gifyu.com/images/jewish-2.jpg",
             info: "",
             timetable: "",
@@ -239,8 +239,8 @@ export default async (models) => {
         },
         {
             name: "National Maritime Museum",
-            shortDescription: "",
-            description: "",
+            shortDescription: "The National Maritime Museum holds one of the world's largest and most notable maritime collections including paintings, ship models, navigation instruments and sea charts. ",
+            description: "The National Maritime Museum shows how water connects worlds. Housed in the old ‘Zeemagazijn van de Admiraliteit’ of Amsterdam, a former naval storehouse from 1656, the museum is dedicated to ships and ship transport. It illustrates the story of five hundred years of maritime history in the Netherlands and shows the sea’s influence on the Dutch culture. The collection includes ship models, paintings, world maps and various weapons. A 1990 replica of the famous VOC ship Amsterdam is moored next to the museum.",
             img: "https://s8.gifyu.com/images/amsterdam-museum-maritime-ship-and-building.jpg",
             info: "",
             timetable: "",
@@ -249,8 +249,10 @@ export default async (models) => {
         },
         {
             name: "Stedelijk Museum Amsterdam",
-            shortDescription: "",
-            description: "",
+            shortDescription: "The Stedelijk Museum Amsterdam, colloquially known as the Stedelijk, is a museum for modern art, contemporary art, and design.",
+            description: "The Stedelijk Museum Amsterdam, colloquially known as the Stedelijk, is a museum for modern art, contemporary art, and design.The 19th century building was designed by Adriaan Willem Weissman and the 21st century wing with the current entrance was designed by Benthem Crouwel Architects. It is located at the Museum Square in the borough Amsterdam South, where it is close to the Van Gogh Museum, the Rijksmuseum, and the Concertgebouw.\n" +
+              "\n" +
+              "The collection comprises modern and contemporary art and design from the early 20th century up to the 21st century. It features artists such as Vincent van Gogh, Wassily Kandinsky, Ernst Ludwig Kirchner, Marc Chagall, Henri Matisse, Jackson Pollock, Karel Appel, Andy Warhol, Willem de Kooning, Marlene Dumas, Lucio Fontana, and Gilbert & George.",
             img: "https://s8.gifyu.com/images/Stedelijk-Museum-Amsterdam.jpg",
             info: "",
             timetable: "",
@@ -260,8 +262,8 @@ export default async (models) => {
         },
         {
             name: "West Church (Westerkerk)",
-            shortDescription: "",
-            description: "",
+            shortDescription: "The Western Church, is the most important Protestant church in the city, while its bell tower remains until today the pride of Amsterdam, regarded by many, as the city symbol.",
+            description: "The Western Church, is the most important Protestant church in the city, while its bell tower remains until today the pride of Amsterdam, regarded by many, as the city symbol. Probably for the reason that their land is so flat, the Dutch love towers. The much admired 85m/275ft high Westerkerk Tower, built in 1638, dominates above most of the Old City centre. During the tourist season, you may also climb the Westerkerk Tower and enjoy a truly unique view of Amsterdam from its balcony.",
             img: "https://s8.gifyu.com/images/westkerk.jpg",
             info: "",
             timetable: "",
@@ -270,8 +272,8 @@ export default async (models) => {
         },
         {
             name: "The Oude Church",
-            shortDescription: "",
-            description: "",
+            shortDescription: "The Oude Church is a big and monumental church (The Old Church) that dominates over the Red Light District.",
+            description: "The Oude Church is a big and monumental church (The Old Church) that dominates over the Red Light District. Standing in the church's main entry, you will be amazed to see a coffee shop just left to it, windows with sex workers in front of it and the Princess Juliana Nursery School right of it. Contrast could not be bigger and there. The Oude Kerk is the oldest and for centuries was the most important church in Amsterdam. Although it lost this title to the Nieuwe Kerk (New Curch), it still remains one of the grand sights to visit.",
             img: "https://s8.gifyu.com/images/oude-church.jpg",
             info: "",
             timetable: "",
@@ -280,8 +282,10 @@ export default async (models) => {
         },
         {
             name: "Heineken Experience",
-            shortDescription: "",
-            description: "",
+            shortDescription: "In 1988 Heineken closed an old Amsterdam brewery, which spread its smell over the popular De Pijp district, and opened a tour for the fans of its beer.",
+            description: "In 1988 Heineken closed an old Amsterdam brewery, which spread its smell over the popular De Pijp district, and opened a tour for the fans of its beer. For a small admission charge, you could learn something about the famous pilsner and drink as much as you wanted.\n" +
+              "\n" +
+              "The museum part of the show still remains interesting. The architecture of the 19th century Heineken brewery buildings, authentic interiors, old photographs and state decorations Heineken family received, famous gold medal from The Universal Exhibition in Paris in 1889, which you may see reproduced on each can of Heineken, impressive brass beer tanks and a quiet horse stable.",
             img: "https://s8.gifyu.com/images/heineken-experience.jpg",
             info: "",
             timetable: "",
@@ -292,8 +296,8 @@ export default async (models) => {
 
         {
             name: "Hortus Botanicus Amsterdam",
-            shortDescription: "",
-            description: "",
+            shortDescription: "Amsterdam has one of the oldest botanical gardens in the world called Hortus Botanicus. It was established in 1638 by the city municipality as Hortus Medicus, an herb garden with medical plants for Amsterdam doctors and pharmacists. ",
+            description: "Amsterdam has one of the oldest botanical gardens in the world called Hortus Botanicus. It was established in 1638 by the city municipality as Hortus Medicus, an herb garden with medical plants for Amsterdam doctors and pharmacists. The reasons for establishing a specialized medical garden were very serious: at that time the cities of Leiden and Utrecht experienced the plague epidemic (1634-1637) with thousands of victims. Additionally, several monasteries moved out of the quickly growing city and there was not enough space in Amsterdam to plant herbs.",
             img: "https://s8.gifyu.com/images/horus-botanicus-2.jpg",
             info: "",
             timetable: "",
@@ -302,8 +306,8 @@ export default async (models) => {
         },
         {
             name: "Amsterdam Royal Zoo",
-            shortDescription: "",
-            description: "",
+            shortDescription: " The zoo features 27 historic buildings, of which most date from the 19th century.",
+            description: " The zoo features 27 historic buildings, of which most date from the 19th century. Because of this, Artis has a distinctive charm and a historical dimension that lacks in more modern zoos. The monumental aquarium contains tropical fish and in the monumental birdhouse various birds fly around freely. In the tropical forest many animal species live with and between each other. Artis also features a butterfly pavilion where butterflies flutter.",
             img: "https://s8.gifyu.com/images/artis.jpg",
             info: "",
             timetable: "",
@@ -313,8 +317,8 @@ export default async (models) => {
         },
         {
             name: "Albert Cuyp Market",
-            shortDescription: "",
-            description: "",
+            shortDescription: "The Albert Cuypmarkt is a busy cosmopolitan food and clothes market, and by far the most famous daily market in Amsterdam. ",
+            description: "The Albert Cuypmarkt is a busy cosmopolitan food and clothes market, and by far the most famous daily market in Amsterdam. The whole area including the Ferdinand Bolstraat and Ceintuurbaan has many interesting shops. The 100-year-old, open-air street market features nearly 300 vendors selling everything from fruits, vegetables, fish, meats, spices, chocolate, cheese, flowers and plants to cheap clothes, jewelry, shoes, bike accessories, bedding, fabrics and cosmetics.",
             img: "https://s8.gifyu.com/images/albertcuyp.jpg",
             info: "",
             timetable: "",
@@ -323,8 +327,10 @@ export default async (models) => {
         },
         {
             name: "Bloemenmarkt",
-            shortDescription: "",
-            description: "",
+            shortDescription: "The Amsterdam Flower Market is the only floating flower market in the world, and one of the most fragrant places of interest of Amsterdam - in all seasons.",
+            description: "The Amsterdam Flower Market is the only floating flower market in the world, and one of the most fragrant places of interest of Amsterdam - in all seasons. This unique market exists since 1862. The flower stalls stand on the houseboats and evoke the old days when the market was daily supplied by boat.\n" +
+              "\n" +
+              "The flower market of Amsterdam is a particularly colorful place in the city. You will find there all sorts of tulips, narcissus, geraniums and many other types of flowers. At the Amsterdam Flower Market you can either buy bouquets, single flowers or bulbs. The bulbs are ready for export, so you can enjoy them at home too.",
             img: "https://s8.gifyu.com/images/bloemenmarkt-2.jpg",
             info: "",
             timetable: "",
@@ -333,8 +339,8 @@ export default async (models) => {
         },
         {
             name: "FOAM",
-            shortDescription: "",
-            description: "",
+            shortDescription: "Foam is an internationally renowned Amsterdam museum that exhibits all genres of photography in a beautiful canal-side setting.",
+            description: "Foam is an internationally renowned Amsterdam museum that exhibits all genres of photography in a beautiful canal-side setting. As well as displaying a wide variety of works, it acts as a creative hub where photographers can meet and participate in forums and symposiums.",
             img: "https://s8.gifyu.com/images/FOAM.jpg",
             info: "",
             timetable: "",
@@ -352,23 +358,27 @@ export default async (models) => {
     const itinerariesList = [
         {
             name: "One-day itinerary",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description: "Amsterdam is easily one of the most famous cities in Europe. If you’re planning on spending 1 day in Amsterdam, we think you should visit this attractions.\nFor your trip of 1 day we advise you three of the most characteristic attraction: ",
             img: "https://s8.gifyu.com/images/best-and-popular-Amsterdam-tours.jpg",
+            maplink: "https://www.google.com/maps/d/u/0/embed?mid=1v9W7nOXFe2K0ALFhUTf8XAxhFIeErOQ&ehbc=2E312F"
         },
         {
             name: "Three-day itinerary",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description: "Amsterdam is easily one of the most famous cities in Europe. If you’re planning on spending 3 days in Amsterdam, we think you should visit this attractions.\nFor your trip of 3 days we advise you five of the most characteristic attraction: ",
             img: "https://s8.gifyu.com/images/083da412e487316e61.jpg",
+            maplink: "https://www.google.com/maps/d/u/0/embed?mid=16bHMJ-NUrChVKw6rmpcpADWHjeBR9OI&ehbc=2E312F"
         },
         {
             name: "Five-day itinerary",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description: "Amsterdam is easily one of the most famous cities in Europe. If you’re planning on spending 5 days in Amsterdam, we think you should visit this attractions.\nFor your trip of 5 days we advise you seven of the most characteristic attraction: ",
             img: "https://s8.gifyu.com/images/caption.jpg",
+            maplink: "https://www.google.com/maps/d/u/0/embed?mid=17prt9f6ckhm0AkSGVunlfzZ4OA5Mwis&ehbc=2E312F"
         },
         {
             name: "One-week itinerary",
-            description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident",
+            description: "Amsterdam is easily one of the most famous cities in Europe. If you’re planning on spending one week in Amsterdam, we think you should visit this attractions.\nFor your trip of one week we advise you ten of the most characteristic attraction: ",
             img: "https://s8.gifyu.com/images/tulip-field-netherlands-shutterstock_483619153-1024x679.jpg",
+            maplink: "https://www.google.com/maps/d/u/0/embed?mid=1yIdV0JHJTtZr3o2ddYjhCzSC-IlnWVs&ehbc=2E312F"
         },
 
     ]
@@ -387,7 +397,118 @@ export default async (models) => {
             img: "https://deadline.com/wp-content/uploads/2018/03/ap_18061696756896.jpg?w=681&h=383&crop=1",
             location: "Vondelpark",
             when: "During all winter",
-            date: "21/12/2022"
+            date: '2022-12-21',
+            type: 'sport'
+        },
+        {
+            name: "Vondelpark Open Air Theatre",
+            description:"Head to the Open Air Theatre in Amsterdam's Vondelpark to catch summertime performances from children's acts, classical presentations or the latest Dutch or international pop performer. From May until early September you'll find a lot going on every Saturday and Sunday. ",
+            season: "winter",
+            img: "https://s8.gifyu.com/images/IMG_6594.jpg",
+            location: "Vondelpark",
+            when: "From May to September",
+            date: '2022-05-01',
+            type: 'art'
+        },
+        {
+            name: "Amsterdam Light Festival",
+            description:"During the winter months, the annual Amsterdam Light Festival (ALF) illuminates the city with brilliant works of light art. Each year, hundreds of ideas are submitted by designers, architects and artists from around the world. A selection committee usually chooses about 30 artworks that make up the festival’s installations. Past years have featured the work of prominent artists such as Ai Weiwei and Nicole Banowetz. ",
+            season: "winter",
+            img: "https://s8.gifyu.com/images/65790_fullimage_adam-light-festival_light-a-wish_1120x-520x320.jpg",
+            location: "Canals of Amsterdam",
+            when: "December 2 - January 23",
+            date: '2022-12-02',
+            type: 'art'
+        },
+        {
+            name: "New Year's Eve in Amsterdam",
+            description:"Whether you’re a party animal or a romantic, young of years or young-at-heart, a big spender or on a budget, Amsterdam is a great city to ring in the New Year. Fireworks illuminate the night sky and the city thrums in a cacophony of rockets, aerials, brocades, bangers and glittering willows. There will not be an official city-sponsored firework display this year, but you can expect to see a host of firework shows lighting up various locations around Amsterdam. Street level can be a bit chaotic in the midst of all the revelry, so you may want to find a nice rooftop perch or balcony to take it all in. ",
+            season: "winter",
+            img: "https://s8.gifyu.com/images/amsterdam-january-blog.jpg",
+            location: "Dam square",
+            when: "December 31 - January 1",
+            date: '2022-12-31',
+            type: 'experience'
+        },
+        {
+            name: "Sinterklaas",
+            description:"Saint Nicholas has had close ties with Amsterdam since 343 AD. Legend has it that Sinterklaas originally came from Turkey as St. Nicolaus, the Bishop of Mira, an honourable man who was kind to children. No one really knows why he then chose to live in Spain but historians point to the Spanish domination over the Netherlands in the past. The medieval attire of Sinterklaas’ assistants, the Zwarte Pieten, is equally mysterious. Zwarte Piet (literally: ‘Black Peter’) has long been the subject of debate in Amsterdam and the rest of the Netherlands. In 2018, the traditional Zwarte Pieten were replaced by Schoorsteenpieten (literally: ‘Chimney Peters’) at the Amsterdam Sinterklaas Parade. Rather than wearing the traditional blackface makeup that is at the heart of the Zwarte Piet controversy, the Schoorsteenpieten are only marked with light smudges of soot from bringing presents down the chimney. The more important characteristics of the Pieten, such as their jovial attitudes and seemingly endless supply of cookies and sweets, remain unchanged.  ",
+            season: "winter",
+            img: "https://s8.gifyu.com/images/sinterklaas-1280x720.jpg",
+            location: "Dam square",
+            when: "December 25",
+            date: '2022-12-25',
+            type: 'experience'
+        },
+        {
+            name: "Amsterdam Fringe Festival",
+            description:"Sometimes referred to as the NL Theater Festival’s quirky sister, Amsterdam Fringe Festival is all about bringing avant-garde productions to light. Each year some 70 productions are presented created by unorthodox theatre-makers keen to impress with their vision. What’s more, the venues where these eclectic performances take place can be just as unexpected. ",
+            season: "summer",
+            img: "https://s8.gifyu.com/images/Fringe-Festival-e1528194443195-1.webp",
+            location: "Vondelpark",
+            when: "September 1 - September 11",
+            date: '2022-09-01',
+            type: 'art'
+        },
+        {
+            name: "IDFA Festival",
+            description:"Each November, the International Documentary Film Festival Amsterdam (IDFA) transforms Amsterdam’s city centre into a paradise for documentary film fans. Held since 1988, IDFA is the world’s largest documentary festival and features lectures, workshops and over 300 movies that tell stories about life around the world. Some are funny, others sad, and they all represent the best the genre has to offer. Screenings take place throughout the city and include outdoor showings where you can watch a film under the night sky. ",
+            season: "autumn",
+            img: "https://s8.gifyu.com/images/1479458168545_0570x0400_0x0x0x0_1574326207583.jpg",
+            location: "EYE Film Institute Netherlands",
+            when: "November 13 - November 19",
+            date: '2022-09-01',
+            type: 'art'
+        },
+        {
+            name: "TCS Amsterdam Marathon",
+            description:"The 46th edition of the TCS Amsterdam Marathon will return to the city on Sunday October 16th, 2022. When it comes to running events, you could say Amsterdam has a personal best: the TCS Amsterdam Marathon taking place annually in October. The event draws elite runners from around the world as well as thousands of amateurs.",
+            season: "autumn",
+            img: "https://s8.gifyu.com/images/tcs-amsterdam-marathon-2020-lg.jpg",
+            location: "Vondelpark",
+            when: "October 16",
+            date: '2022-10-16',
+            type: 'sport'
+        },
+        {
+            name: "Pride Amsterdam",
+            description:"One of the biggest celebrations of LGBTI equality in the world, Pride Amsterdam celebrates its 25th anniversary in 2021. Whilst most large-scale parties, including the Canal Parade and Milkshake Festival cannot take place this year, a wealth of smaller events, exhibitions, talks and screenings will take place across the city.",
+            season: "summer",
+            img: "https://s8.gifyu.com/images/tcs-amsterdam-marathon-2020-lg.jpg",
+            location: "Dam square",
+            when: "June",
+            date: '2022-06-01',
+            type: 'experience'
+        },
+        {
+            name: "Grachtenfestival Amsterdam",
+            description:"The magnificent Grachtenfestival (Canal Festival), held annually in August on and around Amsterdam’s canals, is one of the cultural highlights of the Amsterdam summer. The historic canal belt of Amsterdam, a UNESCO World Heritage site since 2010, hosts the ten-day festival of classical music at numerous beautiful locations. ",
+            season: "summer",
+            img: "https://s8.gifyu.com/images/ia_grachtenfestival_02-1024x576.jpg",
+            location: "Canals of Amsterdam",
+            when: "August 8 - August 14",
+            date: '2022-08-12',
+            type: 'art'
+        },
+        {
+            name: "De Parade Theatre Festival",
+            description:"At De Parade there really is something for everyone. Whether you’re a die-hard theatre devotee or just along for the ride, you’ll find it here no matter what your pleasure is. Once on the festival terrain, you’ll find yourself enticed by artists giving outdoor performances in full regalia. The festival offers visitors a variety of short and full-length performances, as well as performances in open-air and secret locations. There’s always something new and surprising to look out for!",
+            season: "summer",
+            img: "https://s8.gifyu.com/images/63967_fullimage_parade_amsterdam_818x512.jpg",
+            location: "Vondelpark",
+            when: "August 12 - August 14",
+            date: '2022-08-12',
+            type: 'art'
+        },
+        {
+            name: "Holland Festival",
+            description:"One of the highlights of Amsterdam’s theatre and dance agenda, this theatre festival is held in various locations in Amsterdam and offers a heady mix of theatre, music, opera, film and visual arts, as well as Western and non-Western performance pieces in a variety of languages. programming consistently emphasises disciplinary crossovers and always includes works of the highest artistic standards. The festival has particularly been a frontrunner in supporting modern and non-classical contemporary music and new forms in musical theatre.",
+            season: "spring",
+            img: "https://s8.gifyu.com/images/dc93db771eb490fc0954e069674a6fe0.jpg",
+            location: "Dam square",
+            when: "March 15 - March 21",
+            date: '2022-03-15',
+            type: ''
         },
         {
             name: "van-gogh-week",
@@ -396,7 +517,8 @@ export default async (models) => {
             img: "https://cdn.getyourguide.com/img/tour/57a213594ce6f.jpeg/145.jpg",
             location: "Van Gogh Museum",
             when: "January 7 - January 14",
-            date: "07/01/2023"
+            date: '2023-01-07',
+            type: 'art'
         },
         {
             name: "street-museum",
@@ -405,7 +527,8 @@ export default async (models) => {
             img: "https://travel.thewom.it/pictures/2020/04/06/street-art_1.jpeg",
             location: "Canals of Amsterdam",
             when: "April 18 - March 18",
-            date: "18/04/2023"
+            date: '2023/04/18',
+            type: 'art'
 
         },
         {
@@ -415,7 +538,8 @@ export default async (models) => {
             img: "https://i0.wp.com/tulipfestivalamsterdam.com/wp-content/uploads/2018/11/cropped-Bloemenvelden-Bollenstreek-2019.jpg?resize=800%2C451&ssl=1",
             location: "Hortus Botanicus Amsterdam",
             when: "23 March until firsts of April",
-            date: "23/03/2023"
+            date: '2023-03-23',
+            type: 'experience'
 
         },
         {
@@ -425,8 +549,8 @@ export default async (models) => {
             img: "https://storage.googleapis.com/mcp_acc_236blog/uploads/2015/06/2011-4-Dennis-Bouman.jpg",
             location: "Vondelpark",
             when: "July 5 - July 7",
-            date: "5/08/2022"
-
+            date: '2022-08-05',
+            type: 'music'
         },
         {
             name: "modern-art-exihibit",
@@ -435,7 +559,8 @@ export default async (models) => {
             img: "https://files.ocula.com/anzax/77/77b2e762-fbf0-4c1b-91d2-3e2ee0380d10_2000_1500.jpg",
             location: "FOAM",
             when: "August 15 - August 30",
-            date: "15/08/2022"
+            date: '2022-08-15',
+            type: 'art'
 
         },
         {
@@ -445,7 +570,8 @@ export default async (models) => {
             img: "https://media.resources.festicket.com/image/1262x460/smart/filters:quality(70)/www/magazine/Rock_B.jpg",
             location: "Dam square",
             when: "October 15 - October 18",
-            date: "15/10/2022"
+            date: '2022-10-15',
+            type: 'music'
 
         },
         {
@@ -455,7 +581,8 @@ export default async (models) => {
             img: "https://s1.gifyu.com/images/duomo.jpg",
             location: "Bloemenmarkt",
             when: "November 10 - November 17",
-            date: "10/11/2022"
+            date: '2022-11-05',
+            type: 'food'
 
         },
 

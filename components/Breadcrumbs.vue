@@ -28,10 +28,21 @@ export default {
   },
   computed: {
     crumbs() {
-      const fullPath = this.$route.fullPath
-      const params = fullPath.substring(1).split('/')
-      const crumbs = []
+      const fullPath = this.$route.fullPath // Save the full path into a const
+      // console.log("FULL PATH: " + fullPath)
+      let params,trimPath
 
+      //Different beahviours if it's present in the fullpath the fragment identifier ('#')
+      if (fullPath.indexOf('#') === -1) {
+        params = fullPath.substring(1).split('/') // Remove the '/' character and save each item of the path into an array
+      } else {
+        trimPath = fullPath.slice(0, fullPath.indexOf('#')); // Remove from the fullPath the fragment idetifier after the '#' character
+        params = trimPath.substring(1).split('/') // Remove the '/' character and save each item of the path into an array
+      }
+      // console.log("TRIM PATH: " + trimPath)
+      // console.log("PARAMS: " + params)
+
+      const crumbs = []
       let path = ''
 
       params.forEach((param, index) => {

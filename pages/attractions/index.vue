@@ -1,9 +1,9 @@
 <template>
-  <div class="">
+  <div>
     <cover-image img="https://s8.gifyu.com/images/attractions-1.jpg" title="Things to do"></cover-image>
 
-    <div class="container">
-      <div class="row m-5">
+    <div class="section-container mt-5">
+      <div class="row">
         <div class="col-md m-2">
           <topic-card title="Attractions Tours" img="https://s8.gifyu.com/images/adrien-olichon-QRtym77B6xk-unsplash.jpg"
             path="/itineraries" />
@@ -119,7 +119,6 @@
 
 <script>
 import CommonMixin from '~/mixins/common';
-import OverlayCard from '~/components/OverlayCard.vue';
 import Card from '~/components/Card.vue';
 import CardCarousel from '~/components/CardCarousel.vue';
 import CoverImage from '~/components/CoverImage.vue';
@@ -130,7 +129,6 @@ export default {
   title: 'Attractions',
   mixins: [CommonMixin],
   components: {
-    OverlayCard,
     Card,
     CardCarousel,
     CoverImage

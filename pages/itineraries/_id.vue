@@ -1,78 +1,58 @@
 <template>
-  <div class="">
-    <div class="container mb-5 mt-5">
-      <div class="row">
-        <div class="col">
-          <h1 class="title second-title vl mb-3">{{ name }}</h1>
-          <p>{{ description }}</p>
-        </div>
-        <!--div class="col">
-          <img :src="img" class="rounded mx-auto img-fluid poi-img" />
-        </div-->
-      </div>
-    </div>
-
-    <!--hr /-->
-    <section id="info">
-      <div class="container mt-5">
-        <div class="row mb-3">
-          <h2 class="">The places in this itinerary</h2>
-        </div>
-        <!--p>
-          We suggest to visit these places in the given order, but feel free to
-          pick any order you wish and also complement it with other interesting
-          places to explore during your stay!
-        </p-->
+  <div class="page-container">
+    <section id="title-description">
+      <div class="section-container">
+        <h1 class="text-center m-5">{{ name }}</h1>
+        <p class="mb-1 p-0">{{ description }}</p>
+        <ul class="nav nav-pills mb-0 " id="pills-tab" role="tablist">
+          <li v-for="(item, index) of poisOfItinerary" :key="index" class="nav-item d-grid m-0 p-0" role="presentation">
+            <p class="fw-bold m-0">{{item.name}}:</p>
+            <p class="m-0">{{ item.shortDescription }}</p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section id="card-carousel">
+    <section id="attractions-list">
+      <div class="section-container">
+        <h2 class="second-title vl mt-5">The places in this itinerary</h2>
+      </div>
       <card-carousel
         :detailMatrix="generateMatrixFromArray(poisOfItinerary, 4)"
         class="mb-5"
       />
     </section>
-    <hr />
+
+    <hr class="m-5" />
 
     <section id="map">
-      <div class="container mt-5">
+      <div class="section-container mt-5">
         <div class="row mb-3">
-          <h2 class="title second-title vl">Itinerary map</h2>
+          <h2 class="second-title vl">Itinerary map</h2>
         </div>
-        <div class="row mb-5">
         <p>
           This is a map of all the attractions you will visit if you choose to
           enbark on this itinerary. The points are numbered and a path is
           already layed out for you to follow, but you can visit these places in
           any order you want!
         </p>
-        </div>
-        <div class="row mb-5 justify-content-center">
-          <img
-            src="https://cdn.shopify.com/s/files/1/1261/5247/products/Amsterdam_city_map_vector_edit_centre_1024x1024.JPG?v=1571294389"
-            alt="map not loaded"
-            class="img-fluid rounded-start"
-          />
-        </div>
+        <iframe
+          :src="src"
+          width="100%"
+          height="480"
+        ></iframe>
       </div>
     </section>
 
-    <div class="d-grid gap-2 d-md-flex justify-content-center mb-4 mb-lg-3">
+    <div class="d-grid gap-2 d-md-flex justify-content-center m-5">
       <button
         type="button"
-        class="btn btn-outline-secondary btn-lg px-4"
+        class="btn btn-outline-dark btn-lg px-4"
         @click="backToList"
       >
         Back to itineraries
       </button>
     </div>
-
-    <!-- You may also like content -->
-
-    <!--section id="other-attractions">
-      <h1> You may also like </h1>
-      <card-carousel></card-carousel>
-    </section-->
   </div>
 </template>
 
@@ -83,14 +63,12 @@
 import CommonMixin from '@/mixins/common.js'
 import GoogleMap from '@/components/Map.vue'
 import CardCarousel from '~/components/CardCarousel.vue'
-import Accordion from '@/components/Accordion.vue'
 export default {
   scrollToTop: true,
   name: 'DetailsPage',
   components: {
     GoogleMap,
     CardCarousel,
-    Accordion,
   },
 
   data() {
@@ -107,24 +85,28 @@ export default {
   //     title: this.name
   //   }
   // },
-  async asyncData({ route, $axios }) {
+  async asyncData({ route, $axios, redirect }) {
     const { id } = route.params
     const { data: itineraryInfo } = await $axios.get(`/api/itineraries/` + id)
     console.log(id)
     const { data: poisOfItinerary } = await $axios.get(
       `/api/poisByItinerary/` + id
     )
+    if (itineraryInfo == null){
+      return redirect('/error/?err=This itinerary does not exist!')
+    }
     return {
       name: itineraryInfo.name,
       img: itineraryInfo.img,
       description: itineraryInfo.description,
+      src: itineraryInfo.maplink,
       poisOfItinerary: poisOfItinerary,
     }
   },
 
   methods: {
     backToList() {
-      this.$router.push('/itinerary/list')
+      this.$router.push('/itineraries')
     },
   },
 }

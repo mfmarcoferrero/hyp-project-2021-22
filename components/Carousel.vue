@@ -51,6 +51,7 @@ export default {
 </script> 
 
 <style scoped>
+
 .slide-img {
   width: 100%;
   height: 500px;

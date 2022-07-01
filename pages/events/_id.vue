@@ -1,24 +1,27 @@
 <template>
-  <div class="page container mt-5">
+  <div class="page-container mt-5">
 
-    <div class="container mb-5">
-      <h1 class="title text-center ">{{ swapDashesAndCapitalize(name) }}</h1>
-      <div class="row row-cols-1 row-cols-lg-2 mt-5">
-        <div class="col">
-          <p class="p-4">{{ description }}</p>
-        </div>
-        <div class="col">
-          <img :src="img" alt="No img" class="img-fluid border border-dark border-3 id-img">
+    <section id="description">
+      <div class="section-container mb-5">
+        <h1 class="title text-center ">{{ swapDashesAndCapitalize(name) }}</h1>
+        <div class="row row-cols-1 row-cols-lg-2 mt-5">
+          <div class="col">
+            <p class="p-4">{{ description }}</p>
+          </div>
+          <div class="col">
+            <img :src="img" alt="No img" class="img-fluid id-img">
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <hr>
+
     <section id="info">
-      <div class="container mt-3">
+      <div class="section-container mt-3">
         <div class="row row-cols-1 row-cols-lg-2">
           <div class="col">
-            <google-map :query="location" />
+            <google-map :query="location" height="400px" />
           </div>
           <div class="col">
             <div class="">
@@ -31,7 +34,11 @@
                 <span :class="locationIcon"></span>
               </div>
               <div class="col event-card-text ms-1">
-                <span class="fs-4">{{ location }}</span>
+                <span class="fs-4">
+                  <nuxt-link :to="`/attractions/`+location">
+                    {{ location }}
+                  </nuxt-link>
+                </span>
               </div>
             </div>
 
@@ -47,10 +54,9 @@
         </div>
       </div>
     </section>
-    <hr>
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-      <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="backToList">
+    <div class="section-container d-grid gap-2 d-md-flex justify-content-md-start mb-b mt-5">
+      <button type="button" class="btn btn-outline-dark btn-lg px-4" @click="backToList">
         Back to events
       </button>
     </div>
@@ -94,9 +100,12 @@ export default {
       dateIcon: 'mdi mdi-timer',
     }
   },
-  async asyncData({ route, $axios }) {
+  async asyncData({ route, $axios, redirect }) {
     const { id } = route.params
     const { data } = await $axios.get(`/api/events/` + id)
+    if (data == null){
+      return redirect('/error/?err=This event does not exist!')
+    }
     return {
       name: data.name,
       location: data.location,
@@ -120,14 +129,14 @@ export default {
 <style scoped>
 .id-img {
   width: 100%;
-  height: 350px
+  height: 100%;
 }
 
 .icon-item {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 .event-card-text {
-    padding-top: 6px;
+  padding-top: 6px;
 }
 </style>

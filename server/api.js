@@ -50,7 +50,8 @@ async function initializeDatabaseConnection() {
     img: DataTypes.STRING(1000),
     location: DataTypes.STRING(10000),
     when: DataTypes.STRING,
-    date: DataTypes.STRING
+    date: DataTypes.DATEONLY,
+    type: DataTypes.STRING
   })
   const Itinerary = database.define("itinerary", {
     name: {
@@ -58,7 +59,8 @@ async function initializeDatabaseConnection() {
       primaryKey: true
     },
     description: DataTypes.STRING(10000),
-    img: DataTypes.STRING
+    img: DataTypes.STRING,
+    maplink: DataTypes.STRING
   })
   const ServiceType = database.define("serviceType", {
     name: {
@@ -87,8 +89,13 @@ async function initializeDatabaseConnection() {
     description: DataTypes.STRING,
     url: DataTypes.STRING,
     path: DataTypes.STRING(1000),
-  }) 
-  
+  })
+  const Message = database.define("message", {
+    name: DataTypes.STRING,
+    email: DataTypes.STRING,
+    message: DataTypes.STRING(10000)
+  })
+
   //const ItineraryPoi = database.define("itinerary_poi", {})
   //Itinerary.belongsToMany(POI, { through: 'itinerary_poi' })
   //POI.belongsToMany(Itinerary, { through: 'itinerary_poi' }) 
@@ -101,7 +108,8 @@ async function initializeDatabaseConnection() {
     ServiceType,
     Service,
     //ItineraryPoi,
-    Photolist
+    Photolist,
+    Message
   }
 }
 
@@ -133,7 +141,7 @@ async function runMainApi() {
 
   app.get('/poisByItinerary/:name', async (req, res) => {
     const name = req.params.name
-    const result = await models.POI.findAll({ where: { itineraryName : { [Op.contains] : [name] } } })
+    const result = await models.POI.findAll({ where: { itineraryName: { [Op.contains]: [name] } } })
     return res.json(result)
   })
 
@@ -144,9 +152,6 @@ async function runMainApi() {
       filtered.push({
         name: element.name,
         img: element.img,
-        description: element.description,
-        id: element.id,
-        pins: element.pins,
       })
     }
     return res.json(filtered)
@@ -171,7 +176,8 @@ async function runMainApi() {
       filtered.push({
         name: element.name,
         description: element.description,
-        img: element.img
+        img: element.img,
+        maplink: element.maplink
       })
     }
     return res.json(filtered)
@@ -188,11 +194,32 @@ async function runMainApi() {
         img: element.img,
         location: element.location,
         when: element.when,
-        date: element.date
+        date: element.date,
+        type: element.type
       })
     }
     return res.json(filtered)
   })
+
+  app.get("/eventsByPlace/:placename", async (req, res) => {
+    const placename = req.params.placename
+    const result = await models.Event.findAll({ where: { location: placename } })
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        description: element.description,
+        season: element.season,
+        img: element.img,
+        location: element.location,
+        when: element.when,
+        date: element.date,
+        type: element.type
+      })
+    }
+    return res.json(filtered)
+  })
+  
 
   app.get('/events/:name', async (req, res) => {
     const name = req.params.name
@@ -278,12 +305,25 @@ async function runMainApi() {
     return res.json(filtered)
   })
 
+  //-----------------------------------------------------------------------------------------
+  //-----------------------------------------------------------------------------------------
+  //                                    MESSAGE API
+  //-----------------------------------------------------------------------------------------
+  //-----------------------------------------------------------------------------------------
 
-
+  app.post("/message", async (req, res) => {
+    const { name, email, message, commercialFlag } = req.body
+    const messageObj = models.Message.build({
+      name,
+      email,
+      message
+    })
+    await messageObj.save()
+    return res.sendStatus(200)
+  })
 
 }
 
 runMainApi()
-
 
 export default app
