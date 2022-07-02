@@ -247,6 +247,23 @@ async function runMainApi() {
     })
   })
 
+  app.get('/itinerariesByPlace/:name', async (req, res) => {
+    const name = req.params.name
+    const query = 'SELECT i.name, i.description, i.img FROM itineraries as i JOIN itinerary_pois as ip ON name = itinerary_name WHERE poi_name = :name';
+
+    await database.query(query,
+      {
+        replacements: {
+          name: name
+        },
+        nest: true
+      }).then(ret => {
+      return res.json(ret)
+    }).catch(err => {
+      console.log(err)
+    })
+  })
+
   //-----------------------------------------------------------------------------------------
   //-----------------------------------------------------------------------------------------
   //                                PAGE DETAILS

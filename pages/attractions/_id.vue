@@ -85,8 +85,8 @@
                     <div class="accordion-body">
                       <ul>
                         <li v-for="(item, index) of itineraryList" :key="index">
-                          <nuxt-link :to="`/itineraries/`+item">
-                            <strong> {{ item }} </strong>
+                          <nuxt-link :to="`/itineraries/`+item.name">
+                            <strong> {{ item.name }} </strong>
                           </nuxt-link>
                         </li>
                       </ul>
@@ -145,7 +145,7 @@ export default {
   },
   data() {
     return {
-      
+
     }
   },
   mixins: [CommonMixin],
@@ -161,7 +161,8 @@ export default {
     const { id } = route.params
     const { data: poiInfo } = await $axios.get(`/api/pois/` + id)
     const { data: eventList} = await $axios.get(`/api/eventsByPlace/` + id)
-    console.log("lenght: " + Object.keys( eventList ).length ) 
+    const { data: itineraryList} = await $axios.get(`/api/itinerariesByPlace/` + id)
+    console.log("lenght: " + Object.keys( eventList ).length )
     numberOfEvents = Object.keys( eventList ).length
     console.log(numberOfEvents)
     if (poiInfo == null || eventList == null) {
@@ -171,7 +172,7 @@ export default {
       name: poiInfo.name,
       img: poiInfo.img,
       description: poiInfo.description,
-      itineraryList : poiInfo.itineraryName,
+      itineraryList : itineraryList,
       eventList: eventList,
       numberOfEvents: numberOfEvents,
 
