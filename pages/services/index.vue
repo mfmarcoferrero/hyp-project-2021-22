@@ -55,7 +55,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: '',
+          content: 'Amsterdam is a city that offers many services to increase the quality of life of its visitors and residents. Services for areas such as medical, banks, transport, shopping, job and school',
         },
       ],
     }
@@ -78,13 +78,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-
-/* windmill markline was too noticeable, fixed bg color for this page */
-
-.page-container{
-  /*background: white;*/
-}
-
-</style>

@@ -57,13 +57,25 @@ import GoogleMap from '@/components/Map.vue'
 import Accordion from '@/components/Accordion.vue'
 export default {
   name: 'DetailsPage',
-
   mixins:[CommonMixin],
-
   components: {
     GoogleMap,
     Accordion,
   },
+  
+  head() {
+    return {
+      title: 'Visit-DAM | ' + this.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.name + ' :' + this.description,
+        },
+      ],
+    }
+  },
+  
   data() {
     return {
       locationIcon: 'mdi mdi-map-marker',
@@ -90,9 +102,6 @@ export default {
     }
   },
   methods: {
-    swapUnderscoresWithSpaces(string) {
-      return string.replace(/_/g, " ");
-    },
     backToList() {
       this.$router.push('/services')
 

@@ -79,12 +79,20 @@ export default {
 
   mixins: [CommonMixin],
 
-  //Important for the SEO
-  //head() {
-  //   return {
-  //     title: this.name
-  //   }
-  // },
+ 
+  head() {
+    return {
+      title: 'Visit-DAM | ' + this.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.name + ': discover the beauty of Amsterdam with this amazing tour and experience',
+        },
+      ],
+    }
+  },
+
   async asyncData({ route, $axios, redirect }) {
     const { id } = route.params
     const { data: itineraryInfo } = await $axios.get(`/api/itineraries/` + id)

@@ -35,7 +35,7 @@
               </div>
               <div class="col event-card-text ms-1">
                 <span class="fs-4">
-                  <nuxt-link :to="`/attractions/`+location">
+                  <nuxt-link :to="`/attractions/` + location">
                     {{ location }}
                   </nuxt-link>
                 </span>
@@ -87,12 +87,19 @@ export default {
   },
   mixins: [CommonMixin],
 
-  //Important for the SEO
-  //head() {
-  //   return {
-  //     title: this.name
-  //   }
-  // },
+
+  head() {
+    return {
+      title: 'Visit-DAM | ' + this.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.name + ' : join this amazing event.',
+        },
+      ],
+    }
+  },
 
   data() {
     return {
@@ -103,7 +110,7 @@ export default {
   async asyncData({ route, $axios, redirect }) {
     const { id } = route.params
     const { data } = await $axios.get(`/api/events/` + id)
-    if (data == null){
+    if (data == null) {
       return redirect('/error/?err=This event does not exist!')
     }
     return {
@@ -111,7 +118,7 @@ export default {
       location: data.location,
       img: data.img,
       description: data.description,
-      when: data.when,
+      when: data.when
     }
   },
 

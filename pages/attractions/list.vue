@@ -68,6 +68,20 @@ export default {
             img: "https://s8.gifyu.com/images/gaurav-jain-2K2SR19RLg8-unsplash.jpg"
         }
     },
+
+    head() {
+        return {
+            title: 'Visit-DAM | All Attractions',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: "Here you can find all the most popular attractions and experiences in Amsterdam: museums and arts, top sights, buildings and churches.",
+                },
+            ],
+        }
+    },
+
     // Note: This happens on backend (server) side
     async asyncData({ $axios }) {
         let topList = []
@@ -100,6 +114,3 @@ export default {
     }
 }
 </script>
-
-<style>
-</style>

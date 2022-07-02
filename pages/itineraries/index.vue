@@ -153,8 +153,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content:
-            '',
+          content: 'Itineraries and guided tour are the best way to explore the city of Amsterdam, saving time and without missing any important attraction or experience. You can choose from a different days itineraries that will perfectly fit your stay in the city.',
         },
       ],
     }

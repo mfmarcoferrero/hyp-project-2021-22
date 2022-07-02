@@ -47,8 +47,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content:
-            '',
+          content: 'Take part in one of the most exciting events in Amsterdam. Art, music, sport and food events will tanke part in any season you will have your vacation',
         },
       ],
     }

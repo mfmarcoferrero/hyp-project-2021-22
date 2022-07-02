@@ -143,8 +143,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content:
-            '',
+          content: "Amsterdam is rich with fascinating attractions and sights. From ancient castles to magnificent museums, secret courtyards to quaint cobbled streets, and the city's world-famous canals. You can find here tickets for top visited attractions and art or cultural museums.",
         },
       ],
     }
