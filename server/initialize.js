@@ -638,12 +638,12 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/Librarian-showing-books.xa04803ee.jpg",
         },
         {
-            name: "Thematic_and_leisure_parks",
+            name: "Public_parks",
             description: "parks services description",
-            img: "https://s8.gifyu.com/images/walibi-holland-theme-park-netherlands-rollercoaster.jpg",
+            img: "https://s8.gifyu.com/images/tulip-field-netherlands-shutterstock_483619153-1024x679.jpg",
         },
         {
-            name: "Work_Services",
+            name: "Job_Services",
             description: "job services description",
             img: "https://s8.gifyu.com/images/istockphoto-1147555040-612x612.jpg",
         },
@@ -651,6 +651,31 @@ export default async (models) => {
             name: "Student_Services",
             description: "job services description",
             img: "https://s8.gifyu.com/images/PISA-Volume-VI-blog.webp",
+        },
+        {
+            name: "Bank_Services",
+            description: "bank services description",
+            img: "https://s8.gifyu.com/images/AP_683947517957-e1560336607192.jpg",
+        },
+        {
+            name: "Transport_Services",
+            description: "transport services description",
+            img: "https://s8.gifyu.com/images/mezzi-pubblici-amsterdam-1-800x400.jpg",
+        },
+        {
+            name: "Pharmacy_Services",
+            description: "Pharmacy services description",
+            img: "https://s8.gifyu.com/images/farmacia-olandese-la-firma-dentro-i-paesi-bassi-154411099.jpg",
+        },
+        {
+            name: "Rental_bikes_Services",
+            description: "Rental bikes services description",
+            img: "https://s8.gifyu.com/images/come-noleggiare-una-bici-ad-amsterdam_800_resize.jpg",
+        },
+        {
+            name: "Shopping_center_Services",
+            description: "shopping center services description",
+            img: "https://s8.gifyu.com/images/Magna-plaza-2.jpg",
         },
     ]
     const serviceList = [
@@ -735,7 +760,7 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/1-small_library_meg.jpg",
         },
         {
-            type: "Thematic_and_leisure_parks",
+            type: "Public_parks",
             name: "Rijksmuseumtuinen",
             description: "Park with garden",
             address: "Museumstraat, 1071 ZC Amsterdam, N",
@@ -743,7 +768,7 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/download663eec1377e9db34.jpg",
         },
         {
-            type: "Thematic_and_leisure_parks",
+            type: "Public_parks",
             name: "Vondelpark",
             description: "The biggest park of Amsterdam with open theatre",
             address: "Amsterdam, Paesi Bassi",
@@ -751,7 +776,7 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/vondelpark-amsterdam805587f87cafaaa5.jpg",
         },
         {
-            type: "Thematic_and_leisure_parks",
+            type: "Public_parks",
             name: "Rembrandtpark",
             description: "Public park with lakes, paths and play areas in a quiet and densely wooded environment.",
             address: "Postjesweg, Amsterdam, Paesi Bassi",
@@ -759,7 +784,7 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/302231_xgaplus.jpg",
         },
         {
-            type: "Work_Services",
+            type: "Job_Services",
             name: "WeWork - Kantoorruimte en coworking",
             description: "Coworking",
             address: "Weteringschans 165 C, 1017 XD Amsterdam, Paesi Bassi",
@@ -767,7 +792,7 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/original_6158a17fddec8617ce4cacaf_61598d37b99f0.webp",
         },
         {
-            type: "Work_Services",
+            type: "Job_Services",
             name: "Models at Work Amsterdam",
             description: "Organization of events.",
             address: "Overhoeksplein 1, Kantoor 11A, 1031 KS Amsterdam, Paesi Bassi",
@@ -775,7 +800,7 @@ export default async (models) => {
             img: "https://s8.gifyu.com/images/Unknown.jpg",
         },
         {
-            type: "Work_Services",
+            type: "Job_Services",
             name: "StartDock Coworking Herengracht",
             description: "Coworking",
             address: "Herengracht 420, 1017 BZ Amsterdam, Paesi Bassi",
@@ -805,7 +830,55 @@ export default async (models) => {
             address: "Joan Muyskenweg 15-16-17, 1096 CJ Amsterdam, Paesi Bassi",
             hours: "00:00-24:00",
             img: "https://s8.gifyu.com/images/amstelhome-91.jpg",
-        }
+        },
+        {
+            type: "Bank_Services",
+            name: "GWK Travelex ATM",
+            description: "Bank with service of change currency",
+            address: "Piet Heinkade 11; Amsterdam Amsterdam 1019BR Amsterdam, Piet Heinkade 11, 1019 BR, Paesi Bassi",
+            hours: "09:00-17:00",
+            img: "https://s8.gifyu.com/images/gwk-travelex-351570.webp",
+        },
+        {
+            type: "Bank_Services",
+            name: "Chaabi Bank Nederland",
+            description: "Bank",
+            address: "De Clercqstraat 55, 1053 AD Amsterdam, Paesi Bassi",
+            hours: "10:00-17:00",
+            img: "https://s8.gifyu.com/images/chaabi-bank1-300x207.jpg",
+        },
+        {
+            type: "Bank_Services",
+            name: "ABN AMRO kantoor",
+            description: "Bank",
+            address: "Leidseplein 29, 1017 PS Amsterdam, Paesi Bassi",
+            hours: "12:00-17:00",
+            img: "https://s8.gifyu.com/images/download-12710c7db2a881b59.jpg",
+        },
+        {
+            type: "Transport_Services",
+            name: "Taxi Amsterdam | Goedkope Taxi | Taxi Transportation Service",
+            description: "Taxi service",
+            address: "Keizersgracht 520 H, 1017 EK Amsterdam, Paesi Bassi",
+            hours: "00:00-24:00",
+            img: "https://s8.gifyu.com/images/V-C-Taxis-NC.jpg",
+        },
+        {
+            type: "Transport_Services",
+            name: "ETS Eiffel Transport Service B.V.",
+            description: "Transport service",
+            address: "Cruquiuskade 251, 1018 AM Amsterdam, Paesi Bassi",
+            hours: "05:00-24:00",
+            img: "https://s8.gifyu.com/images/download-21fd7c71d8dc7638c.jpg",
+        },
+        {
+            type: "Transport_Services",
+            name: "Stromma - Central Station",
+            description: "Boat excursions",
+            address: "Prins Hendrikkade 37, 1012 AB Amsterdam, Paesi Bassi",
+            hours: "10:00-22:00",
+            img: "https://s8.gifyu.com/images/open-boot-amsterdamse-grachten-met-stromma.jpg",
+        },
     ]
 
     await models.POI.bulkCreate(poiList)

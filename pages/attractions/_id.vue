@@ -65,8 +65,8 @@
                     <div class="accordion-body">
                       <ul>
                         <li v-for="(item, index) of itineraryList" :key="index">
-                          <nuxt-link :to="`/itineraries/`+item">
-                            <strong> {{ item }} </strong>
+                          <nuxt-link :to="`/itineraries/`+item.name">
+                            <strong> {{ item.name }} </strong>
                           </nuxt-link>
                         </li>
                       </ul>
@@ -122,6 +122,7 @@ export default {
 
     }
   },
+  
   mixins: [CommonMixin],
 
   head() {
@@ -141,9 +142,10 @@ export default {
     let numberOfEvents
     const { id } = route.params
     const { data: poiInfo } = await $axios.get(`/api/pois/` + id)
-    const { data: eventList } = await $axios.get(`/api/eventsByPlace/` + id)
-    console.log("lenght: " + Object.keys(eventList).length)
-    numberOfEvents = Object.keys(eventList).length
+    const { data: eventList} = await $axios.get(`/api/eventsByPlace/` + id)
+    const { data: itineraryList} = await $axios.get(`/api/itinerariesByPlace/` + id)
+    console.log("lenght: " + Object.keys( eventList ).length )
+    numberOfEvents = Object.keys( eventList ).length
     console.log(numberOfEvents)
     if (poiInfo == null || eventList == null) {
       return redirect('/error/?err=This attraction does not exist!')
@@ -153,7 +155,7 @@ export default {
       img: poiInfo.img,
       shortDescription: poiInfo.shortDescription,
       description: poiInfo.description,
-      itineraryList: poiInfo.itineraryName,
+      itineraryList : itineraryList,
       eventList: eventList,
       numberOfEvents: numberOfEvents,
     }
