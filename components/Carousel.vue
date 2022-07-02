@@ -1,16 +1,32 @@
+<!-- 
+
+    Component: Carousel
+    Description: Classic bootstrap carousel with images in slides
+    Use: homepage
+    Props: 
+      detailList -> list of images to place in each slide
+      scrollTo -> clicking on this icon, page scroll to a specific session
+         
+-->
+
 <template>
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
+
+      <!-- For each image of detailList a new slide is created,
+        Only the first one is declared as current slide (active slide) using Vue v-bind -->
+
       <div v-for="(detail, detailIndex) of detailList" :key="`detail-index-${detailIndex}`"
         v-bind:class="[carouselClass, detailIndex == 0 ? activeClass : '']">
         <img :src="detail.img" class="slide-img d-block" alt="image">
-        <div class="carousel-caption d-none d-md-block position-absolute top-0">
-          <h2>{{ swapUnderscoresWithSpaces(detail.name) }}</h2>
-          <p>{{ detail.description }}</p>
-        </div>
       </div>
+
+      <!-- ScrollTo icon -->
+
       <a :href="scrollTo" class="scroll-down" address="true"></a>
     </div>
+
+    <!-- Previous and next buttons -->
 
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -20,15 +36,12 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
+
   </div>
 </template>
 
 <script>
-// TODO: Fix the img size (even if images on db have different sizes) and change the cursor icon when on the slide
-//       the image format that is the best one for the carousel is the static/pictures/dam.jpeg file format
-import CommonMixin from '~/mixins/common';
 export default {
-  mixins: [CommonMixin],
   name: 'Carousel',
 
   props: {
@@ -43,6 +56,7 @@ export default {
 
   data() {
     return {
+      //Bootstrap classes defined in variables
       carouselClass: 'carousel-item',
       activeClass: 'active',
     }
@@ -52,6 +66,7 @@ export default {
 
 <style scoped>
 
+/* Dimension of the image inside each slide */
 .slide-img {
   width: 100%;
   height: 500px;
@@ -64,6 +79,8 @@ export default {
   margin: 0;
   padding: 0;
 }
+
+/* Scroll down icon style definition and beahviour */
 
 .scroll-down {
   opacity: 1;
@@ -101,6 +118,8 @@ export default {
   border: 2px solid white;
   border-width: 0px 0 2px 2px;
 }
+
+/* Bounce animation for the scroll down icon */
 
 @keyframes bounce {
 

@@ -1,6 +1,21 @@
+<!-- 
+
+    Component: CoverImage
+    Description: Component used in each introductory page to have a fullscreen width image and a title
+    Use: In attractions, events, itineraries, services
+    Props: 
+          title -> cover title
+          img -> cover image
+
+ -->
+
 <template>
     <div class="container-cover">
         <img :src="img" alt="no image" class="cover-img">
+
+        <!-- Positioning for the title in the middle of the cover image
+            Additional styling using bootstrap classes for shadows and font size -->
+
         <p class="fs-1 text-center fw-bold position-absolute top-50 start-50 translate-middle shadow-plg cover-title">
             {{ title }} </p>
     </div>
@@ -26,6 +41,8 @@ export default {
 </script>
 
 <style scoped>
+
+/* Fix dimension for cover image */
 .cover-img {
     width: 100%;
     height: 500px;
@@ -39,12 +56,9 @@ export default {
     color: white;
 }
 
+/* Text shadows and color */
 .cover-title {
     text-shadow: 0 0 16px rgba(0, 0, 0, .75);
-    /* font-size: 36px; */
-    /* font-weight: 900; */
-    /* line-height: 1.17; */
     color: #fff;
-    /* width: 100%; */
 }
 </style>

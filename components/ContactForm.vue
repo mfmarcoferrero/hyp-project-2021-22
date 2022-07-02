@@ -1,3 +1,10 @@
+<!-- 
+
+    Component: ContactForm
+    Description: Form to send messages and save it into db. A post api is called when submit is done
+    Use: contact
+    
+-->
 <template>
     <div>
         <form id="form" @submit="sendMessage">
@@ -28,7 +35,9 @@
             <button v-if="messageSent === false" type="submit" class="btn btn-dam">Submit</button>
         </form>
 
-        <!-- SUCCESSFULLY RESPONSE INTERFACE: on message correctly sent -->
+        <!-- RESPONSE INTERFACE: When button is clicked it's not possible to send a new one 
+                                and a message showing that request has been sent is shown 
+                                (even if an error occured, but message request has been sent) -->
 
         <div v-if="messageSent === true || errApi == true">
             <p>
@@ -36,11 +45,16 @@
             </p>
         </div>
 
-        <!-- Modal -->
+        <!-- MODAL: informs users that message has been sent and will reaceive a response
+                    or an error with api/backend occurs -->
+
         <div class="modal fade" id="responseModal" tabindex="-1" aria-labelledby="responseModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
+
+                    <!-- Modal header change its content if there is an error or if message is sent with success -->
+
                     <div class="modal-header">
                         <h5 v-if="messageSent === true" class="modal-title" id="responseModalLabel">Your message has
                             been
@@ -48,12 +62,16 @@
                         <h5 v-if="errorApi === true" class="modal-title" id="responseModalLabel">An error occured</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+
+                    <!-- Modal body change its content if there is an error or if message is sent with success -->
+
                     <div class="modal-body">
                         <span v-if="messageSent === true"> You will receive a message from Visit-DAM as soon as
                             possible</span>
                         <span v-if="errorApi === true"> At the moment this service is not available. <br> Try again
                             later </span>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
@@ -72,16 +90,16 @@ export default {
 
     name: 'ContactForm',
     data() {
+        // Variables used to save message content and state of message sending
+
         return {
             messageSent: false,
             errorApi: false,
 
             name: null,
-            surname: null,
             email: null,
             message: null,
             privacy: null,
-            commercial: null,
         }
     },
     methods: {
@@ -107,6 +125,7 @@ export default {
                     this.messageSent = false
                     this.errorApi = true // Display the error interface
                 })
+            // Show modal with message
             modal.toggle()
         },
 

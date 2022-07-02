@@ -1,14 +1,20 @@
+<!-- 
+
+    Component: Breadcrumbs
+    Description: Classic breadcrumbs that shows current position in the directory structure of the website
+    Use: deafult layout (all pages except homepage)
+         
+-->
+
 <template>
   <ol vocab="http://schema.org/" typeof="BreadcrumbList" class="mb-0 bg-light">
     <li property="itemListElement" typeof="ListItem">
-      <nuxt-Link property="item" typeof="WebPage" to="/">
-      </nuxt-Link>
       <meta property="position" content="1" />
     </li>
     <li v-for="(crumb, index) in crumbs" :key="index" property="itemListElement" typeof="ListItem">
       <nuxt-Link property="item" typeof="WebPage" :to="crumb.path">
         <span property="name">
-          {{ $route.fullPath === crumb.path && title !== null ? title : crumb.title }}
+          {{ crumb.title }}
         </span>
       </nuxt-Link>
       <meta property="position" :content="index + 2" />
@@ -20,30 +26,24 @@
 import CommonMixin from '~/mixins/common';
 export default {
   mixins: [CommonMixin],
-  props: {
-    title: {
-      type: String,
-      default: null,
-    },
-  },
+
   computed: {
     crumbs() {
       const fullPath = this.$route.fullPath // Save the full path into a const
-      // console.log("FULL PATH: " + fullPath)
       let params,trimPath
 
-      //Different beahviours if it's present in the fullpath the fragment identifier ('#')
+      //Different beahviours if in the fullpath it's present the fragment identifier ('#')
       if (fullPath.indexOf('#') === -1) {
         params = fullPath.substring(1).split('/') // Remove the '/' character and save each item of the path into an array
       } else {
         trimPath = fullPath.slice(0, fullPath.indexOf('#')); // Remove from the fullPath the fragment idetifier after the '#' character
         params = trimPath.substring(1).split('/') // Remove the '/' character and save each item of the path into an array
       }
-      // console.log("TRIM PATH: " + trimPath)
-      // console.log("PARAMS: " + params)
 
       const crumbs = []
       let path = ''
+
+      // Generation of an array of page names for current path
 
       params.forEach((param, index) => {
         let regex = /\?id=[0-9]*/
@@ -55,6 +55,7 @@ export default {
 
         if (match.name !== null) {
           crumbs.push({
+            // Common mixins used to capitalize first letter of each page name
             title: this.capitalizeFirstLetter(param.replace(/-/g, ' ')),
             ...match,
           })
@@ -67,6 +68,9 @@ export default {
 </script>
 
 <style scoped>
+
+/* Styling for colors and arrows for the ordered list and list elements */
+
 ol {
   list-style: none;
 }
@@ -89,9 +93,5 @@ li:last-child:after {
 
 li a {
   color: black;
-}
-
-li a.nuxt-link-exact-active.nuxt-link-active {
-  color: grey;
 }
 </style>

@@ -1,3 +1,11 @@
+<!-- 
+
+    Component: TheFooter
+    Description: Classic footer with follow us list and logo img. It is present in each page of the website
+    Use: default, nocrumbs, error layouts
+    Props: No props only static data defined
+      
+-->
 <template>
   <footer class="footer bg-header">
     <div class="footer-content row row-cols-1 row-cols-md-2 justify-content-center justify-content-md-between">
@@ -28,6 +36,8 @@
 export default {
   data() {
     return {
+
+      // Static definition of contents in the follow us section for names, icons and links
       socialList: [
         {
           name: 'Facebook',

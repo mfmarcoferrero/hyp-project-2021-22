@@ -1,5 +1,23 @@
+<!-- 
+
+    Component: Card
+    Description: Classic bootstrap card with some hover effected added 
+                 (different from component Card in its layout and content)
+    Use: events
+    Props: 
+      title -> name of a specific topic
+      img -> img of a specific topic
+      description -> description of a specific topic
+      location -> location of a specific event
+      date -> date of a specific event
+      path -> clicking on the card redirect to this path  
+         
+-->
 <template>
     <div class="card" @click="goTo(path)">
+
+        <!-- Layout definition using bootstrap row-cols -->
+
         <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col-md-6">
                 <img :src="img" class="img-fluid rounded-start img-card" alt="No Image">
@@ -10,6 +28,9 @@
                         <h5 class="card-title vl second-title">{{ title }}</h5>
                     </div>
                     <hr class="me-5">
+
+                    <!-- Bootstrap row-cols to have an icond and a text in a line -->
+
                     <div class="row row-cols-2">
                         <div class="icon-item col-1">
                             <span :class="locationIcon"></span>
@@ -19,6 +40,8 @@
                         </div>
                     </div>
 
+                    <!-- Bootstrap row-cols to have an icond and a text in a line -->
+
                     <div class="row row-cols-2">
                         <div class="icon-item col-1">
                             <span :class="dateIcon"></span>
@@ -27,8 +50,6 @@
                             <span class="">{{ date }}</span>
                         </div>
                     </div>
-
-                    <!--p class="card-text mt-2"><small class="text-muted">COVID-19 restrictions may apply</small></p-->
                 </div>
             </div>
         </div>
@@ -43,6 +64,7 @@ export default {
     name: 'EventCard',
     data() {
         return {
+            // Icons imported from material design icons css
             locationIcon: 'mdi mdi-map-marker',
             dateIcon: 'mdi mdi-calendar',
         }
@@ -68,12 +90,8 @@ export default {
         },
         path: {
             type: String,
-            //required: true
+            required: true
         },
-        // goToPath: {
-        //   type: Boolean,
-        //   required: true
-        // } 
     },
     methods: {
         goTo(path) {
@@ -84,6 +102,9 @@ export default {
 </script>
  
 <style lang="scss" scoped>
+
+// Fixed dimension for height
+
 .card {
     width: 100%;
     height: 200px;
@@ -91,16 +112,20 @@ export default {
     cursor: pointer;
 }
 
+// On hover -> shadow effect 
 .card:hover {
     box-shadow: 6px 6px 6px 6px #e9ecef;
     transform: scale(1.005);
 }
 
+// Fixed img height
 .img-card {
-    height: 200px; /* Change it based upon requirement */
+    height: 200px;
+    /* Change it based upon requirement */
     object-fit: cover;
 }
 
+// Text style
 .icon-item {
     font-size: 25px;
 }
@@ -109,18 +134,20 @@ export default {
     padding-top: 6px;
 }
 
+// Changing dimension of card of responsiveness
+
 @media only screen and (max-width: 800px) {
     .img-card {
-        height: 100%; /* Change it based upon requirement */
+        height: 100%;
+        /* Change it based upon requirement */
         object-fit: cover;
     }
 
     .card {
-    width: 100%;
-    height: 100%;
-    transition: all 0.2s ease;
-    cursor: pointer;
+        width: 100%;
+        height: 100%;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
 }
-}
-
 </style>

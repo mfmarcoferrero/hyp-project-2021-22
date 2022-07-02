@@ -19,7 +19,7 @@
     <section id="agenda">
       <div class="section-container mt-0">
         <h2 class="second-title vl ms-4 mb-4">Cultural Agenda</h2>
-        <agenda :list="eventList" class="mt-5" />
+        <agenda :list="eventList" class="mt-5" :categories="agendaCategories" :selected="agendaSelected"/>
       </div>
     </section>
 
@@ -47,8 +47,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content:
-            '',
+          content: '',
         },
       ],
     }
@@ -76,7 +75,9 @@ export default {
       {
         name: "fall",
         description: "Summer ends, the trees are starting to lose their leaves, but Amsterdam does not go to sleep! A lot of fun and interesting events are taking place in the city during fall. Explore this possibilities and enjoy the fall season throught us!"
-      }]
+      }],
+      agendaSelected: 'Music',
+      agendaCategories: ['Music', 'Art', 'Food', 'Sport'],
     }
   },
   async asyncData({ $axios }) {
