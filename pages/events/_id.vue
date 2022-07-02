@@ -1,6 +1,7 @@
 <template>
   <div class="page-container mt-5">
 
+    <!-- DESCRIPTION SECTION CONTAINS EVENT NAME, DESCRIPTION AND IMAGE PULLED FROM DB-->
     <section id="description">
       <div class="section-container mb-5">
         <h1 class="title text-center ">{{ swapDashesAndCapitalize(name) }}</h1>
@@ -17,6 +18,7 @@
 
     <hr>
 
+    <!-- INFO SECTIONS CONTAINS GMAP COMPONENT AND GENERAL INFORMATION LIKE TIME AND PLACE -->
     <section id="info">
       <div class="section-container mt-3">
         <div class="row row-cols-1 row-cols-lg-2">
@@ -61,13 +63,6 @@
       </button>
     </div>
 
-    <!-- You may also like content -->
-
-    <!--section id="other-attractions">
-      <h1> You may also like </h1>
-      <card-carousel></card-carousel>
-    </section-->
-
   </div>
 </template>
 
@@ -100,6 +95,7 @@ export default {
       dateIcon: 'mdi mdi-timer',
     }
   },
+  // Api call with error management if queried ID does not exist
   async asyncData({ route, $axios, redirect }) {
     const { id } = route.params
     const { data } = await $axios.get(`/api/events/` + id)

@@ -2,6 +2,7 @@
   <div class="page-container">
     <cover-image :img="coverImg" :title="title" />
 
+    <!-- THIS SECTIONS HOSTS CARD-LIST COMPONENT, THAT DIVIDES EVENTS BY SEASON -->
     <section id="events-by-season">
       <div class="section-container mt-5">
         <h1 class="text-center"><strong>What's up in Amsterdam?</strong></h1>
@@ -16,6 +17,7 @@
 
     <hr class="m-5">
 
+    <!-- AGENDA COMPONENTS, OTHERWISE, DIVIDES EVENTS BY PURPOSE -->
     <section id="agenda">
       <div class="section-container mt-0">
         <h2 class="second-title vl ms-4 mb-4">Cultural Agenda</h2>
@@ -79,6 +81,7 @@ export default {
       }]
     }
   },
+  // api call
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/events')
     return {

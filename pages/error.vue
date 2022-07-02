@@ -3,7 +3,7 @@
     <section class="section-container error-messages p-5">
       <img src="https://s8.gifyu.com/images/sad-emoji-by-google.png" height="300">
       <h1><br />Oops!</h1>
-      <p>{{ $route.query.err }}</p>
+      <p>{{ $route.query.err }}</p>       <!-- extracts error details and show them to the user -->
       <button
         type="button"
         class="btn btn-outline-secondary btn-lg px-4 m-5"

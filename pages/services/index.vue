@@ -2,6 +2,7 @@
   <div class="page-container">
     <cover-image :img="coverImg" :title="title" />
 
+    <!-- SECTION THAT RENDERS A TOPIC CARD FOR EACH TYPE OF SERVICE REGISTERED IN DB -->
     <section id="services-section">
       <div class="section-container mt-5">
         <h2 class="text-center"><strong>Which kind of service?</strong></h2>
@@ -22,15 +23,6 @@
       </div>
     </section>
 
-    <section id="loading-img">
-      <div class="text-center m-5">
-        <img
-          src="https://i.pinimg.com/originals/f2/50/95/f250958979ba717571bf069ea43f053c.gif"
-          class="img-responsive text-center"
-          style="height: 150px; width: 200px"
-        />
-      </div>
-    </section>
   </div>
 </template>
 
@@ -80,11 +72,5 @@ export default {
 </script>
 
 <style scoped>
-
-/* windmill markline was too noticeable, fixed bg color for this page */
-
-.page-container{
-  background: white;
-}
 
 </style>

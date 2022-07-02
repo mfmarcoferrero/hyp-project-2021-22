@@ -1,6 +1,7 @@
 <template>
   <div class="page-container">
 
+    <!-- SECTION THAT CONTAINS SERVICE TYPE AND DESCRIPTION -->
     <section id="description">
       <div class="section-container mb-5">
         <h1 class="title text-center ">{{ swapUnderscoresWithSpaces(name) }}</h1>
@@ -17,6 +18,7 @@
 
     <hr class="m-5">
 
+    <!-- GOOGLE MAP COMPONENT AND ACCORDION COMPONENT FOR SINGLE SERVICES-->
     <section id="info">
       <div class="section-container">
         <div class="row row-cols-1 row-cols-lg-2">
@@ -31,19 +33,12 @@
       </div>
     </section>
 
-
+    <!-- NAVBACK BUTTON -->
     <div class="section-container d-grid gap-2 d-md-flex justify-content-md-start mt-5 mb-5">
       <button type="button" class="btn btn-outline-dark btn-lg px-4" @click="backToList">
         Back to services
       </button>
     </div>
-
-    <!-- You may also like content -->
-
-    <!--section id="other-attractions">
-      <h1> You may also like </h1>
-      <card-carousel></card-carousel>
-    </section-->
 
   </div>
 </template>
@@ -62,14 +57,12 @@ export default {
   },
   data() {
     return {
-      locationIcon: 'mdi mdi-map-marker',
-      dateIcon: 'mdi mdi-timer',
+
     }
   },
   async asyncData({ route, $axios, redirect }) {
     /*
-      Se si fanno entrambe le chiamate api, non funziona.
-      La parte commentata dovrebbe riempire la parte superiore della pagina.
+      API calls to database, with error management in case of non-existing ID
     */
     const { id } = route.params
     const { data: serviceInfo } = await $axios.get('/api/services/' + id)
@@ -86,6 +79,7 @@ export default {
     }
   },
   methods: {
+    //utility function
     swapUnderscoresWithSpaces(string) {
       return string.replace(/_/g, " ");
     },

@@ -1,6 +1,7 @@
 <template>
   <div class="page-container">
 
+    <!-- CAROUSEL COMPONENT -->
     <section id="image-carousel">
       <div class="container-carousel position-relative">
         <carousel :detailList="carouselList" scrollTo="#quick-look" />
@@ -20,6 +21,7 @@
       </div>
     </section>
 
+    <!-- VFOR SHOWING THE TOPIC CARDS, RENDERED BY TOPIC CARD COMPONENT -->
     <section id="topic-menu">
       <div class="section-container">
         <h2 class="text-center m-5">{{topicMenuTitle}}</h2>
@@ -33,6 +35,7 @@
 
     <hr class="m-5" />
 
+    <!-- QUICK LOOK SHOWS A MIX OF POIS AND SEASONAL EVENTS -->
     <section id="quick-look">
       <div class="section-container position-relative pb-5">
         <h2 class="second-title vl ms-5 mt-5 mb-4">Quick look</h2>
@@ -115,6 +118,7 @@ export default {
     )
     const { data: attractions_details } = await $axios.get('/api/attractions-page-details')
     const { data: event_details } = await $axios.get('/api/events')
+    // Based on their category, the elements pulled from the database are pushed in their respective array
     for (var item of homepage_details) {
       if (item.section === 'carousel') {
         carousel.push(item)
@@ -122,6 +126,7 @@ export default {
         categories.push(item)
       }
     }
+    // Same things happens here for the information of the "quick look" section
     for (var item of attractions_details) {
       if (item.category == 'top') topAttractions.push(item)
     }
