@@ -21,7 +21,7 @@
       <div class="section-container">
         <div class="row row-cols-1 row-cols-lg-2">
           <div class="col">
-            <google-map :query="name + 'Amsterdam'"  height="400px"/>
+            <google-map :query="swapUnderscoresWithSpaces(name) "  height="400px"/>
           </div>
           <div class="col">
             <accordion :serviceDetails="serviceDetails" />
@@ -52,10 +52,14 @@
 </style>
 
 <script>
+import CommonMixin from '@/mixins/common.js'
 import GoogleMap from '@/components/Map.vue'
 import Accordion from '@/components/Accordion.vue'
 export default {
   name: 'DetailsPage',
+
+  mixins:[CommonMixin],
+
   components: {
     GoogleMap,
     Accordion,

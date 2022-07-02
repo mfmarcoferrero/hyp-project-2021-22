@@ -81,15 +81,6 @@ async function initializeDatabaseConnection() {
     hours: DataTypes.STRING,
     img: DataTypes.STRING,
   })
-  const Photolist = database.define("photoList", {
-    name: {
-      type: DataTypes.STRING,
-      primaryKey: true
-    },
-    description: DataTypes.STRING,
-    url: DataTypes.STRING,
-    path: DataTypes.STRING(1000),
-  })
   const Message = database.define("message", {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
@@ -98,7 +89,7 @@ async function initializeDatabaseConnection() {
 
   //const ItineraryPoi = database.define("itinerary_poi", {})
   //Itinerary.belongsToMany(POI, { through: 'itinerary_poi' })
-  //POI.belongsToMany(Itinerary, { through: 'itinerary_poi' }) 
+  //POI.belongsToMany(Itinerary, { through: 'itinerary_poi' })
   await database.sync({ force: true })
   return {
     HomePageDetail,
@@ -108,7 +99,6 @@ async function initializeDatabaseConnection() {
     ServiceType,
     Service,
     //ItineraryPoi,
-    Photolist,
     Message
   }
 }
@@ -219,7 +209,7 @@ async function runMainApi() {
     }
     return res.json(filtered)
   })
-  
+
 
   app.get('/events/:name', async (req, res) => {
     const name = req.params.name
@@ -291,19 +281,6 @@ async function runMainApi() {
     return res.json(filtered)
   })
 
-  app.get("/photolist", async (req, res) => {
-    const result = await models.Photolist.findAll()
-    const filtered = []
-    for (const element of result) {
-      filtered.push({
-        name: element.name,
-        description: element.description,
-        url: element.url,
-        path: element.path,
-      })
-    }
-    return res.json(filtered)
-  })
 
   //-----------------------------------------------------------------------------------------
   //-----------------------------------------------------------------------------------------

@@ -25,9 +25,9 @@
     <section id="loading-img">
       <div class="text-center m-5">
         <img
-          src="https://i.pinimg.com/originals/f2/50/95/f250958979ba717571bf069ea43f053c.gif"
+          src="https://s8.gifyu.com/images/ezgif.com-gif-maker438ae3a2d884770f.gif"
           class="img-responsive text-center"
-          style="height: 150px; width: 200px"
+          style="height: 250px; width: auto"
         />
       </div>
     </section>
@@ -84,7 +84,7 @@ export default {
 /* windmill markline was too noticeable, fixed bg color for this page */
 
 .page-container{
-  background: white;
+  /*background: white;*/
 }
 
 </style>
