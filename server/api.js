@@ -31,14 +31,13 @@ async function initializeDatabaseConnection() {
       type: DataTypes.STRING,
       primaryKey: true
     },
-    shortDescription: DataTypes.STRING(10000),
+    short_description: DataTypes.STRING(10000),
     description: DataTypes.STRING(10000),
     img: DataTypes.STRING,
     info: DataTypes.STRING(1000),
     timetable: DataTypes.STRING(1000),
     category: DataTypes.STRING,
     link: DataTypes.STRING,
-    itineraryName: DataTypes.ARRAY(DataTypes.STRING),
   })
   const Event = database.define("event", {
     name: {
@@ -87,9 +86,17 @@ async function initializeDatabaseConnection() {
     message: DataTypes.STRING(10000)
   })
 
-  //const ItineraryPoi = database.define("itinerary_poi", {})
-  //Itinerary.belongsToMany(POI, { through: 'itinerary_poi' })
-  //POI.belongsToMany(Itinerary, { through: 'itinerary_poi' })
+  const ItineraryPoi = database.define("itinerary_poi", {
+    poi_name: {
+      type: DataTypes.STRING,
+      primaryKey: true
+    },
+    itinerary_name: {
+      type: DataTypes.STRING,
+      primaryKey: true
+    },
+  })
+
   await database.sync({ force: true })
   return {
     HomePageDetail,
@@ -98,7 +105,7 @@ async function initializeDatabaseConnection() {
     Itinerary,
     ServiceType,
     Service,
-    //ItineraryPoi,
+    ItineraryPoi,
     Message
   }
 }
@@ -129,11 +136,11 @@ async function runMainApi() {
     return res.json(result)
   })
 
-  app.get('/poisByItinerary/:name', async (req, res) => {
-    const name = req.params.name
-    const result = await models.POI.findAll({ where: { itineraryName: { [Op.contains]: [name] } } })
-    return res.json(result)
-  })
+  // app.get('/poisByItinerary/:name', async (req, res) => {
+  //   const name = req.params.name
+  //   const result = await models.POI.findAll({ where: { itineraryName: { [Op.contains]: [name] } } })
+  //   return res.json(result)
+  // })
 
   app.get("/services", async (req, res) => {
     const result = await models.ServiceType.findAll()
@@ -222,12 +229,23 @@ async function runMainApi() {
     const result = await models.Itinerary.findOne({ where: { name: name } })
     return res.json(result)
   })
-  /*
+
   app.get('/poisOfItinerary/:name', async (req, res) => {
-    const name = req.params.name
-    const result = await models.ItineraryPoi.findAll({ where: { itineraryName: name } })
-    return res.json(result)
-  }) */
+    const nameItinerary = req.params.name
+    const query = 'SELECT name, short_description, img FROM pointofinterests as p JOIN itinerary_pois as ip ON name = poi_name WHERE itinerary_name = :name';
+
+    await database.query(query,
+      {
+                replacements: {
+                  name: nameItinerary
+                },
+                nest: true
+      }).then(ret => {
+      return res.json(ret)
+    }).catch(err => {
+      console.log(err)
+    })
+  })
 
   //-----------------------------------------------------------------------------------------
   //-----------------------------------------------------------------------------------------

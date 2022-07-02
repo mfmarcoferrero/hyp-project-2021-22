@@ -7,7 +7,7 @@
         <ul class="nav nav-pills mb-0 " id="pills-tab" role="tablist">
           <li v-for="(item, index) of poisOfItinerary" :key="index" class="nav-item d-grid m-0 p-0" role="presentation">
             <p class="fw-bold m-0">{{item.name}}:</p>
-            <p class="m-0">{{ item.shortDescription }}</p>
+            <p class="m-0">{{ item.short_description }}</p>
           </li>
         </ul>
       </div>
@@ -90,7 +90,7 @@ export default {
     const { data: itineraryInfo } = await $axios.get(`/api/itineraries/` + id)
     console.log(id)
     const { data: poisOfItinerary } = await $axios.get(
-      `/api/poisByItinerary/` + id
+      `/api/poisOfItinerary/` + id
     )
     if (itineraryInfo == null){
       return redirect('/error/?err=This itinerary does not exist!')
