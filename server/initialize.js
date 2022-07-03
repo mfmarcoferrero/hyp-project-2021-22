@@ -2,63 +2,6 @@ export default async (models) => {
 
     //-----------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------
-    //                              HOME PAGE DETAILS
-    //-----------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------
-    const homePageList = [
-        {
-            name: "",
-            description: "",
-            img: "https://s8.gifyu.com/images/homepage-dam.jpg",
-            section: "carousel",
-        },
-        {
-            name: "",
-            description: "",
-            img: "https://s8.gifyu.com/images/GettyImages-659083249-5912430d3df78c92830e4eaa.jpg",
-            section: "carousel",
-        },
-        {
-            name: "",
-            description: "",
-            img: "https://s8.gifyu.com/images/gaurav-jain-2K2SR19RLg8-unsplash.jpg",
-            section: "carousel",
-        },
-        {
-            name: "",
-            description: "",
-            img: "https://s8.gifyu.com/images/tobias-kordt-2GaBftOdewQ-unsplash.jpg",
-            section: "carousel",
-        },
-        {
-            name: "Attractions",
-            description: "",
-            img: "https://s8.gifyu.com/images/frans-ruiter-jfPGunIH_9M-unsplash.jpg",
-            section: "categories",
-        },
-        {
-            name: "Itineraries",
-            description: "",
-            img: "https://s8.gifyu.com/images/moritz-kindler-I5zb8Tw-Avc-unsplash.jpg",
-            section: "categories",
-        },
-        {
-            name: "Events",
-            description: "",
-            img: "https://s8.gifyu.com/images/pedro-cunha-GjUXroFNC0c-unsplash.jpg",
-            section: "categories",
-        },
-        {
-            name: "Services",
-            description: "",
-            img: "https://s8.gifyu.com/images/behzad-ghaffarian-ayrkUIy9r30-unsplash.jpg",
-            section: "categories",
-        },
-    ]
-
-
-    //-----------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------
     //                              POINTS OF INTEREST
     //-----------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------
@@ -956,7 +899,6 @@ export default async (models) => {
     await models.POI.bulkCreate(poiList)
     await models.ServiceType.bulkCreate(serviceTypesList)
     await models.Service.bulkCreate(serviceList)
-    await models.HomePageDetail.bulkCreate(homePageList)
     await models.Itinerary.bulkCreate(itinerariesList)
     await models.Event.bulkCreate(eventList)
     await models.ItineraryPoi.bulkCreate(itineraryPOIList)

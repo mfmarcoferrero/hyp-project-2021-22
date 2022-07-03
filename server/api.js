@@ -19,13 +19,7 @@ const database = new Sequelize(process.env.DATABASE_URL)
 // Function that will initialize the connection to the database
 async function initializeDatabaseConnection() {
   await database.authenticate()
-  const HomePageDetail = database.define("homepage_detail", {
-    name: DataTypes.STRING,
-    description: DataTypes.STRING(10000),
-    img: DataTypes.STRING,
-    section: DataTypes.STRING,
-    path: DataTypes.STRING
-  })
+
   const POI = database.define("point_of_interest", {
     name: {
       type: DataTypes.STRING,
@@ -99,7 +93,6 @@ async function initializeDatabaseConnection() {
 
   await database.sync({ force: true })
   return {
-    HomePageDetail,
     POI,
     Event,
     Itinerary,
@@ -269,22 +262,6 @@ async function runMainApi() {
   //                                PAGE DETAILS
   //-----------------------------------------------------------------------------------------
   //-----------------------------------------------------------------------------------------
-
-  app.get("/home-page-details", async (req, res) => {
-    const result = await models.HomePageDetail.findAll()
-    const filtered = []
-    for (const element of result) {
-      filtered.push({
-        id: element.id,
-        name: element.name,
-        img: element.img,
-        description: element.description,
-        section: element.section,
-        path: element.path
-      })
-    }
-    return res.json(filtered)
-  })
 
   app.get("/attractions-page-details", async (req, res) => {
     const result = await models.POI.findAll()

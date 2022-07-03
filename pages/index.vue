@@ -79,19 +79,6 @@ import Card from '@/components/Card.vue'
 
 export default {
 
-  head() {
-    return {
-      title: "Visit-DAM",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: "",
-        },
-      ],
-    };
-  },
-
   components: {
     Card,
     Carousel,
