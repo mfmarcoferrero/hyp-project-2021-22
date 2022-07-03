@@ -11,15 +11,19 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Visit-DAM',
+    title: 'Visit-DAM: the official Amsterdam website',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Visit-DAM is the first online visitor guide for the city of Amsterdam. Discover the best of Amsterdam with Visit DAM, the official guide to Netherland’s exciting capital.',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/dam-logo.png' },
@@ -30,7 +34,6 @@ export default {
         rel: 'stylesheet',
       },
     ],
-
     script: [
       { src: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" }
     ]

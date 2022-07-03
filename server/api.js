@@ -19,26 +19,25 @@ const database = new Sequelize(process.env.DATABASE_URL, {
 // Function that will initialize the connection to the database
 async function initializeDatabaseConnection() {
   await database.authenticate()
-  const HomePageDetail = database.define("homePageDetail", {
+  const HomePageDetail = database.define("homepage_detail", {
     name: DataTypes.STRING,
     description: DataTypes.STRING(10000),
     img: DataTypes.STRING,
     section: DataTypes.STRING,
     path: DataTypes.STRING
   })
-  const POI = database.define("pointofinterest", {
+  const POI = database.define("point_of_interest", {
     name: {
       type: DataTypes.STRING,
       primaryKey: true
     },
-    shortDescription: DataTypes.STRING(10000),
+    short_description: DataTypes.STRING(10000),
     description: DataTypes.STRING(10000),
     img: DataTypes.STRING,
     info: DataTypes.STRING(1000),
     timetable: DataTypes.STRING(1000),
     category: DataTypes.STRING,
     link: DataTypes.STRING,
-    itineraryName: DataTypes.ARRAY(DataTypes.STRING),
   })
   const Event = database.define("event", {
     name: {
@@ -62,7 +61,7 @@ async function initializeDatabaseConnection() {
     img: DataTypes.STRING,
     maplink: DataTypes.STRING
   })
-  const ServiceType = database.define("serviceType", {
+  const ServiceType = database.define("service_type", {
     name: {
       type: DataTypes.STRING,
       primaryKey: true
@@ -70,7 +69,7 @@ async function initializeDatabaseConnection() {
     description: DataTypes.STRING(10000),
     img: DataTypes.STRING,
   })
-  const Service = database.define("serviceList", {
+  const Service = database.define("services", {
     type: DataTypes.STRING,
     name: {
       type: DataTypes.STRING,
@@ -81,24 +80,23 @@ async function initializeDatabaseConnection() {
     hours: DataTypes.STRING,
     img: DataTypes.STRING,
   })
-  const Photolist = database.define("photoList", {
-    name: {
-      type: DataTypes.STRING,
-      primaryKey: true
-    },
-    description: DataTypes.STRING,
-    url: DataTypes.STRING,
-    path: DataTypes.STRING(1000),
-  })
   const Message = database.define("message", {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     message: DataTypes.STRING(10000)
   })
 
-  //const ItineraryPoi = database.define("itinerary_poi", {})
-  //Itinerary.belongsToMany(POI, { through: 'itinerary_poi' })
-  //POI.belongsToMany(Itinerary, { through: 'itinerary_poi' }) 
+  const ItineraryPoi = database.define("itinerary_poi", {
+    poi_name: {
+      type: DataTypes.STRING,
+      primaryKey: true
+    },
+    itinerary_name: {
+      type: DataTypes.STRING,
+      primaryKey: true
+    },
+  })
+
   await database.sync({ force: true })
   return {
     HomePageDetail,
@@ -107,8 +105,7 @@ async function initializeDatabaseConnection() {
     Itinerary,
     ServiceType,
     Service,
-    //ItineraryPoi,
-    Photolist,
+    ItineraryPoi,
     Message
   }
 }
@@ -139,11 +136,11 @@ async function runMainApi() {
     return res.json(result)
   })
 
-  app.get('/poisByItinerary/:name', async (req, res) => {
-    const name = req.params.name
-    const result = await models.POI.findAll({ where: { itineraryName: { [Op.contains]: [name] } } })
-    return res.json(result)
-  })
+  // app.get('/poisByItinerary/:name', async (req, res) => {
+  //   const name = req.params.name
+  //   const result = await models.POI.findAll({ where: { itineraryName: { [Op.contains]: [name] } } })
+  //   return res.json(result)
+  // })
 
   app.get("/services", async (req, res) => {
     const result = await models.ServiceType.findAll()
@@ -219,7 +216,7 @@ async function runMainApi() {
     }
     return res.json(filtered)
   })
-  
+
 
   app.get('/events/:name', async (req, res) => {
     const name = req.params.name
@@ -232,12 +229,40 @@ async function runMainApi() {
     const result = await models.Itinerary.findOne({ where: { name: name } })
     return res.json(result)
   })
-  /*
+
   app.get('/poisOfItinerary/:name', async (req, res) => {
+    const nameItinerary = req.params.name
+    const query = 'SELECT name, short_description, img FROM point_of_interests as p JOIN itinerary_pois as ip ON name = poi_name WHERE itinerary_name = :name';
+
+    await database.query(query,
+      {
+                replacements: {
+                  name: nameItinerary
+                },
+                nest: true
+      }).then(ret => {
+      return res.json(ret)
+    }).catch(err => {
+      console.log(err)
+    })
+  })
+
+  app.get('/itinerariesByPlace/:name', async (req, res) => {
     const name = req.params.name
-    const result = await models.ItineraryPoi.findAll({ where: { itineraryName: name } })
-    return res.json(result)
-  }) */
+    const query = 'SELECT i.name, i.description, i.img FROM itineraries as i JOIN itinerary_pois as ip ON name = itinerary_name WHERE poi_name = :name';
+
+    await database.query(query,
+      {
+        replacements: {
+          name: name
+        },
+        nest: true
+      }).then(ret => {
+      return res.json(ret)
+    }).catch(err => {
+      console.log(err)
+    })
+  })
 
   //-----------------------------------------------------------------------------------------
   //-----------------------------------------------------------------------------------------
@@ -269,7 +294,7 @@ async function runMainApi() {
         filtered.push({
           name: element.name,
           img: element.img,
-          shortDescription: element.shortDescription,
+          shortDescription: element.short_description,
           category: element.category,
           link: element.link
         })
@@ -291,19 +316,6 @@ async function runMainApi() {
     return res.json(filtered)
   })
 
-  app.get("/photolist", async (req, res) => {
-    const result = await models.Photolist.findAll()
-    const filtered = []
-    for (const element of result) {
-      filtered.push({
-        name: element.name,
-        description: element.description,
-        url: element.url,
-        path: element.path,
-      })
-    }
-    return res.json(filtered)
-  })
 
   //-----------------------------------------------------------------------------------------
   //-----------------------------------------------------------------------------------------

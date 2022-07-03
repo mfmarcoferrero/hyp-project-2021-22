@@ -6,7 +6,7 @@
         }}</h2>
     </div>
 </template>
- 
+
 <script>
 import CommonMixin from '~/mixins/common';
 export default {
@@ -31,13 +31,13 @@ export default {
         }
     },
     methods: {
-        goTo(path) {    
+        goTo(path) {
             this.$router.push(path);
         },
     }
 }
 </script>
- 
+
 <style scoped>
 .topic-card {
     transition: all 0.2s ease;
@@ -49,7 +49,7 @@ export default {
 
 .topic-card-img {
     width: 100%;
-    /* height: 15vw; */
+    min-height: 85px;
     object-fit: cover;
     filter: brightness(75%)
 }

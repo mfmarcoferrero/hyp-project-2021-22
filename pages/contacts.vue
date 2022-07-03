@@ -1,4 +1,7 @@
 <template>
+
+  <!-- CONTACT US PAGE -->
+
   <div class="page-container">
     <div class="section-container">
       <h2 class="second-title vl ms-5 mt-5 mb-5">Contact us</h2>
@@ -11,9 +14,7 @@
 
         <div class="col">
           <div class="row mb-3 justify-content-center">
-            <span class="p-3">Amsterdam main official tourist office is in the center of the city. This office not only inform you
-              about the city in a professional way but
-              can also give you free small maps and folders with information about the city.</span>
+            <span class="p-3">{{ info }}</span>
           </div>
 
           <div class="row row-cols-2 justify-content-center">
@@ -68,11 +69,15 @@ export default {
     };
   },
   data() {
+    // strings are stored in data to facilitate edits and future translation implementations
     return {
       locationIcon: 'mdi mdi-map-marker',
       location: 'De Ruijterkade 28, 1012 AA Amsterdam, Netherlands',
       phoneIcon: 'mdi mdi-phone',
       phone: '+31 20 702 60 00',
+      info: `Amsterdam main official tourist office is in the center of the city. This office not only inform you
+              about the city in a professional way but
+              can also give you free small maps and folders with information about the city.`
     };
   },
   components: {
@@ -83,6 +88,9 @@ export default {
 </script>
 
 <style>
+
+/* Icon styling */
+
 .icon-item {
   font-size: 30px;
 }

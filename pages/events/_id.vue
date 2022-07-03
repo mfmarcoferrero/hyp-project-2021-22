@@ -1,6 +1,7 @@
 <template>
   <div class="page-container mt-5">
 
+    <!-- DESCRIPTION SECTION CONTAINS EVENT NAME, DESCRIPTION AND IMAGE PULLED FROM DB-->
     <section id="description">
       <div class="section-container mb-5">
         <h1 class="title text-center ">{{ swapDashesAndCapitalize(name) }}</h1>
@@ -17,6 +18,7 @@
 
     <hr>
 
+    <!-- INFO SECTIONS CONTAINS GMAP COMPONENT AND GENERAL INFORMATION LIKE TIME AND PLACE -->
     <section id="info">
       <div class="section-container mt-3">
         <div class="row row-cols-1 row-cols-lg-2">
@@ -25,7 +27,7 @@
           </div>
           <div class="col">
             <div class="">
-              <h2 class="text-center">General Information</h2>
+              <h2 class="text-center"> {{ generalInformation }} </h2>
             </div>
             <br>
 
@@ -35,7 +37,7 @@
               </div>
               <div class="col event-card-text ms-1">
                 <span class="fs-4">
-                  <nuxt-link :to="`/attractions/`+location">
+                  <nuxt-link :to="`/attractions/` + location">
                     {{ location }}
                   </nuxt-link>
                 </span>
@@ -55,18 +57,12 @@
       </div>
     </section>
 
+    <!-- NAVBACK BUTTON -->
     <div class="section-container d-grid gap-2 d-md-flex justify-content-md-start mb-b mt-5">
       <button type="button" class="btn btn-outline-dark btn-lg px-4" @click="backToList">
-        Back to events
+        {{ backToEvents }}
       </button>
     </div>
-
-    <!-- You may also like content -->
-
-    <!--section id="other-attractions">
-      <h1> You may also like </h1>
-      <card-carousel></card-carousel>
-    </section-->
 
   </div>
 </template>
@@ -87,23 +83,34 @@ export default {
   },
   mixins: [CommonMixin],
 
-  //Important for the SEO
-  //head() {
-  //   return {
-  //     title: this.name
-  //   }
-  // },
+
+  head() {
+    return {
+      title: 'Visit-DAM | ' + this.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.name + ' : join this amazing event.',
+        },
+      ],
+    }
+  },
 
   data() {
+    // strings are stored in data to facilitate edits and future translation implementations
     return {
       locationIcon: 'mdi mdi-map-marker',
       dateIcon: 'mdi mdi-timer',
+      generalInformation: "General Information",
+      backToEvents: "Back to events"
     }
   },
+  // Api call with error management if queried ID does not exist
   async asyncData({ route, $axios, redirect }) {
     const { id } = route.params
     const { data } = await $axios.get(`/api/events/` + id)
-    if (data == null){
+    if (data == null) {
       return redirect('/error/?err=This event does not exist!')
     }
     return {
@@ -111,7 +118,7 @@ export default {
       location: data.location,
       img: data.img,
       description: data.description,
-      when: data.when,
+      when: data.when
     }
   },
 
@@ -127,6 +134,9 @@ export default {
 </script>
 
 <style scoped>
+
+/* Event content styling to fit the cards recipient */
+
 .id-img {
   width: 100%;
   height: 100%;

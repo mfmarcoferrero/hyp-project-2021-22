@@ -1,9 +1,10 @@
 <template>
   <div class="page-container">
 
+    <!-- CAROUSEL COMPONENT -->
     <section id="image-carousel">
       <div class="container-carousel position-relative">
-        <carousel :detailList="carouselList" scrollTo="#quick-look" />
+        <carousel :detailList="carouselImages" scrollTo="#quick-look" />
         <p class="
           fs-1
           text-center
@@ -20,6 +21,7 @@
       </div>
     </section>
 
+    <!-- VFOR SHOWING THE TOPIC CARDS, RENDERED BY TOPIC CARD COMPONENT -->
     <section id="topic-menu">
       <div class="section-container">
         <h2 class="text-center m-5">{{topicMenuTitle}}</h2>
@@ -33,6 +35,7 @@
 
     <hr class="m-5" />
 
+    <!-- QUICK LOOK SHOWS A MIX OF POIS AND SEASONAL EVENTS -->
     <section id="quick-look">
       <div class="section-container position-relative pb-5">
         <h2 class="second-title vl ms-5 mt-5 mb-4">Quick look</h2>
@@ -98,30 +101,43 @@ export default {
   title: 'VisitDam',
 
   data() {
+    // strings are stored in data to facilitate edits and future translation implementations
     return {
       carouselTitle: 'Welcome to Amsterdam !',
       topicMenuTitle: 'What are you looking for?',
-      quickLookDescription: "With its picturesque canal network, rich history and thrumming cultural scene, the capital of the Netherlands is one of the world’s most vibrant cities. There are endless things to do in Amsterdam in any weather and many of the most rewarding experiences lie beyond the well-trodden tourist paths of the city centre. To lead you through the wealth of wonders, we’ve whittled down the selection to this essential places you can't leave without visiting, and some important events that are taking place in this period."
+      quickLookDescription: "With its picturesque canal network, rich history and thrumming cultural scene, the capital of the Netherlands is one of the world’s most vibrant cities. There are endless things to do in Amsterdam in any weather and many of the most rewarding experiences lie beyond the well-trodden tourist paths of the city centre. To lead you through the wealth of wonders, we’ve whittled down the selection to this essential places you can't leave without visiting, and some important events that are taking place in this period.",
+      carouselImages: ['https://s8.gifyu.com/images/homepage-dam.jpg',
+                       'https://s8.gifyu.com/images/GettyImages-659083249-5912430d3df78c92830e4eaa.jpg',
+                       'https://s8.gifyu.com/images/gaurav-jain-2K2SR19RLg8-unsplash.jpg',
+                       'https://s8.gifyu.com/images/tobias-kordt-2GaBftOdewQ-unsplash.jpg'
+                      ],
+      categoriesList: [
+                      {
+                          name: "Attractions",
+                          img: "https://s8.gifyu.com/images/frans-ruiter-jfPGunIH_9M-unsplash.jpg",
+                      },
+                      {
+                          name: "Itineraries",
+                          img: "https://s8.gifyu.com/images/moritz-kindler-I5zb8Tw-Avc-unsplash.jpg",
+                      },
+                      {
+                          name: "Events",
+                          img: "https://s8.gifyu.com/images/pedro-cunha-GjUXroFNC0c-unsplash.jpg",
+                      },
+                      {
+                          name: "Services",
+                          img: "https://s8.gifyu.com/images/behzad-ghaffarian-ayrkUIy9r30-unsplash.jpg",
+                      },
+        ]
     };
   },
-
+  // Data fetching from DB
   async asyncData({ $axios }) {
-    let carousel = []
-    let categories = []
     let topAttractions = []
     let topEvents = []
-    const { data: homepage_details } = await $axios.get(
-      '/api/home-page-details'
-    )
     const { data: attractions_details } = await $axios.get('/api/attractions-page-details')
     const { data: event_details } = await $axios.get('/api/events')
-    for (var item of homepage_details) {
-      if (item.section === 'carousel') {
-        carousel.push(item)
-      } else if (item.section === 'categories') {
-        categories.push(item)
-      }
-    }
+    // Data sorting based on category
     for (var item of attractions_details) {
       if (item.category == 'top') topAttractions.push(item)
     }
@@ -129,8 +145,6 @@ export default {
       if (item.season == 'summer') topEvents.push(item)
     }
     return {
-      carouselList: carousel,
-      categoriesList: categories,
       path: 'attractions',
       topAttractions: topAttractions,
       topEvents: topEvents,
