@@ -54,13 +54,13 @@ export default {
 
   head() {
     return {
-      title: 'Visit-DAM | About Us',
+      title: 'Visit-DAM | About',
       meta: [
         {
           hid: 'description',
           name: 'description',
           content:
-            '',
+            'A brief overview of the Netherlands Board of Tourism & Conventions that menages the development, branding and marketing of the Netherlands as a destination. Visit-DAM is part of the NBTC and is part of a program for management organisation of and for the Netherlands',
         },
       ],
     }

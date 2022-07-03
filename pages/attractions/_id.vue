@@ -27,7 +27,7 @@
           </div>
           <div class="col">
             <div class="">
-              <h2 class="text-center"><strong>General Information</strong></h2>
+              <h2 class="text-center"> {{ relatedInformations }} </h2>
             </div>
             <br />
             <div class="row row-cols-2 ms-3">
@@ -84,8 +84,7 @@
       </div>
     </section>
 
-    <div
-      class="
+    <div class="
         section-container
         d-grid
         gap-2
@@ -93,14 +92,9 @@
         justify-content-md-start
         mb-b
         mt-5
-      "
-    >
-      <button
-        type="button"
-        class="btn btn-outline-dark btn-lg px-4"
-        @click="backToList"
-      >
-        Back to all the attractions
+      ">
+      <button type="button" class="btn btn-outline-dark btn-lg px-4" @click="backToList">
+        {{ backToAttractions }}
       </button>
     </div>
 
@@ -128,24 +122,41 @@ export default {
     CardCarousel,
   },
   data() {
-    return {}
+    return {
+        relatedInformations: "Related informations",
+        events: "Events",
+        takingPlace: "taking place here",
+        noEvents: "There are currently no events scheduled here!",
+        itineraries: "Itineraries",
+        includeThisPlace: "that include this place",
+        backToAttractions: "Back to all the attractions"
+    }
   },
+
   mixins: [CommonMixin],
 
-  //Important for the SEO
-  //head() {
-  //   return {
-  //     title: this.name
-  //   }
-  // },
+  head() {
+    return {
+      title: 'Visit-DAM | ' + this.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.name + ': ' + this.shortDescription,
+        },
+      ],
+    }
+  },
+
   async asyncData({ route, $axios, redirect }) {
     // Pulling 
     let numberOfEvents
     const { id } = route.params
     const { data: poiInfo } = await $axios.get(`/api/pois/` + id)
-    const { data: eventList } = await $axios.get(`/api/eventsByPlace/` + id)
-    console.log('lenght: ' + Object.keys(eventList).length)
-    numberOfEvents = Object.keys(eventList).length
+    const { data: eventList} = await $axios.get(`/api/eventsByPlace/` + id)
+    const { data: itineraryList} = await $axios.get(`/api/itinerariesByPlace/` + id)
+    console.log("lenght: " + Object.keys( eventList ).length )
+    numberOfEvents = Object.keys( eventList ).length
     console.log(numberOfEvents)
     if (poiInfo == null || eventList == null) {
       return redirect('/error/?err=This attraction does not exist!')
@@ -153,10 +164,9 @@ export default {
     return {
       name: poiInfo.name,
       img: poiInfo.img,
+      shortDescription: poiInfo.shortDescription,
       description: poiInfo.description,
-      itineraryList: poiInfo.itineraryName,
-      time: poiInfo.timetable,
-      link: poiInfo.link,
+      itineraryList : itineraryList,
       eventList: eventList,
       numberOfEvents: numberOfEvents,
     }

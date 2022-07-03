@@ -3,11 +3,7 @@
     <div class="carousel-inner">
       <div v-for="(detail, detailIndex) of detailList" :key="`detail-index-${detailIndex}`"
         v-bind:class="[carouselClass, detailIndex == 0 ? activeClass : '']">
-        <img :src="detail.img" class="slide-img d-block" alt="image">
-        <div class="carousel-caption d-none d-md-block position-absolute top-0">
-          <h2>{{ swapUnderscoresWithSpaces(detail.name) }}</h2>
-          <p>{{ detail.description }}</p>
-        </div>
+        <img :src="detail" class="slide-img d-block" alt="image">
       </div>
       <a :href="scrollTo" class="scroll-down" address="true"></a>
     </div>

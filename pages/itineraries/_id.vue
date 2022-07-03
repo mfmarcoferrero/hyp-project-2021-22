@@ -7,7 +7,7 @@
         <ul class="nav nav-pills mb-0 " id="pills-tab" role="tablist">
           <li v-for="(item, index) of poisOfItinerary" :key="index" class="nav-item d-grid m-0 p-0" role="presentation">
             <p class="fw-bold m-0">{{item.name}}:</p>
-            <p class="m-0">{{ item.shortDescription }}</p>
+            <p class="m-0">{{ item.short_description }}</p>
           </li>
         </ul>
       </div>
@@ -15,7 +15,7 @@
 
     <section id="attractions-list">
       <div class="section-container">
-        <h2 class="second-title vl mt-5">The places in this itinerary</h2>
+        <h2 class="second-title vl mt-5"> {{ placeOfItinerary }} </h2>
       </div>
       <card-carousel
         :detailMatrix="generateMatrixFromArray(poisOfItinerary, 4)"
@@ -28,14 +28,9 @@
     <section id="map">
       <div class="section-container mt-5">
         <div class="row mb-3">
-          <h2 class="second-title vl">Itinerary map</h2>
+          <h2 class="second-title vl"> {{ itineraryMap }} </h2>
         </div>
-        <p>
-          This is a map of all the attractions you will visit if you choose to
-          enbark on this itinerary. The points are numbered and a path is
-          already layed out for you to follow, but you can visit these places in
-          any order you want!
-        </p>
+        <p> {{ mapDescription }} </p>
         <iframe
           :src="src"
           width="100%"
@@ -48,9 +43,8 @@
       <button
         type="button"
         class="btn btn-outline-dark btn-lg px-4"
-        @click="backToList"
-      >
-        Back to itineraries
+        @click="backToList">
+        {{ backToItineraries }}
       </button>
     </div>
   </div>
@@ -74,23 +68,38 @@ export default {
   data() {
     return {
       itinerariesDetails: [],
+      placeOfItinerary: "The places in this itinerary",
+      itineraryMap: "Itinerary map",
+      mapDescription: "This is a map of all the attractions you will visit if you choose to\n" +
+        "          enbark on this itinerary. The points are numbered and a path is\n" +
+        "          already layed out for you to follow, but you can visit these places in\n" +
+        "          any order you want!",
+      backToItineraries: "Back to itineraries"
     }
   },
 
   mixins: [CommonMixin],
 
-  //Important for the SEO
-  //head() {
-  //   return {
-  //     title: this.name
-  //   }
-  // },
+
+  head() {
+    return {
+      title: 'Visit-DAM | ' + this.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.name + ': discover the beauty of Amsterdam with this amazing tour and experience',
+        },
+      ],
+    }
+  },
+
   async asyncData({ route, $axios, redirect }) {
     const { id } = route.params
     const { data: itineraryInfo } = await $axios.get(`/api/itineraries/` + id)
     console.log(id)
     const { data: poisOfItinerary } = await $axios.get(
-      `/api/poisByItinerary/` + id
+      `/api/poisOfItinerary/` + id
     )
     if (itineraryInfo == null){
       return redirect('/error/?err=This itinerary does not exist!')

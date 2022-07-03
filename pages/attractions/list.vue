@@ -3,7 +3,7 @@
         <cover-image :img="img" title="Attractions and Experiences" class="mb-5" />
 
         <div class="section-container">
-            <h2 class="second-title vl m-5"> Top Sights</h2>
+            <h2 class="second-title vl m-5"> {{ topSights }} </h2>
             <div class="row row-cols-1 row-cols-lg-4">
                 <div class="col mb-4" v-for="(poi, poiIndex) of topList" :key="`poi-index-${poiIndex}`">
                     <card :name="poi.name" :img="poi.img" :path="'/attractions/' + poi.name" class="mb-3" />
@@ -13,7 +13,7 @@
         </div>
 
         <div class="section-container">
-            <h2 class="second-title vl m-5"> Museums and Arts </h2>
+            <h2 class="second-title vl m-5"> {{ museumAndArts }} </h2>
             <div class="row row-cols-1 row-cols-lg-4">
                 <div class="col mb-4" v-for="(poi, poiIndex) of artList" :key="`poi-index-${poiIndex}`">
                     <card :name="poi.name" :img="poi.img" :path="'/attractions/' + poi.name" class="mb-3" />
@@ -23,7 +23,7 @@
         </div>
 
         <div class="section-container">
-            <h2 class="second-title vl m-5"> Experiences </h2>
+            <h2 class="second-title vl m-5"> {{ experiences }} </h2>
             <div class="row row-cols-1 row-cols-lg-4">
                 <div class="col mb-4" v-for="(poi, poiIndex) of experienceList" :key="`poi-index-${poiIndex}`">
                     <card :name="poi.name" :img="poi.img" :path="'/attractions/' + poi.name" class="mb-3" />
@@ -33,7 +33,7 @@
         </div>
 
         <div class="section-container">
-            <h2 class="second-title vl m-5"> Buildings and Churches </h2>
+            <h2 class="second-title vl m-5"> {{ buildingAndChurches }} </h2>
             <div class="row row-cols-1 row-cols-lg-4">
                 <div class="col mb-4" v-for="(poi, poiIndex) of buildingList" :key="`poi-index-${poiIndex}`">
                     <card :name="poi.name" :img="poi.img" :path="'/attractions/' + poi.name" class="mb-3" />
@@ -65,9 +65,27 @@ export default {
     data() {
         return {
             name: "Museum",
-            img: "https://s8.gifyu.com/images/gaurav-jain-2K2SR19RLg8-unsplash.jpg"
+            img: "https://s8.gifyu.com/images/gaurav-jain-2K2SR19RLg8-unsplash.jpg",
+            topSights: "Top Sights",
+            museumAndArts: "Museums and Arts",
+            experiences: "Experiences",
+            buildingAndChurches: "Buildings and Churches"
         }
     },
+
+    head() {
+        return {
+            title: 'Visit-DAM | All Attractions',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: "Here you can find all the most popular attractions and experiences in Amsterdam: museums and arts, top sights, buildings and churches.",
+                },
+            ],
+        }
+    },
+
     // Note: This happens on backend (server) side
     async asyncData({ $axios }) {
         let topList = []
@@ -100,6 +118,3 @@ export default {
     }
 }
 </script>
-
-<style>
-</style>

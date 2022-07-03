@@ -27,7 +27,7 @@
           </div>
           <div class="col">
             <div class="">
-              <h2 class="text-center">General Information</h2>
+              <h2 class="text-center"> {{ generalInformation }} </h2>
             </div>
             <br>
 
@@ -37,7 +37,7 @@
               </div>
               <div class="col event-card-text ms-1">
                 <span class="fs-4">
-                  <nuxt-link :to="`/attractions/`+location">
+                  <nuxt-link :to="`/attractions/` + location">
                     {{ location }}
                   </nuxt-link>
                 </span>
@@ -59,7 +59,7 @@
 
     <div class="section-container d-grid gap-2 d-md-flex justify-content-md-start mb-b mt-5">
       <button type="button" class="btn btn-outline-dark btn-lg px-4" @click="backToList">
-        Back to events
+        {{ backToEvents }}
       </button>
     </div>
 
@@ -82,24 +82,33 @@ export default {
   },
   mixins: [CommonMixin],
 
-  //Important for the SEO
-  //head() {
-  //   return {
-  //     title: this.name
-  //   }
-  // },
+
+  head() {
+    return {
+      title: 'Visit-DAM | ' + this.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.name + ' : join this amazing event.',
+        },
+      ],
+    }
+  },
 
   data() {
     return {
       locationIcon: 'mdi mdi-map-marker',
       dateIcon: 'mdi mdi-timer',
+      generalInformation: "General Information",
+      backToEvents: "Back to events"
     }
   },
   // Api call with error management if queried ID does not exist
   async asyncData({ route, $axios, redirect }) {
     const { id } = route.params
     const { data } = await $axios.get(`/api/events/` + id)
-    if (data == null){
+    if (data == null) {
       return redirect('/error/?err=This event does not exist!')
     }
     return {
@@ -107,7 +116,7 @@ export default {
       location: data.location,
       img: data.img,
       description: data.description,
-      when: data.when,
+      when: data.when
     }
   },
 

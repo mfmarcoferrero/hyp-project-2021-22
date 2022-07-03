@@ -1,6 +1,6 @@
 <template>
   <div v-if="loading">
-    <img src="https://i.pinimg.com/originals/f2/50/95/f250958979ba717571bf069ea43f053c.gif" class="spinner" style="height:150px; width:200px; margin: 50%;"/>
+    <img src="https://s8.gifyu.com/images/ezgif.com-gif-maker438ae3a2d884770f.gif" class="spinner" style="height:250px; width:auto; margin: 50%;"/>
   </div>
 </template>
 

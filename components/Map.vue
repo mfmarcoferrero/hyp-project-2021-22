@@ -1,7 +1,7 @@
 <template>
   <div :style="'width:'+ width + ';' +  'height:'+ height + ';'">
     <iframe :style="'width:'+ width + ';' +  'height:'+ height + ';'" style="border:0" loading="lazy" allowfullscreen
-      referrerpolicy="no-referrer-when-downgrade" :src="link + query + ' amsterdam'"></iframe>
+      referrerpolicy="no-referrer-when-downgrade" :src="link + query + city "></iframe>
   </div>
 </template>
 
@@ -12,6 +12,7 @@ export default {
   data() {
     return {
       link: process.env.MAPS_KEY,
+      city: ' of amsterdam'
     }
   },
   props: {
