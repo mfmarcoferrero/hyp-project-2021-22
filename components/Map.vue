@@ -17,8 +17,7 @@
     <!-- Loading attribute lazy means that the page is rendered even if the map is still loading -->
 
     <iframe :style="'width:'+ width + ';' +  'height:'+ height + ';'" style="border:0" loading="lazy" allowfullscreen
-      referrerpolicy="no-referrer-when-downgrade" :src="link + query + ' amsterdam'"></iframe>
-
+      referrerpolicy="no-referrer-when-downgrade" :src="link + query + city "></iframe>
   </div>
 </template>
 
@@ -28,7 +27,8 @@ export default {
   name: 'Map',
   data() {
     return {
-      link: process.env.MAPS_KEY, //process variable to define API Google Maps key
+      link: process.env.MAPS_KEY,
+      city: ' of amsterdam'
     }
   },
   props: {

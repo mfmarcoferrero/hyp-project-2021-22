@@ -18,7 +18,7 @@
 
       <div v-for="(detail, detailIndex) of detailList" :key="`detail-index-${detailIndex}`"
         v-bind:class="[carouselClass, detailIndex == 0 ? activeClass : '']">
-        <img :src="detail.img" class="slide-img d-block" alt="image">
+        <img :src="detail" class="slide-img d-block" alt="image">
       </div>
 
       <!-- ScrollTo icon -->

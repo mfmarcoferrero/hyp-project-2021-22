@@ -1,5 +1,7 @@
 <template>
   <div class="page-container mt-5">
+
+    <!-- DESCRIPTION SECTION CONTAINS NAME AND DESCRIPTION PULLED FROM DB-->
     <section id="description">
       <div class="section-container mb-5">
         <h1 class="title text-center">{{ swapUnderscoresWithSpaces(name) }}</h1>
@@ -16,6 +18,7 @@
 
     <hr />
 
+    <!-- INFO SECTION CONTAINS GENERAL INFO (LIKE TICKETS LINK IF ANY) AND CORRELATED INFO -->
     <section id="info">
       <div class="section-container mt-3">
         <div class="row row-cols-1 row-cols-lg-2">
@@ -24,84 +27,64 @@
           </div>
           <div class="col">
             <div class="">
-              <h2 class="text-center">Related informations</h2>
+              <h2 class="text-center"> {{ relatedInformations }} </h2>
             </div>
             <br />
-
-            <div class="row row-cols ms-3">
-              <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button
-                      class="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
-                    >
-                      <p><strong>Events</strong> taking place here</p>
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseOne"
-                    class="accordion-collapse collapse show"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      <ul>
-                        <p v-if="numberOfEvents == 0"><strong>There are currently no events scheduled here!</strong></p>
-                        <li v-for="(item, index) of eventList" :key="index">
-                          <nuxt-link :to="`/events/`+item.name">
-                            <strong> {{ swapDashesAndCapitalize(item.name) }} </strong>
-                          </nuxt-link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingTwo">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
-                    >
-                      <p>
-                        <strong>Itineraries</strong> that include this place
-                      </p>
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseTwo"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      <ul>
-                        <li v-for="(item, index) of itineraryList" :key="index">
-                          <nuxt-link :to="`/itineraries/`+item">
-                            <strong> {{ item }} </strong>
-                          </nuxt-link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+            <div v-if="time != null" class="row row-cols-2 ms-3">
+              <div class="icon-item col-1">
+                <span class="mdi mdi-timer"></span>
               </div>
+              <div class="col event-card-text ms-1">
+                <span class="fs-4">
+                  {{ time }}
+                </span>
+              </div>
+            </div>
+            <div v-if="link != null" class="row row-cols-2 m-3">
+              <div class="icon-item col-1">
+                <span class="mdi mdi-ticket-confirmation"></span>
+              </div>
+
+              <div class="col event-card-text ms-1">
+                <a
+                  :href="link"
+                  target="_blank"
+                  class="btn btn-outline-dark"
+                  type="button"
+                >
+                  Book a ticket
+                </a>
+              </div>
+            </div>
+
+            <br />
+            <div class="row row-cols ms-3">
+              <h3 class=""> {{ events }} {{ takingPlace }}</h3>
+              <ul>
+                <p v-if="numberOfEvents == 0">
+                  <strong>{{  noEvents }}</strong>
+                </p>
+                <li v-for="(item, index) of eventList" :key="index">
+                  <nuxt-link :to="`/events/` + item.name">
+                    <strong> {{ swapDashesAndCapitalize(item.name) }} </strong>
+                  </nuxt-link>
+                </li>
+              </ul>
+              <h3 class="">{{ itineraries }} {{ includeThisPlace }}</h3>
+              <ul>
+                <li v-for="(item, index) of itineraryList" :key="index">
+                  <nuxt-link :to="`/itineraries/` + item.name">
+                    <strong> {{ item.name }} </strong>
+                  </nuxt-link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div
-      class="
+    <div class="
         section-container
         d-grid
         gap-2
@@ -109,23 +92,11 @@
         justify-content-md-start
         mb-b
         mt-5
-      "
-    >
-      <button
-        type="button"
-        class="btn btn-outline-dark btn-lg px-4"
-        @click="backToList"
-      >
-        Back to all the attractions
+      ">
+      <button type="button" class="btn btn-outline-dark btn-lg px-4" @click="backToList">
+        {{ backToAttractions }}
       </button>
     </div>
-
-    <!-- You may also like content -->
-
-    <!--section id="other-attractions">
-      <h1> You may also like </h1>
-      <card-carousel></card-carousel>
-    </section-->
   </div>
 </template>
 
@@ -144,37 +115,56 @@ export default {
     CardCarousel,
   },
   data() {
+    // strings are stored in data to facilitate edits and future translation implementations
     return {
-      
+        relatedInformations: "Related informations",
+        events: "Events",
+        takingPlace: "taking place here",
+        noEvents: "There are currently no events scheduled here!",
+        itineraries: "Itineraries",
+        includeThisPlace: "that include this place",
+        backToAttractions: "Back to all the attractions"
     }
   },
+
   mixins: [CommonMixin],
 
-  //Important for the SEO
-  //head() {
-  //   return {
-  //     title: this.name
-  //   }
-  // },
+  head() {
+    return {
+      title: 'Visit-DAM | ' + this.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.name + ': ' + this.shortDescription,
+        },
+      ],
+    }
+  },
+
   async asyncData({ route, $axios, redirect }) {
+    // Pulling info from DB
     let numberOfEvents
     const { id } = route.params
     const { data: poiInfo } = await $axios.get(`/api/pois/` + id)
     const { data: eventList} = await $axios.get(`/api/eventsByPlace/` + id)
-    console.log("lenght: " + Object.keys( eventList ).length ) 
+    const { data: itineraryList} = await $axios.get(`/api/itinerariesByPlace/` + id)
     numberOfEvents = Object.keys( eventList ).length
     console.log(numberOfEvents)
+    // Error management
     if (poiInfo == null || eventList == null) {
       return redirect('/error/?err=This attraction does not exist!')
     }
     return {
       name: poiInfo.name,
       img: poiInfo.img,
+      shortDescription: poiInfo.shortDescription,
       description: poiInfo.description,
-      itineraryList : poiInfo.itineraryName,
+      link: poiInfo.link,
+      time: poiInfo.timetable,
+      itineraryList : itineraryList,
       eventList: eventList,
       numberOfEvents: numberOfEvents,
-
     }
   },
 

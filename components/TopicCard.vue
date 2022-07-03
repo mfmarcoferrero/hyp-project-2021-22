@@ -21,7 +21,7 @@
         }}</h2>
     </div>
 </template>
- 
+
 <script>
 import CommonMixin from '~/mixins/common';
 export default {
@@ -46,13 +46,13 @@ export default {
         }
     },
     methods: {
-        goTo(path) {    
+        goTo(path) {
             this.$router.push(path);
         },
     }
 }
 </script>
- 
+
 <style scoped>
 
 /* Solid border definition */
@@ -67,6 +67,7 @@ export default {
 /* Brightness changed to see title clearly */
 .topic-card-img {
     width: 100%;
+    min-height: 85px;
     object-fit: cover;
     filter: brightness(75%)
 }
