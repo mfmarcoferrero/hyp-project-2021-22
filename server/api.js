@@ -19,14 +19,14 @@ const database = new Sequelize(process.env.DATABASE_URL)
 // Function that will initialize the connection to the database
 async function initializeDatabaseConnection() {
   await database.authenticate()
-  const HomePageDetail = database.define("homePageDetail", {
+  const HomePageDetail = database.define("homepage_detail", {
     name: DataTypes.STRING,
     description: DataTypes.STRING(10000),
     img: DataTypes.STRING,
     section: DataTypes.STRING,
     path: DataTypes.STRING
   })
-  const POI = database.define("pointofinterest", {
+  const POI = database.define("point_of_interest", {
     name: {
       type: DataTypes.STRING,
       primaryKey: true
@@ -61,7 +61,7 @@ async function initializeDatabaseConnection() {
     img: DataTypes.STRING,
     maplink: DataTypes.STRING
   })
-  const ServiceType = database.define("serviceType", {
+  const ServiceType = database.define("service_type", {
     name: {
       type: DataTypes.STRING,
       primaryKey: true
@@ -69,7 +69,7 @@ async function initializeDatabaseConnection() {
     description: DataTypes.STRING(10000),
     img: DataTypes.STRING,
   })
-  const Service = database.define("serviceList", {
+  const Service = database.define("service_list", {
     type: DataTypes.STRING,
     name: {
       type: DataTypes.STRING,
@@ -232,7 +232,7 @@ async function runMainApi() {
 
   app.get('/poisOfItinerary/:name', async (req, res) => {
     const nameItinerary = req.params.name
-    const query = 'SELECT name, short_description, img FROM pointofinterests as p JOIN itinerary_pois as ip ON name = poi_name WHERE itinerary_name = :name';
+    const query = 'SELECT name, short_description, img FROM point_of_interests as p JOIN itinerary_pois as ip ON name = poi_name WHERE itinerary_name = :name';
 
     await database.query(query,
       {
