@@ -1,4 +1,7 @@
 <template>
+
+    <!-- RENDERING OF ALL POIS WITH CARDS -->
+
     <div class="page-container">
         <cover-image :img="img" title="Attractions and Experiences" class="mb-5" />
 
@@ -63,6 +66,7 @@ export default {
         CoverImage
     },
     data() {
+        // strings are stored in data to facilitate edits and future translation implementations
         return {
             name: "Museum",
             img: "https://s8.gifyu.com/images/gaurav-jain-2K2SR19RLg8-unsplash.jpg",
@@ -86,13 +90,14 @@ export default {
         }
     },
 
-    // Note: This happens on backend (server) side
+    // Data pulling from DB
     async asyncData({ $axios }) {
         let topList = []
         let artList = []
         let experienceList = []
         let buildingList = []
         const { data } = await $axios.get('/api/pois')
+        // Data sorting based on category
         for (var item of data) {
             if (item.category === 'top') {
                 topList.push(item)

@@ -57,6 +57,7 @@
       </div>
     </section>
 
+    <!-- NAVBACK BUTTON -->
     <div class="section-container d-grid gap-2 d-md-flex justify-content-md-start mb-b mt-5">
       <button type="button" class="btn btn-outline-dark btn-lg px-4" @click="backToList">
         {{ backToEvents }}
@@ -97,6 +98,7 @@ export default {
   },
 
   data() {
+    // strings are stored in data to facilitate edits and future translation implementations
     return {
       locationIcon: 'mdi mdi-map-marker',
       dateIcon: 'mdi mdi-timer',
@@ -132,6 +134,9 @@ export default {
 </script>
 
 <style scoped>
+
+/* Event content styling to fit the cards recipient */
+
 .id-img {
   width: 100%;
   height: 100%;

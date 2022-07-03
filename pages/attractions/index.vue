@@ -1,7 +1,9 @@
 <template>
   <div>
+    <!-- COVER IMAGE SECTION -->
     <cover-image img="https://s8.gifyu.com/images/attractions-1.jpg" title="Things to do"></cover-image>
 
+    <!-- THEMATIC SECTIONS OF ATTRACTIONS -->
     <div class="section-container mt-5">
       <div class="row">
         <div class="col-md m-2">
@@ -21,6 +23,7 @@
 
     <hr class="m-5">
 
+    <!-- TOP ATTRACTIONS -->
     <div class="container position-relative pb-5">
       <h2 class="second-title vl ms-5 mt-5 mb-4"> {{ mostVisited }} </h2>
       <p class="m-4 p-2"> {{ descriptionMostVisited }} </p>
@@ -58,6 +61,8 @@
     </div>
 
     <hr class="m-5">
+
+    <!-- ART AND CULTURE SECTION -->
 
     <section id="art-and-culture">
     <div class="container">
@@ -97,6 +102,7 @@
       <h2 class="second-title vl ms-5"> {{ tickets }} </h2>
     </div>
 
+    <!-- CARD CAROUSEL COMPONENT, RENDERING THE TICKET INFORMATION-->
     <section id="tickets-info">
       <card-carousel :detailMatrix="generateMatrixFromArray(ticketList, 4)" class="mb-5"> </card-carousel>
     </section>
@@ -135,6 +141,7 @@ export default {
   },
 
   data() {
+    // strings are stored in data to facilitate edits and future translation implementations
     return {
       name: "Museum",
       img: "https://s8.gifyu.com/images/frans-ruiter-jfPGunIH_9M-unsplash.jpg",
@@ -161,12 +168,13 @@ export default {
       tickets: "Tickets for attractions and activities"
     }
   },
-  // Note: This happens on backend (server) side
+  // Pulling data from DB
   async asyncData({ $axios }) {
     let topList = []
     let artList = []
     let ticketList = []
     const { data } = await $axios.get('/api/attractions-page-details')
+    // Data sorting based on category
     for (var item of data) {
       if (item.category === 'top') {
         topList.push(item)

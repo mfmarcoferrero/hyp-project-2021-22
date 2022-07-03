@@ -1,7 +1,9 @@
 <template>
+  <!-- COVERIMAGE COMPONENT -->
   <div class="page-container">
     <CoverImage :img="coverImg" title="Itineraries and Guided Tours" />
 
+    <!-- NAVIGATION TOPIC CARDS -->
     <section id="topic-menu">
       <div class="section-container mt-5">
         <div class="row">
@@ -22,6 +24,7 @@
       </div>
     </section>
 
+    <!-- GENERAL DESCRIPTION OF ITINERARIES -->
     <section id="city-itineraries">
       <hr class="m-5">
       <div class="section-container position-relative">
@@ -41,6 +44,7 @@
 
     <hr class="m-5">
 
+    <!-- CITY SIGHTSEEING SECTION -->
     <section id="city-sightseeing">
       <div class="section-container position-relative">
         <h2 class="second-title vl mt-5 mb-4"> {{ tours }} </h2>
@@ -65,6 +69,7 @@
 
     <hr class="m-5">
 
+    <!-- CANAL CRUISES SECTION -->
     <section id="canal-cruises">
       <div class="section-container position-relative">
         <h2 class="second-title vl mt-5 mb-4"> {{ canal }} </h2>
@@ -123,6 +128,7 @@ export default {
   },
 
   data() {
+    // strings are stored in data to facilitate edits and future translation implementations
     return {
       itinerariesDetails: [],
       coverImg: "https://s8.gifyu.com/images/adrien-olichon-QRtym77B6xk-unsplash.jpg",
@@ -169,28 +175,11 @@ export default {
   },
 
   async asyncData({ $axios }) {
-
+    // Data fetching from DB
     const { data } = await $axios.get('/api/itineraries')
     return {
       itinerariesDetails: data,
     }
-
-    /*Database table to populate service image, service description and markers array to show on map
-    return $axios.get('/api/itineraries').then(async itineraries => {
-      for (let itinerary of itineraries.data) {
-        let pois = []
-        const { data } = await $axios.get('/api/poisOfItinerary/' + itinerary.name)
-        for (let item of data) {
-          pois.push((await $axios.get('/api/pois/' + item.pointofinterestName)).data)
-        }
-        itinerary.pois = pois
-      }
-      console.log(itineraries.data)
-      return { itinerariesDetails: itineraries.data }
-    })
-      .catch(err => {
-        console.log(err)
-      }) */
   },
 
   methods: {

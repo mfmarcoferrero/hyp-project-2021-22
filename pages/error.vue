@@ -9,7 +9,7 @@
         class="btn btn-outline-secondary btn-lg px-4 m-5"
         @click="navigateTo('/')"
       >
-        Back to homepage
+        {{ back }}
       </button>
     </section>
   </main>
@@ -22,6 +22,12 @@ export default {
   head() {
     return {
       title: 'Visit DAM | Error',
+    }
+  },
+  data(){
+    // strings are stored in data to facilitate edits and future translation implementations
+    return {
+      back: "Back to homepage",
     }
   },
   methods: {

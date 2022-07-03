@@ -23,6 +23,7 @@
       </div>
     </section>
 
+    <!-- DECORATIVE WIND MILL ANIMATION -->
     <section id="loading-img">
       <div class="text-center m-5">
         <img
@@ -63,6 +64,7 @@ export default {
   },
 
   data() {
+    // strings are stored in data to facilitate edits and future translation implementations
     return {
       coverImg:
         'https://s8.gifyu.com/images/netherlands-transportation-1920x1080.jpg',

@@ -1,5 +1,6 @@
 <template>
   <div class="page-container">
+    <!-- SECTION CONTAINING DESCRIPTION AND PHOTO OF ITINERARY -->
     <section id="title-description">
       <div class="section-container">
         <h1 class="text-center m-5">{{ name }}</h1>
@@ -13,6 +14,7 @@
       </div>
     </section>
 
+    <!-- THIS SECTION CONTAINS A CARD CAROUSEL WITH ALL POIS COTAINED IN THE ITINERARY -->
     <section id="attractions-list">
       <div class="section-container">
         <h2 class="second-title vl mt-5"> {{ placeOfItinerary }} </h2>
@@ -25,6 +27,8 @@
 
     <hr class="m-5" />
 
+
+    <!-- THIS SECTION CONTAINES AN ITINERARY MAP, MADE WITH MYGOOGLEMAPS AND IMPLEMENTED WITH IFRAMES -->
     <section id="map">
       <div class="section-container mt-5">
         <div class="row mb-3">
@@ -39,6 +43,7 @@
       </div>
     </section>
 
+    <!-- NAVBACK BUTTON -->
     <div class="d-grid gap-2 d-md-flex justify-content-center m-5">
       <button
         type="button"
@@ -66,6 +71,7 @@ export default {
   },
 
   data() {
+    // strings are stored in data to facilitate edits and future translation implementations
     return {
       itinerariesDetails: [],
       placeOfItinerary: "The places in this itinerary",
@@ -93,7 +99,7 @@ export default {
       ],
     }
   },
-
+  // Data fetching from DB
   async asyncData({ route, $axios, redirect }) {
     const { id } = route.params
     const { data: itineraryInfo } = await $axios.get(`/api/itineraries/` + id)
@@ -101,6 +107,7 @@ export default {
     const { data: poisOfItinerary } = await $axios.get(
       `/api/poisOfItinerary/` + id
     )
+    // Error management
     if (itineraryInfo == null){
       return redirect('/error/?err=This itinerary does not exist!')
     }

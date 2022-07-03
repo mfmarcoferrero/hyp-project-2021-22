@@ -52,6 +52,7 @@ export default {
     }
   },
   data() {
+    // strings are stored in data to facilitate edits and future translation implementations
     return {
       coverImg: "https://s8.gifyu.com/images/events-cover.jpg",
       title: "Festivals & Events",
@@ -84,7 +85,7 @@ export default {
       culturalAgenda: "Cultural Agenda"
     }
   },
-  // api call
+  // Data fetching from DB
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/events')
     return {

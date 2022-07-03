@@ -69,7 +69,6 @@ export default async (models) => {
             description: "In the heart of Amsterdam, Dam Square was created in the 15th century and every day since it has been the center-point of the city. Within the square, you will be able to see the picturesque Royal Palace.To this day, the Royal Palace is where the Dutch royal family hosts prominent visitors from around the world. The good news, however, is that the palace is open for locals and tourists. Other important attractions include the National Monument, which honors lives lost in combat, Madame Tussauds and the Nieuwe Kerk Church, which hosts art exhibitions throughout the year.",
             img: "https://s8.gifyu.com/images/amsterdam_09_piazza_dam_jpg_1200_630_cover_85.jpg",
             info: "",
-            timetable: "",
             category: "top",
         },
         {
@@ -88,7 +87,6 @@ export default async (models) => {
             description: "The Vondelpark is a public urban park of 47 hectares in Amsterdam, Netherlands. It is part of the borough of Amsterdam-Zuid and situated west from the Leidseplein and the Museumplein. The park was opened in 1865 and originally named Nieuwe Park, but later renamed Vondelpark, after the 17th-century playwright and poet Joost van den Vondel. The park has around 10 million visitors annually. Within the park is an open-air theatre, a playground and several food service facilities.",
             img: "https://s8.gifyu.com/images/28280-Vondelpark.jpg",
             info: "",
-            timetable: "",
             category: "top",
         },
         {
@@ -107,7 +105,6 @@ export default async (models) => {
             description: "Amsterdam has more than 100 kilometers (62 mi) of grachten (canals), about 90 islands and 1,500 bridges. The three main canals (Herengracht, Prinsengracht and Keizersgracht), dug in the 17th century during the Dutch Golden Age, form concentric belts around the city, known as the Grachtengordel. Alongside the main canals are 1550 monumental buildings. The 17th-century canal ring area, including the Prinsengracht, Keizersgracht, Herengracht and Jordaan, were listed as UNESCO World Heritage Site in 2010, contributing to Amsterdam's fame as the Venice of the North",
             img: "https://s8.gifyu.com/images/canals.jpg",
             info: "",
-            timetable: "",
             category: "top",
         },
         {
@@ -182,8 +179,8 @@ export default async (models) => {
             name: "Stedelijk Museum Amsterdam",
             short_description: "The Stedelijk Museum Amsterdam, colloquially known as the Stedelijk, is a museum for modern art, contemporary art, and design.",
             description: "The Stedelijk Museum Amsterdam, colloquially known as the Stedelijk, is a museum for modern art, contemporary art, and design.The 19th century building was designed by Adriaan Willem Weissman and the 21st century wing with the current entrance was designed by Benthem Crouwel Architects. It is located at the Museum Square in the borough Amsterdam South, where it is close to the Van Gogh Museum, the Rijksmuseum, and the Concertgebouw.\n" +
-              "\n" +
-              "The collection comprises modern and contemporary art and design from the early 20th century up to the 21st century. It features artists such as Vincent van Gogh, Wassily Kandinsky, Ernst Ludwig Kirchner, Marc Chagall, Henri Matisse, Jackson Pollock, Karel Appel, Andy Warhol, Willem de Kooning, Marlene Dumas, Lucio Fontana, and Gilbert & George.",
+                "\n" +
+                "The collection comprises modern and contemporary art and design from the early 20th century up to the 21st century. It features artists such as Vincent van Gogh, Wassily Kandinsky, Ernst Ludwig Kirchner, Marc Chagall, Henri Matisse, Jackson Pollock, Karel Appel, Andy Warhol, Willem de Kooning, Marlene Dumas, Lucio Fontana, and Gilbert & George.",
             img: "https://s8.gifyu.com/images/Stedelijk-Museum-Amsterdam.jpg",
             info: "",
             timetable: "10:00 - 18:00",
@@ -212,8 +209,8 @@ export default async (models) => {
             name: "Heineken Experience",
             short_description: "In 1988 Heineken closed an old Amsterdam brewery, which spread its smell over the popular De Pijp district, and opened a tour for the fans of its beer.",
             description: "In 1988 Heineken closed an old Amsterdam brewery, which spread its smell over the popular De Pijp district, and opened a tour for the fans of its beer. For a small admission charge, you could learn something about the famous pilsner and drink as much as you wanted.\n" +
-              "\n" +
-              "The museum part of the show still remains interesting. The architecture of the 19th century Heineken brewery buildings, authentic interiors, old photographs and state decorations Heineken family received, famous gold medal from The Universal Exhibition in Paris in 1889, which you may see reproduced on each can of Heineken, impressive brass beer tanks and a quiet horse stable.",
+                "\n" +
+                "The museum part of the show still remains interesting. The architecture of the 19th century Heineken brewery buildings, authentic interiors, old photographs and state decorations Heineken family received, famous gold medal from The Universal Exhibition in Paris in 1889, which you may see reproduced on each can of Heineken, impressive brass beer tanks and a quiet horse stable.",
             img: "https://s8.gifyu.com/images/heineken-experience.jpg",
             info: "",
             timetable: "10:30 - 21:00",
@@ -253,11 +250,10 @@ export default async (models) => {
             name: "Bloemenmarkt",
             short_description: "The Amsterdam Flower Market is the only floating flower market in the world, and one of the most fragrant places of interest of Amsterdam - in all seasons.",
             description: "The Amsterdam Flower Market is the only floating flower market in the world, and one of the most fragrant places of interest of Amsterdam - in all seasons. This unique market exists since 1862. The flower stalls stand on the houseboats and evoke the old days when the market was daily supplied by boat.\n" +
-              "\n" +
-              "The flower market of Amsterdam is a particularly colorful place in the city. You will find there all sorts of tulips, narcissus, geraniums and many other types of flowers. At the Amsterdam Flower Market you can either buy bouquets, single flowers or bulbs. The bulbs are ready for export, so you can enjoy them at home too.",
+                "\n" +
+                "The flower market of Amsterdam is a particularly colorful place in the city. You will find there all sorts of tulips, narcissus, geraniums and many other types of flowers. At the Amsterdam Flower Market you can either buy bouquets, single flowers or bulbs. The bulbs are ready for export, so you can enjoy them at home too.",
             img: "https://s8.gifyu.com/images/bloemenmarkt-2.jpg",
             info: "",
-            timetable: "",
             category: "experience",
         },
         {
@@ -305,113 +301,117 @@ export default async (models) => {
 
     ]
 
-  const itineraryPOIList = [
-    {
-      itinerary_name: "One-day itinerary",
-      poi_name: "Dam square"
-    },
-    {
-      itinerary_name: "One-day itinerary",
-      poi_name: "Van Gogh Museum"
-    },
-    {
-      itinerary_name: "One-day itinerary",
-      poi_name: "West Church (Westerkerk)"
-    },
-    {
-      itinerary_name: "One-day itinerary",
-      poi_name: "Heineken Experience"
-    },
-    {
-      itinerary_name: "Three-day itinerary",
-      poi_name: "Anne Frank house"
-    },
-    {
-      itinerary_name: "Three-day itinerary",
-      poi_name: "Canals of Amsterdam"
-    },
-    {
-      itinerary_name: "Three-day itinerary",
-      poi_name: "Rijksmuseum"
-    },
-    {
-      itinerary_name: "Three-day itinerary",
-      poi_name: "National Maritime Museum"
-    },
-    {
-      itinerary_name: "Three-day itinerary",
-      poi_name: "Hortus Botanicus Amsterdam"
-    },
-    {
-      itinerary_name: "Five-day itinerary",
-      poi_name: "Royal Palace of Amsterdam"
-    },
-    {
-      itinerary_name: "Five-day itinerary",
-      poi_name: "NEMO Science Museum"
-    },
-    {
-      itinerary_name: "Five-day itinerary",
-      poi_name: "EYE Film Institute Netherlands"
-    },
-    {
-      itinerary_name: "Five-day itinerary",
-      poi_name: "Stedelijk Museum Amsterdam"
-    },
-    {
-      itinerary_name: "Five-day itinerary",
-      poi_name: "The Oude Church"
-    },
-    {
-      itinerary_name: "Five-day itinerary",
-      poi_name: "Amsterdam Royal Zoo"
-    },
-    {
-      itinerary_name: "Five-day itinerary",
-      poi_name: "Bloemenmarkt"
-    },
-    {
-      itinerary_name: "One-week itinerary",
-      poi_name: "Dam square"
-    },
-    {
-      itinerary_name: "One-week itinerary",
-      poi_name: "Anne Frank house"
-    },
-    {
-      itinerary_name: "One-week itinerary",
-      poi_name: "Canals of Amsterdam"
-    },
-    {
-      itinerary_name: "One-week itinerary",
-      poi_name: "Van Gogh Museum"
-    },
-    {
-      itinerary_name: "One-week itinerary",
-      poi_name: "National Maritime Museum"
-    },
-    {
-      itinerary_name: "One-week itinerary",
-      poi_name: "Jewish Historical Museum"
-    },
-    {
-      itinerary_name: "One-week itinerary",
-      poi_name: "West Church (Westerkerk)"
-    },
-    {
-      itinerary_name: "One-week itinerary",
-      poi_name: "The Oude Church"
-    },
-    {
-      itinerary_name: "One-week itinerary",
-      poi_name: "Hortus Botanicus Amsterdam"
-    },
-    {
-      itinerary_name: "One-week itinerary",
-      poi_name: "Amsterdam Royal Zoo"
-    },
+    const itineraryPOIList = [
+        {
+            itinerary_name: "One-day itinerary",
+            poi_name: "Dam square"
+        },
+        {
+            itinerary_name: "One-day itinerary",
+            poi_name: "Van Gogh Museum"
+        },
+        {
+            itinerary_name: "One-day itinerary",
+            poi_name: "West Church (Westerkerk)"
+        },
+        {
+            itinerary_name: "One-day itinerary",
+            poi_name: "Heineken Experience"
+        },
+        {
+            itinerary_name: "Three-day itinerary",
+            poi_name: "Anne Frank house"
+        },
+        {
+            itinerary_name: "Three-day itinerary",
+            poi_name: "Canals of Amsterdam"
+        },
+        {
+            itinerary_name: "Three-day itinerary",
+            poi_name: "Rijksmuseum"
+        },
+        {
+            itinerary_name: "Three-day itinerary",
+            poi_name: "National Maritime Museum"
+        },
+        {
+            itinerary_name: "Three-day itinerary",
+            poi_name: "Hortus Botanicus Amsterdam"
+        },
+        {
+            itinerary_name: "Five-day itinerary",
+            poi_name: "Royal Palace of Amsterdam"
+        },
+        {
+            itinerary_name: "Five-day itinerary",
+            poi_name: "NEMO Science Museum"
+        },
+        {
+            itinerary_name: "Five-day itinerary",
+            poi_name: "EYE Film Institute Netherlands"
+        },
+        {
+            itinerary_name: "Five-day itinerary",
+            poi_name: "Stedelijk Museum Amsterdam"
+        },
+        {
+            itinerary_name: "Five-day itinerary",
+            poi_name: "The Oude Church"
+        },
+        {
+            itinerary_name: "Five-day itinerary",
+            poi_name: "Amsterdam Royal Zoo"
+        },
+        {
+            itinerary_name: "Five-day itinerary",
+            poi_name: "Bloemenmarkt"
+        },
+        {
+            itinerary_name: "Five-day itinerary",
+            poi_name: "Vondelpark"
+        },
+        {
+            itinerary_name: "One-week itinerary",
+            poi_name: "Dam square"
+        },
+        {
+            itinerary_name: "One-week itinerary",
+            poi_name: "Anne Frank house"
+        },
+        {
+            itinerary_name: "One-week itinerary",
+            poi_name: "Canals of Amsterdam"
+        },
+        {
+            itinerary_name: "One-week itinerary",
+            poi_name: "Van Gogh Museum"
+        },
+        {
+            itinerary_name: "One-week itinerary",
+            poi_name: "National Maritime Museum"
+        },
+        {
+            itinerary_name: "One-week itinerary",
+            poi_name: "Jewish Historical Museum"
+        },
+        {
+            itinerary_name: "One-week itinerary",
+            poi_name: "West Church (Westerkerk)"
+        },
+        {
+            itinerary_name: "One-week itinerary",
+            poi_name: "The Oude Church"
+        },
+        {
+            itinerary_name: "One-week itinerary",
+            poi_name: "Hortus Botanicus Amsterdam"
+        },
+        {
+            itinerary_name: "One-week itinerary",
+            poi_name: "Amsterdam Royal Zoo"
+        },
 
-  ]
+    ]
 
 
     //-----------------------------------------------------------------------------------------
@@ -422,7 +422,7 @@ export default async (models) => {
     const eventList = [
         {
             name: "ice-skating-on-the-river",
-            description:"Skate on the frozen Amsterdam canals! This event happens during winter for obvious reasons, and it's a really interesting way to explore the city's canal system. Just be careful not to break the ice under your feet!",
+            description: "Skate on the frozen Amsterdam canals! This event happens during winter for obvious reasons, and it's a really interesting way to explore the city's canal system. Just be careful not to break the ice under your feet!",
             season: "winter",
             img: "https://s8.gifyu.com/images/ap_18061696756896.webp",
             location: "Vondelpark",
@@ -432,7 +432,7 @@ export default async (models) => {
         },
         {
             name: "Vondelpark Open Air Theatre",
-            description:"Head to the Open Air Theatre in Amsterdam's Vondelpark to catch summertime performances from children's acts, classical presentations or the latest Dutch or international pop performer. From May until early September you'll find a lot going on every Saturday and Sunday. ",
+            description: "Head to the Open Air Theatre in Amsterdam's Vondelpark to catch summertime performances from children's acts, classical presentations or the latest Dutch or international pop performer. From May until early September you'll find a lot going on every Saturday and Sunday. ",
             season: "winter",
             img: "https://s8.gifyu.com/images/IMG_6594.jpg",
             location: "Vondelpark",
@@ -442,7 +442,7 @@ export default async (models) => {
         },
         {
             name: "Amsterdam Light Festival",
-            description:"During the winter months, the annual Amsterdam Light Festival (ALF) illuminates the city with brilliant works of light art. Each year, hundreds of ideas are submitted by designers, architects and artists from around the world. A selection committee usually chooses about 30 artworks that make up the festival’s installations. Past years have featured the work of prominent artists such as Ai Weiwei and Nicole Banowetz. ",
+            description: "During the winter months, the annual Amsterdam Light Festival (ALF) illuminates the city with brilliant works of light art. Each year, hundreds of ideas are submitted by designers, architects and artists from around the world. A selection committee usually chooses about 30 artworks that make up the festival’s installations. Past years have featured the work of prominent artists such as Ai Weiwei and Nicole Banowetz. ",
             season: "winter",
             img: "https://s8.gifyu.com/images/65790_fullimage_adam-light-festival_light-a-wish_1120x-520x320.jpg",
             location: "Canals of Amsterdam",
@@ -452,7 +452,7 @@ export default async (models) => {
         },
         {
             name: "New Year's Eve in Amsterdam",
-            description:"Whether you’re a party animal or a romantic, young of years or young-at-heart, a big spender or on a budget, Amsterdam is a great city to ring in the New Year. Fireworks illuminate the night sky and the city thrums in a cacophony of rockets, aerials, brocades, bangers and glittering willows. There will not be an official city-sponsored firework display this year, but you can expect to see a host of firework shows lighting up various locations around Amsterdam. Street level can be a bit chaotic in the midst of all the revelry, so you may want to find a nice rooftop perch or balcony to take it all in. ",
+            description: "Whether you’re a party animal or a romantic, young of years or young-at-heart, a big spender or on a budget, Amsterdam is a great city to ring in the New Year. Fireworks illuminate the night sky and the city thrums in a cacophony of rockets, aerials, brocades, bangers and glittering willows. There will not be an official city-sponsored firework display this year, but you can expect to see a host of firework shows lighting up various locations around Amsterdam. Street level can be a bit chaotic in the midst of all the revelry, so you may want to find a nice rooftop perch or balcony to take it all in. ",
             season: "winter",
             img: "https://s8.gifyu.com/images/amsterdam-january-blog.jpg",
             location: "Dam square",
@@ -462,7 +462,7 @@ export default async (models) => {
         },
         {
             name: "Sinterklaas",
-            description:"Saint Nicholas has had close ties with Amsterdam since 343 AD. Legend has it that Sinterklaas originally came from Turkey as St. Nicolaus, the Bishop of Mira, an honourable man who was kind to children. No one really knows why he then chose to live in Spain but historians point to the Spanish domination over the Netherlands in the past. The medieval attire of Sinterklaas’ assistants, the Zwarte Pieten, is equally mysterious. Zwarte Piet (literally: ‘Black Peter’) has long been the subject of debate in Amsterdam and the rest of the Netherlands. In 2018, the traditional Zwarte Pieten were replaced by Schoorsteenpieten (literally: ‘Chimney Peters’) at the Amsterdam Sinterklaas Parade. Rather than wearing the traditional blackface makeup that is at the heart of the Zwarte Piet controversy, the Schoorsteenpieten are only marked with light smudges of soot from bringing presents down the chimney. The more important characteristics of the Pieten, such as their jovial attitudes and seemingly endless supply of cookies and sweets, remain unchanged.  ",
+            description: "Saint Nicholas has had close ties with Amsterdam since 343 AD. Legend has it that Sinterklaas originally came from Turkey as St. Nicolaus, the Bishop of Mira, an honourable man who was kind to children. No one really knows why he then chose to live in Spain but historians point to the Spanish domination over the Netherlands in the past. The medieval attire of Sinterklaas’ assistants, the Zwarte Pieten, is equally mysterious. Zwarte Piet (literally: ‘Black Peter’) has long been the subject of debate in Amsterdam and the rest of the Netherlands. In 2018, the traditional Zwarte Pieten were replaced by Schoorsteenpieten (literally: ‘Chimney Peters’) at the Amsterdam Sinterklaas Parade. Rather than wearing the traditional blackface makeup that is at the heart of the Zwarte Piet controversy, the Schoorsteenpieten are only marked with light smudges of soot from bringing presents down the chimney. The more important characteristics of the Pieten, such as their jovial attitudes and seemingly endless supply of cookies and sweets, remain unchanged.  ",
             season: "winter",
             img: "https://s8.gifyu.com/images/sinterklaas-1280x720.jpg",
             location: "Dam square",
@@ -472,7 +472,7 @@ export default async (models) => {
         },
         {
             name: "Amsterdam Fringe Festival",
-            description:"Sometimes referred to as the NL Theater Festival’s quirky sister, Amsterdam Fringe Festival is all about bringing avant-garde productions to light. Each year some 70 productions are presented created by unorthodox theatre-makers keen to impress with their vision. What’s more, the venues where these eclectic performances take place can be just as unexpected. ",
+            description: "Sometimes referred to as the NL Theater Festival’s quirky sister, Amsterdam Fringe Festival is all about bringing avant-garde productions to light. Each year some 70 productions are presented created by unorthodox theatre-makers keen to impress with their vision. What’s more, the venues where these eclectic performances take place can be just as unexpected. ",
             season: "summer",
             img: "https://s8.gifyu.com/images/Fringe-Festival-e1528194443195-1.webp",
             location: "Vondelpark",
@@ -482,7 +482,7 @@ export default async (models) => {
         },
         {
             name: "IDFA Festival",
-            description:"Each November, the International Documentary Film Festival Amsterdam (IDFA) transforms Amsterdam’s city centre into a paradise for documentary film fans. Held since 1988, IDFA is the world’s largest documentary festival and features lectures, workshops and over 300 movies that tell stories about life around the world. Some are funny, others sad, and they all represent the best the genre has to offer. Screenings take place throughout the city and include outdoor showings where you can watch a film under the night sky. ",
+            description: "Each November, the International Documentary Film Festival Amsterdam (IDFA) transforms Amsterdam’s city centre into a paradise for documentary film fans. Held since 1988, IDFA is the world’s largest documentary festival and features lectures, workshops and over 300 movies that tell stories about life around the world. Some are funny, others sad, and they all represent the best the genre has to offer. Screenings take place throughout the city and include outdoor showings where you can watch a film under the night sky. ",
             season: "autumn",
             img: "https://s8.gifyu.com/images/1479458168545_0570x0400_0x0x0x0_1574326207583.jpg",
             location: "EYE Film Institute Netherlands",
@@ -492,7 +492,7 @@ export default async (models) => {
         },
         {
             name: "TCS Amsterdam Marathon",
-            description:"The 46th edition of the TCS Amsterdam Marathon will return to the city on Sunday October 16th, 2022. When it comes to running events, you could say Amsterdam has a personal best: the TCS Amsterdam Marathon taking place annually in October. The event draws elite runners from around the world as well as thousands of amateurs.",
+            description: "The 46th edition of the TCS Amsterdam Marathon will return to the city on Sunday October 16th, 2022. When it comes to running events, you could say Amsterdam has a personal best: the TCS Amsterdam Marathon taking place annually in October. The event draws elite runners from around the world as well as thousands of amateurs.",
             season: "autumn",
             img: "https://s8.gifyu.com/images/tcs-amsterdam-marathon-2020-lg.jpg",
             location: "Vondelpark",
@@ -502,7 +502,7 @@ export default async (models) => {
         },
         {
             name: "Pride Amsterdam",
-            description:"One of the biggest celebrations of LGBTI equality in the world, Pride Amsterdam celebrates its 25th anniversary in 2021. Whilst most large-scale parties, including the Canal Parade and Milkshake Festival cannot take place this year, a wealth of smaller events, exhibitions, talks and screenings will take place across the city.",
+            description: "One of the biggest celebrations of LGBTI equality in the world, Pride Amsterdam celebrates its 25th anniversary in 2021. Whilst most large-scale parties, including the Canal Parade and Milkshake Festival cannot take place this year, a wealth of smaller events, exhibitions, talks and screenings will take place across the city.",
             season: "summer",
             img: "https://s8.gifyu.com/images/tcs-amsterdam-marathon-2020-lg.jpg",
             location: "Dam square",
@@ -512,7 +512,7 @@ export default async (models) => {
         },
         {
             name: "Grachtenfestival Amsterdam",
-            description:"The magnificent Grachtenfestival (Canal Festival), held annually in August on and around Amsterdam’s canals, is one of the cultural highlights of the Amsterdam summer. The historic canal belt of Amsterdam, a UNESCO World Heritage site since 2010, hosts the ten-day festival of classical music at numerous beautiful locations. ",
+            description: "The magnificent Grachtenfestival (Canal Festival), held annually in August on and around Amsterdam’s canals, is one of the cultural highlights of the Amsterdam summer. The historic canal belt of Amsterdam, a UNESCO World Heritage site since 2010, hosts the ten-day festival of classical music at numerous beautiful locations. ",
             season: "summer",
             img: "https://s8.gifyu.com/images/ia_grachtenfestival_02-1024x576.jpg",
             location: "Canals of Amsterdam",
@@ -522,7 +522,7 @@ export default async (models) => {
         },
         {
             name: "De Parade Theatre Festival",
-            description:"At De Parade there really is something for everyone. Whether you’re a die-hard theatre devotee or just along for the ride, you’ll find it here no matter what your pleasure is. Once on the festival terrain, you’ll find yourself enticed by artists giving outdoor performances in full regalia. The festival offers visitors a variety of short and full-length performances, as well as performances in open-air and secret locations. There’s always something new and surprising to look out for!",
+            description: "At De Parade there really is something for everyone. Whether you’re a die-hard theatre devotee or just along for the ride, you’ll find it here no matter what your pleasure is. Once on the festival terrain, you’ll find yourself enticed by artists giving outdoor performances in full regalia. The festival offers visitors a variety of short and full-length performances, as well as performances in open-air and secret locations. There’s always something new and surprising to look out for!",
             season: "summer",
             img: "https://s8.gifyu.com/images/63967_fullimage_parade_amsterdam_818x512.jpg",
             location: "Vondelpark",
@@ -532,7 +532,7 @@ export default async (models) => {
         },
         {
             name: "Holland Festival",
-            description:"One of the highlights of Amsterdam’s theatre and dance agenda, this theatre festival is held in various locations in Amsterdam and offers a heady mix of theatre, music, opera, film and visual arts, as well as Western and non-Western performance pieces in a variety of languages. programming consistently emphasises disciplinary crossovers and always includes works of the highest artistic standards. The festival has particularly been a frontrunner in supporting modern and non-classical contemporary music and new forms in musical theatre.",
+            description: "One of the highlights of Amsterdam’s theatre and dance agenda, this theatre festival is held in various locations in Amsterdam and offers a heady mix of theatre, music, opera, film and visual arts, as well as Western and non-Western performance pieces in a variety of languages. programming consistently emphasises disciplinary crossovers and always includes works of the highest artistic standards. The festival has particularly been a frontrunner in supporting modern and non-classical contemporary music and new forms in musical theatre.",
             season: "spring",
             img: "https://s8.gifyu.com/images/dc93db771eb490fc0954e069674a6fe0.jpg",
             location: "Dam square",
@@ -563,7 +563,7 @@ export default async (models) => {
         },
         {
             name: "flower-walk",
-            description:"What's that parfume on the air? It's blooming tulips! If you love flowers then this is the right time to visit our Botanic Center. Tulip flowers are a wonderful sight and a charateristic event of our city. Come visit alone or with good company!",
+            description: "What's that parfume on the air? It's blooming tulips! If you love flowers then this is the right time to visit our Botanic Center. Tulip flowers are a wonderful sight and a charateristic event of our city. Come visit alone or with good company!",
             season: "spring",
             img: "https://s8.gifyu.com/images/cropped-Bloemenvelden-Bollenstreek-2019.webp",
             location: "Hortus Botanicus Amsterdam",
@@ -595,7 +595,7 @@ export default async (models) => {
         },
         {
             name: "fall-rock-festival",
-            description:"Ready to rock your body? Fall Rock Festival is the perfect event for rock-loving people. A lot of very famous bands and rock artists are coming to play, and thousands of people are expected to join. Let's welcome the new season with dancing and rocking!",
+            description: "Ready to rock your body? Fall Rock Festival is the perfect event for rock-loving people. A lot of very famous bands and rock artists are coming to play, and thousands of people are expected to join. Let's welcome the new season with dancing and rocking!",
             season: "fall",
             img: "https://s8.gifyu.com/images/Rock_B.webp",
             location: "Dam square",
@@ -634,47 +634,47 @@ export default async (models) => {
         },
         {
             name: "Cultural_Services",
-            description: "cultural services description",
+            description: "Libraries, culture and social centres are the best places to explore Amstersam's vibrant cultural tissue!",
             img: "https://s8.gifyu.com/images/Librarian-showing-books.xa04803ee.jpg",
         },
         {
             name: "Public_parks",
-            description: "parks services description",
+            description: "If you're planning to have some fun during your stay check out our public parks! Thematic parks or green paradises to breath some good air, explore them all!",
             img: "https://s8.gifyu.com/images/tulip-field-netherlands-shutterstock_483619153-1024x679.jpg",
         },
         {
             name: "Job_Services",
-            description: "job services description",
+            description: "If you're looking for employment or want to know what Amsterdam's work environment is, then this is what you are looking for.",
             img: "https://s8.gifyu.com/images/istockphoto-1147555040-612x612.jpg",
         },
         {
             name: "Student_Services",
-            description: "job services description",
+            description: "Schools, student centers and activities are listed here. Enjoy the student life in Amsterdam. And remember, don't study too much!",
             img: "https://s8.gifyu.com/images/PISA-Volume-VI-blog.webp",
         },
         {
             name: "Bank_Services",
-            description: "bank services description",
+            description: "Banks, finantial institutions and money exchanges, look for the service you need in this page.",
             img: "https://s8.gifyu.com/images/AP_683947517957-e1560336607192.jpg",
         },
         {
             name: "Transport_Services",
-            description: "transport services description",
+            description: "Amsterdam public transport system is one of the most advanced ones in Europe. If you need information about this topic, this page contains all the places that provide that!",
             img: "https://s8.gifyu.com/images/mezzi-pubblici-amsterdam-1-800x400.jpg",
         },
         {
             name: "Pharmacy_Services",
-            description: "Pharmacy services description",
+            description: "Pharmacies, para-pharmacies and \"herboristic\" places, if you need medication this is a list of the places that provide this kind of service.",
             img: "https://s8.gifyu.com/images/farmacia-olandese-la-firma-dentro-i-paesi-bassi-154411099.jpg",
         },
         {
             name: "Rental_bikes_Services",
-            description: "Rental bikes services description",
+            description: "Amsterdam's cyclist lanes are one of the most developed of Europe! Exploring this city by bike is the most charateristic, economic and eco-friendly choiche you can make!",
             img: "https://s8.gifyu.com/images/come-noleggiare-una-bici-ad-amsterdam_800_resize.jpg",
         },
         {
             name: "Shopping_center_Services",
-            description: "shopping center services description",
+            description: "Amsterdam's cold caught you by surprise? Need a coat or a scarf to survive the wind? Or you just want to buy some clothing and souvernirs? This is the right place for you.",
             img: "https://s8.gifyu.com/images/Magna-plaza-2.jpg",
         },
     ]
@@ -879,78 +879,78 @@ export default async (models) => {
             hours: "10:00-22:00",
             img: "https://s8.gifyu.com/images/open-boot-amsterdamse-grachten-met-stromma.jpg",
         },
-      {
-        type: "Pharmacy_Services",
-        name: "Dam Apotheek",
-        description: "Pharmacy",
-        address: "Damstraat 2, 1012 JM Amsterdam, Paesi Bassi",
-        hours: "08:30-17:30",
-        img: "https://s8.gifyu.com/images/download-366634def342fdcf2.jpg",
-      },
-      {
-        type: "Pharmacy_Services",
-        name: "Amsterdam Central Pharmacy",
-        description: "Pharmacy",
-        address: "De Ruijterkade 24, A, 1012 AA Amsterdam, Paesi Bassi",
-        hours: "08:30-19:00",
-        img: "https://s8.gifyu.com/images/download-42d8e1e1af3e4f1cf.jpg",
-      },
-      {
-        type: "Pharmacy_Services",
-        name: "Lairesse Pharmacy",
-        description: "Pharmacy",
-        address: "De Lairessestraat 40hs, 1071 PB Amsterdam, Paesi Bassi",
-        hours: "08:30-18:00",
-        img: "https://s8.gifyu.com/images/02pharmacy.1506063549.4019.jpg",
-      },
-      {
-        type: "Rental_bikes_Services",
-        name: "A-Bike Rental & Tours - Leidseplein",
-        description: "Rental bikes service",
-        address: "Kerkstraat 27 A, 1017 GB Amsterdam, Paesi Bassi",
-        hours: "09:00-21:00",
-        img: "https://s8.gifyu.com/images/a-bike-rental-and-tours-vondelpark.jpg.webp",
-      },
-      {
-        type: "Rental_bikes_Services",
-        name: "AMSTEL BIKE",
-        description: "Rental bikes service",
-        address: "Westermarkt 5-A, 1016 DH Amsterdam, Paesi Bassi",
-        hours: "10:00-19:30",
-        img: "https://s8.gifyu.com/images/download-568ed5478df7acd90.jpg",
-      },
-      {
-        type: "Rental_bikes_Services",
-        name: "MacBike - Bike Rental & Repair Amsterdam - Vondelpark",
-        description: "Rental bikes service",
-        address: "Overtoom 45, 1054 HB Amsterdam, Paesi Bassi",
-        hours: "09:00-18:00",
-        img: "https://s8.gifyu.com/images/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2cLaqCpuWlrCtFuRT5tegu5okZonJJlHZGU8grhOVi_cqbYWv0Dr8ytVTX6t8OgFEQ.webp",
-      },
-      {
-        type: "Shopping_center_Services",
-        name: "De Hallen Amsterdam",
-        description: "Shopping center",
-        address: "Hannie Dankbaarpassage 47, 1053 RT Amsterdam, Paesi Bassi",
-        hours: "07:00-22:00",
-        img: "https://s8.gifyu.com/images/download-77cd2a0f3270980aa.jpg",
-      },
-      {
-        type: "Shopping_center_Services",
-        name: "Shopping Center Square '40-'45",
-        description: "Shopping center",
-        address: "Joop van Weezelhof 23, 1063 MK Amsterdam, Paesi Bassi",
-        hours: "09:30-18:00",
-        img: "https://s8.gifyu.com/images/download-8d5c8ad197d1e6068.jpg",
-      },
-      {
-        type: "Shopping_center_Services",
-        name: "Magna Plaza",
-        description: "The most famous shopping center of Amsterdam",
-        address: "Nieuwezijds Voorburgwal 182I, 1012 SJ Amsterdam, Paesi Bassi",
-        hours: "10:00-21:00",
-        img: "https://s8.gifyu.com/images/38ea9568-0a56-49e0-aaa2-c73117b5139c.jpg",
-      }
+        {
+            type: "Pharmacy_Services",
+            name: "Dam Apotheek",
+            description: "Pharmacy",
+            address: "Damstraat 2, 1012 JM Amsterdam, Paesi Bassi",
+            hours: "08:30-17:30",
+            img: "https://s8.gifyu.com/images/download-366634def342fdcf2.jpg",
+        },
+        {
+            type: "Pharmacy_Services",
+            name: "Amsterdam Central Pharmacy",
+            description: "Pharmacy",
+            address: "De Ruijterkade 24, A, 1012 AA Amsterdam, Paesi Bassi",
+            hours: "08:30-19:00",
+            img: "https://s8.gifyu.com/images/download-42d8e1e1af3e4f1cf.jpg",
+        },
+        {
+            type: "Pharmacy_Services",
+            name: "Lairesse Pharmacy",
+            description: "Pharmacy",
+            address: "De Lairessestraat 40hs, 1071 PB Amsterdam, Paesi Bassi",
+            hours: "08:30-18:00",
+            img: "https://s8.gifyu.com/images/02pharmacy.1506063549.4019.jpg",
+        },
+        {
+            type: "Rental_bikes_Services",
+            name: "A-Bike Rental & Tours - Leidseplein",
+            description: "Rental bikes service",
+            address: "Kerkstraat 27 A, 1017 GB Amsterdam, Paesi Bassi",
+            hours: "09:00-21:00",
+            img: "https://s8.gifyu.com/images/a-bike-rental-and-tours-vondelpark.jpg.webp",
+        },
+        {
+            type: "Rental_bikes_Services",
+            name: "AMSTEL BIKE",
+            description: "Rental bikes service",
+            address: "Westermarkt 5-A, 1016 DH Amsterdam, Paesi Bassi",
+            hours: "10:00-19:30",
+            img: "https://s8.gifyu.com/images/download-568ed5478df7acd90.jpg",
+        },
+        {
+            type: "Rental_bikes_Services",
+            name: "MacBike - Bike Rental & Repair Amsterdam - Vondelpark",
+            description: "Rental bikes service",
+            address: "Overtoom 45, 1054 HB Amsterdam, Paesi Bassi",
+            hours: "09:00-18:00",
+            img: "https://s8.gifyu.com/images/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2cLaqCpuWlrCtFuRT5tegu5okZonJJlHZGU8grhOVi_cqbYWv0Dr8ytVTX6t8OgFEQ.webp",
+        },
+        {
+            type: "Shopping_center_Services",
+            name: "De Hallen Amsterdam",
+            description: "Shopping center",
+            address: "Hannie Dankbaarpassage 47, 1053 RT Amsterdam, Paesi Bassi",
+            hours: "07:00-22:00",
+            img: "https://s8.gifyu.com/images/download-77cd2a0f3270980aa.jpg",
+        },
+        {
+            type: "Shopping_center_Services",
+            name: "Shopping Center Square '40-'45",
+            description: "Shopping center",
+            address: "Joop van Weezelhof 23, 1063 MK Amsterdam, Paesi Bassi",
+            hours: "09:30-18:00",
+            img: "https://s8.gifyu.com/images/download-8d5c8ad197d1e6068.jpg",
+        },
+        {
+            type: "Shopping_center_Services",
+            name: "Magna Plaza",
+            description: "The most famous shopping center of Amsterdam",
+            address: "Nieuwezijds Voorburgwal 182I, 1012 SJ Amsterdam, Paesi Bassi",
+            hours: "10:00-21:00",
+            img: "https://s8.gifyu.com/images/38ea9568-0a56-49e0-aaa2-c73117b5139c.jpg",
+        }
     ]
 
     await models.POI.bulkCreate(poiList)

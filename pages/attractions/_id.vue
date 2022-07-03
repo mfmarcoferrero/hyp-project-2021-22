@@ -30,7 +30,7 @@
               <h2 class="text-center"> {{ relatedInformations }} </h2>
             </div>
             <br />
-            <div class="row row-cols-2 ms-3">
+            <div v-if="time != null" class="row row-cols-2 ms-3">
               <div class="icon-item col-1">
                 <span class="mdi mdi-timer"></span>
               </div>
@@ -59,10 +59,10 @@
 
             <br />
             <div class="row row-cols ms-3">
-              <h3 class="">Events taking place here</h3>
+              <h3 class=""> {{ events }} {{ takingPlace }}</h3>
               <ul>
                 <p v-if="numberOfEvents == 0">
-                  <strong>There are currently no events scheduled here!</strong>
+                  <strong>{{  noEvents }}</strong>
                 </p>
                 <li v-for="(item, index) of eventList" :key="index">
                   <nuxt-link :to="`/events/` + item.name">
@@ -70,11 +70,11 @@
                   </nuxt-link>
                 </li>
               </ul>
-              <h3 class="">Itineraries that include this place</h3>
+              <h3 class="">{{ itineraries }} {{ includeThisPlace }}</h3>
               <ul>
                 <li v-for="(item, index) of itineraryList" :key="index">
-                  <nuxt-link :to="`/itineraries/` + item">
-                    <strong> {{ item }} </strong>
+                  <nuxt-link :to="`/itineraries/` + item.name">
+                    <strong> {{ item.name }} </strong>
                   </nuxt-link>
                 </li>
               </ul>
@@ -97,13 +97,6 @@
         {{ backToAttractions }}
       </button>
     </div>
-
-    <!-- You may also like content -->
-
-    <!--section id="other-attractions">
-      <h1> You may also like </h1>
-      <card-carousel></card-carousel>
-    </section-->
   </div>
 </template>
 
@@ -122,6 +115,7 @@ export default {
     CardCarousel,
   },
   data() {
+    // strings are stored in data to facilitate edits and future translation implementations
     return {
         relatedInformations: "Related informations",
         events: "Events",
@@ -149,15 +143,15 @@ export default {
   },
 
   async asyncData({ route, $axios, redirect }) {
-    // Pulling 
+    // Pulling info from DB
     let numberOfEvents
     const { id } = route.params
     const { data: poiInfo } = await $axios.get(`/api/pois/` + id)
     const { data: eventList} = await $axios.get(`/api/eventsByPlace/` + id)
     const { data: itineraryList} = await $axios.get(`/api/itinerariesByPlace/` + id)
-    console.log("lenght: " + Object.keys( eventList ).length )
     numberOfEvents = Object.keys( eventList ).length
     console.log(numberOfEvents)
+    // Error management
     if (poiInfo == null || eventList == null) {
       return redirect('/error/?err=This attraction does not exist!')
     }
@@ -166,6 +160,8 @@ export default {
       img: poiInfo.img,
       shortDescription: poiInfo.shortDescription,
       description: poiInfo.description,
+      link: poiInfo.link,
+      time: poiInfo.timetable,
       itineraryList : itineraryList,
       eventList: eventList,
       numberOfEvents: numberOfEvents,

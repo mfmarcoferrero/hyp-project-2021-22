@@ -101,6 +101,7 @@ export default {
   title: 'VisitDam',
 
   data() {
+    // strings are stored in data to facilitate edits and future translation implementations
     return {
       carouselTitle: 'Welcome to Amsterdam !',
       topicMenuTitle: 'What are you looking for?',
@@ -130,12 +131,13 @@ export default {
         ]
     };
   },
-
+  // Data fetching from DB
   async asyncData({ $axios }) {
     let topAttractions = []
     let topEvents = []
     const { data: attractions_details } = await $axios.get('/api/attractions-page-details')
     const { data: event_details } = await $axios.get('/api/events')
+    // Data sorting based on category
     for (var item of attractions_details) {
       if (item.category == 'top') topAttractions.push(item)
     }
