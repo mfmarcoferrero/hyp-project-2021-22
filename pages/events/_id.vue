@@ -25,7 +25,7 @@
           </div>
           <div class="col">
             <div class="">
-              <h2 class="text-center">General Information</h2>
+              <h2 class="text-center"> {{ generalInformation }} </h2>
             </div>
             <br>
 
@@ -57,7 +57,7 @@
 
     <div class="section-container d-grid gap-2 d-md-flex justify-content-md-start mb-b mt-5">
       <button type="button" class="btn btn-outline-dark btn-lg px-4" @click="backToList">
-        Back to events
+        {{ backToEvents }}
       </button>
     </div>
 
@@ -105,6 +105,8 @@ export default {
     return {
       locationIcon: 'mdi mdi-map-marker',
       dateIcon: 'mdi mdi-timer',
+      generalInformation: "General Information",
+      backToEvents: "Back to events"
     }
   },
   async asyncData({ route, $axios, redirect }) {

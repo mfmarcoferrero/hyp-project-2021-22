@@ -4,7 +4,7 @@
 
     <section id="services-section">
       <div class="section-container mt-5">
-        <h2 class="text-center"><strong>Which kind of service?</strong></h2>
+        <h2 class="text-center"><strong> {{ titleServices }} </strong></h2>
         <div class="row mt-5 mb-1 row-cols-1 row-cols-md-2 row-cols-lg-5">
           <div
             v-for="(service, index) of servicesList"
@@ -66,6 +66,7 @@ export default {
       coverImg:
         'https://s8.gifyu.com/images/netherlands-transportation-1920x1080.jpg',
       title: 'Services & Facilities',
+      titleServices: "Which kind of service?"
     }
   },
 

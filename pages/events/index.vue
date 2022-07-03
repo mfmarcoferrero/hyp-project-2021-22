@@ -4,12 +4,9 @@
 
     <section id="events-by-season">
       <div class="section-container mt-5">
-        <h1 class="text-center"><strong>What's up in Amsterdam?</strong></h1>
-        <p class="second-title vl ms-3 mt-5 mb-5">Almost every week a cultural event or festival is held in Amsterdam.
-          Many of these Amsterdam events and
-          festivals have a long tradition and are carefully conserved by the Dutch. But these typical Dutch festivities
-          are also very nice for tourists, because a lot of them are held with an English-speaking public in mind.</p>
-        <h3 class="text-center mb-3">Choose a time period!</h3>
+        <h1 class="text-center"><strong> {{ whatsup }} </strong></h1>
+        <p class="second-title vl ms-3 mt-5 mb-5"> {{ descriptionEvents }} </p>
+        <h3 class="text-center mb-3"> {{ chooseTime }} </h3>
       </div>
       <card-list :list="eventList" :categories="categories" />
     </section>
@@ -18,7 +15,7 @@
 
     <section id="agenda">
       <div class="section-container mt-0">
-        <h2 class="second-title vl ms-4 mb-4">Cultural Agenda</h2>
+        <h2 class="second-title vl ms-4 mb-4"> {{ culturalAgenda }} </h2>
         <agenda :list="eventList" class="mt-5" />
       </div>
     </section>
@@ -75,7 +72,14 @@ export default {
       {
         name: "fall",
         description: "Summer ends, the trees are starting to lose their leaves, but Amsterdam does not go to sleep! A lot of fun and interesting events are taking place in the city during fall. Explore this possibilities and enjoy the fall season throught us!"
-      }]
+      }],
+      whatsup: "What's up in Amsterdam?",
+      descriptionEvents: "Almost every week a cultural event or festival is held in Amsterdam.\n" +
+        "          Many of these Amsterdam events and\n" +
+        "          festivals have a long tradition and are carefully conserved by the Dutch. But these typical Dutch festivities\n" +
+        "          are also very nice for tourists, because a lot of them are held with an English-speaking public in mind.",
+      chooseTime: "Choose a time period!",
+      culturalAgenda: "Cultural Agenda"
     }
   },
   async asyncData({ $axios }) {
