@@ -15,7 +15,7 @@
 
     <section id="attractions-list">
       <div class="section-container">
-        <h2 class="second-title vl mt-5">The places in this itinerary</h2>
+        <h2 class="second-title vl mt-5"> {{ placeOfItinerary }} </h2>
       </div>
       <card-carousel
         :detailMatrix="generateMatrixFromArray(poisOfItinerary, 4)"
@@ -28,14 +28,9 @@
     <section id="map">
       <div class="section-container mt-5">
         <div class="row mb-3">
-          <h2 class="second-title vl">Itinerary map</h2>
+          <h2 class="second-title vl"> {{ itineraryMap }} </h2>
         </div>
-        <p>
-          This is a map of all the attractions you will visit if you choose to
-          enbark on this itinerary. The points are numbered and a path is
-          already layed out for you to follow, but you can visit these places in
-          any order you want!
-        </p>
+        <p> {{ mapDescription }} </p>
         <iframe
           :src="src"
           width="100%"
@@ -48,9 +43,8 @@
       <button
         type="button"
         class="btn btn-outline-dark btn-lg px-4"
-        @click="backToList"
-      >
-        Back to itineraries
+        @click="backToList">
+        {{ backToItineraries }}
       </button>
     </div>
   </div>
@@ -74,12 +68,19 @@ export default {
   data() {
     return {
       itinerariesDetails: [],
+      placeOfItinerary: "The places in this itinerary",
+      itineraryMap: "Itinerary map",
+      mapDescription: "This is a map of all the attractions you will visit if you choose to\n" +
+        "          enbark on this itinerary. The points are numbered and a path is\n" +
+        "          already layed out for you to follow, but you can visit these places in\n" +
+        "          any order you want!",
+      backToItineraries: "Back to itineraries"
     }
   },
 
   mixins: [CommonMixin],
 
- 
+
   head() {
     return {
       title: 'Visit-DAM | ' + this.name,

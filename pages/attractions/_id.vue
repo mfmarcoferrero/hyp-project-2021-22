@@ -24,7 +24,7 @@
           </div>
           <div class="col">
             <div class="">
-              <h2 class="text-center">Related informations</h2>
+              <h2 class="text-center"> {{ relatedInformations }} </h2>
             </div>
             <br />
 
@@ -34,14 +34,14 @@
                   <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                       data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      <p><strong>Events</strong> taking place here</p>
+                      <p><strong> {{ events }} </strong> {{ takingPlace }}</p>
                     </button>
                   </h2>
                   <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                       <ul>
-                        <p v-if="numberOfEvents == 0"><strong>There are currently no events scheduled here!</strong></p>
+                        <p v-if="numberOfEvents == 0"><strong> {{ noEvents }} </strong></p>
                         <li v-for="(item, index) of eventList" :key="index">
                           <nuxt-link :to="`/events/`+item.name">
                             <strong> {{ swapDashesAndCapitalize(item.name) }} </strong>
@@ -56,7 +56,7 @@
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                       data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                       <p>
-                        <strong>Itineraries</strong> that include this place
+                        <strong> {{ itineraries }} </strong> {{ includeThisPlace }}
                       </p>
                     </button>
                   </h2>
@@ -90,7 +90,7 @@
         mt-5
       ">
       <button type="button" class="btn btn-outline-dark btn-lg px-4" @click="backToList">
-        Back to all the attractions
+        {{ backToAttractions }}
       </button>
     </div>
 
@@ -119,10 +119,16 @@ export default {
   },
   data() {
     return {
-
+        relatedInformations: "Related informations",
+        events: "Events",
+        takingPlace: "taking place here",
+        noEvents: "There are currently no events scheduled here!",
+        itineraries: "Itineraries",
+        includeThisPlace: "that include this place",
+        backToAttractions: "Back to all the attractions"
     }
   },
-  
+
   mixins: [CommonMixin],
 
   head() {
