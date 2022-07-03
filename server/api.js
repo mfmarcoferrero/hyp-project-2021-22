@@ -69,7 +69,7 @@ async function initializeDatabaseConnection() {
     description: DataTypes.STRING(10000),
     img: DataTypes.STRING,
   })
-  const Service = database.define("service_list", {
+  const Service = database.define("services", {
     type: DataTypes.STRING,
     name: {
       type: DataTypes.STRING,
@@ -294,7 +294,7 @@ async function runMainApi() {
         filtered.push({
           name: element.name,
           img: element.img,
-          shortDescription: element.shortDescription,
+          shortDescription: element.short_description,
           category: element.category,
           link: element.link
         })
