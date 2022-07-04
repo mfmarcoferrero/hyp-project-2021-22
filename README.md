@@ -114,8 +114,8 @@ Gifyu.com is a free photo-sharing website and image hosting service which allows
 
 # Design Report
 
-> You can find the file of the final **Design Document**  in the [deliverable]() folder.
+> You can find the file of the final **Design Document**  in the [deliverable](https://github.com/mfmarcoferrero/hyp-project-2021-22/tree/master/docs/design/deliverable/) folder.
 
 # Usability Report
 
-> You can find the file of the final **Usability Document**  in the [deliverable]() folder.
+> You can find the file of the final **Usability Document**  in the [deliverable](https://github.com/mfmarcoferrero/hyp-project-2021-22/tree/master/docs/design/deliverable/) folder.

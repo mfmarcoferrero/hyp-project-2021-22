@@ -1,0 +1,8 @@
+Group name: Milan-Delft
+Group members:
+	Marco Ferrero (10613076 - marcoadriano.ferrero@mail.polimi.it)
+	Davide Franchi (10614321 - davide1.franchi@mail.polimi.it)
+	Daniele Ferracuti (10580840 - daniele.ferracuti@mail.polimi.it)
+	Emile Lampe (10875320 - emileanton.lampe@mail.polimi.it)
+Link to repository: https://github.com/mfmarcoferrero/hyp-project-2021-22
+Link to the website: https://visitdam.herokuapp.com
